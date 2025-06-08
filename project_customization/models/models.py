@@ -466,7 +466,7 @@ class ProjectProject(models.Model):
 
     design_sold = fields.Char(
         string="Design Sold",
-        required=True,
+        required=False,
         tracking=True
     )
 
