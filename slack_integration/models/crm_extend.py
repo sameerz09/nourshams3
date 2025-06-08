@@ -184,15 +184,15 @@ class CrmLead(models.Model):
         return [('job_id.name', '=', 'Sales Consultant')]
     average_bill = fields.Float(string="Average Bill", tracking=True)
     date_sit = fields.Date(string="Date Sit", tracking=True,required = False)
-    date_design_requested = fields.Date(string="Date Design Requested", tracking=True ,required = True)
+    date_design_requested = fields.Date(string="Date Design Requested", tracking=True ,required = False)
     date_signed = fields.Date(string="Date Signed", tracking=True ,required = False)
-    date_booked = fields.Date(string="Date Booked", tracking=True ,required = True)
-    date_appointment = fields.Date(string="Date Appointment", tracking=True ,required = True)
+    date_booked = fields.Date(string="Date Booked", tracking=True ,required = False)
+    date_appointment = fields.Date(string="Date Appointment", tracking=True ,required = False)
     phone = fields.Char(required=False)
     time_appointment = fields.Float(
         string="Time Appointment",
         help="Time in hours (e.g., 14.5 for 2:30 PM)",
-        tracking=True,required = True
+        tracking=True,required = False
     )
     is_sales_consultant = fields.Boolean(
         compute="_compute_user_roles",
