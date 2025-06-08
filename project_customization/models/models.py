@@ -22,224 +22,224 @@ class ProjectFile(models.Model):
 class ProjectProject(models.Model):
     _inherit = 'project.project'
 
-    # displacement_reasons = fields.Selection([
-    #     ('house_demolition', 'هدم المنزل'),
-    #     ('direct_bombing', 'قصف مباشر'),
-    #     ('arrest_threat', 'تهديد بالاعتقال'),
-    #     ('job_loss', 'فقدان العمل'),
-    #     ('lack_services', 'انعدام الخدمات'),
-    # ], string="أسباب النزوح", help="اختر سبب أو أكثر", required=False, multi=True)
-    #
-    # displacement_residence_type = fields.Selection([
-    #     ('shelter', 'مركز إيواء'),
-    #     ('relatives', 'لدى أقارب'),
-    #     ('rented', 'شقة مستأجرة'),
-    #     ('partial_return', 'عائد للمنزل لكن جزء من الأسرة ما زال نازحًا'),
-    #     ('other', 'موقع آخر')
-    # ], string="مكان الإقامة الحالي", tracking=True)
-    #
-    # multiple_displacements = fields.Selection([
-    #     ('yes', 'نعم'),
-    #     ('no', 'لا'),
-    # ], string="هل تعرضتم لأكثر من حالة تهجير؟", tracking=True)
-    #
+    displacement_reasons = fields.Selection([
+        ('house_demolition', 'هدم المنزل'),
+        ('direct_bombing', 'قصف مباشر'),
+        ('arrest_threat', 'تهديد بالاعتقال'),
+        ('job_loss', 'فقدان العمل'),
+        ('lack_services', 'انعدام الخدمات'),
+    ], string="أسباب النزوح", help="اختر سبب أو أكثر", required=False, multi=True)
+
+    displacement_residence_type = fields.Selection([
+        ('shelter', 'مركز إيواء'),
+        ('relatives', 'لدى أقارب'),
+        ('rented', 'شقة مستأجرة'),
+        ('partial_return', 'عائد للمنزل لكن جزء من الأسرة ما زال نازحًا'),
+        ('other', 'موقع آخر')
+    ], string="مكان الإقامة الحالي", tracking=True)
+
+    multiple_displacements = fields.Selection([
+        ('yes', 'نعم'),
+        ('no', 'لا'),
+    ], string="هل تعرضتم لأكثر من حالة تهجير؟", tracking=True)
+
+    sales_consultant_employee_id = fields.Many2one(
+        'hr.employee',
+        string="Sales Consultant (Employee)",
+        domain=lambda self: self._default_domain_sales_consultant_employee(),
+        help="Sales Consultant assigned to this event (Employee)."
+    )
+
     # sales_consultant_employee_id = fields.Many2one(
     #     'hr.employee',
     #     string="Sales Consultant (Employee)",
     #     domain=lambda self: self._default_domain_sales_consultant_employee(),
-    #     help="Sales Consultant assigned to this event (Employee)."
+    #     help="Sales Consultant assigned to this project."
     # )
-    #
-    # # sales_consultant_employee_id = fields.Many2one(
-    # #     'hr.employee',
-    # #     string="Sales Consultant (Employee)",
-    # #     domain=lambda self: self._default_domain_sales_consultant_employee(),
-    # #     help="Sales Consultant assigned to this project."
-    # # )
-    #
-    # displacement_date = fields.Date(string="تاريخ النزوح", tracking=True)
-    # request_date = fields.Datetime(string="تاريخ تقييد الطلب", default=lambda self: fields.Datetime.now(),
-    #                                tracking=True)
-    # customer_name = fields.Char(string="Customer Name", required=True, tracking=True)
-    # phone = fields.Char(string="Phone", required=True, tracking=True)
-    # email = fields.Char(string="Email", required=True, tracking=True)
-    # secondary_customer_name = fields.Char(string="Secondary Customer Name", tracking=True)
-    # secondary_phone = fields.Char(string="Secondary Phone", tracking=True)
-    # secondary_email = fields.Char(string="Secondary Email", tracking=True)
-    # street_address = fields.Text(string="Street Address", required=True, tracking=True)
-    # city = fields.Char(string="City", required=False, tracking=True)
-    # state = fields.Char(string="State", required=False, tracking=True)
-    # zip_code = fields.Char(string="Zip Code", required=False, tracking=True)
-    # reroof = fields.Selection([
-    #     ('yes_needed', 'Yes Needed'),
-    #     ('yes_customer_requested', 'Yes Customer Requested'),
-    #     ('not_needed', 'Not Needed')],
-    #     string="Reroof", required=True, tracking=True
-    # )
-    # mount = fields.Selection([
-    #     ('roof', 'Roof'),
-    #     ('ground', 'Ground'),
-    #     ('mixed', 'Mixed')],
-    #     string="Mount", required=True, tracking=True
-    # )
-    # hoa = fields.Selection([
-    #     ('yes', 'Yes'),
-    #     ('no', 'No')],
-    #     string="HOA", required=True, tracking=True
-    # )
-    # gated_access = fields.Selection([
-    #     ('yes', 'Yes'),
-    #     ('no', 'No')],
-    #     string="Gated Access", required=True, tracking=True
-    # )
-    # gate_code = fields.Char(string="Gate Code", required=False, tracking=True)
-    #
-    # battery = fields.Selection([
-    #     ('grid_tied', 'Grid-Tied'),
-    #     ('full_backup', 'Full BackUp'),
-    #     ('no_battery', 'No Battery')],
-    #     string="Battery", required=True, tracking=True
-    # )
-    # utility_bill_holder = fields.Selection([
-    #     ('customer', 'Customer'),
-    #     ('cosigner_on_contract', 'Cosigner on Contract'),
-    #     ('other', 'Other')],
-    #     string="Utility Bill Holder", required=True, tracking=True
-    # )
-    # other_utility_bill_holder = fields.Char(string="Other Utility Bill Holder", required=False, tracking=True)
-    # provider = fields.Char(string="Provider", required=True, tracking=True)
-    # finance_type = fields.Selection([
-    #     ('loan', 'Loan'),
-    #     ('ppa', 'PPA'),
-    #     ('cash', 'Cash'),
-    #     ('enfin_loan', 'Enfin Loan'),
-    #     ('everbright_loan', 'Everbright Loan'),
-    #     ('goodleap_ppa', 'GoodLeap PPA'),
-    #     ('goodleap_loan', 'GoodLeap Loan'),
-    #     ('lightreach_ppa', 'Lightreach PPA'),
-    #     ('mosaic_loan', 'Mosaic Loan'),
-    #     ('pace', 'PACE'),
-    #     ('sunlight_loan', 'Sunlight Loan'),
-    #     ('sunrun_ppa', 'Sunrun PPA'),
-    #     ('thrive_ppa', 'Thrive PPA')],
-    #     string="Finance Type", required=True, tracking=True
-    # )
-    # loantype = fields.Char(string="Loan Type", required=False, tracking=True)
-    # installer = fields.Selection([
-    #     ('lytegen', 'Lytegen'),
-    #     ('brightops', 'BrightOps'),
-    #     ('thrive', 'Thrive')],
-    #     string="Installer", required=False, tracking=True
-    # )
-    # lead_origin = fields.Selection([
-    #     ('company_lead', 'Company Lead'),
-    #     ('company_referral', 'Company Referral'),
-    #     ('selfgen', 'Selfgen')],
-    #     string="Lead Origin", required=True, tracking=True
-    # )
-    # requested_site_survey_date = fields.Selection([
-    #     ('soonest_possible', 'Soonest Possible - FASTEST INSTALL'),
-    #     ('custom_requested', 'Custom Requested')],
-    #     string="Requested Site Survey Date", required=True, tracking=True
-    # )
-    # custom_ss_times = fields.Text(string="Custom SS Times", required=True, tracking=True)
-    # usage_files = fields.Many2many(
-    #     'ir.attachment',
-    #     relation="project_usage_files_rel",
-    #     string="Usage Files",
-    #     tracking=True
-    # )
-    # additional_files = fields.Many2many(
-    #     'ir.attachment',
-    #     relation="project_additional_files_rel",
-    #     string="Additional Files",
-    #     tracking=True
-    # )
-    #
-    # unrwa_document = fields.Many2many(
-    #     'ir.attachment',
-    #     relation="project_unrwa_document_rel",
-    #     string="وثيقة الأونروا",
-    #     tracking=True
-    # )
-    #
-    # family_member_count = fields.Integer(string="عدد أفراد العائلة", tracking=True)
-    #
-    # notes = fields.Text(
-    #     string="Notes / Special Requests",
-    #     help="Help us understand this project completely and give as much detail as possible",
-    #     required=True,
-    #     tracking=True
-    # )
-    # special_request = fields.Text(string="Special Request", help="If no special request, put 'NA'", tracking=True)
-    # system_size = fields.Float(string="System Size", required=True, tracking=True)
-    # project_id = fields.Char(string="Project ID", tracking=True)
-    # installer_id = fields.Char(string="Installer ID", tracking=True)
-    # last_contact = fields.Date(string="Last Contact", tracking=True)
-    # last_bps_update = fields.Datetime(string="Last BPS Update", tracking=True)
-    # project_status = fields.Char(string="Project Status", tracking=True)
-    # funding_source = fields.Char(string="Funding Source", tracking=True)
-    # funding_kickback = fields.Char(string="Funding Kickback", tracking=True)
-    # funding_notes = fields.Text(string="Funding Notes", tracking=True)
-    # sales_action = fields.Char(string="Sales Action", tracking=True)
-    # sales_action_notes = fields.Text(string="Sales Action Notes", tracking=True)
-    # site_survey_scheduled = fields.Date(string="Site Survey Scheduled", tracking=True)
-    # ss_completed = fields.Date(string="Site Survey Completed", tracking=True)
-    # installation_scheduled = fields.Date(string="Installation Scheduled", tracking=True)
-    # change_order_required = fields.Date(string="Change Order Required", tracking=True)
-    # change_order_signed = fields.Date(string="Change Order Signed", tracking=True)
-    # sold_design_id = fields.Many2one(
-    #     'design',
-    #     string='Sold Design',
-    #     tracking=True,
-    #     ondelete='set null'  # Ensures if the design is deleted, the field is reset to null
-    # )
-    # street_address_visible = fields.Boolean(
-    #     string="Is Street Address Visible",
-    #     # compute='_compute_street_address_visible',
-    #     default=False,
-    #     store=True,
-    # )
-    #
-    # add_ons = fields.Selection([
-    #     ('yes', 'Yes'),
-    #     ('no', 'No')],
-    #     string="Add Ons",
-    #     required=True,
-    #     tracking=True
-    # )
-    #
-    # wifi_network_id = fields.Char(
-    #     string="WiFi Network ID",
-    #     required=True,
-    #     tracking=True
-    # )
-    #
-    # wifi_network_password = fields.Char(
-    #     string="WiFi Network Password",
-    #     required=True,
-    #     tracking=True
-    # )
-    #
-    # electrical_update = fields.Selection([
-    #     ('only_if_needed_fastest_install', 'Only if needed (Fastest install)'),
-    #     ('customer_requested', 'Customer requested (45 days delay)')],
-    #     string="Electrical Update",
-    #     required=True,
-    #     tracking=True
-    # )
-    #
-    # pets = fields.Selection([
-    #     ('yes', 'Yes'),
-    #     ('no', 'No')],
-    #     string="Pets",
-    #     required=True,
-    #     tracking=True
-    # )
-    #
-    # create_date_formatted = fields.Char(string='Created Date/Time', compute='_compute_create_date_formatted')
-    # date_formatted = fields.Char(string='Created Date/Time', compute='_compute_date_formatted')
-    # time_formatted = fields.Char(string='Created Date/Time', compute='_compute_time_formatted')
+
+    displacement_date = fields.Date(string="تاريخ النزوح", tracking=True)
+    request_date = fields.Datetime(string="تاريخ تقييد الطلب", default=lambda self: fields.Datetime.now(),
+                                   tracking=True)
+    customer_name = fields.Char(string="Customer Name", required=True, tracking=True)
+    phone = fields.Char(string="Phone", required=True, tracking=True)
+    email = fields.Char(string="Email", required=True, tracking=True)
+    secondary_customer_name = fields.Char(string="Secondary Customer Name", tracking=True)
+    secondary_phone = fields.Char(string="Secondary Phone", tracking=True)
+    secondary_email = fields.Char(string="Secondary Email", tracking=True)
+    street_address = fields.Text(string="Street Address", required=True, tracking=True)
+    city = fields.Char(string="City", required=False, tracking=True)
+    state = fields.Char(string="State", required=False, tracking=True)
+    zip_code = fields.Char(string="Zip Code", required=False, tracking=True)
+    reroof = fields.Selection([
+        ('yes_needed', 'Yes Needed'),
+        ('yes_customer_requested', 'Yes Customer Requested'),
+        ('not_needed', 'Not Needed')],
+        string="Reroof", required=True, tracking=True
+    )
+    mount = fields.Selection([
+        ('roof', 'Roof'),
+        ('ground', 'Ground'),
+        ('mixed', 'Mixed')],
+        string="Mount", required=True, tracking=True
+    )
+    hoa = fields.Selection([
+        ('yes', 'Yes'),
+        ('no', 'No')],
+        string="HOA", required=True, tracking=True
+    )
+    gated_access = fields.Selection([
+        ('yes', 'Yes'),
+        ('no', 'No')],
+        string="Gated Access", required=True, tracking=True
+    )
+    gate_code = fields.Char(string="Gate Code", required=False, tracking=True)
+
+    battery = fields.Selection([
+        ('grid_tied', 'Grid-Tied'),
+        ('full_backup', 'Full BackUp'),
+        ('no_battery', 'No Battery')],
+        string="Battery", required=True, tracking=True
+    )
+    utility_bill_holder = fields.Selection([
+        ('customer', 'Customer'),
+        ('cosigner_on_contract', 'Cosigner on Contract'),
+        ('other', 'Other')],
+        string="Utility Bill Holder", required=True, tracking=True
+    )
+    other_utility_bill_holder = fields.Char(string="Other Utility Bill Holder", required=False, tracking=True)
+    provider = fields.Char(string="Provider", required=True, tracking=True)
+    finance_type = fields.Selection([
+        ('loan', 'Loan'),
+        ('ppa', 'PPA'),
+        ('cash', 'Cash'),
+        ('enfin_loan', 'Enfin Loan'),
+        ('everbright_loan', 'Everbright Loan'),
+        ('goodleap_ppa', 'GoodLeap PPA'),
+        ('goodleap_loan', 'GoodLeap Loan'),
+        ('lightreach_ppa', 'Lightreach PPA'),
+        ('mosaic_loan', 'Mosaic Loan'),
+        ('pace', 'PACE'),
+        ('sunlight_loan', 'Sunlight Loan'),
+        ('sunrun_ppa', 'Sunrun PPA'),
+        ('thrive_ppa', 'Thrive PPA')],
+        string="Finance Type", required=True, tracking=True
+    )
+    loantype = fields.Char(string="Loan Type", required=False, tracking=True)
+    installer = fields.Selection([
+        ('lytegen', 'Lytegen'),
+        ('brightops', 'BrightOps'),
+        ('thrive', 'Thrive')],
+        string="Installer", required=False, tracking=True
+    )
+    lead_origin = fields.Selection([
+        ('company_lead', 'Company Lead'),
+        ('company_referral', 'Company Referral'),
+        ('selfgen', 'Selfgen')],
+        string="Lead Origin", required=True, tracking=True
+    )
+    requested_site_survey_date = fields.Selection([
+        ('soonest_possible', 'Soonest Possible - FASTEST INSTALL'),
+        ('custom_requested', 'Custom Requested')],
+        string="Requested Site Survey Date", required=True, tracking=True
+    )
+    custom_ss_times = fields.Text(string="Custom SS Times", required=True, tracking=True)
+    usage_files = fields.Many2many(
+        'ir.attachment',
+        relation="project_usage_files_rel",
+        string="Usage Files",
+        tracking=True
+    )
+    additional_files = fields.Many2many(
+        'ir.attachment',
+        relation="project_additional_files_rel",
+        string="Additional Files",
+        tracking=True
+    )
+
+    unrwa_document = fields.Many2many(
+        'ir.attachment',
+        relation="project_unrwa_document_rel",
+        string="وثيقة الأونروا",
+        tracking=True
+    )
+
+    family_member_count = fields.Integer(string="عدد أفراد العائلة", tracking=True)
+
+    notes = fields.Text(
+        string="Notes / Special Requests",
+        help="Help us understand this project completely and give as much detail as possible",
+        required=True,
+        tracking=True
+    )
+    special_request = fields.Text(string="Special Request", help="If no special request, put 'NA'", tracking=True)
+    system_size = fields.Float(string="System Size", required=True, tracking=True)
+    project_id = fields.Char(string="Project ID", tracking=True)
+    installer_id = fields.Char(string="Installer ID", tracking=True)
+    last_contact = fields.Date(string="Last Contact", tracking=True)
+    last_bps_update = fields.Datetime(string="Last BPS Update", tracking=True)
+    project_status = fields.Char(string="Project Status", tracking=True)
+    funding_source = fields.Char(string="Funding Source", tracking=True)
+    funding_kickback = fields.Char(string="Funding Kickback", tracking=True)
+    funding_notes = fields.Text(string="Funding Notes", tracking=True)
+    sales_action = fields.Char(string="Sales Action", tracking=True)
+    sales_action_notes = fields.Text(string="Sales Action Notes", tracking=True)
+    site_survey_scheduled = fields.Date(string="Site Survey Scheduled", tracking=True)
+    ss_completed = fields.Date(string="Site Survey Completed", tracking=True)
+    installation_scheduled = fields.Date(string="Installation Scheduled", tracking=True)
+    change_order_required = fields.Date(string="Change Order Required", tracking=True)
+    change_order_signed = fields.Date(string="Change Order Signed", tracking=True)
+    sold_design_id = fields.Many2one(
+        'design',
+        string='Sold Design',
+        tracking=True,
+        ondelete='set null'  # Ensures if the design is deleted, the field is reset to null
+    )
+    street_address_visible = fields.Boolean(
+        string="Is Street Address Visible",
+        # compute='_compute_street_address_visible',
+        default=False,
+        store=True,
+    )
+
+    add_ons = fields.Selection([
+        ('yes', 'Yes'),
+        ('no', 'No')],
+        string="Add Ons",
+        required=True,
+        tracking=True
+    )
+
+    wifi_network_id = fields.Char(
+        string="WiFi Network ID",
+        required=True,
+        tracking=True
+    )
+
+    wifi_network_password = fields.Char(
+        string="WiFi Network Password",
+        required=True,
+        tracking=True
+    )
+
+    electrical_update = fields.Selection([
+        ('only_if_needed_fastest_install', 'Only if needed (Fastest install)'),
+        ('customer_requested', 'Customer requested (45 days delay)')],
+        string="Electrical Update",
+        required=True,
+        tracking=True
+    )
+
+    pets = fields.Selection([
+        ('yes', 'Yes'),
+        ('no', 'No')],
+        string="Pets",
+        required=True,
+        tracking=True
+    )
+
+    create_date_formatted = fields.Char(string='Created Date/Time', compute='_compute_create_date_formatted')
+    date_formatted = fields.Char(string='Created Date/Time', compute='_compute_date_formatted')
+    time_formatted = fields.Char(string='Created Date/Time', compute='_compute_time_formatted')
 
     displacement_reasons = fields.Selection([
         ('house_demolition', 'هدم المنزل'),
