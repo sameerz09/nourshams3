@@ -67,9 +67,9 @@ class ProjectProject(models.Model):
     secondary_phone = fields.Char(string="Secondary Phone", tracking=True)
     secondary_email = fields.Char(string="Secondary Email", tracking=True)
     street_address = fields.Text(string="Street Address", required=True, tracking=True)
-    city = fields.Char(string="City", required=True, tracking=True)
-    state = fields.Char(string="State", required=True, tracking=True)
-    zip_code = fields.Char(string="Zip Code", required=True, tracking=True)
+    city = fields.Char(string="City", required=False, tracking=True)
+    state = fields.Char(string="State", required=False, tracking=True)
+    zip_code = fields.Char(string="Zip Code", required=False, tracking=True)
     reroof = fields.Selection([
         ('yes_needed', 'Yes Needed'),
         ('yes_customer_requested', 'Yes Customer Requested'),
