@@ -185,7 +185,7 @@ class CrmLead(models.Model):
     average_bill = fields.Float(string="Average Bill", tracking=True)
     date_sit = fields.Date(string="Date Sit", tracking=True,required = False)
     date_design_requested = fields.Date(string="Date Design Requested", tracking=True ,required = True)
-    date_signed = fields.Date(string="Date Signed", tracking=True ,required = True)
+    date_signed = fields.Date(string="Date Signed", tracking=True ,required = False)
     date_booked = fields.Date(string="Date Booked", tracking=True ,required = True)
     date_appointment = fields.Date(string="Date Appointment", tracking=True ,required = True)
     phone = fields.Char(required=False)
