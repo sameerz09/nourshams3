@@ -1,0 +1,13 @@
+<odoo>
+    <template id="appointment_info_inherit" inherit_id="appointment.appointment_info" name="Remove Appointment Failure Messages">
+        <!-- Remove 'failed-staff-user' and 'failed-resource' alerts -->
+        <xpath expr="//div[@t-if=&quot;state in ['failed-staff-user', 'failed-resource']&quot;]" position="replace">
+            <div></div>
+        </xpath>
+
+        <!-- Remove 'failed-partner' alert -->
+        <xpath expr="//div[@t-if=&quot;state == 'failed-partner'&quot;]" position="replace">
+            <div></div>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,118 @@
+<odoo>
+    <!-- Customized Tree View for Project -->
+    <record id="view_project_tree_custom" model="ir.ui.view">
+        <field name="name">project.project.tree.custom</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.view_project"/>
+        <field name="arch" type="xml">
+            <!-- Disable creation from tree view -->
+            <xpath expr="//list" position="attributes">
+                <attribute name="create">false</attribute>
+            </xpath>
+
+            <!-- Insert Project ID before Display Name -->
+            <xpath expr="//field[@name='display_name']" position="before">
+                <field name="id" string="Project ID"/>
+            </xpath>
+
+            <!-- Insert Created Date and Time before Street Address (adjusted to avoid missing XPath errors) -->
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="date_formatted" string="Created Date"/>
+                <field name="time_formatted" string="Created Time"/>
+                <field name="street_address"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Customized Form View for Project -->
+    <record id="view_project_form_inherited" model="ir.ui.view">
+        <field name="name">project.project.form.inherit</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+            <!-- Disable creation from form -->
+            <xpath expr="//form" position="attributes">
+                <attribute name="create">false</attribute>
+            </xpath>
+
+            <!-- Hide settings page -->
+            <xpath expr="//page[@name='settings']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <!-- Hide unused or optional fields -->
+            <xpath expr="//field[@name='date_start']" position="attributes">
+                <attribute name="invisible">1</attribute>
+                <attribute name="required">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='tag_ids']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//button[@name='action_open_share_project_wizard']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <!-- Inject Custom Fields Before User Field -->
+           <xpath expr="//field[@name='partner_id']" position="after">
+                   <field name="displacement_date"/>
+                   <field name="displacement_residence_type"/>
+                   <field name="multiple_displacements"/>
+                   <field name="request_date"/>
+                   <field name="displacement_reasons"/>
+                    <field name="design_sold" widget="url"/>
+                    <field name="sales_consultant_employee_id" required="1"/>
+                    <field name="reroof"/>
+                    <field name="mount"/>
+                    <field name="electrical_update"/>
+                    <field name="hoa"/>
+                    <field name="gated_access"/>
+                    <field name="gate_code"/>
+                    <field name="battery"/>
+                    <field name="utility_bill_holder"/>
+                    <field name="other_utility_bill_holder"/>
+                    <field name="provider"/>
+                    <field name="finance_type"/>
+                    <field name="loantype"/>
+                    <field name="installer"/>
+                    <field name="lead_origin"/>
+
+
+            </xpath>
+            <xpath expr="//field[@name='user_id']" position="after">
+
+
+                    <field name="custom_ss_times"/>
+                    <field name="usage_files" widget="many2many_binary_preview"/>
+                    <field name="unrwa_document" widget="many2many_binary_preview"/>
+                    <field name="additional_files" widget="many2many_binary_preview"/>
+                    <field name="family_member_count"/>
+                    <field name="notes"/>
+                    <field name="system_size"/>
+                    <field name="add_ons"/>
+<!--                    <field name="wifi_network_id" placeholder="Enter WiFi network ID"/>-->
+<!--                    <field name="wifi_network_password" placeholder="Enter WiFi password"/>-->
+                    <field name="pets"/>
+            </xpath>
+
+
+            <!-- Optionally hide notebook if unnecessary -->
+            <xpath expr="//notebook" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='tag_ids']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='label_tasks']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='partner_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Ensure list and form views are accessible -->
+    <record id="project.open_view_project_all" model="ir.actions.act_window">
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

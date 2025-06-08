@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- List view for calendar.transcript (Odoo 18 style: <list> instead of <tree>) -->
+    <record id="view_calendar_transcript_list" model="ir.ui.view">
+        <field name="name">calendar.transcript.list</field>
+        <field name="model">calendar.transcript</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="audio_id"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form view for calendar.transcript -->
+    <record id="view_calendar_transcript_form" model="ir.ui.view">
+        <field name="name">calendar.transcript.form</field>
+        <field name="model">calendar.transcript</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="audio_id"/>
+                    </group>
+                    <group>
+                        <!-- Example: HTML widget for transcript content -->
+                        <field name="content" widget="html"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action to open the list/form of transcripts -->
+    <record id="action_calendar_transcript" model="ir.actions.act_window">
+        <field name="name">Transcripts</field>
+        <field name="res_model">calendar.transcript</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+<!--    &lt;!&ndash; Menu item for 'Transcripts' under Calendar > Configuration &ndash;&gt;-->
+<!--    <menuitem id="menu_calendar_transcript"-->
+<!--              name="Transcripts"-->
+<!--              parent="calendar.mail_menu_calendar"-->
+<!--              action="action_calendar_transcript"-->
+<!--              sequence="30" />-->
+</odoo>

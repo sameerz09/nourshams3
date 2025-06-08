@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Tree view for Webhook Configuration -->
+    <record id="view_webhook_configuration_tree" model="ir.ui.view">
+        <field name="name">slack.webhook.configuration.tree</field>
+        <field name="model">slack.webhook.configuration</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="webhook"/>
+                <field name="status"/>
+                <field name="is_default"/>
+                <field name="category"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form view for Webhook Configuration -->
+    <record id="view_webhook_configuration_form" model="ir.ui.view">
+        <field name="name">slack.webhook.configuration.form</field>
+        <field name="model">slack.webhook.configuration</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="webhook"/>
+                        <field name="status"/>
+                        <field name="is_default"/>
+                        <field name="category"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action for Webhook Configurations -->
+    <record id="action_webhook_configuration" model="ir.actions.act_window">
+        <field name="name">Webhook Configurations</field>
+        <field name="res_model">slack.webhook.configuration</field>
+        <field name="view_mode">list,form</field>
+        <field name="target">current</field>
+    </record>
+</odoo>

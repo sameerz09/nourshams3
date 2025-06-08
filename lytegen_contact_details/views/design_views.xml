@@ -1,0 +1,97 @@
+<odoo>
+
+    <data>
+
+        <!-- Tree View -->
+        <record id="view_design_tree" model="ir.ui.view">
+            <field name="name">Design</field>
+            <field name="model">design</field>
+            <field name="arch" type="xml">
+                <list create="false">
+                    <field name="id" string="Proposal ID"/>
+                    <field name="first_name"/>
+                    <field name="last_name"/>
+                    <field name="date_formatted"/>
+                    <field name="time_formatted"/>
+                    <field name="sales_consultant_employee_id" string="Sales Consultant"/>
+                    <field name="street_address" string="Full street address"/>
+                    <field name="create_uid" string="Created By"/>
+
+                </list>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="view_design_form" model="ir.ui.view">
+            <field name="name">Design</field>
+            <field name="model">design</field>
+            <field name="arch" type="xml">
+                <form create="false">
+                    <sheet>
+                         <header>
+                            <button name="action_renew_12hr_for_designer"
+                                    type="object"
+                                    string="Renew 12hr for Designer"
+                                    class="btn-primary"
+                                    groups="lytegen_contact_details.group_user_role_admin,lytegen_contact_details.group_user_hide_menu"/>
+                        </header>
+                        <group>
+                            <group>
+                                <field name="design_name" required="1"/>
+                                <field name="first_name" required="1"/>
+                                <field name="last_name" required="1"/>
+                                <field name="phone_number" placeholder="Enter 10-digit phone number" required="1"/>
+                                <field name="email" required="1"/>
+                                <field name="street_address" widget="address_autocomplete"/>
+                                <field name="city" required="1"/>
+                                <field name="state" required="1"/>
+                                <field name="zip_code" required="1"/>
+                                <field name="sales_consultant_employee_id" required="1"/>
+
+                            </group>
+                            <group>
+
+                                <field name="usage_files" widget="many2many_binary_preview"/>
+
+
+                                <field name="utility_provider" required="1"/>
+                                <field name="discounts" required="1"/>
+                                <field name="rate_type" required="1"/>
+                                <field name="average_bill" required="1"/>
+                                <field name="proposal_notes" required="1"/>
+                            </group>
+
+
+
+                        </group>
+                         <notebook>
+
+                    <page string="Proposal Links">
+                        <field name="design_link_ids">
+                            <list editable="bottom">
+                                <field name="name"/>
+                                <field name="link" widget="url"/>
+                            </list>
+                        </field>
+                    </page>
+                </notebook>
+                    </sheet>
+                    <chatter groups="base.group_system"/> <!-- This line adds Chatter -->
+                </form>
+            </field>
+        </record>
+
+        <!-- Action to open the model -->
+        <record id="action_design_model" model="ir.actions.act_window">
+            <field name="name">Proposal</field>
+            <field name="res_model">design</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <!-- Menu Item -->
+        <menuitem id="menu_parent_designs" name="Proposal" sequence="10" web_icon="lytegen_contact_details,static/description/design.png" groups="lytegen_contact_details.group_designer,lytegen_contact_details.group_user_role_admin,lytegen_contact_details.group_user_hide_menu"/>
+        <menuitem id="menu_child_design" name="Proposal" parent="menu_parent_designs" action="action_design_model"/>
+
+    </data>
+
+</odoo>

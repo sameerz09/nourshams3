@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="thankyou_template" name="Proposal Request Thank You">
+        <t t-call="website.layout">
+            <div class="container py-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <img src="/lytegen_contact_details/static/src/img/success.png" alt="Success" class="img-fluid mb-4" style="max-width: 150px;"/>
+                        <h2 class="text-success fw-bold">Thank You!</h2>
+                        <p class="lead">Your proposal request has been successfully submitted.</p>
+                        <a href="/proposalrequest" class="btn btn-primary mt-3">Back to Home</a>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

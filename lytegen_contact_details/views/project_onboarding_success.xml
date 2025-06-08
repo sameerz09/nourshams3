@@ -1,0 +1,13 @@
+<odoo>
+<template id="project_onboarding_success" name="Project Onboarding Success">
+    <t t-call="website.layout">
+        <div class="container my-5">
+            <div class="alert alert-success text-center">
+                <h2>✅ تم ارسال البيانات بنجاح</h2>
+                <p>شكرا لك</p>
+                <a href="/project_onboarding" class="btn btn-primary mt-3">العودة للخلف</a>
+            </div>
+        </div>
+    </t>
+</template>
+     </odoo>

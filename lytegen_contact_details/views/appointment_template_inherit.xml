@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <template id="appointment_form_update" inherit_id="appointment.appointment_form">
+
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" type="text/css" href="/lytegen_contact_details/static/src/css/intlTelInput.min.css"/>
+            <script src="/lytegen_contact_details/static/src/js/lib/jquery-3.6.0.min.js"/>
+            <script src="/lytegen_contact_details/static/src/js/lib/intlTelInput.min.js"/>
+            <script>
+                $(document).ready(function() {
+                    var input = document.querySelector("#phone_field");
+                    var iti = window.intlTelInput(input,({
+                        initialCountry: "us"
+                    }));
+
+                    input.addEventListener("countrychange", function() {
+                       document.querySelector("#country_code").value = iti.getSelectedCountryData().dialCode;
+                    });
+
+                    // Also set initially
+                    document.querySelector("#country_code").value = iti.getSelectedCountryData().dialCode;
+
+                })
+            </script>
+
+            <style>
+                .iti {
+                    width: 100%;
+                    margin-top: 7px;
+                }
+
+                .form-control,.form-select{
+                    border-color: #007BFF !important;
+                    border: 1px solid #ccc !important;;
+                }
+                .form-select:focus,
+                .form-control:focus {
+                  border-color: #000;
+                  outline: none;
+                  box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25) !important;
+                }
+
+                .btn-primary{
+                    background-color: #007BFF !important;
+                    border-color: #007BFF !important;
+                    color: white !important;
+                }
+            </style>
+        </xpath>
+         <xpath expr="//nav[@class='d-print-none d-flex justify-content-between mb-4']" position="replace">
+            <!-- Removed -->
+        </xpath>
+        <!-- Hide the title block -->
+        <xpath expr="//div[@class='oe_structure o_appointment']/h4" position="replace">
+            <!-- Empty block to remove the title -->
+        </xpath>
+        <xpath expr="//form[@class='appointment_submit_form']" position="before">
+                <div class="text-center mb-4">
+                    <img t-att-src="'/lytegen_contact_details/static/src/img/lytegen.png'" alt="Lytegen Logo" style="max-width: 150px;"/>
+                </div>
+        </xpath>
+
+        <xpath expr="//div[label[@for='name']]" position="replace">
+        <div class="row mb-4">
+            <label class="col-sm-3 col-form-label fw-normal" for="name">First Name</label>
+            <div class="col-sm-9">
+                <input type="char" class="form-control" name="name" required="1"
+                    t-att-value="'name' in partner_data and partner_data['name']"
+                    placeholder="Enter first name"/>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <label class="col-sm-3 col-form-label fw-normal" for="last_name" aria-label="Last Name">Last Name</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" name="last_name" id="last_name"
+                       placeholder="Enter last name" aria-label="Last Name Input" required="required"/>
+            </div>
+        </div>
+    </xpath>
+        <!-- Make the phone field optional -->
+        <xpath expr="//form" position="inside">
+            <input type="hidden" id="country_code" name="country_code"/>
+        </xpath>
+        <xpath expr="//input[@id='phone_field']" position="attributes">
+            <attribute name="required">false</attribute>
+            <attribute name="maxlength">10</attribute>
+            <attribute name="placeholder">Enter 10-digit phone number</attribute>
+            <attribute name="pattern">\d{10}</attribute>
+        </xpath>
+        <xpath expr="//div[@class='my-3 pt-3']" position="attributes">
+            <attribute name="style">display: none;</attribute>
+        </xpath>
+
+        <xpath expr="//form[@class='appointment_submit_form']" position="inside">
+
+    <div id="serviceAddress">
+        <div class="row mb-4">
+            <label class="col-sm-3 col-form-label fw-normal" for="street_address" aria-label="Street Address">Street Address</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" name="street_address" id="street_address"
+                       placeholder="Enter street address 123" aria-label="Street Address Input" required="required" />
+            </div>
+        </div>
+
+        <!-- City Field -->
+        <div class="row mb-4">
+            <label class="col-sm-3 col-form-label fw-normal" for="city" aria-label="City">City</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" name="city" id="city" placeholder="Enter city"
+                       aria-label="City Input" required="required" />
+            </div>
+        </div>
+
+        <!-- State Field -->
+        <div class="row mb-4">
+            <label class="col-sm-3 col-form-label fw-normal" for="state" aria-label="State">State</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" name="state" id="state" placeholder="Enter state"
+                       aria-label="State Input" required="required" />
+            </div>
+        </div>
+
+        <!-- Zip Code Field -->
+        <div class="row mb-4">
+            <label class="col-sm-3 col-form-label fw-normal" for="zip_code" aria-label="Zip Code">Zip Code</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" name="zip_code" id="zip_code" placeholder="Enter zip code"
+                       aria-label="Zip Code Input" required="required" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Language Selection Dropdown -->
+    <div class="row mb-4">
+        <label class="col-sm-3 col-form-label fw-normal" for="language_field" aria-label="Choose Language">Choose Language</label>
+        <div class="col-sm-9">
+            <select class="form-select" id="language_field" name="language" aria-label="Language Selection" required="required">
+                <option value="en">English</option>
+                <option value="es">Spanish</option>
+                <option value="ot">Other Language</option>
+            </select>
+        </div>
+    </div>
+
+    <label class="col-sm-3 col-form-label fw-normal" for="appointment_notes" aria-label="Appointment Notes">
+        Appointment Notes
+    </label>
+    <div class="col-sm-9 ms-auto">
+            <textarea class="form-control" name="appointment_notes" id="appointment_notes"
+                      placeholder="Enter appointment notes here..." rows="4" aria-label="Appointment Notes Field"></textarea>
+    </div>
+    <div class="col-sm-9 ms-auto mt-3">
+        <input type="text" class="form-control" name="two_fa_code" id="two_fa_code"
+               placeholder="Enter your 2FA code" aria-label="2FA Code Field" maxlength="6" />
+    </div>
+
+
+    <!-- Confirm Button -->
+    <div class="my-3 pt-3">
+        <div class="o_not_editable text-end">
+            <button type="button" class="o_appointment_form_confirm_btn btn btn-primary ms-auto">Confirm Appointment</button>
+        </div>
+    </div>
+
+</xpath>
+        <xpath expr="//label[@for='email']/ancestor::div[@class='row mb-4']" position="replace">
+            <div class="row mb-4">
+                <label class="col-sm-3 col-form-label fw-normal" for="email">Email</label>
+                <div class="col-sm-9">
+                    <input type="email" class="form-control" name="email"
+                        t-att-value="'email' in partner_data and partner_data['email']"
+                        placeholder="Enter your best contact email 2"/>
+                </div>
+            </div>
+        </xpath>
+    </template>
+    <template id="appointment_meeting_user_hide_operator" inherit_id="appointment.appointment_meeting_user">
+            <!-- Remove the 'Operator' section -->
+                <xpath expr="//div[@class='mt-3 pt-3 border-top']" position="replace">
+                    <!-- Empty block to replace the section -->
+                </xpath>
+    </template>
+    <template id="appointment_validated_hide_details" inherit_id="appointment.appointment_validated">
+            <!-- Hide the 'Details' section -->
+            <xpath expr="//div[@class='row mb-4' and .//span[@class='text-muted' and text()='Details']]" position="replace">
+                <!-- Empty block to remove the section -->
+            </xpath>
+
+            <!-- Hide the 'Not available anymore?' section -->
+            <xpath expr="//div[@class='row mb-4' and .//span[contains(text(), 'Not available anymore?')]]" position="replace">
+                <!-- Empty block to remove the section -->
+            </xpath>
+<!--            <xpath expr="//div[@class='col-12 col-md-4 px-md-4' and .//t[@t-call='appointment.appointment_validated_card']]" position="replace">-->
+<!--                &lt;!&ndash; Empty block to remove the section &ndash;&gt;-->
+<!--            </xpath>-->
+<!--        -->
+<!--            <xpath expr="//div[@class='row mb-4']//span[text()='When']/ancestor::div[@class='row mb-4']" position="replace">-->
+<!--            &lt;!&ndash; 'When' section hidden &ndash;&gt;-->
+<!--            </xpath>-->
+
+            <xpath expr="//div[@class='o_appointment_validation_details o_wappointment_type_options row justify-content-between']//div[@class='o_appointment_add_to_calendar_btns d-flex flex-wrap gap-3 mt-2']" position="replace">
+            <!-- Section completely hidden -->
+            </xpath>
+            <xpath expr="//div[@class='row mb-4' and div/span[contains(text(), 'How to join')]]" position="attributes">
+                <attribute name="style">display: none;</attribute>
+            </xpath>
+
+
+
+    </template>
+
+<!--    <template id="inherit_appointment_info_upcoming_appointment" inherit_id="Appointment.appointment_info_upcoming_appointment" name="Hide Upcoming Appointment Block">-->
+<!--        &lt;!&ndash; Add condition to hide if appointmentCount <= 0 or multiple appointments &ndash;&gt;-->
+<!--        <xpath expr="//div[@class='o_appointment_upcoming_event_info col-12 mx-auto']" position="attributes">-->
+<!--            <attribute name="t-if">appointmentCount > 10000</attribute>-->
+<!--        </xpath>-->
+<!--    </template>-->
+
+
+
+
+</odoo>

@@ -1,0 +1,234 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* legal_case_management_dashboard
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0-20250223\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-10 10:12+0000\n"
+"PO-Revision-Date: 2025-04-10 10:12+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: legal_case_management_dashboard
+#. odoo-javascript
+#: code:addons/legal_case_management_dashboard/static/src/xml/dashboard_template.xml:0
+msgid "Amount Invoiced"
+msgstr ""
+
+#. module: legal_case_management_dashboard
+#. odoo-javascript
+#: code:addons/legal_case_management_dashboard/static/src/xml/dashboard_template.xml:0
+msgid "Cancel"
+msgstr ""
+
+#. module: legal_case_management_dashboard
+#. odoo-javascript
+#: code:addons/legal_case_management_dashboard/static/src/xml/dashboard_template.xml:0
+msgid "Cases"
+msgstr ""
+
+#. module: legal_case_management_dashboard
+#. odoo-javascript
+#: code:addons/legal_case_management_dashboard/static/src/xml/dashboard_template.xml:0
+msgid "Cases in Different Category"
+msgstr ""
+
+#. module: legal_case_management_dashboard
+#. odoo-javascript
+#: code:addons/legal_case_management_dashboard/static/src/xml/dashboard_template.xml:0
+msgid "Cases in Different stages"
+msgstr ""
+
+#. module: legal_case_management_dashboard
+#. odoo-javascript
+#: code:addons/legal_case_management_dashboard/static/src/xml/dashboard_template.xml:0
+msgid "Clients"
+msgstr ""
+
+#. module: legal_case_management_dashboard
+#: model:ir.actions.client,name:legal_case_management_dashboard.legal_case_dashboard_action
+msgid "Dashboard"
+msgstr ""
+
+#. module: legal_case_management_dashboard
+#. odoo-javascript
+#: code:addons/legal_case_management_dashboard/static/src/xml/dashboard_template.xml:0
+msgid "Draft"
+msgstr ""
+
+#. module: legal_case_management_dashboard
+#. odoo-javascript
+#: code:addons/legal_case_management_dashboard/static/src/xml/dashboard_template.xml:0
+msgid "Evidences"
+msgstr ""
+
+#. module: legal_case_management_dashboard
+#. odoo-javascript
+#: code:addons/legal_case_management_dashboard/static/src/xml/dashboard_template.xml:0
+msgid ""
+"In\n"
+"                                    Progress"
+msgstr ""
+
+#. module: legal_case_management_dashboard
+#. odoo-javascript
+#: code:addons/legal_case_management_dashboard/static/src/xml/dashboard_template.xml:0
+msgid "Income in Last One Year"
+msgstr ""
+
+#. module: legal_case_management_dashboard
+#. odoo-javascript
+#: code:addons/legal_case_management_dashboard/static/src/xml/dashboard_template.xml:0
+msgid "Invoiced"
+msgstr ""
+
+#. module: legal_case_management_dashboard
+#. odoo-javascript
+#: code:addons/legal_case_management_dashboard/static/src/xml/dashboard_template.xml:0
+msgid ""
+"Last 12\n"
+"                                    months"
+msgstr ""
+
+#. module: legal_case_management_dashboard
+#. odoo-javascript
+#: code:addons/legal_case_management_dashboard/static/src/xml/dashboard_template.xml:0
+msgid ""
+"Last 6\n"
+"                                    Months"
+msgstr ""
+
+#. module: legal_case_management_dashboard
+#. odoo-javascript
+#: code:addons/legal_case_management_dashboard/static/src/xml/dashboard_template.xml:0
+msgid "Last Month"
+msgstr ""
+
+#. module: legal_case_management_dashboard
+#. odoo-javascript
+#: code:addons/legal_case_management_dashboard/static/src/xml/dashboard_template.xml:0
+msgid "Lawyers"
+msgstr ""
+
+#. module: legal_case_management_dashboard
+#. odoo-javascript
+#: code:addons/legal_case_management_dashboard/static/src/xml/dashboard_template.xml:0
+msgid "Lost"
+msgstr ""
+
+#. module: legal_case_management_dashboard
+#: model:ir.ui.menu,name:legal_case_management_dashboard.legal_case_dashboard_menu
+msgid "Main Page"
+msgstr "الصفحة الرئيسية"
+
+#. module: legal_case_management_dashboard
+#. odoo-javascript
+#: code:addons/legal_case_management_dashboard/static/src/xml/dashboard_template.xml:0
+msgid "Most Paid Ten Cases"
+msgstr ""
+
+#. module: legal_case_management_dashboard
+#. odoo-javascript
+#: code:addons/legal_case_management_dashboard/static/src/xml/dashboard_template.xml:0
+msgid ""
+"Select\n"
+"                                    Lawyers"
+msgstr ""
+
+#. module: legal_case_management_dashboard
+#. odoo-javascript
+#: code:addons/legal_case_management_dashboard/static/src/xml/dashboard_template.xml:0
+msgid ""
+"Select\n"
+"                                    Month"
+msgstr ""
+
+#. module: legal_case_management_dashboard
+#. odoo-javascript
+#: code:addons/legal_case_management_dashboard/static/src/xml/dashboard_template.xml:0
+msgid "Select Stages"
+msgstr ""
+
+#. module: legal_case_management_dashboard
+#. odoo-javascript
+#: code:addons/legal_case_management_dashboard/static/src/xml/dashboard_template.xml:0
+msgid "Trials"
+msgstr ""
+
+#. module: legal_case_management_dashboard
+#. odoo-javascript
+#: code:addons/legal_case_management_dashboard/static/src/xml/dashboard_template.xml:0
+msgid "Won"
+msgstr ""
+
+#. module: legal_case_management_dashboard
+#. odoo-javascript
+#: code:addons/legal_case_management_dashboard/static/src/xml/dashboard_template.xml:0
+msgid "admin"
+msgstr ""
+
+#. module: legal_case_management_dashboard
+#. odoo-javascript
+#: code:addons/legal_case_management_dashboard/static/src/xml/dashboard_template.xml:0
+msgid "cancel"
+msgstr ""
+
+#. module: legal_case_management_dashboard
+#. odoo-javascript
+#: code:addons/legal_case_management_dashboard/static/src/xml/dashboard_template.xml:0
+msgid "draft"
+msgstr ""
+
+#. module: legal_case_management_dashboard
+#. odoo-javascript
+#: code:addons/legal_case_management_dashboard/static/src/xml/dashboard_template.xml:0
+msgid "in_progress"
+msgstr ""
+
+#. module: legal_case_management_dashboard
+#. odoo-javascript
+#: code:addons/legal_case_management_dashboard/static/src/xml/dashboard_template.xml:0
+msgid "invoiced"
+msgstr ""
+
+#. module: legal_case_management_dashboard
+#. odoo-javascript
+#: code:addons/legal_case_management_dashboard/static/src/xml/dashboard_template.xml:0
+msgid "last_12_months"
+msgstr ""
+
+#. module: legal_case_management_dashboard
+#. odoo-javascript
+#: code:addons/legal_case_management_dashboard/static/src/xml/dashboard_template.xml:0
+msgid "last_6_months"
+msgstr ""
+
+#. module: legal_case_management_dashboard
+#. odoo-javascript
+#: code:addons/legal_case_management_dashboard/static/src/xml/dashboard_template.xml:0
+msgid "last_month"
+msgstr ""
+
+#. module: legal_case_management_dashboard
+#. odoo-javascript
+#: code:addons/legal_case_management_dashboard/static/src/xml/dashboard_template.xml:0
+msgid "lost"
+msgstr ""
+
+#. module: legal_case_management_dashboard
+#. odoo-javascript
+#: code:addons/legal_case_management_dashboard/static/src/xml/dashboard_template.xml:0
+msgid "null"
+msgstr ""
+
+#. module: legal_case_management_dashboard
+#. odoo-javascript
+#: code:addons/legal_case_management_dashboard/static/src/xml/dashboard_template.xml:0
+msgid "won"
+msgstr ""

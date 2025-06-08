@@ -1,0 +1,38 @@
+<odoo>
+    <record id="view_request_log_list" model="ir.ui.view">
+        <field name="name">request.log.list</field>
+        <field name="model">request.log</field>
+        <field name="arch" type="xml">
+            <list string="Request Logs">
+                <field name="name"/>
+                <field name="create_date"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_request_log_form" model="ir.ui.view">
+        <field name="name">request.log.form</field>
+        <field name="model">request.log</field>
+        <field name="arch" type="xml">
+            <form string="Request Log">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="create_date"/>
+                        <field name="headers"/>
+                        <field name="query_params"/>
+                        <field name="body" widget="text"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_request_log" model="ir.actions.act_window">
+        <field name="name">Request Logs</field>
+        <field name="res_model">request.log</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+
+</odoo>

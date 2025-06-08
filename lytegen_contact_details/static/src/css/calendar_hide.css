@@ -1,0 +1,6 @@
+/* Working version (adjust class based on actual DOM) */
+.o_calendar_sidebar .o_filter_panel,
+.o_calendar_sidebar [class*='filter'],
+.o_calendar_sidebar [class*='Filter'] {
+    display: none !important;
+}

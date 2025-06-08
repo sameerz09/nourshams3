@@ -1,0 +1,7 @@
+<odoo>
+    <data>
+        <record id="appointment.attendee_invitation_mail_template" model="mail.template">
+            <field name="active" eval="False"/>
+        </record>
+    </data>
+</odoo>

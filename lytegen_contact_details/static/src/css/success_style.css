@@ -1,0 +1,29 @@
+/* -------------------------------
+   🌟 Success Page Styling
+--------------------------------*/
+.container {
+    max-width: 600px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: auto;
+}
+
+.success-image {
+    max-width: 100px;
+    margin-bottom: 20px;
+}
+
+h2.text-success {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.btn-primary {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+}

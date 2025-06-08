@@ -1,0 +1,17 @@
+<odoo>
+    <!-- Main menu for Slack Integration -->
+    <menuitem id="slack_integration_menu"
+              name="Slack Integration"
+              sequence="10"
+              web_icon="slack_integration,static/description/icon.png"
+              groups="base.group_system"/>
+
+
+    <!-- Submenu for Webhook Configurations -->
+    <menuitem id="webhook_configuration_menu" parent="slack_integration_menu" name="Webhook Configurations" action="action_webhook_configuration"/>
+
+    <!-- Submenu for Slack Messages -->
+    <menuitem id="slack_message_menu" parent="slack_integration_menu" name="Slack Messages" action="action_slack_messages"/>
+    <!-- Submenu for Request Logs -->
+    <menuitem id="request_log_menu" parent="slack_integration_menu" name="Request Logs" action="action_request_log"/>
+</odoo>

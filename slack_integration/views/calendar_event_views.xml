@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Map View Definition for calendar.event -->
+        <record id="calendar_event_view_map" model="ir.ui.view">
+            <field name="name">calendar.event.view.map</field>
+            <field name="model">calendar.event</field>
+            <field name="arch" type="xml">
+                <map res_partner="partner_id">
+                    <field name="partner_id" string="Customer"/>
+                </map>
+            </field>
+        </record>
+
+        <!-- Action Window for calendar.event -->
+        <record id="calendar_event_action_window" model="ir.actions.act_window">
+            <field name="name">Calendar Events</field>
+            <field name="res_model">calendar.event</field>
+            <field name="view_mode">list,form,calendar,map</field>
+        </record>
+
+        <!-- Link the Map View to the Action Window -->
+        <record id="calendar_event_action_view_map" model="ir.actions.act_window.view">
+            <field name="sequence" eval="4"/>
+            <field name="view_mode">map</field>
+            <field name="view_id" ref="calendar_event_view_map"/>
+            <field name="act_window_id" ref="calendar_event_action_window"/>
+        </record>
+
+    </data>
+</odoo>

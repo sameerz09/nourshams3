@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_employee_form_inherit" model="ir.ui.view">
+        <field name="name">hr.employee.form.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <!-- Add usercode to the header -->
+            <xpath expr="//field[@name='department_id']" position="after">
+                <field name="usercode"/>
+            </xpath>
+
+            <!-- Hide the "Public" page -->
+            <xpath expr="//page[@name='public']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <!-- Hide the "Public" page -->
+            <xpath expr="//page[@name='personal_information']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+
+
+
+            <!-- Make category_ids (Tags) invisible -->
+            <xpath expr="//field[@name='category_ids']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+
+             <!-- Add new pages in the form view -->
+            <xpath expr="//sheet/notebook" position="inside">
+
+                <!-- Work Information Custom Page -->
+                <page string="Work Information">
+                    <group>
+                        <group>
+                            <field name="custom_work_location"/>
+                            <field name="custom_shortname"/>
+                            <field name="custom_ai_transcriber_api_key"/>
+                            <field name="custom_schedule"/>
+                        </group>
+                        <group>
+                            <field name="custom_base_pay"/>
+                            <field name="custom_commissions"/>
+                            <field name="custom_commission_details" modifiers="{'invisible': [('custom_commissions', '=', False)]}"/>
+                        </group>
+                        <group>
+                            <field name="custom_hired_date"/>
+                            <field name="custom_terminated_date"/>
+                            <field name="custom_rehireable"/>
+                        </group>
+                    </group>
+                </page>
+
+                <!-- Private Information Custom Page -->
+                <page string="Private Information">
+                    <group>
+                        <group>
+                            <field name="custom_street_address"/>
+                            <field name="custom_city"/>
+                            <field name="custom_state"/>
+                            <field name="custom_country"/>
+                        </group>
+                        <group>
+                            <field name="custom_personal_phone"/>
+                            <field name="custom_personal_email"/>
+                        </group>
+                    </group>
+                </page>
+
+            </xpath>
+
+
+        </field>
+    </record>
+</odoo>

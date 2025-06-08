@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-inherit="web.CalendarController" t-inherit-mode="extension">
+        <xpath expr="//div[@class='o_calendar_wrapper']" position="replace">
+            <!-- Empty or modified content -->
+            <t t-if="false"/> <!-- This hides the div -->
+        </xpath>
+    </t>
+</templates>

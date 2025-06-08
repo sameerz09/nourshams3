@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Access rights For company of case registration model-->
+    <record id="case_registration_rule_company" model="ir.rule">
+        <field name="name">Legal Case: multi-company</field>
+        <field name="model_id" ref="model_case_registration"/>
+        <field name="domain_force">
+            ['|',('company_id','=',False),('company_id', 'in', company_ids)]
+        </field>
+    </record>
+    <!--Access Rights For Admin of case registration model -->
+    <record id="case_registration_rule_admin" model="ir.rule">
+        <field name="name">Admin All Document only view Rule</field>
+        <field name="model_id" ref="model_case_registration"/>
+        <field name="domain_force">[(1,'=',1)]</field>
+        <field name="groups"
+               eval="[(4, ref('legal_case_management.legal_case_management_group_admin'))]"/>
+    </record>
+    <!--Access Rights For Lawyer of case registration model-->
+    <record id="case_registration_rule_lawyer" model="ir.rule">
+        <field name="name">Own Case view Rule</field>
+        <field name="model_id" ref="model_case_registration"/>
+        <field name="domain_force">[('lawyer_id.user_id','=',user.id)]
+        </field>
+        <field name="groups"
+               eval="[(4, ref('legal_case_management.legal_case_management_group_lawyer'))]"/>
+    </record>
+    <!--Access Rights for Admin of legal evidence model-->
+    <record id="legal_evidence_rule_admin" model="ir.rule">
+        <field name="name">Admin All Document only view Rule</field>
+        <field name="model_id" ref="model_legal_evidence"/>
+        <field name="domain_force">[(1,'=',1)]</field>
+        <field name="groups"
+               eval="[(4, ref('legal_case_management.legal_case_management_group_admin'))]"/>
+    </record>
+    <!--Access Rights For Lawyer of legal evidence model-->
+    <record id="legal_evidence_rule_lawyer" model="ir.rule">
+        <field name="name">Own Evidence view Rule</field>
+        <field name="model_id" ref="model_legal_evidence"/>
+        <field name="domain_force">
+            [('case_id.lawyer_id.user_id','=',user.id)]
+        </field>
+        <field name="groups"
+               eval="[(4, ref('legal_case_management.legal_case_management_group_lawyer'))]"/>
+    </record>
+    <!--Access Rights For Admin of legal trial model-->
+    <record id="legal_trial_rule_admin" model="ir.rule">
+        <field name="name">Admin All Document only view Rule</field>
+        <field name="model_id" ref="model_legal_trial"/>
+        <field name="domain_force">[(1,'=',1)]</field>
+        <field name="groups"
+               eval="[(4, ref('legal_case_management.legal_case_management_group_admin'))]"/>
+    </record>
+    <!--Access Rights For Lawyer of legal trial model-->
+    <record id="legal_trial_rule_lawyer" model="ir.rule">
+        <field name="name">Own Trial view Rule</field>
+        <field name="model_id" ref="model_legal_trial"/>
+        <field name="domain_force">
+            [('case_id.lawyer_id.user_id','=',user.id)]
+        </field>
+        <field name="groups"
+               eval="[(4, ref('legal_case_management.legal_case_management_group_lawyer'))]"/>
+    </record>
+            <record id="case_registration_rule_financial_department" model="ir.rule">
+            <field name="name">Financial Department: View Financial/Accepted/Invoiced Cases</field>
+            <field name="model_id" ref="model_case_registration"/>
+            <field name="domain_force">
+                [('state', 'in', ['financial_directory', 'accepted', 'invoiced'])]
+            </field>
+            <field name="groups"
+                   eval="[(4, ref('legal_case_management.legal_case_management_financial_department'))]"/>
+    </record>
+
+    <!-- Access Rights for Field Committee -->
+    <record id="case_registration_rule_field_committee" model="ir.rule">
+        <field name="name">Field Committee: View All Cases</field>
+        <field name="model_id" ref="model_case_registration"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups"
+               eval="[(4, ref('legal_case_management.legal_case_management_field_committee'))]"/>
+    </record>
+
+    <!-- Access Rights for Director General of Directorates -->
+    <record id="case_registration_rule_director_general_of_directorates" model="ir.rule">
+        <field name="name">Director General of Directorates: View All Cases</field>
+        <field name="model_id" ref="model_case_registration"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups"
+               eval="[(4, ref('legal_case_management.legal_case_management_director_general_of_directorates'))]"/>
+    </record>
+
+    <!-- Access Rights for The Highest Committee -->
+    <record id="case_registration_rule_the_highest_committee" model="ir.rule">
+        <field name="name">The Highest Committee: View All Cases</field>
+        <field name="model_id" ref="model_case_registration"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups"
+               eval="[(4, ref('legal_case_management.legal_case_management_the_highest_committee'))]"/>
+    </record>
+
+</odoo>

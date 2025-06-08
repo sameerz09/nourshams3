@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template t-name="appointment.appointment_info_upcoming_appointment">
+        <!-- Completely disabled the upcoming appointment block -->
+    </template>
+</odoo>

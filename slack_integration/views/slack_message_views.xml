@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_slack_message_form" model="ir.ui.view">
+        <field name="name">slack.messages.form</field>
+        <field name="model">slack.messages</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="message"/>
+                        <field name="channel_id"/>
+                        <field name="stats_sent"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="view_slack_message_tree" model="ir.ui.view">
+        <field name="name">slack.messages.tree</field>
+        <field name="model">slack.messages</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="message"/>
+                <field name="channel_id"/>
+                <field name="stats_sent"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Action for Webhook Configurations -->
+    <record id="action_slack_messages" model="ir.actions.act_window">
+        <field name="name">Webhook Messages</field>
+        <field name="res_model">slack.messages</field>
+        <field name="view_mode">list,form</field>
+        <field name="target">current</field>
+    </record>
+</odoo>

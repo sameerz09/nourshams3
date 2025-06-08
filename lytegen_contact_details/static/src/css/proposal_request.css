@@ -1,0 +1,61 @@
+.form-logo {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.form-control::placeholder {
+  font-size: 13px; /* Set font size for placeholder */
+  font-family: 'Roboto';
+  font-weight: 300 !important;
+}
+
+.select2-selection__clear,.select2-selection__arrow{
+    height: 40px !important;
+}
+
+.select2-selection__rendered{
+    line-height: 2.4 !important;
+    font-size: 14px;
+    font-family: 'Roboto';
+    font-weight: 300 !important;
+    padding-left: 2 !important;
+}
+
+.select2-container {
+    margin-top: 0.5rem !important;
+}
+
+.select2-results__option--selectable {
+    font-size: 14px !important;
+    font-family: 'Roboto';
+    font-weight: 300 !important;
+}
+
+.btn-blue{
+    background-color: #1870BDFF;
+    color: #fff;
+}
+
+.subtitle{
+    font-size: 14px;
+    font-family: 'Roboto';
+    font-weight: 300 !important;
+}
+
+.header-font{
+    font-size: 14px;
+    font-family: 'Roboto';
+    font-weight: 300 !important;
+}
+
+.form-control{
+    font-family: 'Roboto';
+    font-weight: 200 !important;
+}
+
+.iti {
+    width: 100%;
+    margin-top: 7px;
+}

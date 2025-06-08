@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- List View -->
+    <record id="view_requirements_types_list" model="ir.ui.view">
+        <field name="name">requirements.types.list</field>
+        <field name="model">requirements.types</field>
+        <field name="arch" type="xml">
+            <list string="Requirements Types">
+                <field name="id" width="50"/>
+                <field name="name" string="Name" width="200"/>
+                <field name="requirements_code" string="Code" width="150"/>
+                <field name="req_vio_id"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_requirements_types_form" model="ir.ui.view">
+        <field name="name">requirements.types.form</field>
+        <field name="model">requirements.types</field>
+        <field name="arch" type="xml">
+            <form string="Requirements Type">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="requirements_code"/>
+                        <field name="req_vio_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_requirements_types" model="ir.actions.act_window">
+        <field name="name">Requirements Types</field>
+        <field name="res_model">requirements.types</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- Menu Item -->
+    <menuitem id="menu_requirements_types"
+              name="Requirements Types"
+              action="action_requirements_types"
+              parent="legal_case_management.configuration_menu"
+              sequence="11"/>
+</odoo>

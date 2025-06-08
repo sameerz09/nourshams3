@@ -1,0 +1,12 @@
+.o_form_view .readonly_m2o .o_input_dropdown,
+.o_form_view .readonly_m2o .o_external_button,
+.o_form_view .readonly_m2o .o_form_uri {
+    pointer-events: none !important;
+    color: #aaa !important;
+    cursor: not-allowed !important;
+    text-decoration: none !important;
+}
+
+.o_form_view .readonly_m2o .o_input_dropdown::after {
+    content: none !important;
+}

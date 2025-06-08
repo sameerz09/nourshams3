@@ -1,0 +1,236 @@
+/* -------------------------------
+   🌟 Global Styles
+--------------------------------*/
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #f7f7f7, #ffffff);
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* -------------------------------
+   🌟 Form Container
+--------------------------------*/
+.container {
+    max-width: 700px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 0.5s ease-in-out;
+    margin: auto;
+}
+
+/* -------------------------------
+   🌟 Form Header (Title + Image)
+--------------------------------*/
+.form-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-logo {
+    max-width: 50%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* -------------------------------
+   🌟 Form Title
+--------------------------------*/
+.form-title {
+    font-size: 26px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #007bff;
+    text-transform: uppercase;
+}
+
+/* -------------------------------
+   🌟 Info Message Box
+--------------------------------*/
+.alert-info {
+    background-color: #e7f3fe;
+    color: #31708f;
+    border: 1px solid #bce8f1;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* -------------------------------
+   🌟 Fieldset (Form Sections)
+--------------------------------*/
+.form-section {
+    margin-bottom: 25px;
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background: #f9f9f9;
+}
+
+.form-section legend {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000; /* Darker for visibility */
+    padding: 0 10px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #007bff;
+}
+
+/* -------------------------------
+   🌟 Form Labels (Better Contrast)
+--------------------------------*/
+label {
+    font-weight: 700; /* Stronger font for clarity */
+    color: #222; /* Darker for better readability */
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px; /* Slightly larger for better contrast */
+}
+
+/* -------------------------------
+   🌟 Form Input Fields
+--------------------------------*/
+.form-control {
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    padding: 12px;
+    font-size: 15px;
+    width: 100%;
+    background: #fff;
+    color: #333; /* Ensures text is visible inside fields */
+    font-weight: 500; /* Slightly bold text for clarity */
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.form-control::placeholder {
+    color: #777; /* Darker placeholders for better contrast */
+    font-size: 14px;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+    background: #f8f9fa;
+}
+
+/* -------------------------------
+   🌟 Two-Column Layout
+--------------------------------*/
+.two-columns {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.two-columns div {
+    flex: 1;
+}
+
+/* -------------------------------
+   🌟 Textarea (for additional info)
+--------------------------------*/
+textarea.form-control {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* -------------------------------
+   🌟 Privacy Notice
+--------------------------------*/
+.privacy-text {
+    font-size: 14px;
+    color: #555;
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* -------------------------------
+   🌟 Confirmation Checkbox
+--------------------------------*/
+.form-group.text-center input {
+    margin-right: 5px;
+}
+
+/* -------------------------------
+   🌟 Submit Button
+--------------------------------*/
+.btn-primary {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    background: linear-gradient(to right, #007bff, #0056b3);
+    border: none;
+    border-radius: 6px;
+    color: white;
+    text-transform: uppercase;
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+    cursor: pointer;
+    display: block;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(to right, #0056b3, #00408a);
+    transform: scale(1.03);
+}
+
+/* -------------------------------
+   🌟 Animations
+--------------------------------*/
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* -------------------------------
+   🌟 Responsive Design
+--------------------------------*/
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .two-columns {
+        flex-direction: column;
+    }
+
+    .btn-primary {
+        font-size: 14px;
+    }
+}
+
+/* -------------------------------
+   🌟 Submit Button Styling
+--------------------------------*/
+.btn-submit {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    background: #4CAF50; /* Green color */
+    border: none;
+    border-radius: 8px; /* Rounded corners */
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    display: block;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.btn-submit:hover {
+    background: #45a049; /* Slightly darker green on hover */
+    transform: scale(1.02);
+}

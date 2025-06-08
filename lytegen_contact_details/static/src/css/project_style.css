@@ -1,0 +1,73 @@
+.form-logo {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.form-control::placeholder {
+  font-size: 14px; /* Set font size for placeholder */
+  font-family: 'Roboto';
+  font-weight: 300 !important;
+}
+
+.custom-container {
+    line-height: 2.6 !important;  /* Set the line-height */
+    padding-left: 2px !important;  /* Set left padding */
+}
+
+.select2-selection__clear,.select2-selection__arrow{
+    height: 40px !important;
+}
+
+.select2-selection__rendered{
+    line-height: 2.4 !important;
+    font-size: 14px;
+    font-family: 'Roboto';
+    font-weight: 300 !important;
+    padding-left: 2 !important;
+}
+
+.select2-container {
+    margin-top: 0.5rem !important;
+}
+
+#select2-sp1-container {
+    line-height: 2.6 !important;
+    padding-left: 2 !important;
+    font-size: 14px;
+    font-family: 'Roboto';
+    font-weight: 300 !important;
+}
+
+.select2-results__option--selectable {
+    font-size: 14px !important;
+    font-family: 'Roboto';
+    font-weight: 300 !important;
+}
+
+.header-font{
+    font-size: 14px;
+    font-family: 'Roboto';
+    font-weight: 300 !important;
+}
+
+.form-control{
+    font-family: 'Roboto';
+    font-weight: 200 !important;
+}
+
+.accordion-button{
+    font-family: 'Roboto';
+    font-weight: 500 !important;
+}
+
+.accordion-button:not(.collapsed)::after,
+.accordion-button::after {
+  background-image: unset !important;
+}
+
+.iti {
+    width: 100%;
+    margin-top: 7px;
+}

@@ -1,0 +1,7 @@
+<odoo>
+  <template id="custom_website_favicon" inherit_id="website.layout">
+    <xpath expr="//link[@rel='shortcut icon']" position="replace">
+      <link rel="shortcut icon" type="image/x-icon" href="lytegen_contact_details/static/src/img/favicon.ico"/>
+    </xpath>
+  </template>
+</odoo>

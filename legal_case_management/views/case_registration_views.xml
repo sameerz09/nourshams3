@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Tree View For Case Registration -->
+    <record id="case_registration_view_tree" model="ir.ui.view">
+        <field name="name">case.registration.view.list</field>
+        <field name="model">case.registration</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="affected_person_id" options="{'no_create': True, 'no_create_edit': True, 'no_open': True}"/>
+                <field name="directory" readonly="1"/>
+                <field name="city" readonly="0"/>
+                <field name="region_id"  options="{'no_create': True, 'no_create_edit': True, 'no_open': True}"/>
+                <field name="completion_status"
+                               readonly="1"
+                               options="{'no_create': True, 'no_create_edit': True}"
+                               decoration-success="completion_status == 'complete'"
+                               decoration-danger="completion_status == 'not_complete'"/>
+
+                <field name="state"
+                       decoration-success="state == 'in progress' or state == 'won'"
+                       decoration-info="state == 'draft'"
+                       widget="badge"/>
+
+            </list>
+        </field>
+    </record>
+
+    <!-- Kanban View For Case Registration -->
+    <record id="case_registration_view_kanban" model="ir.ui.view">
+        <field name="name">case.registration.view.kanban</field>
+        <field name="model">case.registration</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="name"/>
+                <field name="state"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                            <div class="oe_kanban_details">
+                                <ul type="none">
+                                    <li>
+                                        <strong class="o_kanban_record_title">
+                                            <span><field name="name"/></span>
+                                        </strong>
+                                    </li>
+                                    <li>
+                                        <strong class="o_kanban_record_subtitle">
+                                            affected_person:
+                                            <field name="affected_person_id" options="{'no_create': True, 'no_create_edit': True}"/>
+                                        </strong>
+                                    </li>
+                                    <li>
+                                        <strong class="o_kanban_record_subtitle">
+                                            City:
+                                            <field name="city"/>
+                                        </strong>
+                                    </li>
+                                    <li>
+                                        <field name="state"
+                                               decoration-success="state == 'in progress' or state == 'won'"
+                                               decoration-info="state == 'draft'"
+                                               widget="badge"/>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Tree View For Case Requirement Line -->
+    <record id="view_case_requirement_line_tree" model="ir.ui.view">
+        <field name="name">case.requirement.line.list</field>
+        <field name="model">case.requirement.line</field>
+        <field name="arch" type="xml">
+            <list editable="bottom" create="false" delete="false">
+                <field name="requirement_name" readonly="1"/>
+
+                <field name="files" widget="many2many_binary_preview"/>
+                <field name="is_yes" readonly="1"/>
+
+            </list>
+        </field>
+    </record>
+
+    <!-- Form View For Case Registration -->
+    <record id="case_registration_view_form" model="ir.ui.view">
+        <field name="name">case.registration.view.form</field>
+        <field name="model">case.registration</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,somood_directory,ministry_office,financial_directory,invoiced"/>
+                    <button name="action_confirm" string="Confirm" type="object" class="oe_highlight" invisible="state != 'draft'"/>
+                    <button name="action_open_reforward_wizard"
+                            string="Re-forward"
+                            type="object"
+                            class="btn-primary"
+                            invisible="not (state in ['auditing_attachment'])"/>
+
+                    <button name="action_mark_auditing_attachment" string="Mark as Auditing Attachment" type="object" class="oe_highlight" invisible="state != 'auditing_attachment'"/>
+
+                    <button name="action_confirm_directories" string="Confirm Manager" type="object" class="btn btn-primary"
+                            groups="legal_case_management.legal_case_management_north_directory,legal_case_management.legal_case_management_south_directory,legal_case_management.legal_case_management_middle_directory"
+                            invisible="state != 'north_directory' and state != 'south_directory' and state != 'middle_directory'"/>
+
+                    <button name="action_mark_field_committee"
+                            string="ارسال الى مدير المديرية"
+                            type="object"
+                            groups="legal_case_management.legal_case_management_field_committee"
+                            class="oe_highlight"
+                            invisible="state != 'field_committee'"/>
+
+<!--                    <button name="action_director_general_of_directorates"-->
+<!--                            string="Confirm - Director General of Directorates"-->
+<!--                            type="object"-->
+<!--                            class="oe_highlight"-->
+<!--                            invisible="state != 'director_general_of_directorates'"/>-->
+                    <button name="action_director_general_of_directorates"
+                            string="Confirm - Director General of Directorates"
+                            type="object"
+                            groups="legal_case_management.legal_case_management_director_general_of_directorates"
+                            class="oe_highlight"
+                            invisible="state != 'director_general_of_directorates'"/>
+
+                    <button name="action_confirm_somood" string="Confirm-manager-somood" type="object"
+                            groups="legal_case_management.legal_case_management_somood_directory"
+                            class="oe_highlight" invisible="state != 'somood_directory'"/>
+<!--                    <button name="action_the_highest_committee"-->
+<!--                            string="Confirm - The Highest Committee"-->
+<!--                            type="object"-->
+<!--                            class="oe_highlight"-->
+<!--                            invisible="state != 'the_highest_committee'"/>-->
+                    <button name="action_the_highest_committee"
+                            string="Confirm - The Highest Committee"
+                            type="object"
+                            groups="legal_case_management.legal_case_management_the_highest_committee"
+                            class="oe_highlight"
+                            invisible="state != 'the_highest_committee'"/>
+                    <button name="action_ministry_office" string="Confirm-ministry-office" type="object"
+                            groups="legal_case_management.legal_case_management_misinstry_office"
+                            class="oe_highlight" invisible="state != 'misinstry_office'"/>
+                    <button name="action_financial_department" string="Confirm-financial_department" type="object"
+                            class="oe_highlight" invisible="state != 'financial_directory'"/>
+                    <button name="action_cancel" string="Reject" type="object"
+                            groups="legal_case_management.legal_case_management_misinstry_office"
+                            invisible="state != 'misinstry_office' and state != 'draft' and state != 'auditing_attachment' and state != 'north_directory' and state != 'south_directory' and state != 'middle_directory' and state != 'somood_directory' and state != 'financial_directory' and state != 'misinstry_office' and state != 'the_highest_committee' and state != 'director_general_of_directorates'" class="oe_highlight"/>
+                    <button name="action_evidence" string="Evidence" type="object" class="oe_highlight" invisible="state != 'in_progress'"/>
+                    <button name="action_trial" string="Trial" type="object" class="oe_highlight" invisible="state != 'in_progress'"/>
+                    <button name="action_invoice" string="Paid" type="object" class="oe_highlight" invisible="state != 'accepted'"/>
+                    <button name="action_full_settlement" string="Full Settlement" type="object" class="btn-secondary" invisible="state != 'in_progress'"/>
+<!--                    <button name="action_cancel" string="Cancel" type="object" class="btn-secondary" invisible="state != 'in_progress'"/>-->
+                    <button name="action_reset_to_draft" string="Reset To Draft" type="object" class="oe_highlight" invisible="1"/>
+                </header>
+
+                <sheet>
+                    <group>
+                        <h1><field name="name" placeholder="Case No"/></h1>
+                    </group>
+
+                    <group>
+                        <group>
+                            <field name="start_date" readonly="state != 'draft'"/>
+                            <field name="affected_person_id" readonly="state != 'draft'" options="{'no_create': True, 'no_create_edit': True, 'no_open': True}"/>
+                            <field name="personal_name" readonly="state != 'draft'"/>
+                            <field name="job" readonly="state != 'draft'"/>
+                            <field name="region_id" readonly="state != 'draft'" options="{'no_create': True, 'no_create_edit': True, 'no_open': True}"/>
+                            <field name="city" readonly="state != 'draft'"/>
+                            <field name="identity_no" readonly="state != 'draft'"/>
+                            <field name="violation_id" readonly="state != 'draft' and state != 'auditing_attachment'"  options="{'no_create': True, 'no_create_edit': True, 'no_open': True}"/>
+                        </group>
+
+                        <group>
+
+                            <field name="applicant" readonly="state != 'draft'" options="{'no_create': True, 'no_create_edit': True}"/>
+                            <field name="representative_name" readonly="1" options="{'no_create': True, 'no_create_edit': True}"/>
+                            <field name="family_name" readonly="state != 'draft'" options="{'no_create': True, 'no_create_edit': True}"/>
+                            <field name="contact_no" readonly="state != 'draft'" options="{'enable_sms': false, 'no_create': True, 'no_create_edit': True}"/>
+                            <field name="directory" readonly="state != 'draft' and state != 'auditing_attachment'" invisible="False"/>
+<!--                            <field name="forward_to" readonly="state != 'draft' and state != 'auditing_attachment'" invisible="False"/>-->
+<!--                            <field name="applicant" readonly="state != 'draft'" options="{'no_create': True, 'no_create_edit': True}"/>-->
+<!--                            <field name="files" readonly="state != 'draft'" widget="many2many_binary_preview"/>-->
+<!--                            <field name="report" readonly="state != 'draft'" widget="many2many_binary_preview"/>-->
+<!--                            <field name="completion_status" readonly="1" options="{'no_create': True, 'no_create_edit': True}"/>-->
+                            <field name="completion_status"
+                                   readonly="1"
+                                   options="{'no_create': True, 'no_create_edit': True}"
+                                   decoration-success="completion_status == 'complete'"
+                                   decoration-danger="completion_status == 'not_complete'"/>
+
+                            <field name="cancel_reason" readonly="1" invisible="state != 'cancel'"/>
+<!--                            <field name="field_report" readonly="state != 'field_committee'" invisible="state != 'field_committee'" widget="many2many_binary_preview"/>-->
+                            <field name="field_report"
+                                   readonly="state != 'field_committee'"
+                                   invisible="not (state in ['field_committee', 'north_directory', 'south_directory', 'middle_directory', 'director_general_of_directorates', 'somood_directory', 'the_highest_committee', 'misinstry_office', 'financial_directory', 'accepted'])"
+                                   widget="many2many_binary_preview"/>
+
+
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Requirements">
+                           <field name="requirement_ids" context="{}" mode="list,form" widget="one2many" readonly="state != 'auditing_attachment'" invisible="state == 'draft'"/>
+
+                        </page>
+
+                        <page string="FinancialSection" groups="legal_case_management.legal_case_management_financial_department" invisible="state != 'financial_directory' and state != 'accepted' and state != 'invoiced'">
+                            <group>
+
+                                <field name="amount_value"
+                                       string="Amount Value"
+                                       readonly="state != 'financial_directory'"
+                                       options="{'currency_field': 'currency_id'}"
+                                       style="direction: rtl; text-align: right;"/>
+                                <field name="currency_id"
+                                       string="Currency"
+                                       readonly="state != 'financial_directory'"
+                                       options="{'no_open': True}"/>
+
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+
+                <chatter/>
+            </form>
+        </field>
+    </record>
+    <record id="case_registration_view_search" model="ir.ui.view">
+    <field name="name">case.registration.search</field>
+    <field name="model">case.registration</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="identity_no" string="Identity No"/>
+
+            <field name="affected_person_id" string="Affected Person"/>
+            <!-- Add other filters here if needed -->
+        </search>
+    </field>
+</record>
+
+</odoo>

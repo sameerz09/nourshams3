@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="site_survey_form" name="Site Survey Form">
+            <t t-call="website.layout">
+                <t t-set="title">Site Survey</t>
+
+                <!-- Load Custom CSS -->
+<!--                <link rel="stylesheet" type="text/css" href="/lytegen_contact_details/static/src/css/ach_style.css"/>-->
+                <link rel="stylesheet" type="text/css" href="/lytegen_contact_details/static/src/css/credit_check_style.css"/>
+                <link rel="stylesheet" type="text/css" href="/lytegen_contact_details/static/src/css/select2.min.css"/>
+                <script src="/lytegen_contact_details/static/src/js/lib/jquery-3.6.0.min.js"/>
+                <script src="/lytegen_contact_details/static/src/js/lib/select2.min.js"/>
+                <script src="/lytegen_contact_details/static/src/js/site_survey.js"/>
+
+                <style>
+
+                    .select2-selection__rendered{
+                        line-height: 2.4 !important;
+                        font-size: 14px;
+                        padding-left: 2 !important;
+                    }
+
+                    .select2-container {
+                        margin-top: 0.5rem !important;
+                    }
+
+                    .select2-results__option--selectable {
+                        font-size: 14px !important;
+                    }
+                </style>
+
+                <div class="container py-5">
+                    <form method="post" action="#">
+                       <div class="accordion" id="property">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#propertyCollapse" aria-expanded="true" aria-controls="propertyCollapse">
+                                        Property
+                                      </button>
+                                </h2>
+
+                                <div id="propertyCollapse" class="accordion-collapse collapse show" data-bs-parent="#propertyCollapse">
+                                  <div class="accordion-body">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <label for="front_house">Front of the house</label>
+                                            <input type="file" accept="image/*" class="form-control mt-2" name="front_house" id="front_house" required="required"/>
+                                        </div>
+
+                                        <div class="col-lg-12 mt-4">
+                                            <label for="address_number">Address number</label>
+                                            <input type="file" accept="image/*" class="form-control mt-2" name="address_number" id="address_number" required="required"/>
+                                        </div>
+
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#electricMeterCollapse" aria-expanded="true" aria-controls="electricMeterCollapse">
+                                        Electric Meter
+                                      </button>
+                                </h2>
+
+                                <div id="electricMeterCollapse" class="accordion-collapse collapse show" data-bs-parent="#electricMeterCollapse">
+                                  <div class="accordion-body">
+                                      <div class="row">
+                                          <div class="col-lg-12">
+                                            <label for="electric_meter_distance">Electric meter from distance</label>
+                                            <input type="file" accept="image/*" class="form-control mt-2" name="electric_meter_distance" id="electric_meter_distance" required="required"/>
+                                          </div>
+
+                                          <div class="col-lg-12 mt-4">
+                                            <label for="electric_meter_closeup">Electric meter close up</label>
+                                            <input type="file" accept="image/*" class="form-control mt-2" name="electric_meter_closeup" id="electric_meter_closeup" required="required"/>
+                                          </div>
+
+                                          <div class="col-lg-12 mt-4">
+                                            <label for="electric_mpu_distance">Electric MPU from distance</label>
+                                            <input type="file" accept="image/*" class="form-control mt-2" name="electric_mpu_distance" id="electric_mpu_distance" required="required"/>
+                                          </div>
+
+                                          <div class="col-lg-12 mt-4">
+                                            <label for="electric_mpu_full_picture">Electric MPU full picture</label>
+                                            <input type="file" accept="image/*" class="form-control mt-2" name="electric_mpu_full_picture" id="electric_mpu_full_picture" required="required"/>
+                                          </div>
+
+                                          <div class="col-lg-12 mt-4">
+                                            <label for="electric_mpu_label">Electric MPU label</label>
+                                            <input type="file" accept="image/*" class="form-control mt-2" name="electric_mpu_label" id="electric_mpu_label" required="required"/>
+                                          </div>
+
+                                          <div class="col-lg-12 mt-4">
+                                            <label for="electric_side_break">Electrical side break</label>
+                                            <input type="file" accept="image/*" class="form-control mt-2" name="electric_side_break" id="electric_side_break" required="required"/>
+                                          </div>
+
+                                          <div class="col-lg-12 mt-4">
+                                            <label for="electrical_all_breaks">Electrical all breaks</label>
+                                            <input type="file" accept="image/*" class="form-control mt-2" name="electrical_all_breaks" id="electrical_all_breaks" required="required"/>
+                                          </div>
+
+                                          <div class="col-lg-12 mt-4">
+                                            <label for="amps_main_break">Amps main break</label>
+                                            <input type="file" accept="image/*" class="form-control mt-2" name="amps_main_break" id="amps_main_break" required="required"/>
+                                          </div>
+
+                                      </div>
+                                  </div>
+                                </div>
+
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#houseCollapse" aria-expanded="true" aria-controls="houseCollapse">
+                                        House
+                                      </button>
+                                </h2>
+
+                                <div id="houseCollapse" class="accordion-collapse collapse show" data-bs-parent="#houseCollapse">
+                                  <div class="accordion-body">
+                                    <div class="row">
+                                         <div class="col-lg-12">
+                                            <label for="around_house_1">Around the house #1</label>
+                                            <input type="file" accept="image/*" class="form-control mt-2" name="around_house_1" id="around_house_1" required="required"/>
+                                         </div>
+
+                                        <div class="col-lg-12 mt-4">
+                                            <label for="around_house_2">Around the house #2</label>
+                                            <input type="file" accept="image/*" class="form-control mt-2" name="around_house_2" id="around_house_2" required="required"/>
+                                        </div>
+
+                                        <div class="col-lg-12 mt-4">
+                                            <label for="around_house_3">Around the house #3</label>
+                                            <input type="file" accept="image/*" class="form-control mt-2" name="around_house_3" id="around_house_3" required="required"/>
+                                        </div>
+
+                                        <div class="col-lg-12 mt-4">
+                                            <label for="around_house_4">Around the house #4</label>
+                                            <input type="file" accept="image/*" class="form-control mt-2" name="around_house_4" id="around_house_4" required="required"/>
+                                        </div>
+
+                                        <div class="col-lg-12 mt-4">
+                                            <label for="around_house_5">Around the house #5</label>
+                                            <input type="file" accept="image/*" class="form-control mt-2" name="around_house_5" id="around_house_5" required="required"/>
+                                        </div>
+
+                                        <div class="col-lg-12 mt-4">
+                                            <label for="around_house_6">Around the house #6</label>
+                                            <input type="file" accept="image/*" class="form-control mt-2" name="around_house_6" id="around_house_6" required="required"/>
+                                        </div>
+
+                                        <div class="col-lg-12 mt-4">
+                                            <label for="around_house_7">Around the house #7</label>
+                                            <input type="file" accept="image/*" class="form-control mt-2" name="around_house_7" id="around_house_7" required="required"/>
+                                        </div>
+
+                                        <div class="col-lg-12 mt-4">
+                                            <label for="around_house_8">Around the house #8</label>
+                                            <input type="file" accept="image/*" class="form-control mt-2" name="around_house_8" id="around_house_8"/>
+                                        </div>
+
+                                        <div class="col-lg-12 mt-4">
+                                            <label for="around_house_9">Around the house #9</label>
+                                            <input type="file" accept="image/*" class="form-control mt-2" name="around_house_9" id="around_house_9"/>
+                                        </div>
+
+                                        <div class="col-lg-12 mt-4">
+                                            <label for="around_house_10">Around the house #10</label>
+                                            <input type="file" accept="image/*" class="form-control mt-2" name="around_house_10" id="around_house_10"/>
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#roofCollapse" aria-expanded="true" aria-controls="roofCollapse">
+                                        Roof
+                                      </button>
+                                </h2>
+
+                                <div id="roofCollapse" class="accordion-collapse collapse show" data-bs-parent="#roofCollapse">
+                                  <div class="accordion-body">
+                                    <div class="row">
+                                         <div class="col-lg-12">
+                                            <label for="roof_condition_1">Roof Condition #1</label>
+                                            <input type="file" accept="image/*" class="form-control mt-2" name="roof_condition_1" id="roof_condition_1" required="required"/>
+                                         </div>
+
+                                        <div class="col-lg-12 mt-4">
+                                            <label for="roof_condition_2">Roof Condition #2</label>
+                                            <input type="file" accept="image/*" class="form-control mt-2" name="roof_condition_2" id="roof_condition_2" required="required"/>
+                                        </div>
+
+                                        <div class="col-lg-12 mt-4">
+                                            <label for="roof_condition_3">Roof Condition #3</label>
+                                            <input type="file" accept="image/*" class="form-control mt-2" name="roof_condition_3" id="roof_condition_3" required="required"/>
+                                        </div>
+
+                                        <div class="col-lg-12 mt-4">
+                                            <label for="roof_condition_4">Roof Condition #4</label>
+                                            <input type="file" accept="image/*" class="form-control mt-2" name="roof_condition_4" id="roof_condition_4" required="required"/>
+                                        </div>
+
+                                        <div class="col-lg-12 mt-4">
+                                            <label for="roof_condition_5">Roof Condition #5</label>
+                                            <input type="file" accept="image/*" class="form-control mt-2" name="roof_condition_5" id="roof_condition_5" required="required"/>
+                                        </div>
+
+                                        <div class="col-lg-12 mt-4">
+                                            <label for="roof_condition_6">Roof Condition #6</label>
+                                            <input type="file" accept="image/*" class="form-control mt-2" name="roof_condition_6" id="roof_condition_6"/>
+                                        </div>
+
+                                        <div class="col-lg-12 mt-4">
+                                            <label for="roof_condition_7">Roof Condition #7</label>
+                                            <input type="file" accept="image/*" class="form-control mt-2" name="roof_condition_7" id="roof_condition_7"/>
+                                        </div>
+
+                                        <div class="col-lg-12 mt-4">
+                                            <label for="roof_condition_8">Roof Condition #8</label>
+                                            <input type="file" accept="image/*" class="form-control mt-2" name="roof_condition_8" id="roof_condition_8"/>
+                                        </div>
+
+                                        <div class="col-lg-12 mt-4">
+                                            <label for="roof_condition_9">Roof Condition #9</label>
+                                            <input type="file" accept="image/*" class="form-control mt-2" name="roof_condition_9" id="roof_condition_9"/>
+                                        </div>
+
+                                        <div class="col-lg-12 mt-4">
+                                            <label for="roof_condition_10">Roof Condition #10</label>
+                                            <input type="file" accept="image/*" class="form-control mt-2" name="roof_condition_10" id="roof_condition_10"/>
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div>
+
+
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#generalInfoCollapse" aria-expanded="true" aria-controls="generalInfoCollapse">
+                                        General Information
+                                      </button>
+                                </h2>
+
+                                <div id="generalInfoCollapse" class="accordion-collapse collapse show" data-bs-parent="#generalInfoCollapse">
+                                  <div class="accordion-body">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <label for="homeownerhoa">Does the homeowner have an HOA?</label>
+                                            <select class="form-control js-searchable-select" id="homeownerhoa" name="homeownerhoa" onchange="onFieldChange(this,'hoa_information_box')" required="required">
+                                                <option value=""/>
+                                                <t t-foreach="questionAnswers" t-as="type">
+                                                    <option t-esc="type"/>
+                                                </t>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-lg-12 mt-3 d-none" id="hoa_information_box">
+                                            <label for="hoa_information">HOA Information</label>
+                                            <textarea class="form-control" id="hoa_information" name="hoa_information" rows="3"/>
+                                        </div>
+
+                                        <div class="col-lg-12 mt-3">
+                                            <label for="past_leaks">Are there any existing or past leaks?</label>
+                                            <select class="form-control js-searchable-select" id="past_leaks" name="past_leaks" required="required">
+                                                <option value=""/>
+                                                <t t-foreach="questionAnswers" t-as="type">
+                                                    <option t-esc="type"/>
+                                                </t>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-lg-12 mt-3">
+                                            <label for="ground_mount">Is this a ground mount?</label>
+                                            <select class="form-control js-searchable-select" id="ground_mount" name="ground_mount" required="required">
+                                                <option value=""/>
+                                                <t t-foreach="questionAnswers" t-as="type">
+                                                    <option t-esc="type"/>
+                                                </t>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-lg-12 mt-3">
+                                            <label for="mobile_manufactured_home">Is this a mobile or manufactured home?</label>
+                                            <select class="form-control js-searchable-select" id="mobile_manufactured_home" name="mobile_manufactured_home" required="required">
+                                                <option value=""/>
+                                                <t t-foreach="questionAnswers" t-as="type">
+                                                    <option t-esc="type"/>
+                                                </t>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-lg-12 mt-3">
+                                            <label for="house_type">What type of house is this?</label>
+                                            <select class="form-control js-searchable-select" id="house_type" name="house_type" required="required">
+                                                <option value=""/>
+                                                <t t-foreach="house_type" t-as="type">
+                                                    <option t-esc="type"/>
+                                                </t>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-lg-12 mt-3">
+                                            <label for="is_existing_pv_solar_system">Is there an existing PV solar system?</label>
+                                            <select class="form-control js-searchable-select" id="is_existing_pv_solar_system" name="is_existing_pv_solar_system" required="required">
+                                                <option value=""/>
+                                                <t t-foreach="questionAnswers" t-as="type">
+                                                    <option t-esc="type"/>
+                                                </t>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-lg-12 mt-3">
+                                            <label for="is_existing_battery_storage_system">Is there an existing battery storage system?</label>
+                                            <select class="form-control js-searchable-select" id="is_existing_battery_storage_system" name="is_existing_battery_storage_system" required="required">
+                                                <option value=""/>
+                                                <t t-foreach="questionAnswers" t-as="type">
+                                                    <option t-esc="type"/>
+                                                </t>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-lg-12 mt-3">
+                                            <label for="electrical_overhead_service">Does the any electrical overhead service?</label>
+                                            <select class="form-control js-searchable-select" id="electrical_overhead_service" name="electrical_overhead_service" onchange="onFieldChange(this,'electrical_box')" required="required">
+                                                <option value=""/>
+                                                <t t-foreach="electrical_overhead" t-as="type">
+                                                    <option t-esc="type"/>
+                                                </t>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-lg-12 mt-3 d-none" id="electrical_box">
+                                            <label for="electrical_overhead_input">Electrical overhead service</label>
+                                            <textarea class="form-control" id="electrical_overhead_input" name="electrical_overhead_input" rows="3"/>
+                                        </div>
+
+                                        <div class="col-lg-12 mt-3">
+                                            <label for="job_notes">Job Notes</label>
+                                            <textarea class="form-control" id="job_notes" name="job_notes" rows="3" required="required"/>
+                                        </div>
+
+                                    </div>
+
+
+                                  </div>
+                                </div>
+
+                            </div>
+                       </div>
+
+                        <div class="row mt-4">
+                            <div class="col-lg-12 text-center">
+                                <button type="button" class="btn btn-md btn-success w-100">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,17 @@
+<odoo>
+    <!-- Modify the Default View Order for CRM Pipeline -->
+    <record id="crm.crm_lead_action_pipeline" model="ir.actions.act_window">
+        <field name="view_mode">list,kanban,graph,pivot,form,calendar,activity</field>
+    </record>
+
+    <!-- Define the Kanban View with Sequence -->
+    <record id="crm.crm_lead_action_pipeline_view_kanban" model="ir.actions.act_window.view">
+        <field name="sequence" eval="2"/>
+        <field name="view_mode">kanban</field>
+        <field name="view_id" ref="crm.crm_case_kanban_view_leads"/>
+        <field name="act_window_id" ref="crm.crm_lead_action_pipeline"/>
+    </record>
+
+
+
+</odoo>

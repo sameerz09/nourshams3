@@ -1,0 +1,29 @@
+<odoo>
+    <record id="appointment_type_view_list_inherit" model="ir.ui.view">
+        <field name="name">appointment.type.view.list.inherit</field>
+        <field name="model">appointment.type</field>
+        <field name="inherit_id" ref="appointment.appointment_type_view_tree"/>
+        <field name="arch" type="xml">
+            <!-- Insert 'id' before the 'name' (Appointment Title) field -->
+            <xpath expr="//list/field[@name='name']" position="before">
+                <field name="id" string="Appointment ID" readonly="1"/>
+            </xpath>
+        </field>
+     </record>
+
+    <record id="appointment_type_view_form_inherit_schedule" model="ir.ui.view">
+        <field name="name">appointment.type.form.inherit.schedule</field>
+        <field name="model">appointment.type</field>
+        <field name="inherit_id" ref="appointment.appointment_type_view_form"/>
+        <field name="arch" type="xml">
+            <!-- Add the 'resource_ids' field before 'start_hour' -->
+            <xpath expr="//field[@name='start_hour']" position="before">
+                <field name="resource_ids"
+                       widget="many2many_tags_avatar"
+                       options="{'no_create': True}"
+                       domain="resource_ids_domain"
+                       string="Additional Resources"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

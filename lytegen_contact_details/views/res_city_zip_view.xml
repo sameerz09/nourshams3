@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_res_city_zip_list" model="ir.ui.view">
+        <field name="name">res.city.zip.list</field>
+        <field name="model">res.city.zip</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+<!--                 <field name="city_id"/>-->
+<!--                <field name="country_id"/>-->
+<!--                <field name="code"/>-->
+            </list>
+        </field>
+    </record>
+
+    <record id="view_res_city_zip_form" model="ir.ui.view">
+        <field name="name">res.city.zip.form</field>
+        <field name="model">res.city.zip</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+<!--                         <field name="city_id"/>-->
+<!--                        <field name="country_id"/>-->
+<!--                        <field name="code"/>-->
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_res_city_zip" model="ir.actions.act_window">
+        <field name="name">City ZIP Codes</field>
+        <field name="res_model">res.city.zip</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_res_city_zip" name="City ZIP Codes" action="action_res_city_zip" parent="calendar.calendar_menu_config" sequence="11"/>
+</odoo>

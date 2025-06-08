@@ -1,0 +1,42 @@
+<odoo>
+    <record id="view_confirmation_specialist_task_tree" model="ir.ui.view">
+        <field name="name">confirmation.specialist.task.tree</field>
+        <field name="model">confirmation.specialist.task</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="calendar_event_id"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_confirmation_specialist_task_form" model="ir.ui.view">
+        <field name="name">confirmation.specialist.task.form</field>
+        <field name="model">confirmation.specialist.task</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="calendar_event_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+
+ <record id="action_confirmation_specialist_task" model="ir.actions.act_window">
+        <field name="name">Confirmation Tasks</field>
+        <field name="res_model">confirmation.specialist.task</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- Add to existing Calendar menu (parent) -->
+    <menuitem id="menu_confirmation_specialist_task"
+              name="Confirmation Tasks"
+              parent="calendar.mail_menu_calendar"
+              action="action_confirmation_specialist_task"
+              sequence="25"/>
+</odoo>

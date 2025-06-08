@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="module_category_legal_case_management"
+            model="ir.module.category">
+        <field name="name">Case Management</field>
+        <field name="description">Legal Case Management</field>
+        <field name="sequence">120</field>
+    </record>
+    <!--    Groups -->
+    <record id="legal_case_management_group_clerk" model="res.groups">
+        <field name="name">Clerk</field>
+        <field name="category_id" ref="module_category_legal_case_management"/>
+    </record>
+    <record id="legal_case_management_group_lawyer" model="res.groups">
+        <field name="name">Lawyer</field>
+        <field name="category_id" ref="module_category_legal_case_management"/>
+<!--        <field name="implied_ids"-->
+<!--               eval="[(4, ref('legal_case_management.legal_case_management_group_clerk'))]"/>-->
+    </record>
+    <record id="legal_case_management_group_admin" model="res.groups">
+        <field name="name">Admin</field>
+        <field name="category_id" ref="module_category_legal_case_management"/>
+        <field name="implied_ids"
+               eval="[(4, ref('legal_case_management.legal_case_management_group_lawyer'))]"/>
+    </record>
+    <record id="legal_case_management_north_directory" model="res.groups">
+        <field name="name">North Directory</field>
+        <field name="category_id" ref="module_category_legal_case_management"/>
+<!--        <field name="implied_ids"-->
+<!--               eval="[(4, ref('legal_case_management.legal_case_management_group_lawyer'))]"/>-->
+    </record>
+    <record id="legal_case_management_north_department" model="res.groups">
+        <field name="name">North Department</field>
+        <field name="category_id" ref="module_category_legal_case_management"/>
+    </record>
+    <record id="legal_case_management_north_employees" model="res.groups">
+        <field name="name">North Employees</field>
+        <field name="category_id" ref="module_category_legal_case_management"/>
+    </record>
+
+    <record id="legal_case_management_south_directory" model="res.groups">
+        <field name="name">South Directory</field>
+        <field name="category_id" ref="module_category_legal_case_management"/>
+<!--        <field name="implied_ids"-->
+<!--               eval="[(4, ref('legal_case_management.legal_case_management_group_lawyer'))]"/>-->
+    </record>
+    <record id="legal_case_management_south_department" model="res.groups">
+        <field name="name">South Department</field>
+        <field name="category_id" ref="module_category_legal_case_management"/>
+    </record>
+    <record id="legal_case_management_south_employees" model="res.groups">
+        <field name="name">South Employees</field>
+        <field name="category_id" ref="module_category_legal_case_management"/>
+    </record>
+
+    <record id="legal_case_management_financial_department" model="res.groups">
+        <field name="name">Financial Department</field>
+        <field name="category_id" ref="module_category_legal_case_management"/>
+
+    </record>
+    <record id="legal_case_management_middle_directory" model="res.groups">
+        <field name="name">Middle Directory</field>
+        <field name="category_id" ref="module_category_legal_case_management"/>
+    </record>
+    <record id="legal_case_management_middle_department" model="res.groups">
+        <field name="name">Middle Department</field>
+        <field name="category_id" ref="module_category_legal_case_management"/>
+    </record>
+    <record id="legal_case_management_middle_employees" model="res.groups">
+        <field name="name">Middle Employees</field>
+        <field name="category_id" ref="module_category_legal_case_management"/>
+    </record>
+
+    <record id="legal_case_management_somood_directory" model="res.groups">
+        <field name="name">Somood Directory</field>
+        <field name="category_id" ref="module_category_legal_case_management"/>
+    </record>
+    <record id="legal_case_management_somood_department" model="res.groups">
+        <field name="name">Somood Department</field>
+        <field name="category_id" ref="module_category_legal_case_management"/>
+    </record>
+    <record id="legal_case_management_somood_employees" model="res.groups">
+        <field name="name">Somood Employees</field>
+        <field name="category_id" ref="module_category_legal_case_management"/>
+    </record>
+     <record id="legal_case_management_misinstry_office" model="res.groups">
+        <field name="name">Misinstry Office</field>
+        <field name="category_id" ref="module_category_legal_case_management"/>
+
+    </record>
+    <!-- ✅ Newly Added Groups -->
+    <record id="legal_case_management_field_committee" model="res.groups">
+        <field name="name">Field Committee</field>
+        <field name="category_id" ref="module_category_legal_case_management"/>
+    </record>
+    <record id="legal_case_management_director_general_of_directorates" model="res.groups">
+        <field name="name">Director General of Directorates</field>
+        <field name="category_id" ref="module_category_legal_case_management"/>
+    </record>
+    <record id="legal_case_management_the_highest_committee" model="res.groups">
+        <field name="name">The Highest Committee</field>
+        <field name="category_id" ref="module_category_legal_case_management"/>
+    </record>
+</odoo>

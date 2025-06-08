@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="assets_backend" inherit_id="web.assets_backend" name="hide_calendar_button_assets">
+        <xpath expr="." position="inside">
+            <style>
+                /* Nuclear option - hides ALL primary buttons in calendar */
+                .o_control_panel .o_calendar_buttons .btn-primary,
+                /* Specific button selectors */
+                .o_calendar_button_new,
+                .o-calendar-button-new,
+                /* Button by attributes */
+                button[title="New Event"],
+                button[name="action_create"],
+                button[data-original-title="New Event"],
+                /* Button by icon */
+                button:has(> i.fa-plus),
+                /* Button by text */
+                button:has(> span:contains('New')) {
+                    display: none !important;
+                    width: 0 !important;
+                    height: 0 !important;
+                    padding: 0 !important;
+                    margin: 0 !important;
+                    border: none !important;
+                }
+            </style>
+        </xpath>
+    </template>
+</odoo>

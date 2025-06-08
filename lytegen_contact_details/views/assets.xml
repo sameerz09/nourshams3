@@ -1,0 +1,9 @@
+<odoo>
+    <data>
+        <template id="custom_assets" inherit_id="web.assets_frontend" name="Custom JavaScript">
+            <xpath expr="//head" position="inside">
+                <script type="module" src="/lytegen_contact_details/static/src/js/custom_appointment_form.js"/>
+            </xpath>
+        </template>
+    </data>
+</odoo>

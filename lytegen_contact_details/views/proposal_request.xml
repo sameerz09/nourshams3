@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="proposal_request_form" name="Proposal Request Form">
+            <t t-call="website.layout">
+                <t t-set="title">Proposal Request</t>
+
+                <!-- Load Custom CSS -->
+<!--                <link rel="stylesheet" type="text/css" href="/lytegen_contact_details/static/src/css/ach_style.css"/>-->
+                <link rel="stylesheet" type="text/css" href="/lytegen_contact_details/static/src/css/credit_check_style.css"/>
+                <link rel="stylesheet" type="text/css" href="/lytegen_contact_details/static/src/css/proposal_request.css"/>
+
+                <link rel="stylesheet" type="text/css" href="/lytegen_contact_details/static/src/css/select2.min.css"/>
+                <script src="/lytegen_contact_details/static/src/js/lib/jquery-3.6.0.min.js"/>
+                <script src="/lytegen_contact_details/static/src/js/lib/select2.min.js"/>
+                <script src="/lytegen_contact_details/static/src/js/proposal_request.js?1.0"/>
+
+                <div class="container py-5">
+
+                   <div class="row">
+                       <div class="col-lg-8 mx-auto">
+                            <div class="card">
+                                <div class="card-body px-4">
+                                    <!-- Logo & Title -->
+                                    <div class="text-center mb-4">
+                                        <img src="/lytegen_contact_details/static/src/img/lytegen_logo.png" alt="Proposal Request" class="form-logo"/>
+                                    </div>
+
+                                    <h4 class="text-center">PROPOSAL REQUEST</h4>
+                                    <span class="text-center d-block subtitle">Provide as much information possible in order to create your proposal</span>
+
+                <!--                    <div class="form-header">-->
+                <!--                        <img src="/lytegen_contact_details/static/src/img/ach.jpg" alt="Company Logo" class="form-logo"/>-->
+                <!--                        <h2 class="form-title">Credit Check Request</h2>-->
+                <!--                    </div>-->
+
+
+                                    <form class="my-4" action="/submit/proposal_request" method="post" enctype="multipart/form-data">
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <label class="header-font" for="firstname">First Name<sup class="text-danger">*</sup></label>
+                                                <input placeholder="Eg. John" name="firstname" id="firstname" type="text" class="form-control mt-2" required="required"/>
+                                            </div>
+
+                                            <div class="col-lg-6">
+                                                <label class="header-font" for="lastname">Last Name<sup class="text-danger">*</sup></label>
+                                                <input placeholder="Eg. Doe" name="lastname" id="lastname" type="text" class="form-control mt-2" required="required"/>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mt-3">
+                                            <div class="col-lg-6">
+                                                <label class="header-font" for="streetaddress">Street Address<sup class="text-danger">*</sup></label>
+                                                <input placeholder="Street Address" name="streetaddress" id="streetaddress" type="text" class="form-control mt-2" required="required"/>
+                                            </div>
+
+                                            <div class="col-lg-6">
+                                                <label class="header-font" for="city">City<sup class="text-danger">*</sup></label>
+                                                <input placeholder="City" name="city" id="city" type="text" class="form-control mt-2" required="required"/>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mt-3">
+                                            <div class="col-lg-6">
+                                                <label class="header-font" for="state">State<sup class="text-danger">*</sup></label>
+                                                <input placeholder="State" name="state" id="state" type="text" class="form-control mt-2" required="required"/>
+                                            </div>
+
+                                            <div class="col-lg-6">
+                                                <label class="header-font" for="zipcode">Zip Code<sup class="text-danger">*</sup></label>
+                                                <input placeholder="Zip Code" name="zipcode" id="zipcode" type="number" class="form-control mt-2" required="required"/>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mt-3">
+                                            <div class="col-lg-6">
+                                                <label class="header-font" for="email">Email<sup class="text-danger">*</sup></label>
+                                                <input placeholder="johnd@gmail.com" name="email" id="email" type="email" class="form-control mt-2" required="required"/>
+                                            </div>
+
+                                            <div class="col-lg-6">
+                                                <label class="header-font" for="phone">Phone Number<sup class="text-danger">*</sup></label>
+                                                <input placeholder="Eg. (XXX) XXX-XXXX" name="phone" id="phone" oninput="this.value = this.value.slice(0, 10)" pattern="\d{10}" type="tel" class="form-control mt-2" required="required"/>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mt-3">
+                                            <div class="col-lg-6">
+                                                <label class="header-font" for="utility_provider">Utility Provider<sup class="text-danger">*</sup></label>
+                                                <input placeholder="Examples: PGE, Edison, SMUD, etc." name="utility_provider" id="utility_provider" type="text" class="form-control mt-2" required="required"/>
+                                            </div>
+
+                                            <div class="col-lg-6">
+                                                <label class="header-font" for="rate_type">Rate Type<sup class="text-danger">*</sup></label>
+                                                <select class="form-control js-searchable-select" name="rate_type" id="rate_type" required="required">
+                                                    <option value=""/>
+                                                    <t t-foreach="rateType" t-as="q">
+                                                        <option t-att-value="q[0]"><t t-esc="q[1]"/></option>
+                                                    </t>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mt-3">
+                                            <div class="col-lg-6">
+                                                <label class="header-font" for="sp1">Sales Consultant<sup class="text-danger">*</sup></label>
+                                                <select class="form-control js-searchable-select" name="sp1" id="sp1" required="required">
+                                                    <option value=""/>
+                                                    <t t-foreach="sp1s" t-as="q">
+                                                        <option t-att-value="q[0]"><t t-esc="q[1]"/></option>
+                                                    </t>
+                                                </select>
+                                            </div>
+
+                                            <div class="col-lg-6">
+                                                <label class="header-font" for="average_bill">Average Bill<sup class="text-danger">*</sup></label>
+                                                <input placeholder="Verbally Agreed $ Amount" name="average_bill" id="average_bill" type="number" class="form-control mt-2" required="required"/>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mt-3">
+                                            <div class="col-lg-12">
+                                                <label class="header-font" for="bill">Bill<sup class="text-danger">*</sup></label>
+                                                <input placeholder="Multiple files JPG, PNG &amp; PDF" name="bill" id="bill" type="file" class="form-control mt-2" required="required"/>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mt-3">
+                                            <div class="col-lg-12">
+                                                <label class="header-font" for="discount">Discounts<sup class="text-danger">*</sup></label>
+                                                <select class="form-control js-searchable-select" name="discounts" id="discounts" required="required">
+                                                    <option value=""/>
+                                                    <t t-foreach="discounts" t-as="q">
+                                                        <option t-att-value="q[0]"><t t-esc="q[1]"/></option>
+                                                    </t>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mt-3">
+                                            <div class="col-lg-12">
+                                                <label class="header-font" for="proposal_notes">Proposal Notes<sup class="text-danger">*</sup></label>
+                                                <textarea placeholder="Notes and special requests, including energy usage changes (EV, battery, pool, reroof). Provide details for an accurate proposal." class="form-control mt-2" id="proposal_notes" name="proposal_notes" required="required"/>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mt-3">
+                                            <div class="col-lg-12 text-center">
+                                                <button type="submit" class="btn btn-md btn-blue w-100">Submit</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                       </div>
+                   </div>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

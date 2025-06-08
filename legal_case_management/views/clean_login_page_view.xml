@@ -1,0 +1,15 @@
+<odoo>
+    <!-- Hide "Powered by Odoo" -->
+    <template id="hide_brand_promotion" inherit_id="web.brand_promotion_message">
+        <xpath expr="." position="replace">
+            <t></t>
+        </xpath>
+    </template>
+
+    <!-- Disable "Manage Databases" link in login page safely -->
+    <template id="custom_login_page_layout" inherit_id="web.login_layout">
+        <xpath expr="//t[@t-name='web.login_layout']" position="inside">
+            <t t-set="disable_database_manager" t-value="True"/>
+        </xpath>
+    </template>
+</odoo>

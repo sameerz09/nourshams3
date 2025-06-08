@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+	<t t-name="MobileAppsFunnelInherit" t-inherit="web.MobileAppsFunnel" t-inherit-mode="primary">
+
+        <xpath expr="//img[@t-att-src='androidAppstoreImagePath']/.." position="attributes">
+            <attribute name="href">https://play.google.com/store/apps/details?id=com.bizople.spiffy</attribute>
+        </xpath>
+
+        <xpath expr="//img[@t-att-src='iosAppstoreImagePath']/.." position="attributes">
+            <attribute name="href">https://apps.apple.com/in/app/spiffy-odoo-mobile-app/id6449771773</attribute>
+        </xpath>
+	</t>
+</template>

@@ -1,0 +1,102 @@
+<odoo>
+    <data>
+        <record id="view_crm_lead_form_custom" model="ir.ui.view">
+            <field name="name">crm.lead.form.custom</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="attributes">
+                    <attribute name="create">0</attribute>
+                </xpath>
+                <xpath expr="//header" position="inside">
+                    <button name="action_open_email_wizard" type="object" class="btn-primary" string="Send Email"/>
+                </xpath>
+
+                <xpath expr="//field[@name='priority']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='email_from']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='phone']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='partner_id']" position="replace"/>
+                <xpath expr="//field[@name='tag_ids']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='user_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='expected_revenue']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//page[@name='internal_notes']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//notebook" position="inside">
+                    <page string="Contact Information" name="contact_info">
+                        <group class="mt48">
+<!--                            <label for="contact_name_page_clone"/>-->
+<!--                            <div class="o_row">-->
+<!--                                <field name="contact_name" required="1" id="contact_name_page_clone" readonly="is_sales_consultant or is_sales_manager"/>&ndash;&gt;-->
+<!--                                <field name="title" required="1" placeholder="Title" domain="[]" options='{"no_open": True}' readonly="is_sales_consultant or is_sales_manager"/>-->
+<!--                            </div>-->
+<!--                            <field name="function" required="1" readonly="is_sales_consultant or is_sales_manager"/>-->
+                            <div class="o_row o_row_readonly">
+                                <button name="phone_action_blacklist_remove" class="fa fa-ban text-danger"
+                                    title="This phone number is blacklisted for SMS Marketing. Click to unblacklist."
+                                    type="object" context="{'default_phone': mobile}" groups="base.group_user"
+                                    invisible="not mobile_blacklisted"/>
+
+                            </div>
+                        </group>
+                        <group>
+                            <field name="bps_number" required="1" readonly="is_sales_consultant or is_sales_manager"/>
+                            <field name="first_name" required="1" readonly="is_sales_consultant or is_sales_manager"/>
+                            <field name="last_name" required="1" readonly="is_sales_consultant or is_sales_manager"/>
+                            <field name="email_2" required="1" readonly="is_sales_consultant or is_sales_manager"/>
+                            <field name="mobile" required="1" id="mobile_page_clone" widget="phone" readonly="is_sales_consultant or is_sales_manager"/>
+                            <field name="street2" widget="address_autocomplete" required="1" readonly="is_sales_consultant or is_sales_manager"/>
+                            <field name="state" required="1" readonly="is_sales_consultant or is_sales_manager"/>
+                            <field name="city" required="1" readonly="is_sales_consultant or is_sales_manager"/>
+                            <field name="postal_code" required="1" readonly="is_sales_consultant or is_sales_manager"/>
+                            <field name="financer" required="1" readonly="is_sales_consultant or is_sales_manager"/>
+                            <field name="sold_design_link" required="1" readonly="is_sales_consultant or is_sales_manager"/>
+                            <field name="sales_rep_email" required="1" readonly="is_sales_consultant or is_sales_manager"/>
+                            <field name="sales_consultant_employee_id" required="1" readonly="is_sales_consultant or is_sales_manager" options="{'no_create': True, 'no_create_edit': True}"/>
+                            <field name="pipeline_stage" required="1" readonly="is_sales_consultant or is_sales_manager"/>
+                            
+                        </group>
+                    </page>
+                </xpath>
+
+                <xpath expr="//field[@name='date_deadline']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//div[@class='col-auto' and .//label[@for='probability']]" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='lead']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.menu" id="crm.crm_menu_root">
+            <field name="name">A. M. Pipeline</field>
+        </record>
+
+        <record id="view_crm_lead_hide_partner_quick" model="ir.ui.view">
+            <field name="name">crm.lead.quick.form.hide.partner</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.quick_create_opportunity_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

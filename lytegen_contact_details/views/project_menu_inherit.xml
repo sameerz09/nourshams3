@@ -1,0 +1,97 @@
+<odoo>
+<!--    <record id="project.menu_main_pm" model="ir.ui.menu">-->
+<!--        <field name="groups_id" eval="[(6, 0, [ref('lytegen_contact_details.group_sales_consultant')])]"/>-->
+<!--    </record>-->
+<!--    <record id="project.menu_main_pm" model="ir.ui.menu">-->
+<!--        <field name="groups_id" eval="[(6, 0, [ref('lytegen_contact_details.group_user_role_admin'), ref('lytegen_contact_details.group_user_hide_menu')])]"/>-->
+<!--    </record>-->
+    <record id="project.menu_main_pm" model="ir.ui.menu">
+    <field name="groups_id" eval="[(6, 0, [
+        ref('lytegen_contact_details.group_user_role_admin'),
+        ref('lytegen_contact_details.group_user_hide_menu'),
+        ref('lytegen_contact_details.group_user_role_account_management'),
+        ref('lytegen_contact_details.group_operations')
+    ])]"/>
+</record>
+
+    <record id="slack_integration.slack_integration_menu" model="ir.ui.menu">
+    <field name="groups_id" eval="[(6, 0, [
+        ref('lytegen_contact_details.group_app_hidden'),
+    ])]"/>
+    </record>
+
+    <record id="base.menu_apps" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('lytegen_contact_details.group_app_hidden')])]"/>
+    </record>
+
+    <!-- Restrict Contacts Menu -->
+<!--        <record id="contacts.menu_contacts" model="ir.ui.menu">-->
+<!--            <field name="groups_id" eval="[(3, ref('lytegen_contact_details.group_sales_consultant'))]"/>-->
+<!--        </record>-->
+
+<!--        &lt;!&ndash; Restrict Invoicing Menu &ndash;&gt;-->
+<!--        <record id="account.menu_finance" model="ir.ui.menu">-->
+<!--            <field name="groups_id" eval="[(3, ref('lytegen_contact_details.group_sales_consultant'))]"/>-->
+<!--        </record>-->
+
+        <!-- Restrict Link Tracker Menu -->
+<!--        <record id="link_tracker.menu_link_tracker" model="ir.ui.menu">-->
+<!--            <field name="groups_id" eval="[(3, ref('lytegen_contact_details.group_sales_consultant'))]"/>-->
+<!--        </record>-->
+
+    <!-- Restrict Contacts Menu to Admin Only -->
+<!--        <record id="contacts.menu_contacts" model="ir.ui.menu">-->
+<!--        <field name="groups_id" eval="[(6, 0, [-->
+<!--            ref('lytegen_contact_details.group_user_show_calender_menu')-->
+<!--        ])]"/>-->
+<!--        </record>-->
+            <record id="contacts.menu_contacts" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6, 0, [
+                ref('base.group_system'),
+                ref('lytegen_contact_details.group_user_hide_menu')
+            ])]"/>
+            </record>
+
+
+
+
+        <!-- Restrict Invoicing Menu to Admin Only -->
+<!--        <record id="account.menu_finance" model="ir.ui.menu">-->
+<!--            <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>-->
+<!--        </record>-->
+         <record id="utm.menu_link_tracker_root" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>
+        </record>
+       <record id="crm.crm_menu_root" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_system'), ref('lytegen_contact_details.group_crm_read_only'), ref('lytegen_contact_details.group_sales_consultant'), ref('lytegen_contact_details.group_user_hide_menu')])]"/>
+        </record>
+        <record id="crm.crm_menu_root" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6, 0, [
+                ref('base.group_system'),
+                ref('lytegen_contact_details.group_crm_read_only'),
+                ref('lytegen_contact_details.group_sales_consultant'),
+                ref('lytegen_contact_details.group_user_role_account_management'),
+                ref('lytegen_contact_details.group_user_hide_menu'),
+                ref('lytegen_contact_details.group_sales_manager')
+            ])]"/>
+        </record>
+
+
+
+
+<!--        &lt;!&ndash; Inherit the form view to hide the chatter for group_sales_consultant &ndash;&gt;-->
+
+          <!-- Inherit a generic form view -->
+<!--        <record id="inherit_calendar_event_form_to_hide_chatter" model="ir.ui.view">-->
+<!--                <field name="name">inherit.calendar.event.form.to.hide.chatter</field>-->
+<!--                <field name="model">calendar.event</field> &lt;!&ndash; Model for calendar events &ndash;&gt;-->
+<!--                <field name="inherit_id" ref="calendar.view_calendar_event_form" /> &lt;!&ndash; Inherit the calendar event form view &ndash;&gt;-->
+<!--                <field name="arch" type="xml">-->
+<!--                    &lt;!&ndash; Locate the chatter div and hide it &ndash;&gt;-->
+<!--                    <xpath expr="//div[@class='oe_chatter']" position="attributes">-->
+<!--                        <attribute name="invisible">1</attribute>-->
+<!--                    </xpath>-->
+<!--                </field>-->
+<!--        </record>-->
+
+</odoo>

@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_slack_webhook_configuration_user,access.slack.webhook.configuration.user,model_slack_webhook_configuration,base.group_user,1,1,1,1
+access_slack_messages_user,access.slack.messages.user,model_slack_messages,base.group_user,1,1,1,1
+access_request_log_user,access.request.log.user,model_request_log,base.group_user,1,1,1,1

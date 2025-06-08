@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+<!--<record id="appointment.main_menu_appointments" model="ir.ui.menu">-->
+<!--    <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>-->
+<!--</record>-->
+
+<!--<record id="appointment.appointment_menu_calendar" model="ir.ui.menu">-->
+<!--    <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>-->
+<!--</record>-->
+
+<!--<record id="appointment.reporting_menu_calendar" model="ir.ui.menu">-->
+<!--    <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>-->
+<!--</record>-->
+
+<record id="contacts.menu_contacts" model="ir.ui.menu">
+    <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>
+</record>
+
+<record id="mail.menu_root_discuss" model="ir.ui.menu">
+    <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>
+</record>
+
+<!--<record id="project_todo.menu_todo_todos" model="ir.ui.menu">-->
+<!--    <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>-->
+<!--</record>-->
+
+<!--<record id="slack_integration.slack_integration_menu" model="ir.ui.menu">-->
+<!--    <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>-->
+<!--</record>-->
+
+<record id="spreadsheet_dashboard.spreadsheet_dashboard_menu_root" model="ir.ui.menu">
+    <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>
+</record>
+
+<!--<record id="website.menu_website_configuration" model="ir.ui.menu">-->
+<!--    <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>-->
+<!--</record>-->
+
+<record id="hr.menu_hr_root" model="ir.ui.menu">
+    <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>
+</record>
+
+<!--<record id="hr_attendance.menu_hr_attendance_root" model="ir.ui.menu">-->
+<!--    <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>-->
+<!--</record>-->
+
+<record id="base.menu_management" model="ir.ui.menu">
+    <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>
+</record>
+<record id="contacts.menu_contacts" model="ir.ui.menu">
+    <field name="groups_id" eval="[(6, 0, [ref('base.group_user')])]"/>
+</record>
+
+<!--<record id="utm.menu_link_tracker_root" model="ir.ui.menu">-->
+<!--        <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>-->
+<!--</record>-->
+<record id="account.menu_finance" model="ir.ui.menu">
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+</record>
+
+
+
+
+<!--<record id="planning.planning_menu_root" model="ir.ui.menu">-->
+<!--    <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>-->
+<!--</record>-->
+<!--<record id="planning.knowledge_menu_root" model="ir.ui.menu">-->
+<!--    <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>-->
+<!--</record>-->
+<!--<record id="knowledge.knowledge_menu_root" model="ir.ui.menu">-->
+<!--    <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>-->
+<!--</record>-->
+<!--<record id="crm.crm_menu_root" model="ir.ui.menu">-->
+<!--        <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>-->
+<!--</record>-->
+
+
+</odoo>

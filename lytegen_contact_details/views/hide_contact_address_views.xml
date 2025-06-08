@@ -1,0 +1,147 @@
+<odoo>
+    <data>
+        <!-- Inherit the mail view to hide the email field -->
+        <record id="res_partner_view_form_inherit_mail" model="ir.ui.view">
+            <field name="name">res.partner.view.form.inherit.mail</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="mail.res_partner_view_form_inherit_mail"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='email']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='phone']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='mobile']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='category_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                 <xpath expr="//field[@name='website']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record>
+<!--            <record id="hide_partner_simple_form" model="ir.ui.view">-->
+<!--            <field name="name">res.partner.hide.simplified.form</field>-->
+<!--            <field name="model">res.partner</field>-->
+<!--            <field name="inherit_id" ref="base.view_partner_simple_form"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                &lt;!&ndash; Make the entire form invisible &ndash;&gt;-->
+<!--                <xpath expr="//field[@name='phone']" position="attributes">-->
+<!--                    <attribute name="invisible">1</attribute>-->
+<!--                </xpath>-->
+<!--                <xpath expr="//field[@name='mobile']" position="attributes">-->
+<!--                    <attribute name="invisible">1</attribute>-->
+<!--                </xpath>-->
+<!--                <xpath expr="//field[@name='email']" position="attributes">-->
+<!--                    <attribute name="invisible">1</attribute>-->
+<!--                </xpath>-->
+<!--            </field>-->
+<!--        </record>-->
+        <record id="force_hide_partner_simple_form" model="ir.ui.view">
+            <field name="name">res.partner.force.hide.simplified.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_simple_form"/>
+            <field name="arch" type="xml">
+                <!-- Force hide the entire form -->
+                <xpath expr="//form" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record>
+<!--        <record id="hide_sales_button" model="ir.ui.view">-->
+<!--            <field name="name">res.partner.hide.sales.button</field>-->
+<!--            <field name="model">res.partner</field>-->
+<!--            <field name="inherit_id" ref="sale.res_partner_view_buttons"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                &lt;!&ndash; Hide the Sales button &ndash;&gt;-->
+<!--                <xpath expr="//button[@name='action_view_sale_order']" position="attributes">-->
+<!--                    <attribute name="invisible">1</attribute>-->
+<!--                </xpath>-->
+<!--            </field>-->
+<!--        </record>-->
+<!--        <record id="hide_tasks_button" model="ir.ui.view">-->
+<!--            <field name="name">res.partner.hide.tasks.button</field>-->
+<!--            <field name="model">project.milestone</field>-->
+<!--            <field name="inherit_id" ref="project.project_milestone_view_tree"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                &lt;!&ndash; Hide the Sales button &ndash;&gt;-->
+<!--                <xpath expr="//button[@name='action_view_tasks']" position="attributes">-->
+<!--                    <attribute name="invisible">1</attribute>-->
+<!--                </xpath>-->
+<!--            </field>-->
+<!--        </record>-->
+<!--        <record id="hide_partner_website_section" model="ir.ui.view">-->
+<!--            <field name="name">res.partner.hide.website.section</field>-->
+<!--            <field name="model">res.partner</field>-->
+<!--            <field name="inherit_id" ref="website_partner.view_partners_form_website"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                &lt;!&ndash; Hide the is_published field &ndash;&gt;-->
+<!--                <xpath expr="//field[@name='is_published']" position="attributes">-->
+<!--                    <attribute name="invisible">1</attribute>-->
+<!--                </xpath>-->
+<!--            </field>-->
+<!--        </record>-->
+        <record id="hide_employee_button" model="ir.ui.view">
+            <field name="name">res.partner.hide.employee.button</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <!-- Hide the Employee button -->
+                <xpath expr="//button[@name='action_open_employees']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record>
+<!--        <record id="hide_invoice_button" model="ir.ui.view">-->
+<!--            <field name="name">res.partner.hide.invoice.button</field>-->
+<!--            <field name="model">res.partner</field>-->
+<!--            <field name="inherit_id" ref="base.view_partner_form"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                &lt;!&ndash; Hide the Sales button &ndash;&gt;-->
+<!--                <xpath expr="//button[@name='action_view_partner_invoices']" position="attributes">-->
+<!--                    <attribute name="invisible">1</attribute>-->
+<!--                </xpath>-->
+<!--            </field>-->
+<!--        </record>-->
+        <record id="hide_sales_purchases_tab" model="ir.ui.view">
+            <field name="name">res.partner.hide.sales.purchases.tab</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <!-- Make the Sales & Purchase tab invisible -->
+                <xpath expr="//page[@name='sales_purchases']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                 <xpath expr="//page[@name='internal_notes']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//page[@name='contact_addresses']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+<!--                <xpath expr="//page[@name='accounting']" position="attributes">-->
+<!--                    <attribute name="invisible">1</attribute>-->
+<!--                </xpath>-->
+
+            </field>
+        </record>
+
+
+<!--        &lt;!&ndash; Inherit the sms view to hide the phone and mobile fields &ndash;&gt;-->
+<!--        <record id="partner_form_send_sms_form_view" model="ir.ui.view">-->
+<!--            <field name="name">partner.form.send.sms.form.view</field>-->
+<!--            <field name="model">res.partner</field>-->
+<!--            <field name="inherit_id" ref="sms.partner_form_send_sms_form_view"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <xpath expr="//field[@name='phone']" position="attributes">-->
+<!--                    <attribute name="invisible">1</attribute>-->
+<!--                </xpath>-->
+<!--                <xpath expr="//field[@name='mobile']" position="attributes">-->
+<!--                    <attribute name="invisible">1</attribute>-->
+<!--                </xpath>-->
+<!--            </field>-->
+<!--        </record>-->
+    </data>
+</odoo>

@@ -1,0 +1,468 @@
+
+<odoo>
+
+    <record id="category_user_role" model="ir.module.category">
+        <field name="name">User Role</field>
+        <field name="description">Category for user-specific roles like Sales Consultant.</field>
+        <field name="sequence">10</field>
+    </record>
+
+   <record id="group_user_hide_menu" model="res.groups">
+        <field name="name">Full Admin</field>
+        <field name="category_id" ref="lytegen_contact_details.category_user_role"/>
+    </record>
+
+        <!-- NTP Coordinators -->
+    <record id="group_ntp_coordinators" model="res.groups">
+        <field name="name">NTP Coordinators</field>
+        <field name="category_id" ref="lytegen_contact_details.category_user_role"/>
+    </record>
+
+        <!-- Account Coordinators -->
+    <record id="group_account_coordinators" model="res.groups">
+        <field name="name">Account Coordinators</field>
+        <field name="category_id" ref="lytegen_contact_details.category_user_role"/>
+    </record>
+        <!-- Change Coordinators -->
+    <record id="group_change_coordinators" model="res.groups">
+        <field name="name">Change Coordinators</field>
+        <field name="category_id" ref="lytegen_contact_details.category_user_role"/>
+    </record>
+
+    <record id="group_app_hidden" model="res.groups">
+        <field name="name">Hidden App Access</field>
+    </record>
+
+    <record id="group_user_role_auditor" model="res.groups">
+        <field name="name">Auditor</field>
+        <field name="category_id" ref="lytegen_contact_details.category_user_role"/>
+        <field name="comment">This group is for Auditor.</field>
+<!--        <field name="implied_ids" eval="[-->
+<!--            (4, ref('hide_action_menu_buttons.group_hide_action_menu_button_view_form')),-->
+<!--            (4, ref('hide_action_menu_buttons.group_hide_action_menu_button_view_list'))-->
+<!--        ]"/>-->
+    </record>
+
+    <record id="group_user_role_confirmation_specialist" model="res.groups">
+        <field name="name">Confirmation Specialist</field>
+        <field name="category_id" ref="lytegen_contact_details.category_user_role"/>
+        <field name="comment">This group is for Confirmation Specialist.</field>
+<!--        <field name="implied_ids" eval="[-->
+<!--            (4, ref('hide_action_menu_buttons.group_hide_action_menu_button_view_form')),-->
+<!--            (4, ref('hide_action_menu_buttons.group_hide_action_menu_button_view_list'))-->
+<!--        ]"/>-->
+    </record>
+
+    <record id="group_user_role_account_management" model="res.groups">
+        <field name="name">Account Management</field>
+        <field name="category_id" ref="lytegen_contact_details.category_user_role"/>
+        <field name="comment">This group is for users involved in managing accounts and financial access.</field>
+    </record>
+
+
+    <record id="access_res_users_confirmation_specialist" model="ir.model.access">
+        <field name="name">res.users access for confirmation specialist</field>
+        <field name="model_id" ref="base.model_res_users"/>
+        <field name="group_id" ref="lytegen_contact_details.group_user_role_confirmation_specialist"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+
+
+    <record id="group_designer" model="res.groups">
+        <field name="name">Designer</field>
+        <field name="category_id" ref="lytegen_contact_details.category_user_role"/>
+<!--        <field name="implied_ids" eval="[(4, ref('group_user_role_confirmation_specialist'))]"/>-->
+        <field name="comment">This group is for Designer.</field>
+    </record>
+
+    <record id="design_full_access_designer_override" model="ir.rule">
+        <field name="name">Designer Override - Full Access</field>
+        <field name="model_id" ref="lytegen_contact_details.model_design"/>
+        <field name="groups" eval="[(4, ref('lytegen_contact_details.group_designer'))]"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+
+
+
+    <record id="group_sales_consultant" model="res.groups">
+        <field name="name">Sales Consultant</field>
+        <field name="category_id" ref="lytegen_contact_details.category_user_role"/>
+<!--        <field name="implied_ids" eval="[(4, ref('group_designer'))]"/>-->
+        <field name="comment">This group is for Sales Consultants.</field>
+    </record>
+
+    <record id="group_user_role_dispatch_manager" model="res.groups">
+        <field name="name">Dispatch</field>
+        <field name="category_id" ref="lytegen_contact_details.category_user_role"/>
+<!--        <field name="implied_ids" eval="[(4, ref('group_sales_consultant'))]"/>-->
+        <field name="comment">This group is for Dispatch Manager.</field>
+    </record>
+
+    <record id="group_operations" model="res.groups">
+        <field name="name">Operations</field>
+        <field name="category_id" ref="lytegen_contact_details.category_user_role"/>
+        <field name="comment">This group is for Operations.</field>
+    </record>
+
+    <record id="access_project_project_operations" model="ir.model.access">
+        <field name="name">Operations Access to Projects</field>
+        <field name="model_id" ref="project.model_project_project"/>
+        <field name="group_id" ref="lytegen_contact_details.group_operations"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="calendar_event_rule_sales_consultant" model="ir.rule">
+        <field name="name">Sales Consultant - Own Calendar Events</field>
+        <field name="model_id" ref="calendar.model_calendar_event"/>
+        <field name="domain_force">
+            [('sales_consultant_employee_id', 'in', (user.employee_ids.ids or []))]
+        </field>
+        <field name="groups" eval="[(4, ref('lytegen_contact_details.group_sales_consultant'))]"/>
+    </record>
+
+
+    <record id="group_user_role_admin" model="res.groups">
+        <field name="name">Admin</field>
+        <field name="category_id" ref="lytegen_contact_details.category_user_role"/>
+<!--        <field name="implied_ids" eval="[-->
+<!--            (4, ref('group_user_role_dispatch_manager')),-->
+<!--            (4, ref('group_sales_consultant')),-->
+<!--            (4, ref('group_designer')),-->
+<!--            (4, ref('group_user_role_confirmation_specialist')),-->
+<!--            (4, ref('group_user_role_auditor')),-->
+<!--        ]"/>-->
+        <field name="comment">This group is for Admin.</field>
+    </record>
+    <record id="appointment_rule_confirmation_specialist_qa_outcome" model="ir.rule">
+        <field name="name">Calendar Events - QA Outcome for Confirmation Specialist</field>
+        <field name="model_id" ref="calendar.model_calendar_event"/>
+        <field name="groups" eval="[(4, ref('lytegen_contact_details.group_user_role_confirmation_specialist'))]"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <record id="appointment_rule_dispatch_manager_combined" model="ir.rule">
+        <field name="name">Calendar Events - Dispatch Filtered by QA Outcome and Confirmation Status</field>
+        <field name="model_id" ref="calendar.model_calendar_event"/>
+        <field name="groups" eval="[(4, ref('lytegen_contact_details.group_user_role_dispatch_manager'))]"/>
+        <field name="domain_force">
+            [('qa_outcome', 'in', ['approved', 'dq']), ('confirmation_status', 'not in', ['dq', 'requested_rescheduling'])]
+        </field>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+
+
+
+<!--    <record id="group_user_hide_menu" model="res.groups">-->
+<!--        <field name="name">Hide Menu</field>-->
+<!--        <field name="category_id" ref="base.module_category_hidden"/>-->
+<!--    </record>-->
+
+
+
+    <record id="group_user_show_calender_menu" model="res.groups">
+        <field name="name">Show Calender Event Menu</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+    </record>
+
+    <record id="group_user_show_design_menu" model="res.groups">
+        <field name="name">Show Design Menu</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+    </record>
+
+    <record id="lytegen_contact_details.group_sales_consultant" model="res.groups">
+        <field name="name">Sales Consultant</field>
+        <field name="category_id" ref="lytegen_contact_details.category_user_role"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <record id="access_project_collaborator_sales_consultant" model="ir.model.access">
+        <field name="name">Sales Consultant Access to Project Collaborators</field>
+        <field name="model_id" ref="project.model_project_collaborator"/>
+        <field name="group_id" ref="lytegen_contact_details.group_sales_consultant"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="access_project_project_sales_consultant" model="ir.model.access">
+        <field name="name">Sales Consultant Access to Projects</field>
+        <field name="model_id" ref="project.model_project_project"/>
+        <field name="group_id" ref="lytegen_contact_details.group_sales_consultant"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="project_collaborator_access_rule_sales_consultant" model="ir.rule">
+        <field name="name">Collaborators: Access for Sales Consultant</field>
+        <field name="model_id" ref="project.model_project_collaborator"/>
+        <field name="domain_force">[('project_id.create_uid', '=', user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+        <field name="groups" eval="[(4, ref('lytegen_contact_details.group_sales_consultant'))]"/>
+    </record>
+
+    <record id="project_access_rule_sales_consultant" model="ir.rule">
+        <field name="name">Projects: Access for Sales Consultant</field>
+        <field name="model_id" ref="project.model_project_project"/>
+        <field name="domain_force">[('create_uid', '=', user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+        <field name="groups" eval="[(4, ref('lytegen_contact_details.group_sales_consultant'))]"/>
+    </record>
+
+    <!-- Security Rule for qa_outcome in calendar.event -->
+<!--    <record id="qa_outcome_access_rule_design_confirm" model="ir.rule">-->
+<!--        <field name="name">QA Outcome: Access for Design and Confirm Groups</field>-->
+<!--        <field name="model_id" ref="calendar.model_calendar_event"/>-->
+<!--&lt;!&ndash;        <field name="domain_force">[('qa_outcome', 'in', ['approved', 'dq', 'dq_viable'])]</field>&ndash;&gt;-->
+<!--        <field name="domain_force">[(1, '=', 1)]</field>-->
+<!--        <field name="perm_read" eval="True"/>-->
+<!--        <field name="perm_create" eval="False"/>-->
+<!--        <field name="perm_write" eval="True"/> &lt;!&ndash; Change based on your requirement &ndash;&gt;-->
+<!--        <field name="perm_unlink" eval="False"/>-->
+<!--        <field name="groups" eval="[-->
+<!--            (4, ref('lytegen_contact_details.group_designer')),-->
+<!--            (4, ref('lytegen_contact_details.group_user_role_confirmation_specialist'))-->
+<!--        ]"/>-->
+<!--    </record>-->
+
+    <record id="group_employee_read_only" model="res.groups">
+        <field name="name">Read-Only Employee Access</field>
+        <field name="category_id" ref="base.module_category_human_resources_employees"/>
+        <field name="comment">This group allows read-only access to employees.</field>
+    </record>
+    <record id="group_sales_manager" model="res.groups">
+        <field name="name">Sales Manager</field>
+        <field name="category_id" ref="lytegen_contact_details.category_user_role"/>
+<!--        <field name="implied_ids" eval="[(4, ref('lytegen_contact_details.group_employee_read_only'))]"/>-->
+        <field name="comment">This group is for Sales Managers.</field>
+    </record>
+
+
+
+    <record id="module_category_crm" model="ir.module.category">
+            <field name="name">CRM</field>
+            <field name="description">This section contains CRM-related access rights.</field>
+            <field name="sequence" eval="10"/>
+    </record>
+<!--     &lt;!&ndash; Move 'Show Lead Menu' to CRM Section &ndash;&gt;-->
+    <record id="crm.group_use_lead" model="res.groups">
+        <field name="category_id" ref="module_category_crm"/>
+    </record>
+
+<!--        &lt;!&ndash; Move 'Show Recurring Revenues Menu' to CRM Section &ndash;&gt;-->
+    <record id="crm.group_use_recurring_revenues" model="res.groups">
+        <field name="category_id" ref="module_category_crm"/>
+    </record>
+
+    <!-- Read-Only CRM Access Group -->
+    <record id="group_crm_read_only" model="res.groups">
+        <field name="name">Read-Only CRM Access</field>
+        <field name="category_id" ref="lytegen_contact_details.module_category_crm"/>
+        <field name="comment">This group allows read-only access to CRM records.</field>
+<!--            <field name="implied_ids" eval="[(6, 0, [ref('base.group_user')])]"/>-->
+    </record>
+     <record id="hr_employee_public_read_rule" model="ir.rule">
+            <field name="name">Public Employees: Read Custom Fields</field>
+            <field name="model_id" ref="hr.model_hr_employee"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4, ref('hr.group_hr_user'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+        </record>
+<!--       <record id="calendar_event_rule_sales_manager" model="ir.rule">-->
+<!--        <field name="model_id" ref="calendar.model_calendar_event"/>-->
+<!--        <field name="name">All Calendar Events for Sales Manager</field>-->
+<!--        <field name="domain_force">[(1, '=', 1)]</field>-->
+<!--        <field name="groups" eval="[(4, ref('lytegen_contact_details.group_sales_manager'))]"/>-->
+<!--    </record>-->
+     <!-- Allow Sales Managers to see Calendar Events assigned to Employees they manage -->
+        <record id="calendar_event_sales_manager_rule" model="ir.rule">
+            <field name="name">Sales Manager: View Events of Managed Employees</field>
+            <field name="model_id" ref="calendar.model_calendar_event"/>
+            <field name="groups" eval="[(4, ref('lytegen_contact_details.group_sales_manager'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="domain_force">
+                [('sales_consultant_employee_id.parent_id.user_id', '=', user.id)]
+            </field>
+        </record>
+
+        <record id="project_project_sales_manager_rule" model="ir.rule">
+                <field name="name">Sales Manager: View Projects of Managed Employees</field>
+                <field name="model_id" ref="project.model_project_project"/>
+                <field name="groups" eval="[(4, ref('lytegen_contact_details.group_sales_manager'))]"/>
+                <field name="perm_read" eval="1"/>
+                <field name="perm_write" eval="0"/>
+                <field name="perm_create" eval="0"/>
+                <field name="perm_unlink" eval="0"/>
+
+        </record>
+
+        <record id="design_sales_manager_rule" model="ir.rule">
+            <field name="name">Sales Manager: View Designs of Managed Employees</field>
+            <field name="model_id" ref="lytegen_contact_details.model_design"/>
+            <field name="groups" eval="[(4, ref('lytegen_contact_details.group_sales_manager'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="domain_force">
+                [('sales_consultant_employee_id.parent_id.user_id', '=', user.id)]
+            </field>
+        </record>
+        <record id="crm_lead_sales_manager_rule" model="ir.rule">
+            <field name="name">Sales Manager: View CRM Leads of Managed Employees</field>
+            <field name="model_id" ref="crm.model_crm_lead"/>
+            <field name="groups" eval="[(4, ref('lytegen_contact_details.group_sales_manager'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="domain_force">
+                [('sales_consultant_employee_id.parent_id.user_id', '=', user.id)]
+            </field>
+        </record>
+     <!-- Sales Consultants can view only their own Project Tasks -->
+        <record id="project_project_sales_consultant_rule" model="ir.rule">
+            <field name="name">Sales Consultant: View Own Project Tasks</field>
+            <field name="model_id" ref="project.model_project_project"/>
+            <field name="groups" eval="[(4, ref('lytegen_contact_details.group_sales_consultant'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+<!--            <field name="domain_force">-->
+<!--                [('sales_consultant_employee_id.user_id', '=', user.id)]-->
+<!--            </field>-->
+        </record>
+       <record id="design_sales_consultant_rule" model="ir.rule">
+            <field name="name">Sales Consultant: View Own Designs</field>
+            <field name="model_id" ref="lytegen_contact_details.model_design"/>
+            <field name="groups" eval="[(4, ref('lytegen_contact_details.group_sales_consultant'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="domain_force">['|', ('create_uid', '=', user.id), ('sales_consultant_employee_id.user_id', '=', user.id)]</field>
+        </record>
+
+        <record id="crm_lead_sales_consultant_rule" model="ir.rule">
+                <field name="name">Sales Consultant: View Own CRM Leads</field>
+                <field name="model_id" ref="crm.model_crm_lead"/>
+                <field name="groups" eval="[(4, ref('lytegen_contact_details.group_sales_consultant'))]"/>
+                <field name="perm_read" eval="1"/>
+                <field name="perm_write" eval="0"/>
+                <field name="perm_create" eval="0"/>
+                <field name="perm_unlink" eval="0"/>
+                <field name="domain_force">
+                    [('sales_consultant_employee_id.user_id', '=', user.id)]
+                </field>
+        </record>
+        <record id="crm_lead_sales_consultant_rule" model="ir.rule">
+                <field name="name">Sales Consultant: Own Leads Only</field>
+                <field name="model_id" ref="crm.model_crm_lead"/>
+                <field name="groups" eval="[(4, ref('lytegen_contact_details.group_sales_consultant'))]"/>
+                <field name="domain_force">[('sales_consultant_employee_id.user_id.id', '=', user.id)]</field>
+                <field name="perm_read" eval="True"/>
+                <field name="perm_write" eval="True"/>
+                <field name="perm_create" eval="True"/>
+                <field name="perm_unlink" eval="False"/>
+        </record>
+          <!-- This overrides the CRM rule to remove all groups, disabling it -->
+            <record id="crm.crm_rule_all_lead" model="ir.rule">
+                <field name="groups" eval="[(6, 0, [])]"/>
+            </record>
+             <!-- Record Rule for Sales Managers and Consultants: Only see CRM leads for their employees or own employee record -->
+        <record id="crm_lead_sales_manager_rule" model="ir.rule">
+            <field name="name">CRM Lead: Only see leads for managed employees or own employee record</field>
+            <field name="model_id" ref="crm.model_crm_lead"/>
+            <field name="domain_force">
+                ['|',
+                    ('sales_consultant_employee_id.parent_id.user_id', '=', user.id),
+                    ('sales_consultant_employee_id.user_id', '=', user.id)
+                ]
+            </field>
+            <field name="groups" eval="[(4, ref('lytegen_contact_details.group_sales_manager')), (4, ref('lytegen_contact_details.group_sales_consultant'))]"/>
+        </record>
+
+
+
+
+
+<!--    <record id="hr_employee_readonly_rule" model="ir.rule">-->
+<!--        <field name="name">Employee Read-Only Rule</field>-->
+<!--        <field name="model_id" ref="hr.model_hr_employee"/>-->
+<!--        <field name="groups" eval="[(4, ref('group_employee_read_only'))]"/>-->
+<!--        <field name="perm_read" eval="1"/>-->
+<!--        <field name="perm_write" eval="0"/>-->
+<!--        <field name="perm_create" eval="0"/>-->
+<!--        <field name="perm_unlink" eval="0"/>-->
+<!--        <field name="domain_force">[(1, '=', 1)]</field>-->
+<!--    </record>-->
+<!--     &lt;!&ndash; Read-Only Rule for CRM Leads &ndash;&gt;-->
+<!--        <record id="crm_lead_readonly_rule" model="ir.rule">-->
+<!--            <field name="name">CRM Leads Read-Only</field>-->
+<!--            <field name="model_id" ref="crm.model_crm_lead"/>-->
+<!--            <field name="groups" eval="[(4, ref('lytegen_contact_details.group_crm_read_only'))]"/>-->
+<!--            <field name="perm_read" eval="1"/>-->
+<!--            <field name="perm_write" eval="0"/>-->
+<!--            <field name="perm_create" eval="0"/>-->
+<!--            <field name="perm_unlink" eval="0"/>-->
+<!--            <field name="domain_force">[(1, '=', 1)]</field>-->
+<!--        </record>-->
+
+<!--        &lt;!&ndash; Read-Only Rule for CRM Teams &ndash;&gt;-->
+<!--        <record id="crm_team_readonly_rule" model="ir.rule">-->
+<!--            <field name="name">CRM Teams Read-Only</field>-->
+<!--            <field name="model_id" ref="crm.model_crm_team"/>-->
+<!--            <field name="groups" eval="[(4, ref('lytegen_contact_details.group_crm_read_only'))]"/>-->
+<!--            <field name="perm_read" eval="1"/>-->
+<!--            <field name="perm_write" eval="0"/>-->
+<!--            <field name="perm_create" eval="0"/>-->
+<!--            <field name="perm_unlink" eval="0"/>-->
+<!--            <field name="domain_force">[(1, '=', 1)]</field>-->
+<!--        </record>-->
+
+<!--        &lt;!&ndash; Read-Only Rule for CRM Stages &ndash;&gt;-->
+<!--        <record id="crm_stage_readonly_rule" model="ir.rule">-->
+<!--            <field name="name">CRM Stages Read-Only</field>-->
+<!--            <field name="model_id" ref="crm.model_crm_stage"/>-->
+<!--            <field name="groups" eval="[(4, ref('lytegen_contact_details.group_crm_read_only'))]"/>-->
+<!--            <field name="perm_read" eval="1"/>-->
+<!--            <field name="perm_write" eval="0"/>-->
+<!--            <field name="perm_create" eval="0"/>-->
+<!--            <field name="perm_unlink" eval="0"/>-->
+<!--            <field name="domain_force">[(1, '=', 1)]</field>-->
+<!--        </record>-->
+
+
+</odoo>

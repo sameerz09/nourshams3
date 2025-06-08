@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="credit_check_success_page" name="ACH Submission Success">
+        <t t-call="website.layout">
+            <t t-set="title">ACH Submission Successful</t>
+
+            <div class="container text-center py-5">
+                <div class="success-icon">
+                    <img src="/lytegen_contact_details/static/src/img/success.png" alt="Success" class="success-image"/>
+                </div>
+                <h2 class="text-success">Thank You!</h2>
+                <p>Your ACH request has been submitted successfully. Our team will review it and get back to you shortly.</p>
+                <a href="/credit-check" class="btn btn-primary mt-4">Return to ACH Form</a>
+            </div>
+        </t>
+    </template>
+</odoo>

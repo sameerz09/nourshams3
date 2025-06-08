@@ -1,0 +1,31 @@
+<odoo>
+<!--    <template id="custom_auth_passkey_login" inherit_id="auth_passkey.auth_passkey_login" name="Custom Auth Passkey Login">-->
+<!--        &lt;!&ndash; Remove the Passkey Login button &ndash;&gt;-->
+<!--        <xpath expr="//button[contains(@class, 'passkey_login_link')]" position="replace">-->
+<!--            &lt;!&ndash; Empty content to hide the button &ndash;&gt;-->
+<!--        </xpath>-->
+<!--        &lt;!&ndash; Remove the "- or -" text &ndash;&gt;-->
+<!--        <xpath expr="//em" position="replace">-->
+<!--            &lt;!&ndash; Empty content to hide the text &ndash;&gt;-->
+<!--        </xpath>-->
+<!--    </template>-->
+    <template id="hide_brand_promotion" inherit_id="web.brand_promotion_message">
+        <xpath expr="." position="replace">
+            <!-- Completely hide the template -->
+            <t></t>
+        </xpath>
+    </template>
+    <template id="hide_footer" inherit_id="web.frontend_layout">
+        <xpath expr="//footer" position="replace">
+            <!-- Completely hide the footer -->
+            <t></t>
+        </xpath>
+    </template>
+<!--       <template id="custom_web_login" inherit_id="web.login" name="Custom Web Login">-->
+<!--        &lt;!&ndash; Hide the "oe_login_buttons" part &ndash;&gt;-->
+<!--        <xpath expr="//div[@class='oe_login_buttons text-center gap-1 d-grid mb-1 pt-3']" position="replace">-->
+<!--            &lt;!&ndash; Empty content to hide the element &ndash;&gt;-->
+<!--        </xpath>-->
+<!--    </template>-->
+
+</odoo>

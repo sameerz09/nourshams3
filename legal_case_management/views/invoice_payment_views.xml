@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_invoice_payment_tree" model="ir.ui.view">
+        <field name="name">invoice.payment.list</field>
+        <field name="model">invoice.payment</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="case_id"/>
+                <field name="client_id"/>
+                <field name="cost"/>
+                <field name="date"/>
+                <field name="lawyer_id"/>
+                <field name="is_last_trial"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_invoice_payment_form" model="ir.ui.view">
+        <field name="name">invoice.payment.form</field>
+        <field name="model">invoice.payment</field>
+        <field name="arch" type="xml">
+            <form string="Invoice Payment">
+                <sheet>
+                    <group>
+                        <field name="case_id"/>
+                        <field name="client_id"/>
+                        <field name="date"/>
+                        <field name="lawyer_id"/>
+                        <field name="cost"/>
+                        <field name="is_last_trial"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-name="lytegen_staging.appointment_calendar_controller_hide_availability"
+       t-inherit="appointment.CalendarController"
+       t-inherit-mode="extension">
+
+        <!-- Hide Share Availabilities button -->
+        <xpath expr="//button[contains(@class, 'o_appointment_select_slots')]" position="attributes">
+            <attribute name="t-if">false</attribute>
+        </xpath>
+
+        <!-- Optionally, hide the dropdown entirely -->
+        <xpath expr="//div[contains(@class, 'btn-group')][Dropdown]" position="attributes">
+            <attribute name="t-if">false</attribute>
+        </xpath>
+
+    </t>
+</templates>

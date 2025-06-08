@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="ach_appointment_form" name="ACH Appointment Form">
+            <t t-call="website.layout">
+                <t t-set="title">ACH Appointment</t>
+
+                <!-- Load Custom CSS -->
+<!--                <link rel="stylesheet" type="text/css" href="/lytegen_contact_details/static/src/css/ach_style.css"/>-->
+
+                <link rel="stylesheet" type="text/css" href="/lytegen_contact_details/static/src/css/credit_check_style.css"/>
+                <link rel="stylesheet" type="text/css" href="/lytegen_contact_details/static/src/css/intlTelInput.min.css"/>
+                <script src="/lytegen_contact_details/static/src/js/lib/jquery-3.6.0.min.js"/>
+                <script src="/lytegen_contact_details/static/src/js/lib/intlTelInput.min.js"/>
+                <script src="/lytegen_contact_details/static/src/js/common.js"/>
+
+                <div class="container py-5">
+
+                    <!-- Logo & Title -->
+<!--                    <div class="text-center mb-4">-->
+<!--                        <img src="/lytegen_contact_details/static/src/img/bank-illustration.png" alt="Bank Illustration" class="form-logo"/>-->
+<!--                        <h2 class="form-title">ACH Appointment</h2>-->
+<!--                    </div>-->
+
+                    <div class="form-header">
+                        <img src="/lytegen_contact_details/static/src/img/ach.jpg" alt="Company Logo" class="form-logo"/>
+<!--                        <h2 class="form-title">ACH FORM</h2>-->
+                    </div>
+
+                    <!-- Info Message -->
+                    <div class="alert alert-info text-center">
+                        Please provide your accurate banking details to proceed with the ACH appointment request.
+                    </div>
+
+                    <!-- ACH Appointment Form -->
+                    <form action="/submit/ach" method="post" class="ach-form">
+
+                        <!-- Contact Information -->
+                        <fieldset class="form-section">
+                            <legend>Contact Information</legend>
+                            <p>Please enter your full legal name and phone number as registered with your bank.</p>
+
+                            <div class="form-group two-columns">
+                                <div>
+                                    <label for="full_name">Full Name *</label>
+                                    <input type="text" class="form-control" id="full_name" name="full_name" required="required"/>
+                                </div>
+                                <div>
+                                    <label for="phone">Phone Number *</label>
+                                    <input type="hidden" id="country_code" name="country_code"/>
+                                    <input type="tel" oninput="this.value = this.value.slice(0, 10)" pattern="^\+?\d{1,20}$"  class="form-control" id="phone" name="phone" required="required"/>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- Banking Information -->
+                        <fieldset class="form-section">
+                            <legend>Banking Information</legend>
+                            <p>Ensure your account and routing numbers are correct before submitting.</p>
+
+                            <div class="form-group two-columns">
+                                <div>
+                                    <label for="account_number">Bank Account Number *</label>
+                                    <input type="text" class="form-control" id="account_number" name="account_number" required="required"/>
+                                </div>
+                                <div>
+                                    <label for="routing_number">Routing Number *</label>
+                                    <input type="text" class="form-control" id="routing_number" name="routing_number" required="required"/>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="bank_name">Bank Name *</label>
+                                <input type="text" class="form-control" id="bank_name" name="bank_name" required="required"/>
+                            </div>
+                        </fieldset>
+
+                        <!-- Additional Information -->
+                        <fieldset class="form-section">
+                            <legend>Additional Information</legend>
+
+                            <div class="form-group">
+                                <label for="appointment_date">Preferred Appointment Date *</label>
+                                <input type="date" class="form-control" id="appointment_date" name="appointment_date" required="required"/>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="notes">Additional Notes</label>
+                                <textarea class="form-control" id="notes" name="notes"></textarea>
+                            </div>
+                        </fieldset>
+
+                        <!-- Privacy Notice -->
+                        <p class="privacy-text text-center">
+                            We will not share your personal banking details with any third parties unless required by law. Your privacy and security are our top priorities.
+                        </p>
+
+                        <!-- Confirmation Checkbox -->
+                        <div class="form-group text-center">
+                            <input type="checkbox" id="confirmation" required="required"/>
+                            <label for="confirmation"> I acknowledge that I have reviewed the required notices.</label>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="text-center mt-4">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+
+                    </form>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="inherit_appointment_resource_view_form" model="ir.ui.view">
+        <field name="name">appointment.resource.view.form.inherit</field>
+        <field name="model">appointment.resource</field>
+        <field name="inherit_id" ref="appointment.appointment_resource_view_form"/>
+        <field name="arch" type="xml">
+            <!-- Ensure 'shareable' is visible -->
+            <xpath expr="//field[@name='capacity']" position="after">
+                <field name="shareable" invisible="0"/>
+            </xpath>
+
+            <!-- Ensure 'resource_calendar_id' is visible -->
+            <xpath expr="//field[@name='tz']" position="before">
+                <field name="resource_calendar_id" string="Opening Hours"/>
+            </xpath>
+        </field>
+    </record>
+     <record id="inherit_appointment_type_view_form" model="ir.ui.view">
+        <field name="name">appointment.type.view.form.inherit</field>
+        <field name="model">appointment.type</field>
+        <field name="inherit_id" ref="appointment.appointment_type_view_form"/>
+        <field name="arch" type="xml">
+            <!-- Adding 'Is Published' Toggle Next to the Name Field -->
+            <xpath expr="//h1/field[@name='name']" position="after">
+                <field name="is_published" widget="toggle_button"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Inherit the CRM Lead Form View -->
+    <record id="crm_lead_form_view_inherit" model="ir.ui.view">
+        <field name="name">crm.lead.form.inherit</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="replace">
+                    <header groups="base.group_system"/>
+            </xpath>
+
+
+            <!-- Add a New Tab in the Notebook -->
+            <xpath expr="//notebook" position="inside">
+<!--                <page string="Sales Consultants">-->
+<!--                    <group>-->
+<!--                        <field name="sales_consultant_employee_id" readonly="is_sales_consultant or is_sales_manager"/>-->
+<!--                    </group>-->
+<!--                </page>-->
+<!--                <page string="Proposal">-->
+<!--                    <group>-->
+<!--                        <field name="design_ids" readonly="is_sales_consultant or is_sales_manager"/>-->
+<!--                    </group>-->
+<!--                </page>-->
+<!--                <page string="Projects">-->
+<!--                    <group>-->
+<!--                        <field name="project_ids" readonly="is_sales_consultant or is_sales_manager"/>-->
+<!--                    </group>-->
+<!--                </page>-->
+            </xpath>
+
+            <!-- Restrict chatter visibility -->
+            <xpath expr="//chatter" position="attributes">
+                <attribute name="groups">base.group_system</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="crm.crm_lead_action_pipeline" model="ir.actions.act_window">
+            <field name="context">{'default_type': 'opportunity'}</field>
+    </record>
+
+    <record id="custom_crm_case_tree_view_oppor" model="ir.ui.view">
+    <field name="name">crm.lead.list.opportunity.custom</field>
+    <field name="model">crm.lead</field>
+    <field name="inherit_id" ref="crm.crm_case_tree_view_oppor"/>
+    <field name="arch" type="xml">
+
+      <xpath expr="//list" position="attributes">
+        <list string="Opportunities" sample="1" multi_edit="1" create="1">
+<!--          <field name="name" string="Opportunity" readonly="1"/>-->
+          <field name="contact_name"/>
+          <field name="email_from"/>
+<!--          <field name="sales_consultant_employee_id" string="Sales Consultant"/>-->
+          <field name="stage_id" decoration-bf="1"/>
+        </list>
+      </xpath>
+
+    </field>
+  </record>
+<!--    <record id="custom_crm_case_tree_view_oppor_admin" model="ir.ui.view">-->
+<!--    <field name="name">crm.lead.list.opportunity.custom.admin</field>-->
+<!--    <field name="model">crm.lead</field>-->
+<!--    <field name="inherit_id" ref="crm.crm_case_tree_view_oppor"/>-->
+<!--    <field name="priority">30</field> &lt;!&ndash; Higher priority &ndash;&gt;-->
+<!--    <field name="arch" type="xml">-->
+<!--        <xpath expr="//list" position="attributes">-->
+<!--            <attribute name="create">1</attribute>-->
+<!--&lt;!&ndash;            <attribute name="groups">base.group_system</attribute>&ndash;&gt;-->
+<!--        </xpath>-->
+<!--    </field>-->
+<!--</record>-->
+</odoo>

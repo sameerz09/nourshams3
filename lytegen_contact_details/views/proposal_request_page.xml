@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="proposal_request_form" name="Proposal Request Form">
+            <t t-call="website.layout">
+                <t t-set="title">Proposal Request</t>
+
+                <!-- Load Custom CSS and JS -->
+                <link rel="stylesheet" type="text/css" href="/lytegen_contact_details/static/src/css/credit_check_style.css"/>
+                <link rel="stylesheet" type="text/css" href="/lytegen_contact_details/static/src/css/project_style.css"/>
+                <link rel="stylesheet" type="text/css" href="/lytegen_contact_details/static/src/css/proposal_request.css"/>
+                <link rel="stylesheet" type="text/css" href="/lytegen_contact_details/static/src/css/select2.min.css"/>
+                <link rel="stylesheet" type="text/css" href="/lytegen_contact_details/static/src/css/fonts.css"/>
+                <link rel="stylesheet" type="text/css" href="/lytegen_contact_details/static/src/css/intlTelInput.min.css"/>
+
+                <script src="/lytegen_contact_details/static/src/js/lib/jquery-3.6.0.min.js"/>
+                <script src="/lytegen_contact_details/static/src/js/lib/select2.min.js"/>
+                <script src="/lytegen_contact_details/static/src/js/lib/intlTelInput.min.js"/>
+                <script src="/lytegen_contact_details/static/src/js/proposal_request.js?1.0"/>
+
+                <div class="container py-5">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="card">
+                                <div class="card-body px-4">
+                                    <div class="text-center mb-4">
+                                        <img src="/lytegen_contact_details/static/src/img/proposalrequest.png" alt="Logo" class="form-logo"/>
+                                    </div>
+                                    <div class="text-center mb-3">
+<!--                                        <h2 class="fw-bold">PROPOSAL REQUEST</h2>-->
+                                        <p>Provide as much information as possible in order to create your proposal</p>
+                                    </div>
+
+                                    <form action="/submit/proposalrequest" method="post" enctype="multipart/form-data" class="my-4">
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label class="form-label header-font">First Name<sup class="text-danger">*</sup></label>
+                                                <input type="text" name="customer_first_name" class="form-control" placeholder="First Name" required="required"/>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label class="form-label header-font">Last Name<sup class="text-danger">*</sup></label>
+                                                <input type="text" name="customer_last_name" class="form-control" placeholder="Last Name" required="required"/>
+                                            </div>
+                                            <div class="row" id="serviceAddress">
+                                                <div class="col-md-12 mb-3">
+                                                    <label class="form-label header-font">Street Address<sup class="text-danger">*</sup></label>
+                                                    <input type="text" name="street_address" class="form-control" placeholder="Address" required="required"/>
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <label class="form-label header-font">City<sup class="text-danger">*</sup></label>
+                                                    <input type="text" name="city" class="form-control" placeholder="City" required="required"/>
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <label class="form-label header-font">State<sup class="text-danger">*</sup></label>
+                                                    <input type="text" name="state" class="form-control" placeholder="State" required="required"/>
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <label class="form-label header-font">Zip Code<sup class="text-danger">*</sup></label>
+                                                    <input type="text" name="zipcode" class="form-control" placeholder="Zip Code" required="required"/>
+                                                </div>
+
+                                                <div class="col-md-6 mb-3">
+                                                    <label class="form-label header-font">
+                                                        Phone Number<sup class="text-danger">*</sup>
+                                                    </label>
+                                                    <input type="hidden" id="country_code" name="country_code"/>
+                                                    <input type="tel"
+                                                           name="customer_phone"
+                                                           id="customer_phone"
+                                                           oninput="this.value = this.value.slice(0, 10)"
+                                                           pattern="^\+?\d{1,20}$"
+                                                           class="form-control"
+                                                           placeholder="Eg. 1234567890"
+                                                           required="required"/>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="col-md-12 mb-3">
+                                                <label class="form-label header-font">Email<sup class="text-danger">*</sup></label>
+                                                <input type="email" name="customer_email" class="form-control" placeholder="Email" required="required"/>
+                                            </div>
+                                            <div class="col-md-12 mb-3">
+                                                <label class="form-label header-font">Utility Provider<sup class="text-danger">*</sup></label>
+                                                <input type="text" name="utility_company" class="form-control" placeholder="Examples: PGE, Edison, SMUD, etc." required="required"/>
+                                            </div>
+                                            <div class="col-md-12 mb-3">
+                                                <label class="form-label header-font">Rate Type<sup class="text-danger">*</sup></label>
+                                                <select name="rate_type" class="form-control js-searchable-select" required="required">
+<!--                                                    <option value="">Rate type</option>-->
+                                                    <option value=""/>
+                                                    <t t-foreach="rate_types" t-as="rate">
+                                                        <option t-att-value="rate[0]">
+                                                            <t t-esc="rate[1]"/>
+                                                        </option>
+                                                    </t>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-12 mb-3">
+                                                <label class="form-label header-font">Energy Consultant<sup class="text-danger">*</sup></label>
+                                                <select class="form-control js-searchable-select" name="sp1" id="sp1" required="required">
+                                                    <option value=""/>
+                                                    <t t-foreach="sp1s" t-as="type">
+                                                        <option t-att-value="type[0]"><t t-esc="type[1]"/></option>
+                                                    </t>
+                                                </select>
+<!--                                                <input type="text" name="sp1" class="form-control" placeholder="Energy Consultant" required="required"/>-->
+                                            </div>
+                                            <div class="col-md-12 mb-3">
+                                                <label class="form-label header-font">Average Bill<sup class="text-danger">*</sup></label>
+                                                <input type="text" name="average_bill" class="form-control" placeholder="Verbally Agreed $ Amount" required="required"/>
+                                            </div>
+                                            <div class="col-md-12 mb-3">
+                                                <label class="form-label header-font">Upload Bill<sup class="text-danger">*</sup></label>
+                                                <input type="file" name="utility_bill[]" class="form-control" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple" required="required"/>
+                                            </div>
+                                            <div class="col-md-12 mb-3">
+                                                <label class="form-label header-font">Discounts<sup class="text-danger">*</sup></label>
+                                                <select name="discounts" class="form-control js-searchable-select">
+<!--                                                    <option value="">Discounts</option>-->
+                                                    <option value=""/>
+                                                    <t t-foreach="discount_options" t-as="disc">
+                                                        <option t-att-value="disc[0]">
+                                                            <t t-esc="disc[1]"/>
+                                                        </option>
+                                                    </t>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-12 mb-3">
+                                                <label class="form-label header-font">Proposal Notes<sup class="text-danger">*</sup></label>
+                                                <textarea name="notes" class="form-control" rows="3" placeholder="Notes and special requests, including energy usage changes (EV, battery, pool, reroof). Provide details for an accurate proposal."/>
+                                            </div>
+                                            <div class="col-md-12 text-center">
+                                                <button type="submit" class="btn btn-success w-100 rounded-pill">SUBMIT</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

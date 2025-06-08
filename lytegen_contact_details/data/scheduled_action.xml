@@ -1,0 +1,64 @@
+<odoo>
+    <data noupdate="1">
+        <!-- Scheduled Action for Updating Street Address Visibility -->
+        <record id="ir_cron_update_street_address_visibility" model="ir.cron">
+            <field name="name">Update Street Address Visibility</field>
+            <field name="model_id" ref="model_calendar_event"/>
+            <field name="state">code</field>
+            <field name="code">model.update_street_address_visibility()</field>
+            <field name="interval_number">5</field> <!-- Runs every 1 minute -->
+            <field name="interval_type">minutes</field>
+            <field name="active">True</field>
+        </record>
+
+        <record id="ir_cron_create_confirmation_tasks" model="ir.cron">
+            <field name="name">Create Confirmation Tasks</field>
+            <field name="model_id" ref="calendar.model_calendar_event"/>
+            <field name="state">code</field>
+            <field name="code">model.create_confirmation_tasks()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">hours</field>
+            <field name="active">True</field>
+        </record>
+        <record id="ir_cron_reset_is_qa_outcome" model="ir.cron">
+              <field name="name">Reset QA Outcome Boolean</field>
+              <field name="model_id" ref="calendar.model_calendar_event"/>
+              <field name="state">code</field>
+              <field name="code">model._cron_reset_is_qa_outcome()</field>
+              <field name="interval_type">hours</field>
+              <field name="interval_number">1</field>
+              <field name="active">True</field>
+        </record>
+<!--        <record id="ir_cron_cleanup_unlinked_contacts" model="ir.cron">-->
+<!--            <field name="name">Cleanup Unlinked Contacts</field>-->
+<!--            <field name="model_id" ref="base.model_res_partner"/>-->
+<!--            <field name="state">code</field>-->
+<!--            <field name="code">model.cleanup_unlinked_contacts()</field>-->
+<!--            <field name="interval_number">1</field>-->
+<!--            <field name="interval_type">days</field>-->
+<!--&lt;!&ndash;            <field name="numbercall">-1</field>&ndash;&gt;-->
+<!--            <field name="active">True</field>-->
+<!--        </record>-->
+
+
+<!--         <record id="ir_cron_update_street_address_visibility_design" model="ir.cron">-->
+<!--            <field name="name">Update Street Address Visibility (Design)</field>-->
+<!--            <field name="model_id" ref="model_design"/>-->
+<!--            <field name="state">code</field>-->
+<!--            <field name="code">model.update_street_address_visibility_design()</field>-->
+<!--            <field name="interval_number">30</field> &lt;!&ndash; Runs every 30 minutes &ndash;&gt;-->
+<!--            <field name="interval_type">minutes</field>-->
+<!--            <field name="active">True</field>-->
+<!--        </record>-->
+<!--          &lt;!&ndash; Scheduled Action for Updating Street Address Visibility for Project &ndash;&gt;-->
+<!--        <record id="ir_cron_update_street_address_visibility_project" model="ir.cron">-->
+<!--            <field name="name">Update Street Address Visibility (Project)</field>-->
+<!--            <field name="model_id" ref="model_project_project"/>-->
+<!--            <field name="state">code</field>-->
+<!--            <field name="code">model.update_street_address_visibility_project()</field>-->
+<!--            <field name="interval_number">30</field> &lt;!&ndash; Runs every 30 minutes &ndash;&gt;-->
+<!--            <field name="interval_type">minutes</field>-->
+<!--            <field name="active">True</field>-->
+<!--        </record>-->
+    </data>
+</odoo>

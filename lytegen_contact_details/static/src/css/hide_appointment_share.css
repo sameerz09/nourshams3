@@ -1,0 +1,19 @@
+/* Hide the entire appointment share block */
+.o_appointment_scheduling_box {
+    display: none !important;
+}
+
+/* Optionally hide individual buttons if needed */
+.o_appointment_select_slots,
+.o_appointment_get_link,
+.o_appointment_open_form,
+.o_appointment_discard_slots,
+.dropdownAppointmentLink {
+    display: none !important;
+}
+
+/* Hide the entire "already booked appointment" warning block */
+.o_appointment_upcoming_event_info {
+    display: none !important;
+}
+

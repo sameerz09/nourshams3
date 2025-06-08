@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Appointments Menus -->
+    <record id="appointment.main_menu_appointments" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>
+    </record>
+
+    <record id="appointment.appointment_menu_calendar" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>
+    </record>
+
+    <record id="appointment.menu_appointment_invite" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>
+    </record>
+
+    <record id="appointment.menu_schedule_report" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>
+    </record>
+
+    <record id="appointment.reporting_menu_calendar" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>
+    </record>
+
+    <!-- Contacts Menu -->
+    <record id="contacts.menu_contacts" model="ir.ui.menu">
+    <field name="groups_id" eval="[(6, 0, [
+            ref('base.group_system'),
+            ref('lytegen_contact_details.group_user_hide_menu')
+        ])]"/>
+    </record>
+
+
+    <!-- Misc Menus -->
+    <record id="mail.menu_root_discuss" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>
+    </record>
+
+    <record id="project_todo.menu_todo_todos" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>
+    </record>
+
+    <record id="spreadsheet_dashboard.spreadsheet_dashboard_menu_root" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>
+    </record>
+
+    <record id="website.menu_website_configuration" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>
+    </record>
+
+    <!-- HR Menus -->
+    <record id="hr.menu_hr_root" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>
+    </record>
+
+    <record id="hr_attendance.menu_hr_attendance_root" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>
+    </record>
+
+    <record id="base.menu_management" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>
+    </record>
+
+    <record id="hr_timesheet.timesheet_menu_root" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>
+    </record>
+
+    <record id="industry_fsm.fsm_menu_root" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>
+    </record>
+    <record id="base.menu_calendar_root" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>
+    </record>
+    <!-- Email Marketing App: Only Admin -->
+    <record id="mass_mailing.mass_mailing_menu_root" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_nobody')])]"/>
+    </record>
+
+    <!-- Surveys App: Only Admin -->
+    <record id="survey.menu_root" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_nobody')])]"/>
+    </record>
+
+    <!-- Sign App: Only Admin -->
+    <record id="sign.sign_menu_root" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_nobody')])]"/>
+    </record>
+    <record id="account.menu_finance" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [])]"/>
+    </record>
+
+
+
+</odoo>

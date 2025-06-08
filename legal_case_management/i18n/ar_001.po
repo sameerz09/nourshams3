@@ -1,0 +1,2429 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* legal_case_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e-20250108\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-25 10:04+0000\n"
+"PO-Revision-Date: 2025-05-25 10:04+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_legal_case_report__court_id
+msgid " Available Courts"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.case_portal_content
+#: model_terms:ir.ui.view,arch_db:legal_case_management.portal_my_legal_case_requests
+msgid ""
+"<span class=\"badge rounded-pill text-bg-danger\">\n"
+"                                        <i class=\"fa fa-fw fa-check\" aria-label=\"Reversed\" title=\"Lost\" role=\"img\"/>\n"
+"                                        <span class=\"d-none d-md-inline\">\n"
+"                                            Lost\n"
+"                                        </span>\n"
+"                                    </span>"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.case_portal_content
+#: model_terms:ir.ui.view,arch_db:legal_case_management.portal_my_legal_case_requests
+msgid ""
+"<span class=\"badge rounded-pill text-bg-info\">\n"
+"                                        <i class=\"fa fa-fw fa-clock-o\" aria-label=\"Opened\" title=\"Opened\" role=\"img\"/>\n"
+"                                        <span class=\"d-none d-md-inline\">Draft\n"
+"                                        </span>\n"
+"                                    </span>"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.case_portal_content
+#: model_terms:ir.ui.view,arch_db:legal_case_management.portal_my_legal_case_requests
+msgid ""
+"<span class=\"badge rounded-pill text-bg-success\">\n"
+"                                        <i class=\"fa fa-fw fa-check\" aria-label=\"In Progress\" title=\"Paid\" role=\"img\"/>\n"
+"                                        <span class=\"d-none d-md-inline\">In\n"
+"                                            Progress\n"
+"                                        </span>\n"
+"                                    </span>"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.case_portal_content
+#: model_terms:ir.ui.view,arch_db:legal_case_management.portal_my_legal_case_requests
+msgid ""
+"<span class=\"badge rounded-pill text-bg-success\">\n"
+"                                        <i class=\"fa fa-fw fa-check\" aria-label=\"Reversed\" title=\"Invoiced\" role=\"img\"/>\n"
+"                                        <span class=\"d-none d-md-inline\">\n"
+"                                            Invoiced\n"
+"                                        </span>\n"
+"                                    </span>"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.case_portal_content
+#: model_terms:ir.ui.view,arch_db:legal_case_management.portal_my_legal_case_requests
+msgid ""
+"<span class=\"badge rounded-pill text-bg-success\">\n"
+"                                        <i class=\"fa fa-fw fa-check\" aria-label=\"Reversed\" title=\"Invoiced\" role=\"img\"/>\n"
+"                                        <span class=\"d-none d-md-inline\">\n"
+"                                            Won\n"
+"                                        </span>\n"
+"                                    </span>"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.case_portal_content
+#: model_terms:ir.ui.view,arch_db:legal_case_management.portal_my_legal_case_requests
+msgid ""
+"<span class=\"badge rounded-pill text-bg-warning\">\n"
+"                                        <i class=\"fa fa-fw fa-remove\" aria-label=\"Cancelled\" title=\"Cancelled\" role=\"img\"/>\n"
+"                                        <span class=\"d-none d-md-inline\">\n"
+"                                            Cancelled\n"
+"                                        </span>\n"
+"                                    </span>"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.report_case_register_document
+msgid ""
+"<span class=\"fw-bold\">Client Details</span>\n"
+"                        <br/>"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.legal_evidence_view_form
+msgid "<span class=\"o_stat_text\">Attachments</span>"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.legal_case_register_view
+msgid ""
+"<span class=\"s_website_form_label_content\">\n"
+"                                                Attachments\n"
+"                                            </span>"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.legal_case_register_view
+msgid ""
+"<span class=\"s_website_form_label_content\">\n"
+"                                                Case Category\n"
+"                                            </span>"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.legal_case_register_view
+msgid ""
+"<span class=\"s_website_form_label_content\">\n"
+"                                                Case Details\n"
+"                                            </span>"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.legal_case_register_view
+msgid ""
+"<span class=\"s_website_form_label_content\">\n"
+"                                                Contact No\n"
+"                                            </span>"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.report_case_register_document
+msgid "<span>Case :</span>"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.report_case_evidence_document
+msgid "<span>Evidence #</span>"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.report_case_trial_document
+msgid "<span>Trial #</span>"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.case_portal_content
+msgid ""
+"<strong class=\"d-block mb-1\">\n"
+"\n"
+"                            Client Details:\n"
+"                        </strong>"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.case_portal_content
+msgid ""
+"<strong class=\"d-block mb-1\">\n"
+"                                Lawyer:\n"
+"                            </strong>"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.case_portal_content
+msgid "<strong>Register Date:</strong>"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields.selection,name:legal_case_management.selection__case_registration__state__accepted
+msgid "Accepted"
+msgstr "مقبول من الدائرة المالية"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__message_needaction
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_evidence__message_needaction
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_trial__message_needaction
+#: model:ir.model.fields,field_description:legal_case_management.field_requirements_types__message_needaction
+#: model:ir.model.fields,field_description:legal_case_management.field_violations_types__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__activity_ids
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_evidence__activity_ids
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_trial__activity_ids
+#: model:ir.model.fields,field_description:legal_case_management.field_requirements_types__activity_ids
+#: model:ir.model.fields,field_description:legal_case_management.field_violations_types__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__activity_exception_decoration
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_evidence__activity_exception_decoration
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_trial__activity_exception_decoration
+#: model:ir.model.fields,field_description:legal_case_management.field_requirements_types__activity_exception_decoration
+#: model:ir.model.fields,field_description:legal_case_management.field_violations_types__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__activity_state
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_evidence__activity_state
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_trial__activity_state
+#: model:ir.model.fields,field_description:legal_case_management.field_requirements_types__activity_state
+#: model:ir.model.fields,field_description:legal_case_management.field_violations_types__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__activity_type_icon
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_evidence__activity_type_icon
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_trial__activity_type_icon
+#: model:ir.model.fields,field_description:legal_case_management.field_requirements_types__activity_type_icon
+#: model:ir.model.fields,field_description:legal_case_management.field_violations_types__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: legal_case_management
+#: model:res.groups,name:legal_case_management.legal_case_management_group_admin
+msgid "Admin"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.case_registration_view_search
+msgid "Affected Person"
+msgstr "اسم المتضرر"
+
+#. module: legal_case_management
+#: model:ir.ui.menu,name:legal_case_management.menu_customers
+msgid "Affected-People"
+msgstr "المتضررين"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_full_settlement__cost
+#: model:ir.model.fields,field_description:legal_case_management.field_invoice_payment__cost
+msgid "Amount"
+msgstr "القيمة"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__amount_value
+#: model_terms:ir.ui.view,arch_db:legal_case_management.case_registration_view_form
+msgid "Amount Value"
+msgstr "قيمة المبلغ"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__applicant
+#: model:ir.model.fields,help:legal_case_management.field_case_registration__applicant
+msgid "Applicant Name"
+msgstr "اسم مقدم الطلب"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__message_attachment_count
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_evidence__attachment_count
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_evidence__message_attachment_count
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_trial__message_attachment_count
+#: model:ir.model.fields,field_description:legal_case_management.field_requirements_types__message_attachment_count
+#: model:ir.model.fields,field_description:legal_case_management.field_violations_types__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields.selection,name:legal_case_management.selection__case_registration__state__auditing_attachment
+msgid "Auditing Attachment"
+msgstr "تدقيق المرفقات"
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_legal_evidence__evidence_code
+msgid "Automatically fetched from the selected Evidence Type"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_legal_case_report__client_id
+msgid "Available Clients"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_legal_case_report__judge_id
+msgid "Available Judges"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_legal_case_report__lawyer_id
+msgid "Available Lawyers"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_registration__judge_id
+msgid "Available judges"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__bank_account_number
+msgid "Bank Account Number"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.full_settlement_view_form
+#: model_terms:ir.ui.view,arch_db:legal_case_management.invoice_payment_view_form
+#: model_terms:ir.ui.view,arch_db:legal_case_management.legal_case_report_view_form
+msgid "CANCEL"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.full_settlement_view_form
+#: model_terms:ir.ui.view,arch_db:legal_case_management.invoice_payment_view_form
+msgid "CREATE AND VIEW INVOICE"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields.selection,name:legal_case_management.selection__case_registration__state__cancel
+#: model:ir.model.fields.selection,name:legal_case_management.selection__legal_case_report__state__cancel
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.view_cancel_reason_wizard_form
+msgid "Cancel Case"
+msgstr "اغلاق الحالة"
+
+#. module: legal_case_management
+#: model:ir.model,name:legal_case_management.model_cancel_reason_wizard
+msgid "Cancel Reason Wizard"
+msgstr "سبب الرفض"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_res_partner__card_id
+#: model:ir.model.fields,field_description:legal_case_management.field_res_users__card_id
+msgid "Card ID"
+msgstr "رقم الهوية"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__card_id_req
+msgid "Card ID Req"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_cancel_reason_wizard__case_id
+#: model:ir.model.fields,field_description:legal_case_management.field_case_requirement_line__case_id
+#: model:ir.model.fields,field_description:legal_case_management.field_full_settlement__case_id
+#: model:ir.model.fields,field_description:legal_case_management.field_invoice_payment__case_id
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_evidence__case_id
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_trial__case_id
+#: model_terms:ir.ui.view,arch_db:legal_case_management.report_case_evidence_document
+#: model_terms:ir.ui.view,arch_db:legal_case_management.report_case_trial_document
+msgid "Case"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.report_case_register_document
+msgid ""
+"Case\n"
+"                                    Category"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.portal_my_legal_case_requests
+msgid "Case #"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__case_attachment_count
+msgid "Case Attachment Count"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.actions.act_window,name:legal_case_management.case_category_action
+#: model:ir.actions.act_window,name:legal_case_management.legal_report_wizard_action
+#: model:ir.model,name:legal_case_management.model_case_category
+#: model:ir.model.fields,field_description:legal_case_management.field_case_category__name
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__case_category_id
+#: model_terms:ir.ui.view,arch_db:legal_case_management.case_portal_content
+msgid "Case Category"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_registration__description
+#: model_terms:ir.ui.view,arch_db:legal_case_management.case_portal_content
+msgid "Case Details"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.report_case_evidence_document
+msgid "Case Evidence Report"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.module.category,name:legal_case_management.module_category_legal_case_management
+msgid "Case Management"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__name
+#: model_terms:ir.ui.view,arch_db:legal_case_management.case_registration_view_form
+#: model_terms:ir.ui.view,arch_db:legal_case_management.report_legal_case_details
+msgid "Case No"
+msgstr "رقم الملف"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_account_bank_statement_line__case_ref
+#: model:ir.model.fields,field_description:legal_case_management.field_account_move__case_ref
+msgid "Case Reference"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model,name:legal_case_management.model_case_registration
+msgid "Case Register"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.legal_case_register_view
+msgid "Case Registration"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.actions.report,name:legal_case_management.case_registration_action_report
+msgid "Case Report"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.actions.act_window,name:legal_case_management.legal_case_report_action
+msgid "Case Reporting"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model,name:legal_case_management.model_case_requirement_line
+msgid "Case Requirement Line"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model,name:legal_case_management.model_case_sitting
+msgid "Case Sitting\""
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.report_case_trial_document
+msgid "Case Trial Report"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model,name:legal_case_management.model_case_victim
+msgid "Case Victim"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_registration__name
+msgid "Case number"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_registration__register_date
+msgid "Case registration date"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_invoice_payment__case_id
+msgid "Case to create invoice"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_registration__case_category_id
+msgid "Category of case"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_res_partner__is_judge_unavailable
+#: model:ir.model.fields,help:legal_case_management.field_res_users__is_judge_unavailable
+msgid "Check the availability of judge"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__city
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__city_id
+#: model:ir.model.fields,field_description:legal_case_management.field_res_region__city
+msgid "City"
+msgstr "المحافظة"
+
+#. module: legal_case_management
+#: model:ir.model,name:legal_case_management.model_res_city_zip
+#: model:ir.model.fields,field_description:legal_case_management.field_res_city_zip__name
+msgid "City Name"
+msgstr "اسم المحافظة"
+
+#. module: legal_case_management
+#: model:ir.actions.act_window,name:legal_case_management.action_res_city_zip
+msgid "City ZIP Codes"
+msgstr "رمز المدينة"
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.case_registration_view_kanban
+msgid "City:"
+msgstr "المحافظة"
+
+#. module: legal_case_management
+#: model:res.groups,name:legal_case_management.legal_case_management_group_clerk
+msgid "Clerk"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_full_settlement__client_id
+#: model:ir.model.fields,field_description:legal_case_management.field_invoice_payment__client_id
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_case_report__client_id
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_evidence__client_id
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_trial__client_id
+#: model_terms:ir.ui.view,arch_db:legal_case_management.report_case_evidence_document
+#: model_terms:ir.ui.view,arch_db:legal_case_management.report_case_trial_document
+#: model_terms:ir.ui.view,arch_db:legal_case_management.report_legal_case_details
+msgid "Client"
+msgstr " المتضرر"
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_full_settlement__client_id
+msgid "Client for particular case"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_legal_evidence__client_id
+msgid "Client for the evidence"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_legal_trial__client_id
+msgid "Client of the legal trial"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.actions.act_window,name:legal_case_management.res_partner_action
+msgid "Clients"
+msgstr "المتضررين"
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_invoice_payment__client_id
+msgid "Clients for a case"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.view_cancel_reason_wizard_form
+#: model_terms:ir.ui.view,arch_db:legal_case_management.view_reforward_wizard_form
+msgid "Close"
+msgstr "اغلاق"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_res_city_zip__code
+#: model_terms:ir.ui.view,arch_db:legal_case_management.view_requirements_types_list
+msgid "Code"
+msgstr "الرمز"
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_res_region__zip_codes
+msgid "Comma-separated ZIP codes"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__company_id
+msgid "Company"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_registration__company_id
+msgid "Company in which the case is handled"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields.selection,name:legal_case_management.selection__case_registration__completion_status__complete
+msgid "Complete"
+msgstr "مكتمل"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__completion_status
+msgid "Completion Status"
+msgstr "اكتمال الطلب"
+
+#. module: legal_case_management
+#: model:ir.ui.menu,name:legal_case_management.configuration_menu
+msgid "Configuration"
+msgstr "الاعدادات"
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.case_registration_view_form
+msgid "Confirm"
+msgstr "تدقيق المرفقات"
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.case_registration_view_form
+msgid "Confirm - Director General of Directorates"
+msgstr "موافقة مدير عام المديريات"
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.case_registration_view_form
+msgid "Confirm - The Highest Committee"
+msgstr "موافقة اللجنة العليا"
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.view_cancel_reason_wizard_form
+msgid "Confirm Cancel"
+msgstr "تأكيد الرفض"
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.case_registration_view_form
+msgid "Confirm Manager"
+msgstr "قبول مدير المديرية"
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.view_reforward_wizard_form
+msgid "Confirm Re-forward"
+msgstr "تأكيد اعادة التوجيه"
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.case_registration_view_form
+msgid "Confirm-financial_department"
+msgstr "قبول المدير المالي"
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.case_registration_view_form
+msgid "Confirm-manager-somood"
+msgstr "قبول مدير عام دعم الصمود"
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.case_registration_view_form
+msgid "Confirm-ministry-office"
+msgstr "موافقة الوزير"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_sitting__case_id
+msgid "Connecting Field"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model,name:legal_case_management.model_res_partner
+#: model:ir.model.fields,field_description:legal_case_management.field_case_sitting__contact
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.view_partner_form
+msgid "Contact Details"
+msgstr "بيانات المتضرر"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__opp_party_contact
+#: model:ir.model.fields,field_description:legal_case_management.field_case_victim__contact
+msgid "Contact No"
+msgstr "رقم الهاتف"
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_registration__opp_party_contact
+msgid "Contact No for opposite party"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__contact_no
+#: model_terms:ir.ui.view,arch_db:legal_case_management.case_portal_content
+msgid "Contact Number"
+msgstr "رقم الهاتف"
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_victim__contact
+msgid "Contact of Case victim"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_legal_trial__case_id
+msgid "Corresponding case"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_invoice_payment__is_cost_hide
+msgid "Cost Hide"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_invoice_payment__cost
+msgid "Cost for invoice"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_registration__case_attachment_count
+#: model:ir.model.fields,help:legal_case_management.field_legal_evidence__attachment_count
+msgid "Count of attachments"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_registration__evidence_count
+msgid "Count of evidence"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_registration__invoice_count
+msgid "Count of invoices"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_registration__trial_count
+msgid "Count of trials"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.actions.act_window,name:legal_case_management.legal_court_action
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__court_id
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_case_report__court_id
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_trial__court_id
+#: model_terms:ir.ui.view,arch_db:legal_case_management.report_legal_case_details
+msgid "Court"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_legal_trial__court_id
+msgid "Court for corresponding case"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.actions.act_window,help:legal_case_management.case_category_action
+msgid "Create New Case Category"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.actions.act_window,help:legal_case_management.legal_court_action
+msgid "Create New Court"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.actions.act_window,help:legal_case_management.legal_evidence_action
+msgid "Create New Evidences"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.actions.act_window,help:legal_case_management.hr_employee_lawyer_action
+msgid "Create New Lawyer"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.actions.act_window,help:legal_case_management.legal_trial_action
+msgid "Create New Trials"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_cancel_reason_wizard__create_uid
+#: model:ir.model.fields,field_description:legal_case_management.field_case_category__create_uid
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__create_uid
+#: model:ir.model.fields,field_description:legal_case_management.field_case_requirement_line__create_uid
+#: model:ir.model.fields,field_description:legal_case_management.field_case_sitting__create_uid
+#: model:ir.model.fields,field_description:legal_case_management.field_case_victim__create_uid
+#: model:ir.model.fields,field_description:legal_case_management.field_full_settlement__create_uid
+#: model:ir.model.fields,field_description:legal_case_management.field_invoice_payment__create_uid
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_case_report__create_uid
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_court__create_uid
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_evidence__create_uid
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_trial__create_uid
+#: model:ir.model.fields,field_description:legal_case_management.field_reforward_wizard__create_uid
+#: model:ir.model.fields,field_description:legal_case_management.field_requirements_types__create_uid
+#: model:ir.model.fields,field_description:legal_case_management.field_res_city_zip__create_uid
+#: model:ir.model.fields,field_description:legal_case_management.field_res_region__create_uid
+#: model:ir.model.fields,field_description:legal_case_management.field_violations_types__create_uid
+msgid "Created by"
+msgstr "انشأ بواسطة"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_cancel_reason_wizard__create_date
+#: model:ir.model.fields,field_description:legal_case_management.field_case_category__create_date
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__create_date
+#: model:ir.model.fields,field_description:legal_case_management.field_case_requirement_line__create_date
+#: model:ir.model.fields,field_description:legal_case_management.field_case_sitting__create_date
+#: model:ir.model.fields,field_description:legal_case_management.field_case_victim__create_date
+#: model:ir.model.fields,field_description:legal_case_management.field_full_settlement__create_date
+#: model:ir.model.fields,field_description:legal_case_management.field_invoice_payment__create_date
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_case_report__create_date
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_court__create_date
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_evidence__create_date
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_trial__create_date
+#: model:ir.model.fields,field_description:legal_case_management.field_reforward_wizard__create_date
+#: model:ir.model.fields,field_description:legal_case_management.field_requirements_types__create_date
+#: model:ir.model.fields,field_description:legal_case_management.field_res_city_zip__create_date
+#: model:ir.model.fields,field_description:legal_case_management.field_res_region__create_date
+#: model:ir.model.fields,field_description:legal_case_management.field_violations_types__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__currency_id
+#: model_terms:ir.ui.view,arch_db:legal_case_management.case_registration_view_form
+msgid "Currency"
+msgstr "العملة"
+
+#. module: legal_case_management
+#. odoo-python
+#: code:addons/legal_case_management/models/case_registration.py:0
+msgid "Customer invoice created and case marked as invoiced."
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_sitting__date
+#: model_terms:ir.ui.view,arch_db:legal_case_management.portal_my_legal_case_requests
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_legal_trial__trial_date
+msgid "Date for trial"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_sitting__date
+msgid "Date of case sitting"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_legal_evidence__evidence_date
+msgid "Date when the evidence was collected"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__description
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_evidence__description
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_trial__description
+#: model_terms:ir.ui.view,arch_db:legal_case_management.legal_trial_view_form
+#: model_terms:ir.ui.view,arch_db:legal_case_management.report_case_evidence_document
+msgid "Description"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_legal_trial__description
+msgid "Description for the trail"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_legal_evidence__description
+msgid "Description of evidence"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_sitting__details
+#: model_terms:ir.ui.view,arch_db:legal_case_management.portal_my_legal_case_requests
+msgid "Details"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_sitting__details
+msgid "Details of sittings"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields.selection,name:legal_case_management.selection__case_registration__state__director_general_of_directorates
+#: model:res.groups,name:legal_case_management.legal_case_management_director_general_of_directorates
+msgid "Director General of Directorates"
+msgstr "مدير عام المديريات"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__directory
+msgid "Directory"
+msgstr "المديرية"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_cancel_reason_wizard__display_name
+#: model:ir.model.fields,field_description:legal_case_management.field_case_category__display_name
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__display_name
+#: model:ir.model.fields,field_description:legal_case_management.field_case_requirement_line__display_name
+#: model:ir.model.fields,field_description:legal_case_management.field_case_sitting__display_name
+#: model:ir.model.fields,field_description:legal_case_management.field_case_victim__display_name
+#: model:ir.model.fields,field_description:legal_case_management.field_full_settlement__display_name
+#: model:ir.model.fields,field_description:legal_case_management.field_invoice_payment__display_name
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_case_report__display_name
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_court__display_name
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_evidence__display_name
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_trial__display_name
+#: model:ir.model.fields,field_description:legal_case_management.field_reforward_wizard__display_name
+#: model:ir.model.fields,field_description:legal_case_management.field_requirements_types__display_name
+#: model:ir.model.fields,field_description:legal_case_management.field_res_city_zip__display_name
+#: model:ir.model.fields,field_description:legal_case_management.field_res_region__display_name
+#: model:ir.model.fields,field_description:legal_case_management.field_violations_types__display_name
+msgid "Display Name"
+msgstr "الاسم"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__documents_requirement
+msgid "Documents Requirement"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_sitting__done
+msgid "Done"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields.selection,name:legal_case_management.selection__case_registration__state__draft
+#: model:ir.model.fields.selection,name:legal_case_management.selection__legal_case_report__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: legal_case_management
+#: model:ir.model,name:legal_case_management.model_hr_employee
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: legal_case_management
+#: model:ir.actions.act_window,name:legal_case_management.hr_employee_action
+msgid "Employees"
+msgstr "الموظفين"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__end_date
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_case_report__end_date
+#: model:ir.model.fields,help:legal_case_management.field_legal_case_report__end_date
+#: model_terms:ir.ui.view,arch_db:legal_case_management.report_legal_case_details
+msgid "End Date"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.actions.act_window,name:legal_case_management.legal_evidence_action
+#: model_terms:ir.ui.view,arch_db:legal_case_management.case_portal_content
+#: model_terms:ir.ui.view,arch_db:legal_case_management.case_registration_view_form
+#: model_terms:ir.ui.view,arch_db:legal_case_management.legal_evidence_view_form
+#: model_terms:ir.ui.view,arch_db:legal_case_management.report_case_register_document
+msgid "Evidence"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.report_case_register_document
+msgid ""
+"Evidence\n"
+"                                    Count"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_evidence__evidence_code
+msgid "Evidence Code"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__evidence_count
+msgid "Evidence Count"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_evidence__evidence_date
+msgid "Evidence Date"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.actions.report,name:legal_case_management.legal_evidence_action_report
+msgid "Evidence Report"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_evidence__evidence_types
+msgid "Evidence Type"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__family_name
+#: model:ir.model.fields,field_description:legal_case_management.field_res_partner__family_name
+#: model:ir.model.fields,field_description:legal_case_management.field_res_users__family_name
+msgid "Family Name"
+msgstr "اسم العائلة"
+
+#. module: legal_case_management
+#: model:ir.model.fields.selection,name:legal_case_management.selection__case_registration__state__field_committee
+#: model:res.groups,name:legal_case_management.legal_case_management_field_committee
+msgid "Field Committee"
+msgstr "اللجنة الميدانية"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__files
+msgid "Files"
+msgstr "المرفقات"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__filtered_requirements_ids
+msgid "Filtered Requirements"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__is_financial_department
+#: model:res.groups,name:legal_case_management.legal_case_management_financial_department
+msgid "Financial Department"
+msgstr "المدير المالي"
+
+#. module: legal_case_management
+#: model:ir.model.fields.selection,name:legal_case_management.selection__case_registration__state__financial_directory
+msgid "Financial Directory"
+msgstr "المدير المالي"
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.case_registration_view_form
+msgid "FinancialSection"
+msgstr "قسم المالية"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__message_follower_ids
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_evidence__message_follower_ids
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_trial__message_follower_ids
+#: model:ir.model.fields,field_description:legal_case_management.field_requirements_types__message_follower_ids
+#: model:ir.model.fields,field_description:legal_case_management.field_violations_types__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__message_partner_ids
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_evidence__message_partner_ids
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_trial__message_partner_ids
+#: model:ir.model.fields,field_description:legal_case_management.field_requirements_types__message_partner_ids
+#: model:ir.model.fields,field_description:legal_case_management.field_violations_types__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_registration__activity_type_icon
+#: model:ir.model.fields,help:legal_case_management.field_legal_evidence__activity_type_icon
+#: model:ir.model.fields,help:legal_case_management.field_legal_trial__activity_type_icon
+#: model:ir.model.fields,help:legal_case_management.field_requirements_types__activity_type_icon
+#: model:ir.model.fields,help:legal_case_management.field_violations_types__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_res_partner__full_name
+#: model:ir.model.fields,field_description:legal_case_management.field_res_users__full_name
+msgid "Full Name"
+msgstr "الاسم الشخصي"
+
+#. module: legal_case_management
+#: model:ir.actions.act_window,name:legal_case_management.full_settlement_action
+#: model:ir.model,name:legal_case_management.model_full_settlement
+#: model_terms:ir.ui.view,arch_db:legal_case_management.case_registration_view_form
+msgid "Full Settlement"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__has_message
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_evidence__has_message
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_trial__has_message
+#: model:ir.model.fields,field_description:legal_case_management.field_requirements_types__has_message
+#: model:ir.model.fields,field_description:legal_case_management.field_violations_types__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.portal_legal_case_page
+msgid "History"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_cancel_reason_wizard__id
+#: model:ir.model.fields,field_description:legal_case_management.field_case_category__id
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__id
+#: model:ir.model.fields,field_description:legal_case_management.field_case_requirement_line__id
+#: model:ir.model.fields,field_description:legal_case_management.field_case_sitting__id
+#: model:ir.model.fields,field_description:legal_case_management.field_case_victim__id
+#: model:ir.model.fields,field_description:legal_case_management.field_full_settlement__id
+#: model:ir.model.fields,field_description:legal_case_management.field_invoice_payment__id
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_case_report__id
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_court__id
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_evidence__id
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_trial__id
+#: model:ir.model.fields,field_description:legal_case_management.field_reforward_wizard__id
+#: model:ir.model.fields,field_description:legal_case_management.field_requirements_types__id
+#: model:ir.model.fields,field_description:legal_case_management.field_res_city_zip__id
+#: model:ir.model.fields,field_description:legal_case_management.field_res_region__id
+#: model:ir.model.fields,field_description:legal_case_management.field_violations_types__id
+msgid "ID"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__activity_exception_icon
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_evidence__activity_exception_icon
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_trial__activity_exception_icon
+#: model:ir.model.fields,field_description:legal_case_management.field_requirements_types__activity_exception_icon
+#: model:ir.model.fields,field_description:legal_case_management.field_violations_types__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_registration__activity_exception_icon
+#: model:ir.model.fields,help:legal_case_management.field_legal_evidence__activity_exception_icon
+#: model:ir.model.fields,help:legal_case_management.field_legal_trial__activity_exception_icon
+#: model:ir.model.fields,help:legal_case_management.field_requirements_types__activity_exception_icon
+#: model:ir.model.fields,help:legal_case_management.field_violations_types__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_res_partner__card_id
+#: model:ir.model.fields,help:legal_case_management.field_res_users__card_id
+msgid "Identification card number."
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.case_registration_view_search
+msgid "Identity No"
+msgstr "رقم الهوية"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__identity_no
+msgid "Identity Number"
+msgstr "رقم الهوية"
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_registration__message_needaction
+#: model:ir.model.fields,help:legal_case_management.field_legal_evidence__message_needaction
+#: model:ir.model.fields,help:legal_case_management.field_legal_trial__message_needaction
+#: model:ir.model.fields,help:legal_case_management.field_requirements_types__message_needaction
+#: model:ir.model.fields,help:legal_case_management.field_violations_types__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_registration__message_has_error
+#: model:ir.model.fields,help:legal_case_management.field_case_registration__message_has_sms_error
+#: model:ir.model.fields,help:legal_case_management.field_legal_evidence__message_has_error
+#: model:ir.model.fields,help:legal_case_management.field_legal_evidence__message_has_sms_error
+#: model:ir.model.fields,help:legal_case_management.field_legal_trial__message_has_error
+#: model:ir.model.fields,help:legal_case_management.field_legal_trial__message_has_sms_error
+#: model:ir.model.fields,help:legal_case_management.field_requirements_types__message_has_error
+#: model:ir.model.fields,help:legal_case_management.field_requirements_types__message_has_sms_error
+#: model:ir.model.fields,help:legal_case_management.field_violations_types__message_has_error
+#: model:ir.model.fields,help:legal_case_management.field_violations_types__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_evidence__in_favor_id
+#: model_terms:ir.ui.view,arch_db:legal_case_management.report_case_evidence_document
+msgid "In Favor"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields.selection,name:legal_case_management.selection__legal_case_report__state__in_progress
+msgid "In progress"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_registration__documents_requirement
+msgid "Indicates whether document requirements are completed for this case."
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_full_settlement__cost
+msgid "Invoice Amount"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__invoice_count
+msgid "Invoice Count"
+msgstr ""
+
+#. module: legal_case_management
+#. odoo-python
+#: code:addons/legal_case_management/models/case_registration.py:0
+msgid "Invoice Created"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_full_settlement__date
+#: model:ir.model.fields,field_description:legal_case_management.field_invoice_payment__date
+msgid "Invoice Date"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.actions.act_window,name:legal_case_management.invoice_payment_action
+#: model:ir.model,name:legal_case_management.model_invoice_payment
+msgid "Invoice Payment"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields.selection,name:legal_case_management.selection__case_registration__state__invoiced
+#: model:ir.model.fields.selection,name:legal_case_management.selection__legal_case_report__state__invoiced
+msgid "Invoiced"
+msgstr "تم الصرف"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__court_no_required
+msgid "Is Court Number Required"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__message_is_follower
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_evidence__message_is_follower
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_trial__message_is_follower
+#: model:ir.model.fields,field_description:legal_case_management.field_requirements_types__message_is_follower
+#: model:ir.model.fields,field_description:legal_case_management.field_violations_types__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_res_partner__is_judge
+#: model:ir.model.fields,field_description:legal_case_management.field_res_users__is_judge
+msgid "Is Judge"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_hr_employee__is_lawyer
+msgid "Is Lawyer"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__lawyer_unavailable
+msgid "Is Unavailable"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_res_partner__is_judge
+#: model:ir.model.fields,help:legal_case_management.field_res_users__is_judge
+msgid "Is he a Judge"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_trial__is_invoiced
+msgid "Is invoiced"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_sitting__done
+msgid "Is the sitting is completed or not"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_hr_employee__is_lawyer
+msgid "Is this employee is a lawyer"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_legal_trial__is_invoiced
+msgid "Is trial invoiced"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_account_bank_statement_line__case_ref
+#: model:ir.model.fields,help:legal_case_management.field_account_move__case_ref
+msgid "It is used to identify the case reference"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__job
+msgid "Job"
+msgstr "الوظيفة"
+
+#. module: legal_case_management
+#: model:ir.model,name:legal_case_management.model_account_move
+msgid "Journal Entry"
+msgstr "قيد اليومية"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__judge_id
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_case_report__judge_id
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_court__judge_id
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_trial__judge_id
+#: model_terms:ir.ui.view,arch_db:legal_case_management.report_legal_case_details
+msgid "Judge"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_res_partner__is_judge_unavailable
+#: model:ir.model.fields,field_description:legal_case_management.field_res_users__is_judge_unavailable
+msgid "Judge Available?"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_legal_trial__judge_id
+msgid "Judge for corresponding case"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_legal_court__judge_id
+msgid "Judges are available in the court"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__junior_lawyer_id
+msgid "Junior Lawyer"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_registration__junior_lawyer_id
+msgid "Junior lawyers in the law firm"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_invoice_payment__is_last_trial
+msgid "Last Trail"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_cancel_reason_wizard__write_uid
+#: model:ir.model.fields,field_description:legal_case_management.field_case_category__write_uid
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__write_uid
+#: model:ir.model.fields,field_description:legal_case_management.field_case_requirement_line__write_uid
+#: model:ir.model.fields,field_description:legal_case_management.field_case_sitting__write_uid
+#: model:ir.model.fields,field_description:legal_case_management.field_case_victim__write_uid
+#: model:ir.model.fields,field_description:legal_case_management.field_full_settlement__write_uid
+#: model:ir.model.fields,field_description:legal_case_management.field_invoice_payment__write_uid
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_case_report__write_uid
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_court__write_uid
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_evidence__write_uid
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_trial__write_uid
+#: model:ir.model.fields,field_description:legal_case_management.field_reforward_wizard__write_uid
+#: model:ir.model.fields,field_description:legal_case_management.field_requirements_types__write_uid
+#: model:ir.model.fields,field_description:legal_case_management.field_res_city_zip__write_uid
+#: model:ir.model.fields,field_description:legal_case_management.field_res_region__write_uid
+#: model:ir.model.fields,field_description:legal_case_management.field_violations_types__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_cancel_reason_wizard__write_date
+#: model:ir.model.fields,field_description:legal_case_management.field_case_category__write_date
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__write_date
+#: model:ir.model.fields,field_description:legal_case_management.field_case_requirement_line__write_date
+#: model:ir.model.fields,field_description:legal_case_management.field_case_sitting__write_date
+#: model:ir.model.fields,field_description:legal_case_management.field_case_victim__write_date
+#: model:ir.model.fields,field_description:legal_case_management.field_full_settlement__write_date
+#: model:ir.model.fields,field_description:legal_case_management.field_invoice_payment__write_date
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_case_report__write_date
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_court__write_date
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_evidence__write_date
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_trial__write_date
+#: model:ir.model.fields,field_description:legal_case_management.field_reforward_wizard__write_date
+#: model:ir.model.fields,field_description:legal_case_management.field_requirements_types__write_date
+#: model:ir.model.fields,field_description:legal_case_management.field_res_city_zip__write_date
+#: model:ir.model.fields,field_description:legal_case_management.field_res_region__write_date
+#: model:ir.model.fields,field_description:legal_case_management.field_violations_types__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__lawyer_id
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__opposite_lawyer
+#: model:ir.model.fields,field_description:legal_case_management.field_full_settlement__lawyer_id
+#: model:ir.model.fields,field_description:legal_case_management.field_invoice_payment__lawyer_id
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_case_report__lawyer_id
+#: model:res.groups,name:legal_case_management.legal_case_management_group_lawyer
+#: model_terms:ir.ui.view,arch_db:legal_case_management.report_case_register_document
+#: model_terms:ir.ui.view,arch_db:legal_case_management.report_legal_case_details
+#: model_terms:ir.ui.view,arch_db:legal_case_management.view_employee_form
+msgid "Lawyer"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_hr_employee__not_available
+msgid "Lawyer Unavailable"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__lawyer_wage
+msgid "Lawyer Wage"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_invoice_payment__lawyer_id
+msgid "Lawyer for a case"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_full_settlement__lawyer_id
+msgid "Lawyer for particular case"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.actions.act_window,name:legal_case_management.hr_employee_lawyer_action
+msgid "Lawyers"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_registration__lawyer_id
+msgid "Lawyers in the law firm"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.portal_my_home_legal_case
+msgid "Legal Case"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.module.category,description:legal_case_management.module_category_legal_case_management
+msgid "Legal Case Management"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.actions.report,name:legal_case_management.legal_case_wizard_action_report
+#: model_terms:ir.ui.view,arch_db:legal_case_management.report_case_register_document
+#: model_terms:ir.ui.view,arch_db:legal_case_management.report_legal_case_details
+msgid "Legal Case Report"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.portal_my_home_menu_legal_case
+msgid "Legal Cases"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model,name:legal_case_management.model_legal_trial
+msgid "Legal Trial"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_registration__victim_ids
+msgid "List of Victims"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_evidence__location
+msgid "Location"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_legal_evidence__location
+msgid "Location of the evidence"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields.selection,name:legal_case_management.selection__legal_case_report__state__lost
+msgid "Lost"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_registration__bank_account_number
+#: model:ir.model.fields,help:legal_case_management.field_case_registration__card_id_req
+#: model:ir.model.fields,help:legal_case_management.field_case_registration__court_no_required
+msgid "Makes court number as not required field"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.actions.act_window,help:legal_case_management.action_res_region
+msgid "Manage your sales regions here."
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.case_registration_view_form
+msgid "Mark as Auditing Attachment"
+msgstr "تحويل للجنة الميدانية"
+
+#. module: legal_case_management
+#: model:ir.ui.menu,name:legal_case_management.menu_master_data
+msgid "Master Data"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__message_has_error
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_evidence__message_has_error
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_trial__message_has_error
+#: model:ir.model.fields,field_description:legal_case_management.field_requirements_types__message_has_error
+#: model:ir.model.fields,field_description:legal_case_management.field_violations_types__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__message_ids
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_evidence__message_ids
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_trial__message_ids
+#: model:ir.model.fields,field_description:legal_case_management.field_requirements_types__message_ids
+#: model:ir.model.fields,field_description:legal_case_management.field_violations_types__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields.selection,name:legal_case_management.selection__case_registration__directory__middle
+msgid "Middle"
+msgstr "مديرية الوسط"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__is_middle_department
+#: model:res.groups,name:legal_case_management.legal_case_management_middle_department
+msgid "Middle Department"
+msgstr "مديرية الوسط"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__is_middle_directory
+#: model:ir.model.fields.selection,name:legal_case_management.selection__case_registration__state__middle_directory
+#: model:ir.model.fields.selection,name:legal_case_management.selection__reforward_wizard__target_state__middle_directory
+#: model:res.groups,name:legal_case_management.legal_case_management_middle_directory
+msgid "Middle Directory"
+msgstr "مديرية الوسط / مدير"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__is_middle_employees
+#: model:res.groups,name:legal_case_management.legal_case_management_middle_employees
+msgid "Middle Employees"
+msgstr "مديرية الوسط/ موظفين"
+
+#. module: legal_case_management
+#: model:ir.model.fields.selection,name:legal_case_management.selection__case_registration__state__misinstry_office
+msgid "Ministry Office"
+msgstr "مكتب الوزير"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__is_ministry_office
+#: model:res.groups,name:legal_case_management.legal_case_management_misinstry_office
+msgid "Misinstry Office"
+msgstr "مكتب الوزير"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_res_partner__mobile2
+#: model:ir.model.fields,field_description:legal_case_management.field_res_users__mobile2
+msgid "Mobile"
+msgstr "رقم الجوال"
+
+#. module: legal_case_management
+#. odoo-python
+#: code:addons/legal_case_management/models/res_partner.py:0
+msgid "Mobile 2 must be exactly 10 digits long."
+msgstr ""
+
+#. module: legal_case_management
+#. odoo-python
+#: code:addons/legal_case_management/models/res_partner.py:0
+msgid "Mobile 2 must contain only digits."
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__my_activity_date_deadline
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_evidence__my_activity_date_deadline
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_trial__my_activity_date_deadline
+#: model:ir.model.fields,field_description:legal_case_management.field_requirements_types__my_activity_date_deadline
+#: model:ir.model.fields,field_description:legal_case_management.field_violations_types__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.portal_my_legal_case_requests
+msgid "My Cases"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__opposition_name
+#: model:ir.model.fields,field_description:legal_case_management.field_case_victim__name
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_court__name
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_trial__name
+#: model:ir.model.fields,help:legal_case_management.field_legal_court__name
+#: model_terms:ir.ui.view,arch_db:legal_case_management.view_requirements_types_list
+msgid "Name"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_legal_evidence__case_id
+msgid "Name for cases"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_registration__opposition_name
+msgid "Name of Opposite Party"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_sitting__contact
+msgid "Name of contact person"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_registration__court_id
+msgid "Name of courts"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_registration__opposite_lawyer
+msgid "Name of opposite lawyer"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_category__name
+msgid "Name of the case category"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_legal_evidence__in_favor_id
+msgid "Name of the in favor party for the evidence"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_invoice_payment__is_trial_hide
+msgid "Ned to hide the trial?"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_invoice_payment__is_cost_hide
+msgid "Need to hide the Cost?"
+msgstr ""
+
+#. module: legal_case_management
+#. odoo-python
+#: code:addons/legal_case_management/models/legal_evidence.py:0
+#: code:addons/legal_case_management/models/legal_trial.py:0
+msgid "New"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__activity_calendar_event_id
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_evidence__activity_calendar_event_id
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_trial__activity_calendar_event_id
+#: model:ir.model.fields,field_description:legal_case_management.field_requirements_types__activity_calendar_event_id
+#: model:ir.model.fields,field_description:legal_case_management.field_violations_types__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__activity_date_deadline
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_evidence__activity_date_deadline
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_trial__activity_date_deadline
+#: model:ir.model.fields,field_description:legal_case_management.field_requirements_types__activity_date_deadline
+#: model:ir.model.fields,field_description:legal_case_management.field_violations_types__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__activity_summary
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_evidence__activity_summary
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_trial__activity_summary
+#: model:ir.model.fields,field_description:legal_case_management.field_requirements_types__activity_summary
+#: model:ir.model.fields,field_description:legal_case_management.field_violations_types__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__activity_type_id
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_evidence__activity_type_id
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_trial__activity_type_id
+#: model:ir.model.fields,field_description:legal_case_management.field_requirements_types__activity_type_id
+#: model:ir.model.fields,field_description:legal_case_management.field_violations_types__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.report_legal_case_details
+msgid "No Records"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.actions.act_window,help:legal_case_management.case_category_action
+#: model_terms:ir.actions.act_window,help:legal_case_management.case_registration_action
+#: model_terms:ir.actions.act_window,help:legal_case_management.hr_employee_lawyer_action
+#: model_terms:ir.actions.act_window,help:legal_case_management.legal_court_action
+#: model_terms:ir.actions.act_window,help:legal_case_management.legal_evidence_action
+#: model_terms:ir.actions.act_window,help:legal_case_management.legal_trial_action
+msgid "No data yet!"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields.selection,name:legal_case_management.selection__case_registration__directory__north
+msgid "North"
+msgstr "مديرية الشمال"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__is_north_department
+#: model:res.groups,name:legal_case_management.legal_case_management_north_department
+msgid "North Department"
+msgstr "مديرية الشمال"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__is_north_directory
+#: model:ir.model.fields.selection,name:legal_case_management.selection__case_registration__state__north_directory
+#: model:ir.model.fields.selection,name:legal_case_management.selection__reforward_wizard__target_state__north_directory
+#: model:res.groups,name:legal_case_management.legal_case_management_north_directory
+msgid "North Directory"
+msgstr "مكتب الشمال / مدير"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__is_north_employees
+#: model:res.groups,name:legal_case_management.legal_case_management_north_employees
+msgid "North Employees"
+msgstr "مكتب الشمال / موظفين"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_hr_employee__not_available
+msgid "Not Available"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields.selection,name:legal_case_management.selection__case_registration__completion_status__not_complete
+msgid "Not Complete"
+msgstr "غير مكتمل"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__message_needaction_counter
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_evidence__message_needaction_counter
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_trial__message_needaction_counter
+#: model:ir.model.fields,field_description:legal_case_management.field_requirements_types__message_needaction_counter
+#: model:ir.model.fields,field_description:legal_case_management.field_violations_types__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__message_has_error_counter
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_evidence__message_has_error_counter
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_trial__message_has_error_counter
+#: model:ir.model.fields,field_description:legal_case_management.field_requirements_types__message_has_error_counter
+#: model:ir.model.fields,field_description:legal_case_management.field_violations_types__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_registration__message_needaction_counter
+#: model:ir.model.fields,help:legal_case_management.field_legal_evidence__message_needaction_counter
+#: model:ir.model.fields,help:legal_case_management.field_legal_trial__message_needaction_counter
+#: model:ir.model.fields,help:legal_case_management.field_requirements_types__message_needaction_counter
+#: model:ir.model.fields,help:legal_case_management.field_violations_types__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_registration__message_has_error_counter
+#: model:ir.model.fields,help:legal_case_management.field_legal_evidence__message_has_error_counter
+#: model:ir.model.fields,help:legal_case_management.field_legal_trial__message_has_error_counter
+#: model:ir.model.fields,help:legal_case_management.field_requirements_types__message_has_error_counter
+#: model:ir.model.fields,help:legal_case_management.field_violations_types__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: legal_case_management
+#. odoo-python
+#: code:addons/legal_case_management/models/case_registration.py:0
+msgid "Only employees can create a case registration."
+msgstr "يسمح بتقديم الطلب فقط للموظف الذي يمتلك الصلاحيات اللازمة"
+
+#. module: legal_case_management
+#: model:ir.model.fields.selection,name:legal_case_management.selection__case_registration__payment_method__out_of_court
+#: model:ir.model.fields.selection,name:legal_case_management.selection__legal_case_report__payment_method__out_of_court
+msgid "Out of Court"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.case_registration_view_form
+msgid "Paid"
+msgstr "صرف"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__payment_method
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_case_report__payment_method
+#: model_terms:ir.ui.view,arch_db:legal_case_management.report_legal_case_details
+msgid "Payment Method"
+msgstr "طريقة الدفع"
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_legal_case_report__payment_method
+msgid "Payment Method for the case"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_registration__payment_method
+msgid "Payment method to select one method"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields.selection,name:legal_case_management.selection__case_registration__payment_method__case
+#: model:ir.model.fields.selection,name:legal_case_management.selection__legal_case_report__payment_method__case
+msgid "Per Case"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields.selection,name:legal_case_management.selection__case_registration__payment_method__trial
+#: model:ir.model.fields.selection,name:legal_case_management.selection__legal_case_report__payment_method__trial
+msgid "Per Trial"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__personal_name
+msgid "Personal Name"
+msgstr "الاسم الشخصي"
+
+#. module: legal_case_management
+#. odoo-python
+#: code:addons/legal_case_management/models/case_registration.py:0
+msgid "Please assign a lawyer for the case"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.legal_case_report_view_form
+msgid "Print PDF"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__rating_ids
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_evidence__rating_ids
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_trial__rating_ids
+#: model:ir.model.fields,field_description:legal_case_management.field_requirements_types__rating_ids
+#: model:ir.model.fields,field_description:legal_case_management.field_violations_types__rating_ids
+msgid "Ratings"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.case_registration_view_form
+msgid "Re-forward"
+msgstr "اعادة التوجيه"
+
+#. module: legal_case_management
+#. odoo-python
+#: code:addons/legal_case_management/models/case_registration.py:0
+#: model_terms:ir.ui.view,arch_db:legal_case_management.view_reforward_wizard_form
+msgid "Re-forward Case"
+msgstr "اعادة توجيه الحالة"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_evidence__name
+msgid "Reference"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_full_settlement__case_id
+msgid "Reference for case "
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_legal_evidence__name
+msgid "Reference for the legal evidence"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model,name:legal_case_management.model_reforward_wizard
+msgid "Reforward Wizard"
+msgstr "نافذة اعادة التوجيه"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__region_id
+msgid "Region"
+msgstr "التجمع"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_res_region__name
+msgid "Region Name"
+msgstr "اسم التجمع"
+
+#. module: legal_case_management
+#: model:ir.actions.act_window,name:legal_case_management.action_res_region
+#: model:ir.ui.menu,name:legal_case_management.menu_res_region
+#: model_terms:ir.ui.view,arch_db:legal_case_management.view_res_region_form
+#: model_terms:ir.ui.view,arch_db:legal_case_management.view_res_region_tree
+msgid "Regions"
+msgstr "التجمع"
+
+#. module: legal_case_management
+#: model:ir.actions.act_window,name:legal_case_management.case_registration_action
+msgid "Register Case"
+msgstr "ملفات دعم الصمود"
+
+#. module: legal_case_management
+#: model_terms:ir.actions.act_window,help:legal_case_management.case_registration_action
+msgid "Register New Case"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_victim__registration_id
+msgid "Registration"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__register_date
+msgid "Registration Date"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields.selection,name:legal_case_management.selection__case_registration__state__reject
+#: model:ir.model.fields.selection,name:legal_case_management.selection__legal_case_report__state__reject
+#: model_terms:ir.ui.view,arch_db:legal_case_management.case_registration_view_form
+msgid "Reject"
+msgstr "رفض"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_requirements_types__case_id
+msgid "Related Case"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__report
+msgid "Report"
+msgstr "التقرير الميداني"
+
+#. module: legal_case_management
+#: model:ir.model,name:legal_case_management.model_report_legal_case_management_report_case_register_document
+#: model:ir.model,name:legal_case_management.model_report_legal_case_management_report_legal_case_details
+msgid "Report For Case Registration"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model,name:legal_case_management.model_report_legal_case_management_report_case_evidence_document
+msgid "Report For Evidence"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model,name:legal_case_management.model_report_legal_case_management_report_case_trial_document
+msgid "Report For Trial"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__representative_name
+#: model:ir.model.fields,field_description:legal_case_management.field_res_partner__representative_name
+#: model:ir.model.fields,field_description:legal_case_management.field_res_users__representative_name
+msgid "Representative Name"
+msgstr "وكيله"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__requirements_code
+#: model:ir.model.fields,field_description:legal_case_management.field_case_requirement_line__requirements_code
+#: model:ir.model.fields,field_description:legal_case_management.field_requirements_types__requirements_code
+msgid "Requirement Code"
+msgstr "رمز المتطلب"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_requirement_line__requirement_name
+#: model:ir.model.fields,field_description:legal_case_management.field_requirements_types__name
+#: model:ir.model.fields,field_description:legal_case_management.field_requirements_types__requirement_name
+msgid "Requirement Name"
+msgstr "اسم المتطلب"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_requirements_types__req_vio_id
+msgid "Requirement Violation"
+msgstr "نوع الإعتداء للمتطلب"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__requirement_ids
+#: model_terms:ir.ui.view,arch_db:legal_case_management.case_registration_view_form
+msgid "Requirements"
+msgstr "المتطلبات"
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.view_requirements_types_form
+msgid "Requirements Type"
+msgstr "نوع المتطلب"
+
+#. module: legal_case_management
+#: model:ir.actions.act_window,name:legal_case_management.action_requirements_types
+#: model:ir.model,name:legal_case_management.model_requirements_types
+#: model:ir.ui.menu,name:legal_case_management.menu_requirements_types
+#: model_terms:ir.ui.view,arch_db:legal_case_management.view_requirements_types_list
+msgid "Requirements Types"
+msgstr "أنواع المتطلبات"
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.case_registration_view_form
+msgid "Reset To Draft"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__activity_user_id
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_evidence__activity_user_id
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_trial__activity_user_id
+#: model:ir.model.fields,field_description:legal_case_management.field_requirements_types__activity_user_id
+#: model:ir.model.fields,field_description:legal_case_management.field_violations_types__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__message_has_sms_error
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_evidence__message_has_sms_error
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_trial__message_has_sms_error
+#: model:ir.model.fields,field_description:legal_case_management.field_requirements_types__message_has_sms_error
+#: model:ir.model.fields,field_description:legal_case_management.field_violations_types__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model,name:legal_case_management.model_res_region
+msgid "Sales Regions"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.case_registration_view_form
+msgid "Send to Director General of Directorates"
+msgstr "ارسال الى مدير  المديرية"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_requirement_line__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__sitting_detail_ids
+msgid "Sitting Detail"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.report_legal_case_details
+msgid "Sl.No"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__is_somood_department
+#: model:res.groups,name:legal_case_management.legal_case_management_somood_department
+msgid "Somood Department"
+msgstr "دائرة دعم الصمود"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__is_somood_directory
+#: model:res.groups,name:legal_case_management.legal_case_management_somood_directory
+msgid "Somood Directory"
+msgstr "مدير عام / دعم الصمود"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__is_somood_employees
+#: model:res.groups,name:legal_case_management.legal_case_management_somood_employees
+msgid "Somood Employees"
+msgstr "موظفين دعم الصمود"
+
+#. module: legal_case_management
+#: model:ir.ui.menu,name:legal_case_management.menu_legal_case
+msgid "Somood Files"
+msgstr "ملفات دعم الصمود"
+
+#. module: legal_case_management
+#: model:ir.ui.menu,name:legal_case_management.legal_case_management_root
+msgid "Somood System"
+msgstr "برنامج دعم الصمود"
+
+#. module: legal_case_management
+#: model:ir.model.fields.selection,name:legal_case_management.selection__case_registration__directory__somoud
+msgid "Somoud"
+msgstr "مقر الهيئة"
+
+#. module: legal_case_management
+#: model:ir.model.fields.selection,name:legal_case_management.selection__case_registration__state__somood_directory
+msgid "Somoud Directory"
+msgstr "مدير عام / دعم الصمود"
+
+#. module: legal_case_management
+#: model:ir.model.fields.selection,name:legal_case_management.selection__case_registration__directory__south
+msgid "South"
+msgstr "مديرية الجنوب"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__is_south_department
+#: model:res.groups,name:legal_case_management.legal_case_management_south_department
+msgid "South Department"
+msgstr "مديرية الجنوب"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__is_south_directory
+#: model:ir.model.fields.selection,name:legal_case_management.selection__case_registration__state__south_directory
+#: model:ir.model.fields.selection,name:legal_case_management.selection__reforward_wizard__target_state__south_directory
+#: model:res.groups,name:legal_case_management.legal_case_management_south_directory
+msgid "South Directory"
+msgstr "مديرية الجنوب / مدير"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__is_south_employees
+#: model:res.groups,name:legal_case_management.legal_case_management_south_employees
+msgid "South Employees"
+msgstr "مديرية الجنوب/ موظفين"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__start_date
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_case_report__start_date
+#: model:ir.model.fields,help:legal_case_management.field_legal_case_report__start_date
+#: model_terms:ir.ui.view,arch_db:legal_case_management.report_legal_case_details
+msgid "Start Date"
+msgstr "تاريخ تقديم الطلب"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__state
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_case_report__state
+#: model_terms:ir.ui.view,arch_db:legal_case_management.case_portal_content
+#: model_terms:ir.ui.view,arch_db:legal_case_management.report_case_evidence_document
+#: model_terms:ir.ui.view,arch_db:legal_case_management.report_case_register_document
+#: model_terms:ir.ui.view,arch_db:legal_case_management.report_case_trial_document
+#: model_terms:ir.ui.view,arch_db:legal_case_management.report_legal_case_details
+msgid "State"
+msgstr "الحالة"
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_registration__state
+msgid "State of the case"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_legal_case_report__state
+msgid "State of the legal Case"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.portal_my_legal_case_requests
+msgid "Status"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_registration__activity_state
+#: model:ir.model.fields,help:legal_case_management.field_legal_evidence__activity_state
+#: model:ir.model.fields,help:legal_case_management.field_legal_trial__activity_state
+#: model:ir.model.fields,help:legal_case_management.field_requirements_types__activity_state
+#: model:ir.model.fields,help:legal_case_management.field_violations_types__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.legal_case_register_view
+msgid "Submit"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_requirement_line__is_yes
+msgid "Submitted"
+msgstr "حدد"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_reforward_wizard__target_state
+msgid "Target State"
+msgstr "اعادة توجيه الى"
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.thanks_page
+msgid "Thanks!"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__affected_person_id
+msgid "The Affected Person"
+msgstr "المتضرر"
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_registration__family_name
+msgid "The Family Name"
+msgstr "اسم العائلة"
+
+#. module: legal_case_management
+#: model:ir.model.fields.selection,name:legal_case_management.selection__case_registration__state__the_highest_committee
+#: model:res.groups,name:legal_case_management.legal_case_management_the_highest_committee
+msgid "The Highest Committee"
+msgstr "اللجنة العليا"
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_registration__identity_no
+msgid "The Identity Number"
+msgstr "رقم الهوية"
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_registration__personal_name
+msgid "The Personal Name"
+msgstr "الاسم الشخصي"
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_registration__representative_name
+msgid "The Representative Name"
+msgstr "وكيله"
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_res_partner__representative_name
+#: model:ir.model.fields,help:legal_case_management.field_res_users__representative_name
+msgid "The agent representing the partner."
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_res_partner__family_name
+#: model:ir.model.fields,help:legal_case_management.field_res_users__family_name
+msgid "The family name of the partner."
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_registration__job
+msgid "Title"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_invoice_payment__is_last_trial
+msgid "To identify the last trail"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_full_settlement__date
+#: model:ir.model.fields,help:legal_case_management.field_invoice_payment__date
+msgid "Today date"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.actions.act_window,name:legal_case_management.legal_trial_action
+#: model:ir.model.fields,field_description:legal_case_management.field_invoice_payment__trial_ids
+#: model_terms:ir.ui.view,arch_db:legal_case_management.case_portal_content
+#: model_terms:ir.ui.view,arch_db:legal_case_management.case_registration_view_form
+#: model_terms:ir.ui.view,arch_db:legal_case_management.legal_trial_view_form
+#: model_terms:ir.ui.view,arch_db:legal_case_management.report_case_register_document
+msgid "Trial"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__trial_count
+#: model_terms:ir.ui.view,arch_db:legal_case_management.report_case_register_document
+msgid "Trial Count"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_trial__trial_date
+#: model_terms:ir.ui.view,arch_db:legal_case_management.report_case_trial_document
+msgid "Trial Date"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_invoice_payment__is_trial_hide
+msgid "Trial Hide"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.actions.report,name:legal_case_management.legal_trial_action_report
+msgid "Trial Report"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_legal_trial__name
+msgid "Trial number"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.invoice_payment_view_form
+msgid "Trials"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_legal_evidence__evidence_types
+msgid "Type of the evidence selected from Requirements Types"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_registration__activity_exception_decoration
+#: model:ir.model.fields,help:legal_case_management.field_legal_evidence__activity_exception_decoration
+#: model:ir.model.fields,help:legal_case_management.field_legal_trial__activity_exception_decoration
+#: model:ir.model.fields,help:legal_case_management.field_requirements_types__activity_exception_decoration
+#: model:ir.model.fields,help:legal_case_management.field_violations_types__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_registration__lawyer_unavailable
+msgid "Used to identify available lawyers"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__victim_ids
+msgid "Victim"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_victim__name
+msgid "Victim Name"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_victim__registration_id
+msgid "Victim registration"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_requirement_line__req_vio_id
+msgid "Violation"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__violation_id
+#: model:ir.model.fields,field_description:legal_case_management.field_violations_types__name
+#: model:ir.model.fields,field_description:legal_case_management.field_violations_types__violation_name
+msgid "Violation Name"
+msgstr "اسم الاعتداء"
+
+#. module: legal_case_management
+#: model:ir.actions.act_window,name:legal_case_management.action_violations_types
+#: model:ir.model,name:legal_case_management.model_violations_types
+#: model:ir.ui.menu,name:legal_case_management.menu_violations_types
+msgid "Violations Types"
+msgstr "انواع الاعتداءات"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_hr_employee__wage_per_case
+msgid "Wage Per Case"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_hr_employee__wage_per_trial
+msgid "Wage Per Trial"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_registration__lawyer_wage
+msgid "Wage of the lawyers"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_hr_employee__wage_per_case
+msgid "Wage per Case"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_hr_employee__wage_per_trial
+msgid "Wage per trial"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.view_employee_form
+msgid "Wages"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.thanks_page
+msgid "We will get back to you shortly"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__website_message_ids
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_evidence__website_message_ids
+#: model:ir.model.fields,field_description:legal_case_management.field_legal_trial__website_message_ids
+#: model:ir.model.fields,field_description:legal_case_management.field_requirements_types__website_message_ids
+#: model:ir.model.fields,field_description:legal_case_management.field_violations_types__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_registration__website_message_ids
+#: model:ir.model.fields,help:legal_case_management.field_legal_evidence__website_message_ids
+#: model:ir.model.fields,help:legal_case_management.field_legal_trial__website_message_ids
+#: model:ir.model.fields,help:legal_case_management.field_requirements_types__website_message_ids
+#: model:ir.model.fields,help:legal_case_management.field_violations_types__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model,name:legal_case_management.model_legal_case_report
+msgid "Wizard for printing reports"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields.selection,name:legal_case_management.selection__legal_case_report__state__won
+msgid "Won"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_requirements_types__is_yes
+msgid "Yes"
+msgstr ""
+
+#. module: legal_case_management
+#. odoo-python
+#: code:addons/legal_case_management/models/case_category.py:0
+msgid "You can not delete a case category, because it is used in case"
+msgstr ""
+
+#. module: legal_case_management
+#. odoo-python
+#: code:addons/legal_case_management/models/legal_court.py:0
+msgid "You can not delete a court, because it is used in case"
+msgstr ""
+
+#. module: legal_case_management
+#. odoo-python
+#: code:addons/legal_case_management/models/legal_trial.py:0
+msgid "You can not delete a trial"
+msgstr ""
+
+#. module: legal_case_management
+#. odoo-python
+#: code:addons/legal_case_management/models/case_registration.py:0
+msgid "You must fill in the field report before confirming."
+msgstr "يجب ارفاق تقرير الجنة الميدانية قبل ارسال الطلب الى مدير عام المديريات"
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.thanks_page
+msgid ""
+"Your Case has been\n"
+"                                registered\n"
+"                                successfully."
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_res_region__zip_codes
+msgid "ZIP Codes"
+msgstr ""
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.case_registration_view_kanban
+msgid "affected_person:"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,help:legal_case_management.field_case_sitting__case_id
+msgid "case related to the sitting"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_res_region__city_id
+msgid "city"
+msgstr "المحافظة"
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__client_id
+msgid "client"
+msgstr " المتضرر"
+
+#. module: legal_case_management
+#: model_terms:ir.ui.view,arch_db:legal_case_management.legal_evidence_view_form
+#: model_terms:ir.ui.view,arch_db:legal_case_management.legal_trial_view_form
+msgid "description"
+msgstr "الوصف"
+
+#. module: legal_case_management
+#: model:ir.model,name:legal_case_management.model_legal_court
+msgid "legal court"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model,name:legal_case_management.model_legal_evidence
+msgid "legal evidence"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_requirement_line__files
+msgid "المرفقات"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__field_report
+msgid "تقرير اللجنة الميدانية"
+msgstr ""
+
+#. module: legal_case_management
+#. odoo-python
+#: code:addons/legal_case_management/models/case_registration.py:0
+msgid "جديد"
+msgstr ""
+
+#. module: legal_case_management
+#: model:ir.model.fields,field_description:legal_case_management.field_cancel_reason_wizard__cancel_reason
+#: model:ir.model.fields,field_description:legal_case_management.field_case_registration__cancel_reason
+msgid "سبب الرفض"
+msgstr ""
+
+#. module: legal_case_management
+#. odoo-python
+#: code:addons/legal_case_management/models/case_registration.py:0
+msgid "يجب اكمال المستندات"
+msgstr ""

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Just redefine templates by t-name (safe, no error) -->
+
+    <template t-name="Appointment.appointment_info_no_slot">
+        <div/>
+    </template>
+
+    <template t-name="Appointment.appointment_info_no_capacity">
+        <div/>
+    </template>
+
+    <template t-name="Appointment.appointment_info_no_slot_month">
+        <div/>
+    </template>
+
+    <!-- Do NOT touch Appointment.appointment_info_upcoming_appointment -->
+</odoo>

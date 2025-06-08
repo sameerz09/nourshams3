@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <template id="credit_check_request_form" name="Credit Check Request Form">
+      <t t-call="website.layout">
+        <t t-set="title">Credit Check Request</t>
+
+        <!-- Load Custom CSS -->
+        <link rel="stylesheet" type="text/css" href="/lytegen_contact_details/static/src/css/credit_check_style.css"/>
+        <link rel="stylesheet" type="text/css" href="/lytegen_contact_details/static/src/css/intlTelInput.min.css"/>
+        <script src="/lytegen_contact_details/static/src/js/lib/jquery-3.6.0.min.js"/>
+        <script src="/lytegen_contact_details/static/src/js/lib/intlTelInput.min.js"/>
+        <script src="/lytegen_contact_details/static/src/js/common.js"/>
+
+
+        <div class="container py-5">
+          <div class="form-header">
+            <img src="/lytegen_contact_details/static/src/img/credit_check_logo.jpg" alt="Company Logo" class="form-logo"/>
+<!--            <h2 class="form-title">Credit Check Request</h2>-->
+          </div>
+
+          <div class="alert alert-success text-center">
+            This credit application will initiate a pre-qualification for all product types, resulting in a soft inquiry.
+          </div>
+
+          <form action="/submit/credit-check" method="post" class="credit-check-form">
+            <fieldset class="form-section">
+              <legend>Contact Information</legend>
+              <p>Please enter your full legal name as it appears on your government-issued photo ID. Ensure your email address is correct.</p>
+              <div class="form-group two-columns">
+                <div>
+                  <label for="postal_code">Postal Code *</label>
+                  <input type="text" class="form-control" id="postal_code" name="postal_code" required="required"/>
+                </div>
+                <div>
+                  <label for="first_name">First Name *</label>
+                  <input type="text" class="form-control" id="first_name" name="first_name" required="required"/>
+                </div>
+              </div>
+              <div class="form-group two-columns">
+                <div>
+                  <label for="last_name">Last Name *</label>
+                  <input type="text" class="form-control" id="last_name" name="last_name" required="required"/>
+                </div>
+                <div>
+                  <label for="phone">Phone *</label>
+                  <input type="hidden" id="country_code" name="country_code"/>
+                  <input type="tel" oninput="this.value = this.value.slice(0, 10)" pattern="^\+?\d{1,20}$" class="form-control" id="phone" name="phone" required="required"/>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="form-section">
+              <legend>Financial Information</legend>
+              <div class="form-group two-columns">
+                <div>
+                  <label for="email">Email *</label>
+                  <input type="email" class="form-control" id="email" name="email" required="required"/>
+                </div>
+                <div>
+                  <label for="annual_income">Annual Income *</label>
+                  <div class="input-group">
+                    <span class="input-group-text">$</span>
+                    <input type="number" class="form-control" id="annual_income" name="annual_income" min="0" step="1000" required="required"/>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group two-columns">
+                <div>
+                  <label for="other_income">Other Household Income</label>
+                  <input type="number" class="form-control" id="other_income" name="other_income" min="0" step="100"/>
+                </div>
+                <div>
+                  <label for="ssn">SSN/TIN *</label>
+                  <input type="text" class="form-control" id="ssn" name="ssn" required="required"/>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="form-section">
+              <legend>Additional Information</legend>
+              <div class="form-group two-columns">
+                <div>
+                  <label for="dob">Date of Birth *</label>
+                  <input type="date" class="form-control" id="dob" name="dob" required="required"/>
+                </div>
+                <div>
+                  <label for="cosigner">Cosigner Needed? *</label>
+                  <select class="form-control" id="cosigner" name="cosigner" required="required">
+                    <option value="">Select</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="cosigner_dob">Cosigner DOB</label>
+                <input type="date" class="form-control" id="cosigner_dob" name="cosigner_dob"/>
+              </div>
+            </fieldset>
+
+            <fieldset class="form-section">
+              <legend>Address Information</legend>
+              <div class="form-group two-columns">
+                <div>
+                  <label for="address">Address *</label>
+                  <input type="text" class="form-control" id="address" name="address" required="required"/>
+                </div>
+                <div>
+                  <label for="city">City *</label>
+                  <input type="text" class="form-control" id="city" name="city" required="required"/>
+                </div>
+              </div>
+              <div class="form-group two-columns">
+                <div>
+                  <label for="state">State *</label>
+                  <input type="text" class="form-control" id="state" name="state" required="required"/>
+                </div>
+                <div>
+                  <label for="sales_rep">Sales Representative Full Name *</label>
+                  <input type="text" class="form-control" id="sales_rep" name="sales_rep" required="required"/>
+                </div>
+              </div>
+              <div class="form-group two-columns">
+                <div>
+                  <label for="latest_event_id">Event ID</label>
+                  <input type="text" class="form-control" id="latest_event_id" name="latest_event_id" readonly="readonly"/>
+                </div>
+                <div>
+                  <label for="selected_design_id">Select a Design</label>
+                  <select id="selected_design_id" name="selected_design_id" class="form-control"></select>
+                </div>
+              </div>
+            </fieldset>
+
+            <p class="privacy-text text-center">
+              We will not share your personal information with other individuals or organizations without your permission, except when required by law.
+            </p>
+
+            <div class="form-group text-center">
+              <input type="checkbox" id="confirmation" required="required"/>
+              <label for="confirmation"> I acknowledge that I have reviewed the required notices.</label>
+            </div>
+
+            <div class="text-center mt-4">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Load JS Script -->
+        <script src="/lytegen_contact_details/static/src/js/credit_check_event_lookup_plain.js"></script>
+      </t>
+    </template>
+  </data>
+</odoo>

@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="contact_type_view_list_inherit" model="ir.ui.view">
+        <field name="name">contact.type.view.list.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//list" position="attributes">
+                <attribute name="create">false</attribute>
+            </xpath>
+            <!-- Insert 'id' before the 'name' (Appointment Title) field -->
+            <xpath expr="//list/field[@name='complete_name']" position="before">
+                <field name="id" string="Lead ID" readonly="1"/>
+            </xpath>
+        </field>
+     </record>
+
+    <record id="view_partner_form_restructured" model="ir.ui.view">
+        <field name="name">res.partner.form.restructured</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+             <xpath expr="//chatter" position="attributes">
+                <attribute name="groups">base.group_system</attribute>
+            </xpath>
+            <xpath expr="//form" position="attributes">
+                <attribute name="create">false</attribute>
+            </xpath>
+            <!-- Restructure form view -->
+            <xpath expr="//notebook" position="before">
+    <!-- Contact and Address Information Section -->
+                    <group string="Contact and Address Information" colspan="2">
+                        <!-- Column 1: Contact Information -->
+                        <group string="Contact Information">
+                            <field name="id" string="Lead ID"/>
+                            <field name="name" placeholder="e.g. John Doe"/>
+                            <field name="first_name" placeholder="e.g. John"/>
+                            <field name="last_name" placeholder="e.g. Doe"/>
+                            <field name="full_name" placeholder="e.g. Doe"/>
+                            <field name="phone" placeholder="Enter 10-digit phone number"/>
+                            <field name="email" placeholder="e.g. john.doe@example.com"/>
+                            <field name="origin_file"/>
+                        </group>
+                        <!-- Column 2: Address Information -->
+                        <group string="Address Information">
+<!--                            <field name="street" placeholder="e.g. 123 Main Street"/>-->
+                            <field name="address_2" placeholder="e.g. New York"/>
+                            <field name="city_2" placeholder="e.g. NY" options="{'no_open': True}"/>
+                            <field name="state_2" placeholder="e.g. 10001"/>
+                            <field name="postal_code_2" placeholder="Zip Code"/>
+
+
+                        </group>
+                    </group>
+            </xpath>
+
+            <!-- Additional Information Tab -->
+            <xpath expr="//notebook" position="inside">
+                        <page name="additional_information">
+                            <group colspan="2">
+                                <group>
+<!--                                    <label for="language_2"/>-->
+                                    <field name="language_2"/>
+<!--                                    <label for="opener_2"/>-->
+                                    <field name="opener_2"/>
+<!--                                    <label for="setter_2"/>-->
+                                    <field name="setter_2"/>
+                                </group>
+                                <group>
+<!--                                    <label for="sales_consultant_2"/>-->
+                                    <field name="sales_consultant_id"/>
+<!--                                    <label for="readymode_disposition"/>-->
+                                    <field name="readymode_disposition"/>
+<!--                                    <label for="average_bill_2"/>-->
+                                    <field name="average_bill_2"/>
+                                </group>
+                                <group>
+<!--                                    <label for="date_transferred"/>-->
+                                    <field name="date_transferred"/>
+<!--                                    <label for="date_sit"/>-->
+                                    <field name="date_sit"/>
+                                </group>
+                                <group>
+<!--                                    <label for="date_design_requested"/>-->
+                                    <field name="date_design_requested"/>
+<!--                                    <label for="date_signed"/>-->
+                                    <field name="date_signed"/>
+                                    <field name="proposal_requested_date"/>
+                                </group>
+                                <group>
+<!--                                    <label for="date_booked"/>-->
+                                    <field name="date_booked"/>
+<!--                                    <label for="date_appointment"/>-->
+                                    <field name="date_appointment"/>
+<!--                                    <label for="time_appointment"/>-->
+                                    <field name="time_appointment"/>
+                                </group>
+                                <group>
+<!--                                    <label for="map_link"/>-->
+                                    <field name="map_link" widget="url"/>
+                                    <field name="appointment_status"/>
+                                    <field name="source_file"/>
+                                    <field name="auditor_notes"/>
+
+                                </group>
+                            </group>
+                        </page>
+                    </xpath>
+<!--                    <xpath expr="//span[@name='address_name']" position="attributes">-->
+<!--                    <attribute name="invisible">1</attribute>-->
+<!--                    </xpath>-->
+
+
+                    <xpath expr="//field[@name='vat']" position="attributes">
+                            <attribute name="invisible">1</attribute>
+                    </xpath>
+                     <xpath expr="//field[@name='parent_id']" position="attributes">
+            <attribute name="invisible">1</attribute>
+        </xpath>
+          <!-- Hide address fields -->
+        <xpath expr="//field[@name='street']" position="attributes">
+            <attribute name="invisible">1</attribute>
+        </xpath>
+        <xpath expr="//field[@name='street2']" position="attributes">
+            <attribute name="invisible">1</attribute>
+        </xpath>
+        <xpath expr="//field[@name='city']" position="attributes">
+            <attribute name="invisible">1</attribute>
+        </xpath>
+        <xpath expr="//field[@name='state_id']" position="attributes">
+            <attribute name="invisible">1</attribute>
+        </xpath>
+
+        <xpath expr="//field[@name='zip']" position="attributes">
+            <attribute name="invisible">1</attribute>
+        </xpath>
+        <xpath expr="//field[@name='country_id']" position="attributes">
+            <attribute name="invisible">1</attribute>
+        </xpath>
+
+        <!-- Hide Tax ID -->
+        <xpath expr="//field[@name='vat']" position="attributes">
+            <attribute name="invisible">1</attribute>
+        </xpath>
+        <xpath expr="//field[@name='type']" position="attributes">
+            <attribute name="invisible">1</attribute>
+        </xpath>
+             <!-- Hide the Company Type radio button -->
+        <xpath expr="//field[@name='company_type']" position="attributes">
+            <attribute name="invisible">1</attribute>
+        </xpath>
+        <xpath expr="//field[@name='function']" position="attributes">
+            <attribute name="invisible">1</attribute>
+        </xpath>
+        <xpath expr="//field[@name='title']" position="attributes">
+            <attribute name="invisible">1</attribute>
+        </xpath>
+        <xpath expr="//field[@name='name']" position="attributes">
+            <attribute name="invisible">1</attribute>
+        </xpath>
+<!--        <xpath expr="//div[hasclass('oe_title')]/h1/field[@name='name']" position="replace">-->
+<!--            <field name="last_name" readonly="1"/>-->
+<!--        </xpath>-->
+
+
+
+
+
+
+        </field>
+    </record>
+<!--    <record id="view_partner_address_form_inherit_hide_name" model="ir.ui.view">-->
+<!--        <field name="name">res.partner.address.inherit.hide.name.title</field>-->
+<!--        <field name="model">res.partner</field>-->
+<!--        <field name="inherit_id" ref="base.view_partner_address_form"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            &lt;!&ndash; This removes the entire name line from the top &ndash;&gt;-->
+<!--            <xpath expr="//div[@class='oe_title']" position="replace">-->
+<!--                &lt;!&ndash; Empty replace to remove the title block &ndash;&gt;-->
+<!--            </xpath>-->
+<!--        </field>-->
+<!--    </record>-->
+
+
+    <record id="appointment.main_menu_appointments" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('lytegen_contact_details.group_user_hide_menu'), ref('lytegen_contact_details.group_user_role_dispatch_manager')])]"/>
+    </record>
+
+<!--    <record id="appointment.appointment_menu_calendar" model="ir.ui.menu">-->
+<!--        <field name="groups_id" eval="[(6, 0, [ref('lytegen_contact_details.group_user_hide_menu')])]"/>-->
+<!--    </record>-->
+<!--    <record id="appointment.appointment_menu_calendar" model="ir.ui.menu">-->
+<!--        <field name="groups_id" eval="[(6, 0, [ref('lytegen_contact_details.group_user_hide_menu'), ref('lytegen_contact_details.group_user_role_confirmation_specialist'), ref('lytegen_contact_details.group_sales_manager'), ref('lytegen_contact_details.group_user_role_auditor')])]"/>-->
+<!--    </record>-->
+
+    <record id="appointment.reporting_menu_calendar" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('lytegen_contact_details.group_user_hide_menu'), ref('lytegen_contact_details.group_sales_manager')])]"/>
+    </record>
+
+    <record id="contacts.menu_contacts" model="ir.ui.menu">
+    <field name="groups_id" eval="[(6, 0, [
+        ref('base.group_system'),
+        ref('lytegen_contact_details.group_user_hide_menu')
+    ])]"/>
+    </record>
+
+
+
+
+  <record id="mail.menu_root_discuss" model="ir.ui.menu">
+    <field name="groups_id" eval="[(6, 0, [ref('base.group_portal')])]"/>
+    </record>
+
+
+    <record id="project_todo.menu_todo_todos" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_portal')])]"/>
+    </record>
+
+
+    <record id="spreadsheet_dashboard.spreadsheet_dashboard_menu_root" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_portal')])]"/>
+    </record>
+
+    <record id="website.menu_website_configuration" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_portal')])]"/>
+    </record>
+
+<!--    <record id="hr.menu_hr_root" model="ir.ui.menu">-->
+<!--        <field name="groups_id" eval="[(6, 0, [ref('lytegen_contact_details.group_user_hide_menu')])]"/>-->
+<!--    </record>-->
+    <!-- Update HR Menu to Include Read-Only Employee Group -->
+<!--        <record id="hr.menu_hr_root" model="ir.ui.menu">-->
+<!--            <field name="groups_id" eval="[(6, 0, [ref('lytegen_contact_details.group_user_hide_menu'), ref('lytegen_contact_details.group_employee_read_only')])]"/>-->
+<!--        </record>-->
+        <record id="hr.menu_hr_root" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6, 0, [ref('lytegen_contact_details.group_user_hide_menu')])]"/>
+        </record>
+
+
+    <record id="hr_attendance.menu_hr_attendance_root" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_portal')])]"/>
+    </record>
+
+    <record id="base.menu_management" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('lytegen_contact_details.group_user_hide_menu')])]"/>
+    </record>
+    <record id="hr_timesheet.timesheet_menu_root" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_portal')])]"/>
+    </record>
+    <record id="industry_fsm.fsm_menu_root" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('lytegen_contact_details.group_user_hide_menu')])]"/>
+    </record>
+
+<record id="appointment.appointment_menu_calendar" model="ir.ui.menu">
+    <field name="groups_id" eval="[(6, 0, [
+        ref('lytegen_contact_details.group_user_hide_menu'),
+        ref('lytegen_contact_details.group_user_role_account_management')
+    ])]"/>
+</record>
+
+
+<record id="appointment.menu_appointment_invite" model="ir.ui.menu">
+    <field name="groups_id" eval="[(6, 0, [ref('lytegen_contact_details.group_user_hide_menu')])]"/>
+</record>
+
+<record id="appointment.menu_schedule_report" model="ir.ui.menu">
+    <field name="groups_id" eval="[(6, 0, [ref('lytegen_contact_details.group_user_hide_menu')])]"/>
+</record>
+
+
+
+
+<!--    <record id="calendar.mail_menu_calendar" model="ir.ui.menu">-->
+<!--            <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>-->
+<!--    </record>-->
+<!--    <record id="calendar.mail_menu_calendar" model="ir.ui.menu">-->
+<!--            <field name="groups_id" eval="[-->
+<!--                (6, 0, [-->
+<!--                    ref('lytegen_contact_details.group_sales_manager'),-->
+<!--                    ref('lytegen_contact_details.group_sales_consultant'),-->
+<!--                    ref('lytegen_contact_details.group_user_role_dispatch_manager'),-->
+<!--                    ref('lytegen_contact_details.group_user_role_confirmation_specialist'),-->
+<!--                    ref('lytegen_contact_details.group_user_role_auditor'),-->
+<!--                    ref('lytegen_contact_details.group_user_role_admin'),-->
+<!--                    ref('lytegen_contact_details.group_user_hide_menu'),-->
+<!--                    ref('lytegen_contact_details.group_user_role_account_management')-->
+<!--                ])-->
+<!--            ]"/>-->
+<!--    </record>-->
+    <record id="calendar.mail_menu_calendar" model="ir.ui.menu">
+        <field name="active" eval="False"/>
+    </record>
+
+
+<!--    <record id="design.menu_parent_designs" model="ir.ui.menu">-->
+<!--        <field name="groups_id" eval="[(6, 0, [ref('lytegen_contact_details.group_user_hide_menu')])]"/>-->
+<!--    </record>-->
+
+    <record id="project.menu_main_pm" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('lytegen_contact_details.group_user_hide_menu')])]"/>
+    </record>
+
+
+
+
+</odoo>

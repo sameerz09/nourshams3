@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="lyt.disable_upcoming_appointment">
+        <t t-extend="Appointment.appointment_info_upcoming_appointment">
+            <t t-jquery="." t-operation="replace">
+                <div t-attf-class="o_appointment_upcoming_event_info d-none"/>
+            </t>
+        </t>
+    </t>
+
+</templates>

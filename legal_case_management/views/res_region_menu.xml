@@ -1,0 +1,63 @@
+<odoo>
+    <!-- Define the Tree View for res.region -->
+    <record id="view_res_region_tree" model="ir.ui.view">
+        <field name="name">res.region.list</field>
+        <field name="model">res.region</field>
+        <field name="arch" type="xml">
+            <list string="Regions">
+                <field name="name"/>
+                <field name="city"/>
+<!--                <field name="zip_codes"/>-->
+<!--                <field name="zip_codes_ids" widget="many2many_tags"/>-->
+<!--                <field name="state"/>-->
+<!--                <field name="city"/>-->
+<!--                <field name="county"/>-->
+<!--                <field name="dialer_status"/>-->
+<!--                <field name="utility"/>-->
+            </list>
+        </field>
+    </record>
+
+    <!-- Define the Form View for res.region -->
+    <record id="view_res_region_form" model="ir.ui.view">
+        <field name="name">res.region.form</field>
+        <field name="model">res.region</field>
+        <field name="arch" type="xml">
+            <form string="Regions">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="city"/>
+<!--                        <field name="zip_codes"/>-->
+<!--                        <field name="zip_codes_ids" widget="many2many_tags"/>-->
+<!--                        <field name="state"/>-->
+<!--                        <field name="city"/>-->
+<!--                        <field name="county"/>-->
+<!--                        <field name="dialer_status"/>-->
+<!--                        <field name="utility"/>-->
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Define the Action for res.region -->
+    <record id="action_res_region" model="ir.actions.act_window">
+        <field name="name">Regions</field>
+        <field name="res_model">res.region</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_id" ref="view_res_region_tree"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Manage your sales regions here.
+            </p>
+        </field>
+    </record>
+
+    <!-- Add the menu item under Calendar > Configuration -->
+    <menuitem id="menu_res_region"
+              name="Regions"
+              parent="legal_case_management.configuration_menu"
+              action="action_res_region"
+              sequence="10"/>
+</odoo>

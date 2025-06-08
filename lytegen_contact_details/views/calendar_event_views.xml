@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="view_calendar_event_form_inherit" model="ir.ui.view">
+        <field name="name">calendar.event.form.inherit</field>
+        <field name="model">calendar.event</field>
+        <field name="inherit_id" ref="calendar.view_calendar_event_form"/>
+        <field name="arch" type="xml">
+             <form position="attributes">
+                <attribute name="create">false</attribute>
+            </form>
+
+            <xpath expr="//field[@name='start']" position="attributes">
+                <attribute name="widget">daterange</attribute>
+                <attribute name="options" />
+                <attribute name="invisible" />
+                <attribute name="required" />
+                <attribute name="readonly" />
+            </xpath>
+            <xpath expr="//field[@name='start']" position="attributes">
+                <attribute name="readonly">is_not_admin</attribute>
+            </xpath>
+<!--            <xpath expr="//field[@name='appointment_type_id']" position="attributes">-->
+<!--                <attribute name="readonly">is_auditor or is_designer or is_confirmation_specialist or is_designer or is_sales_consultant</attribute>-->
+<!--            </xpath>-->
+
+            <xpath expr="//field[@name='appointment_type_id']" position="replace">
+                <field name="appointment_type_id" readonly="1" class="readonly_m2o">
+                    <modifier name="readonly">is_auditor or is_designer or is_confirmation_specialist or is_sales_consultant</modifier>
+                    <modifier name="force_disable">is_auditor or is_designer or is_confirmation_specialist or is_sales_consultant</modifier>
+                </field>
+            </xpath>
+
+            <xpath expr="//field[@name='resource_ids']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <xpath expr="//button[@name='action_open_wizard']" position="attributes">
+                             <attribute name="groups">lytegen_contact_details.group_sales_manager,lytegen_contact_details.group_sales_consultant,lytegen_contact_details.group_user_role_dispatch_manager,lytegen_contact_details.group_user_role_confirmation_specialist</attribute>
+
+            </xpath>
+            <xpath expr="//button[@name='action_open_composer']" position="attributes">
+                             <attribute name="groups">lytegen_contact_details.group_sales_manager,lytegen_contact_details.group_sales_consultant,lytegen_contact_details.group_user_role_dispatch_manager,lytegen_contact_details.group_user_role_confirmation_specialist</attribute>
+
+            </xpath>
+
+
+            <xpath expr="//field[@name='alarm_ids']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+
+            </xpath>
+
+            <xpath expr="//div[field[@name='attendees_count']]" position="attributes">
+            <attribute name="invisible">1</attribute>
+        </xpath>
+            <xpath expr="//field[@name='accepted_count']" position="attributes">
+                <attribute name="invisible">not should_show_status</attribute>
+            </xpath>
+            <xpath expr="//field[@name='tentative_count']" position="attributes">
+                <attribute name="invisible">not should_show_status</attribute>
+            </xpath>
+            <xpath expr="//field[@name='declined_count']" position="attributes">
+                <attribute name="invisible">not should_show_status</attribute>
+            </xpath>
+            <xpath expr="//field[@name='awaiting_count']" position="attributes">
+                <attribute name="invisible">not should_show_status</attribute>
+            </xpath>
+            <xpath expr="//field[@name='partner_ids']" position="attributes">
+                <attribute name="invisible">not should_show_status</attribute>
+            </xpath>
+
+
+            <xpath expr="//div[field[@name='accepted_count'] and field[@name='tentative_count'] and field[@name='declined_count'] and field[@name='awaiting_count']]" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='show_as']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+             <xpath expr="//field[@name='categ_ids']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <xpath expr="//div[@class='d-flex gap-2' and ./div/field[@name='duration']]" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='description']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='appointment_status']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+
+            <xpath expr="//field[@name='recurrency']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='recurrency']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='user_id']" position="after">
+
+<!--                <field name="appointment_status_2" groups="base.group_system,lytegen_contact_details.group_sales_manager,lytegen_contact_details.group_user_hide_menu,lytegen_contact_details.group_user_role_admin" readonly="is_auditor"/>-->
+                <field name="confirmation_status" readonly="is_sales_manager or is_designer or is_sales_consultant" widget="selection" groups="lytegen_contact_details.group_user_hide_menu,lytegen_contact_details.group_sales_manager,lytegen_contact_details.group_sales_consultant,lytegen_contact_details.group_user_role_confirmation_specialist"/>
+                <field name="opener_2" groups="base.group_system,lytegen_contact_details.group_sales_manager,lytegen_contact_details.group_user_hide_menu,lytegen_contact_details.group_user_role_admin,lytegen_contact_details.group_user_role_auditor" readonly="is_auditor or is_not_admin or is_auditor or is_sales_manager"/>
+                <field name="setter_2" groups="base.group_system,lytegen_contact_details.group_sales_manager,lytegen_contact_details.group_user_hide_menu,lytegen_contact_details.group_user_role_admin,lytegen_contact_details.group_user_role_auditor" readonly="is_auditor or is_not_admin or is_auditor or is_sales_manager"/>
+                <field name="appointment_setter_notes" groups="base.group_system,lytegen_contact_details.group_sales_manager,lytegen_contact_details.group_user_role_confirmation_specialist,lytegen_contact_details.group_user_role_auditor" readonly="is_auditor or is_sales_consultant or is_sales_manager or is_designer or is_dispatch_manager or is_confirmation_specialist"/>
+
+                <field name="sales_consultant_employee_id" readonly="is_auditor or is_sales_consultant or is_sales_manager or is_designer" groups="base.group_system,lytegen_contact_details.group_user_role_dispatch_manager,lytegen_contact_details.group_sales_manager,lytegen_contact_details.group_user_hide_menu,lytegen_contact_details.group_user_role_admin,lytegen_contact_details.group_user_role_auditor"/>
+
+                <field name="sales_consultant_notes" readonly="is_sales_manager" string="Sales Consultant Notes" groups="lytegen_contact_details.group_sales_consultant,lytegen_contact_details.group_user_hide_menu,lytegen_contact_details.group_sales_manager"/>
+
+                <field name="appointment_outcome" widget="selection" groups="lytegen_contact_details.group_user_role_admin,lytegen_contact_details.group_user_hide_menu,lytegen_contact_details.group_sales_manager,lytegen_contact_details.group_designer,lytegen_contact_details.group_sales_consultant" readonly="is_designer or is_auditor or is_sales_manager"/>
+
+
+
+                <field name="is_sales_consultant" invisible="1"/>
+                 <field name="street_address_visible" invisible="1"/>
+
+<!--               <field name="appointment_resource_ids" widget="many2many_tags"/>-->
+<!--                <field name="is_show_onboarding_request" invisible="0"/>-->
+<!--                <field name="is_show_questions" invisible="0"/>-->
+            </xpath>
+
+<!--             <xpath expr="//field[@name='alarm_ids']" position="after">-->
+<!--                <field name="sold_design_link_id" readonly="is_sales_manager" groups="lytegen_contact_details.group_user_hide_menu,lytegen_contact_details.group_sales_manager"/>-->
+<!--                 <field name="task_ids" readonly="is_auditor or is_sales_manager or is_sales_consultant">-->
+<!--                <list>-->
+<!--                    <field name="name"/>-->
+<!--                </list>-->
+<!--            </field>-->
+
+<!--             </xpath>-->
+
+
+
+<!--             <xpath expr="//field[@name='start']" position="before">-->
+<!--&lt;!&ndash;                 <label for="qa_outcome" string="QA Outcome"/>&ndash;&gt;-->
+<!--                <field name="appointment_outcome" widget="selection"/>-->
+<!--            </xpath>-->
+           <xpath expr="//field[@name='location']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+             <xpath expr="//div[@name='videocall_location_div']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+             <xpath expr="//field[@name='videocall_location']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='privacy']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+             <xpath expr="//field[@name='user_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <xpath expr="//notebook/page[@name='page_questions']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+                    <!-- Hide the Invitations tab -->
+            <xpath expr="//notebook/page[@name='page_invitations']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+
+            <xpath expr="//notebook" position="inside">
+                <page string="Sales Consultant Audio Files" groups="lytegen_contact_details.group_user_role_admin,lytegen_contact_details.group_user_hide_menu,lytegen_contact_details.group_sales_manager,lytegen_contact_details.group_sales_consultant">
+                    <field name="sales_audio_ids" nolabel="1" readonly="is_sales_consultant or is_sales_manager">
+                        <list>
+                                <field name="file"/>
+                                <field name="creation_date" readonly="is_sales_consultant or is_sales_manager"/>
+                                <field name="file_url" widget="ks_audio"/>
+                                <field name="is_sent_fireflies" readonly="is_sales_consultant or is_sales_manager"/>
+                                <field name="is_transcript_generated" readonly="is_sales_consultant or is_sales_manager"/>
+                                <button name="action_view_transcript"
+                                        string="View Transcript"
+                                        type="object"
+                                        class="oe_highlight"
+                                        attrs="{'invisible': [('user_has_groups', 'lytegen_contact_details.group_sales_consultant')]}"/>
+
+                        </list>
+                    </field>
+                </page>
+                <!-- Appointment Information Tab -->
+                <page string="Appointment Information">
+                    <group>
+                        <field name="full_name" string="Full Name" placeholder="Enter full name" invisible="is_sales_consultant" readonly="is_sales_manager or is_auditor"/>
+                        <field name="phone_number" string="Phone Number" placeholder="Enter phone number" groups="lytegen_contact_details.group_user_role_auditor,lytegen_contact_details.group_user_role_confirmation_specialist,lytegen_contact_details.group_user_role_dispatch_manager,lytegen_contact_details.group_user_role_dispatch_manager,lytegen_contact_details.group_user_role_admin,lytegen_contact_details.group_user_hide_menu" readonly="is_sales_manager or is_auditor"/>
+                        <field name="email" string="Email" placeholder="Enter email" groups="lytegen_contact_details.group_user_role_auditor,lytegen_contact_details.group_user_role_confirmation_specialist,lytegen_contact_details.group_user_role_dispatch_manager,lytegen_contact_details.group_user_role_admin,lytegen_contact_details.group_user_hide_menu" readonly="is_sales_manager or is_auditor"/>
+<!--                        <field name="street_address" widget="address_autocomplete" string="Street Address" placeholder="Enter street address" readonly="is_sales_consultant,is_sales_manager" invisible="not street_address_visible" groups="lytegen_contact_details.group_sales_consultant" data-default-value="street_address" />-->
+<!--                        <field name="street_address" widget="address_autocomplete" string="Street Address" placeholder="Enter street address" readonly="is_designer" groups="lytegen_contact_details.group_user_role_auditor,lytegen_contact_details.group_user_role_confirmation_specialist,lytegen_contact_details.group_user_role_dispatch_manager,lytegen_contact_details.group_user_role_admin,lytegen_contact_details.group_user_hide_menu,lytegen_contact_details.group_sales_manager" data-default-value="street_address"/>-->
+                        <field name="street_address" string="Street Address" placeholder="Enter street address" readonly="is_designer or is_sales_consultant or is_auditor" groups="lytegen_contact_details.group_user_role_auditor,lytegen_contact_details.group_user_role_confirmation_specialist,lytegen_contact_details.group_user_role_dispatch_manager,lytegen_contact_details.group_user_role_admin,lytegen_contact_details.group_user_hide_menu,lytegen_contact_details.group_sales_manager,lytegen_contact_details.group_sales_consultant" invisible="not street_address_visible and is_sales_consultant"/>
+
+<!--                        <field name="street_address" invisible="not street_address_visible"/>-->
+                        <field name="region_name" string="Region" placeholder="Enter Region" readonly="is_auditor or is_sales_consultant"/>
+                        <field name="city" string="City" placeholder="Enter city" readonly="is_sales_consultant or is_sales_manager or is_auditor"/>
+                        <field name="state" string="State" placeholder="Enter state" readonly="is_sales_consultant or is_sales_manager or is_auditor"/>
+                        <field name="zip_code" string="Zip Code" placeholder="Enter ZIP code" readonly="is_sales_consultant or is_sales_manager or is_auditor"/>
+                        <field name="average_bill" string="Average Bill" placeholder="Enter average bill" readonly="is_sales_manager or is_auditor" groups="lytegen_contact_details.group_user_hide_menu,lytegen_contact_details.group_sales_manager"/>
+                        <field name="language" string="Language" placeholder="Select language" readonly="is_sales_consultant or is_sales_manager or is_auditor"/>
+                        <field name="date_booked" readonly="is_sales_manager or is_auditor" groups="lytegen_contact_details.group_user_hide_menu,lytegen_contact_details.group_sales_manager"/>
+                        <field name="date_appointment" readonly="is_sales_consultant or is_sales_manager or is_auditor"/>
+                        <field name="time_appointment" widget="float_time" readonly="is_sales_consultant or is_sales_manager or is_auditor"/>
+                        <field name="sales_consultant" invisible="1"/>
+                        <field name="start_weekday" invisible="1"/>
+<!--                        <field name="qa_outcome" widget="selection" readonly="is_sales_consultant"/>-->
+<!--                        <field name="qa_notes" widget="text" invisible="is_sales_consultant"/>-->
+<!--                        <field name="confirmation_status" readonly="is_sales_consultant or is_sales_manager" widget="selection" groups="lytegen_contact_details.group_user_role_auditor,lytegen_contact_details.group_user_role_confirmation_specialist,lytegen_contact_details.group_user_role_dispatch_manager,lytegen_contact_details.group_sales_consultant,lytegen_contact_details.group_user_role_admin,lytegen_contact_details.group_user_hide_menu"/>-->
+<!--                        <field name="confirmation_status" readonly="is_sales_manager or is_designer or is_auditor" widget="selection" groups="lytegen_contact_details.group_user_hide_menu,lytegen_contact_details.group_sales_manager,lytegen_contact_details.group_sales_consultant"/>-->
+                        <field name="map_link" widget="url" readonly="1" groups="lytegen_contact_details.group_user_hide_menu,lytegen_contact_details.group_sales_manager"/>
+                        <field name="source_file" readonly="1" groups="lytegen_contact_details.group_user_hide_menu,lytegen_contact_details.group_sales_manager"/>
+<!--                        <field name="sales_consultant_notes" widget="text" readonly="is_sales_consultant or is_sales_manager"/>/>-->
+                        <field name="is_sales_consultant" invisible="1" readonly="is_sales_consultant or is_sales_manager"/>/>
+                    </group>
+                </page>
+
+                <!-- Design and QA Tab -->
+                <page string="Appointment QA evaluation" groups="lytegen_contact_details.group_user_role_auditor,lytegen_contact_details.group_user_role_confirmation_specialist,lytegen_contact_details.group_user_role_dispatch_manager,lytegen_contact_details.group_user_role_admin,lytegen_contact_details.group_user_hide_menu">
+                    <group>
+<!--                        <field name="shading"/>-->
+                        <field name="high_bill" readonly="is_sales_manager or is_dispatch_manager or is_confirmation_specialist"/>
+                        <field name="low_bill" readonly="is_sales_manager or is_dispatch_manager or is_confirmation_specialist"/>
+                        <field name="average_bill" readonly="is_sales_manager or is_dispatch_manager or is_confirmation_specialist"/>
+<!--                        <field name="homeowner"/>-->
+                        <field name="spanish_speaker_requested" readonly="is_sales_manager or is_dispatch_manager or is_confirmation_specialist"/>
+                        <field name="indian" readonly="is_sales_manager or is_dispatch_manager or is_confirmation_specialist"/>
+                        <field name="ground_mount_requested" readonly="is_sales_manager or is_dispatch_manager or is_confirmation_specialist"/>
+                        <field name="one_hour_window_mentioned" readonly="is_sales_manager or is_dispatch_manager or is_confirmation_specialist"/>
+                        <field name="program_explained" readonly="is_sales_manager or is_dispatch_manager or is_confirmation_specialist"/>
+                        <field name="credit_score_650_plus" readonly="is_sales_manager or is_dispatch_manager or is_confirmation_specialist"/>
+                        <field name="no_bankruptcies" readonly="is_sales_manager or is_dispatch_manager or is_confirmation_specialist"/>
+                        <field name="no_foreclosures" readonly="is_sales_manager or is_dispatch_manager or is_confirmation_specialist"/>
+                        <field name="minimum_market_set_rate_bill" readonly="is_sales_manager or is_dispatch_manager or is_confirmation_specialist"/>
+                        <field name="address_confirmed" readonly="is_sales_manager or is_dispatch_manager or is_confirmation_specialist"/>
+                        <field name="homeowners_present_mentioned" readonly="is_sales_manager or is_dispatch_manager or is_confirmation_specialist"/>
+                        <field name="customer_engagement_score" widget="selection" readonly="is_sales_manager or is_dispatch_manager or is_confirmation_specialist"/>
+
+
+                        <field name="shading_2" readonly="is_sales_manager or is_dispatch_manager or is_confirmation_specialist"/>
+                        <field name="homeowner_2" readonly="is_sales_manager or is_dispatch_manager or is_confirmation_specialist"/>
+<!--                        <field name="additional_notes" widget="text"/>-->
+
+<!--                        <field name="qa_outcome" widget="selection"/>-->
+                        <field name="qa_notes" widget="text" readonly="is_sales_manager or is_dispatch_manager or is_confirmation_specialist"/>
+                        <field name="qa_outcome" groups="lytegen_contact_details.group_user_role_auditor,lytegen_contact_details.group_user_role_confirmation_specialist,lytegen_contact_details.group_user_role_admin,lytegen_contact_details.group_user_hide_menu,lytegen_contact_details.group_sales_manager,lytegen_contact_details.group_user_role_dispatch_manager" readonly="is_sales_manager or is_dispatch_manager or is_dispatch_manager or is_sales_consultant"/>
+                    </group>
+                </page>
+<!--                <page string="Self Quality Check" groups="lytegen_contact_details.group_user_role_confirmation_specialist,lytegen_contact_details.group_user_role_admin,lytegen_contact_details.group_user_hide_menu,lytegen_contact_details.group_sales_manager,lytegen_contact_details.group_user_role_dispatch_manager">-->
+<!--                    <group>-->
+<!--                        <field name="source_file" widget="text" readonly="is_sales_manager or is_dispatch_manager or is_confirmation_specialist"/>-->
+<!--                        <field name="property_not_shaded" readonly="is_sales_manager or is_dispatch_manager or is_confirmation_specialist"/>-->
+<!--                        <field name="high_bill" readonly="is_sales_manager or is_dispatch_manager or is_confirmation_specialist"/>-->
+<!--                        <field name="low_bill" readonly="is_sales_manager or is_dispatch_manager or is_confirmation_specialist"/>-->
+<!--                        <field name="average_bill_checkbox" readonly="is_sales_manager or is_dispatch_manager or is_confirmation_specialist"/>-->
+<!--                        <field name="homeowner" readonly="is_sales_manager or is_dispatch_manager or is_confirmation_specialist"/>-->
+<!--                        <field name="spanish_speaker_requested" readonly="is_sales_manager or is_dispatch_manager or is_confirmation_specialist"/>-->
+<!--                        <field name="ground_mount_requested" readonly="is_sales_manager or is_dispatch_manager or is_confirmation_specialist"/>-->
+<!--                        <field name="one_hour_arrival" readonly="is_sales_manager or is_dispatch_manager or is_confirmation_specialist"/>-->
+<!--                        <field name="customer_engagement_score" widget="selection" readonly="is_sales_manager or is_dispatch_manager or is_confirmation_specialist"/>-->
+<!--                        <field name="additional_notes_section" widget="text" readonly="is_sales_manager or is_dispatch_manager or is_confirmation_specialist"/>-->
+<!--                        &lt;!&ndash; Add other related QA fields here &ndash;&gt;-->
+<!--                        <field name="qa_notes" widget="text" readonly="is_sales_manager or is_dispatch_manager or is_confirmation_specialist"/>-->
+
+<!--                    </group>-->
+<!--                </page>-->
+
+
+<!--                <page string="Designs" groups="lytegen_contact_details.group_sales_consultant,lytegen_contact_details.group_designer,lytegen_contact_details.group_user_role_admin,lytegen_contact_details.group_user_hide_menu,lytegen_contact_details.group_sales_manager">-->
+<!--                    <group>-->
+<!--                        <field name="design_ids" readonly="is_sales_manager" domain="[('id', '=', False)]"/>-->
+<!--                    </group>-->
+<!--                </page>-->
+<!--                <page string="Projects" groups="lytegen_contact_details.group_sales_consultant,lytegen_contact_details.group_sales_manager,lytegen_contact_details.group_sales_consultant,lytegen_contact_details.group_user_role_admin,lytegen_contact_details.group_user_hide_menu">-->
+<!--                    <group>-->
+<!--                        <field name="project_ids" string="Projects" readonly="is_sales_manager"/>-->
+<!--                    </group>-->
+<!--                </page>-->
+                <page string="Credit Check"
+      groups="lytegen_contact_details.group_sales_consultant,
+              lytegen_contact_details.group_sales_manager">
+<!--      groups="lytegen_contact_details.group_sales_manager,-->
+<!--              lytegen_contact_details.group_user_role_admin,-->
+<!--              lytegen_contact_details.group_user_hide_menu,-->
+<!--              lytegen_contact_details.group_designer">-->
+
+    <group>
+        <field name="first_name_credit_check" readonly="1"/>
+        <field name="last_name_credit_check" readonly="1"/>
+        <field name="phone_credit_check" readonly="1"/>
+        <field name="email_credit_check" readonly="1"/>
+        <field name="date_of_birth_credit_check" readonly="1"/>
+        <field name="address_credit_check" readonly="1"/>
+        <field name="city_credit_check" readonly="1"/>
+        <field name="state_credit_check" readonly="1"/>
+        <field name="postal_code_credit_check" readonly="1"/>
+        <field name="annual_income_credit_check" readonly="1"/>
+        <field name="other_household_income_credit_check" readonly="1"/>
+        <field name="ssn_tin_credit_check" readonly="1"/>
+        <field name="cosigner_needed_credit_check" readonly="1"/>
+        <field name="cosigner_dob_credit_check" readonly="1"/>
+        <field name="selected_design_name" readonly="1"/>
+    </group>
+
+</page>
+
+
+
+
+
+
+            </xpath>
+            <xpath expr="//chatter" position="attributes">
+                <attribute name="groups">base.group_system</attribute>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="view_calendar_event_search_inherit" model="ir.ui.view">
+        <field name="name">calendar.event.search.inherit</field>
+        <field name="model">calendar.event</field>
+        <field name="inherit_id" ref="calendar.view_calendar_event_search"/>
+        <field name="arch" type="xml">
+            <search>
+                <!-- Add new fields -->
+                <field name="full_name" string="Full Name"/>
+                <field name="phone_number" string="Phone Number"/>
+                <field name="street_address" string="Street Address"/>
+               <field name="sales_consultant_notes"
+                   string="Sales Consultant Notes"
+                   groups="lytegen_contact_details.group_user_role_confirmation_specialist,
+                           lytegen_contact_details.group_sales_consultant,
+                           lytegen_contact_details.group_sales_manager"/>
+
+
+            </search>
+        </field>
+    </record>
+    <record id="view_calendar_event_tree_inherit_nocreate" model="ir.ui.view">
+    <field name="name">calendar.event.tree.inherit.nocreate</field>
+    <field name="model">calendar.event</field>
+    <field name="inherit_id" ref="calendar.view_calendar_event_tree"/>
+    <field name="arch" type="xml">
+        <xpath expr="//field[@name='name']" position="before">
+            <field name="id" string="Event ID"/>
+            <field name="source_creation_employee_id"/>
+        </xpath>
+        <list position="attributes">
+            <attribute name="create">false</attribute>
+        </list>
+    </field>
+</record>
+
+    <record id="view_calendar_event_calendar_inherit_nocreate" model="ir.ui.view">
+    <field name="name">calendar.event.calendar.inherit.nocreate</field>
+    <field name="model">calendar.event</field>
+    <field name="inherit_id" ref="calendar.view_calendar_event_calendar"/>
+    <field name="arch" type="xml">
+        <calendar position="attributes">
+            <attribute name="create">false</attribute>
+        </calendar>
+    </field>
+</record>
+
+    <record id="custom_calendar_event_calendar" model="ir.ui.view">
+    <field name="name">calendar.event.calendar.custom</field>
+    <field name="model">calendar.event</field>
+    <field name="priority" eval="999"/>
+    <field name="arch" type="xml">
+        <calendar string="Meetings"
+                  js_class="calendar"
+                  date_start="start"
+                  date_stop="stop"
+                  color="user_id"
+                  event_open_popup="true"
+                  quick_create="false">
+            <field name="name"/>
+            <field name="start"/>
+            <field name="stop"/>
+            <field name="user_id"/>
+            <field name="location"/>
+            <field name="duration"/>
+        </calendar>
+    </field>
+</record>
+
+
+<record id="calendar_event_action_admin" model="ir.actions.act_window">
+    <field name="name">Meetings (Admin)</field>
+    <field name="res_model">calendar.event</field>
+    <field name="view_mode">calendar,list,form</field>
+    <field name="view_id" ref="lytegen_contact_details.custom_calendar_event_calendar"/>
+    <field name="domain">[(1, '=', 1)]</field> <!-- Show all records -->
+    <field name="groups_id" eval="[(4, ref('base.group_system'))]"/>
+</record>
+
+
+
+<record id="calendar_event_action_consultant" model="ir.actions.act_window">
+    <field name="name">Meetings (Consultant)</field>
+    <field name="res_model">calendar.event</field>
+    <field name="view_mode">calendar,list,form</field>
+    <field name="domain">[('sales_consultant_employee_id.user_id.id', '=', uid)]</field>
+    <field name="view_id" ref="lytegen_contact_details.custom_calendar_event_calendar"/>
+    <field name="groups_id" eval="[(4, ref('lytegen_contact_details.group_sales_consultant'))]"/>
+</record>
+<record id="calendar_event_action_confirmation_specialist" model="ir.actions.act_window">
+    <field name="name">Meetings (Confirmation)</field>
+    <field name="res_model">calendar.event</field>
+    <field name="view_mode">calendar,list,form</field>
+    <field name="view_id" ref="lytegen_contact_details.custom_calendar_event_calendar"/>
+    <field name="domain">[('create_date', '>=', (context_today() - relativedelta(days=7)).strftime('%Y-%m-%d 00:00:00'))]</field>
+    <field name="context">{}</field>
+    <field name="groups_id" eval="[(4, ref('lytegen_contact_details.group_user_role_confirmation_specialist'))]"/>
+</record>
+
+<record id="calendar_event_action_dispatch_manager" model="ir.actions.act_window">
+    <field name="name">Meetings (Dispatch)</field>
+    <field name="res_model">calendar.event</field>
+    <field name="view_mode">calendar,list,form</field>
+    <field name="view_id" ref="lytegen_contact_details.custom_calendar_event_calendar"/>
+    <field name="domain">
+        [('qa_outcome', 'in', ['approved', 'dq']), ('confirmation_status', 'not in', ['dq', 'requested_rescheduling'])]
+    </field>
+    <field name="context">{}</field>
+    <field name="groups_id" eval="[(4, ref('lytegen_contact_details.group_user_role_dispatch_manager'))]"/>
+</record>
+<record id="calendar_event_action_sales_manager" model="ir.actions.act_window">
+    <field name="name">Meetings (Sales Manager)</field>
+    <field name="res_model">calendar.event</field>
+    <field name="view_mode">calendar,list,form</field>
+    <field name="view_id" ref="lytegen_contact_details.custom_calendar_event_calendar"/>
+    <field name="domain">[]</field>  <!-- Domain is enforced by the record rule -->
+    <field name="context">{}</field>
+    <field name="groups_id" eval="[(4, ref('lytegen_contact_details.group_sales_manager'))]"/>
+</record>
+
+
+
+
+<record id="calendar.action_calendar_event" model="ir.actions.act_window">
+    <field name="domain">
+    [('sales_consultant_employee_id.user_id.id', '=', uid)]
+</field>
+
+
+
+</record>
+
+    <menuitem id="calendar_menu_admin"
+          name="Calendar"
+          action="lytegen_contact_details.calendar_event_action_admin"
+          sequence="10"
+          web_icon="calendar,static/description/icon.png"
+          groups="lytegen_contact_details.group_user_hide_menu,lytegen_contact_details.group_user_role_admin,lytegen_contact_details.group_user_role_auditor"/>
+
+<menuitem id="calendar_menu_consultant"
+          name="Calendar"
+          action="lytegen_contact_details.calendar_event_action_consultant"
+          sequence="11"
+          web_icon="calendar,static/description/icon.png"
+          groups="lytegen_contact_details.group_sales_consultant"/>
+
+<menuitem id="calendar_menu_confirmation_specialist"
+          name="Calendar"
+          action="lytegen_contact_details.calendar_event_action_confirmation_specialist"
+          sequence="12"
+          web_icon="calendar,static/description/icon.png"
+          groups="lytegen_contact_details.group_user_role_confirmation_specialist"/>
+
+<menuitem id="calendar_menu_dispatch_manager"
+          name="Calendar"
+          action="lytegen_contact_details.calendar_event_action_dispatch_manager"
+          sequence="13"
+          web_icon="calendar,static/description/icon.png"
+          groups="lytegen_contact_details.group_user_role_dispatch_manager"/>
+
+<menuitem id="calendar_menu_sales_manager"
+          name="Calendar"
+          action="lytegen_contact_details.calendar_event_action_sales_manager"
+          sequence="14"
+          web_icon="calendar,static/description/icon.png"
+          groups="lytegen_contact_details.group_sales_manager"/>
+
+
+
+
+
+<!--<menuitem id="calendar_menu_confirmation_and_dispatch"-->
+<!--          name="Calendar (Confirmation + Dispatch)"-->
+<!--          action="lytegen_contact_details.calendar_event_action_confirmation_and_dispatch"-->
+<!--          sequence="12"-->
+<!--          web_icon="calendar,static/description/icon.png"-->
+<!--          groups="lytegen_contact_details.group_user_role_confirmation_specialist,-->
+<!--                  lytegen_contact_details.group_user_role_dispatch_manager"/>-->
+
+
+<!--<menuitem id="calendar_menu_general"-->
+<!--          name="Calendar"-->
+<!--          action="calendar.calendar_event_action"-->
+<!--          sequence="12"-->
+<!--          groups="base.group_user"/>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+</odoo>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Inherit the original project form view -->
+    <record id="edit_project_inherit_chatter" model="ir.ui.view">
+        <field name="name">project.project.form.inherit.chatter</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/> <!-- Reference the original view -->
+        <field name="arch" type="xml">
+            <!-- Use XPath to locate the chatter and add the groups attribute -->
+            <xpath expr="//chatter" position="attributes">
+                <attribute name="groups">base.group_system</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>
