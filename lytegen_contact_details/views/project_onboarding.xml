@@ -268,7 +268,7 @@
                                                                            name="unrwa_document"
                                                                            id="unrwa_document"
                                                                            class="form-control mt-2 header-font"
-                                                                           required="required"/>
+                                                                           />
                                                                 </div>
                                                             </div>
                                                         </div>
