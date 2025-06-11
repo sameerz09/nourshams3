@@ -703,7 +703,8 @@ class CustomAppointmentController(AppointmentController):
             # full_name = f"{post.get('customer_first_name', '')} {post.get('customer_middle_name', '')} {post.get('customer_last_name', '')}".strip()
             full_name = f"{post.get('customer_first_name', '')} {post.get('customer_middle_name', '')} {post.get('customer_grandfather_name', '')} {post.get('customer_last_name', '')}".strip()
             country_code = post.get('country_code')
-            phone = f"+{country_code}{post.get('customer_phone_number')}"
+            # phone = f"+{country_code}{post.get('customer_phone_number')}"
+            phone = f"{post.get('customer_phone_number')}"
             email = post.get('customer_email')
             secondary_country_code = post.get('secondary_country_code')
             displacement_date = post.get('displacement_date')

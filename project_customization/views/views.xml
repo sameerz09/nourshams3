@@ -57,6 +57,7 @@
                    <field name="displacement_date"/>
                    <field name="displacement_residence_type"/>
                    <field name="multiple_displacements"/>
+                   <field name="phone"/>
                    <field name="request_date"/>
                    <field name="displacement_reasons"/>
                     <field name="design_sold" widget="url"/>

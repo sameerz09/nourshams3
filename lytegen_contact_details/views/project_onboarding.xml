@@ -12,14 +12,19 @@
                 <link rel="stylesheet" type="text/css" href="/lytegen_contact_details/static/src/css/fonts.css"/>
                 <link rel="stylesheet" type="text/css" href="/lytegen_contact_details/static/src/css/intlTelInput.min.css"/>
                 <link rel="stylesheet" type="text/css" href="/lytegen_contact_details/static/src/css/rtl_style.css"/>
-
-
-
+                <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600&amp;family=Amiri&amp;family=Tajawal:wght@500&amp;display=swap" rel="stylesheet"/>
                 <link rel="stylesheet" type="text/css" href="/lytegen_contact_details/static/src/css/select2.min.css"/>
                 <script src="/lytegen_contact_details/static/src/js/lib/jquery-3.6.0.min.js"/>
                 <script src="/lytegen_contact_details/static/src/js/lib/select2.min.js"/>
                 <script src="/lytegen_contact_details/static/src/js/lib/intlTelInput.min.js"/>
                 <script src="/lytegen_contact_details/static/src/js/project_onboarding.js?1.2"/>
+                        <style>
+                .arabic-header {
+                    font-family: 'Cairo', 'Tajawal', 'Amiri', sans-serif;
+                    font-weight: bold;
+                    direction: rtl;
+                }
+            </style>
 
 
                 <div class="container py-5" dir="rtl" style="direction: rtl; text-align: right; font-family: 'Cairo', sans-serif;">
@@ -27,9 +32,12 @@
                    <div class="row">
                        <div class="col-lg-8 mx-auto">
                             <div class="card">
-                                <div class="text-center mt-4 mb-4">
-    <h1 class="fw-bold">المهجرين من مخيم نورشمس والضواحي</h1>
-</div>
+<!--                                <div class="text-center mt-4 mb-4">-->
+<!--    <h1 class="fw-bold">المهجرين من مخيم نورشمس والضواحي</h1>-->
+<!--</div>-->
+<!--                                <div class="text-center mt-4 mb-4">-->
+<!--                    <h1 class="fw-bold arabic-header">المهجرين من مخيم نورشمس والضواحي</h1>-->
+<!--                </div>-->
                                 <div class="card-body px-4">
 
 
@@ -67,34 +75,67 @@
 
                                                         <!-- الاسم الكامل -->
                                                         <div class="row mt-3">
-                                                            <div class="col-lg-4 col-sm-12">
+                                                            <div class="col-lg-6 col-sm-12">
                                                                 <span class="header-font">الاسم <sup class="text-danger">*</sup></span>
                                                                 <input type="text" name="customer_first_name" id="customer_first_name" class="form-control mt-2 header-font" required="required"/>
                                                             </div>
 
-                                                            <div class="col-lg-4 col-sm-12">
+                                                            <div class="col-lg-6 col-sm-12">
                                                                 <span class="header-font">اسم الأب<sup class="text-danger">*</sup></span>
                                                                 <input type="text" name="customer_middle_name" id="customer_middle_name" class="form-control mt-2 header-font" required="required"/>
                                                             </div>
 
-                                                            <div class="col-lg-4 col-sm-12">
-                                                                <span class="header-font">اسم الجد<sup class="text-danger">*</sup></span>
-                                                                <input type="text" name="customer_grandfather_name" id="customer_grandfather_name" class="form-control mt-2 header-font" required="required"/>
-                                                            </div>
+
                                                         </div>
 
                                                         <!-- اسم العائلة وعدد أفراد العائلة -->
                                                         <div class="row mt-3">
                                                             <div class="col-lg-6 col-sm-12">
+                                                                <span class="header-font">اسم الجد<sup class="text-danger">*</sup></span>
+                                                                <input type="text" name="customer_grandfather_name" id="customer_grandfather_name" class="form-control mt-2 header-font" required="required"/>
+                                                            </div>
+                                                            <div class="col-lg-6 col-sm-12">
                                                                 <span class="header-font">اسم العائلة <sup class="text-danger">*</sup></span>
                                                                 <input type="text" name="customer_last_name" id="customer_last_name" class="form-control mt-2 header-font" required="required"/>
                                                             </div>
 
+<!--                                                            <div class="col-lg-6 col-sm-12">-->
+<!--                                                                <span class="header-font">عدد أفراد العائلة <sup class="text-danger">*</sup></span>-->
+<!--                                                                <input type="number" name="family_member_count" id="family_member_count" class="form-control mt-2 header-font" min="1" required="required"/>-->
+<!--                                                            </div>-->
+                                                        </div>
+                                                        <div class="row mt-3">
                                                             <div class="col-lg-6 col-sm-12">
+                                                                <span class="header-font">رقم الهوية <sup class="text-danger">*</sup></span>
+                                                                <input type="text" name="id_number" id="id_number" class="form-control mt-2 header-font" required="required"/>
+                                                            </div>
+
+                                                            <div class="col-lg-6 col-sm-12">
+                                                                <span class="header-font">رقم كرت UNRWA <sup class="text-danger">*</sup></span>
+                                                                <input type="text" name="unrwa_card_number" id="unrwa_card_number" class="form-control mt-2 header-font" required="required"/>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mt-3">
+                                                            <div class="col-lg-4 col-sm-12">
                                                                 <span class="header-font">عدد أفراد العائلة <sup class="text-danger">*</sup></span>
                                                                 <input type="number" name="family_member_count" id="family_member_count" class="form-control mt-2 header-font" min="1" required="required"/>
                                                             </div>
+
+                                                            <div class="col-lg-4 col-sm-12">
+                                                                <span class="header-font">هل الأسرة نازحة حاليًا؟ <sup class="text-danger">*</sup></span>
+                                                                <select name="is_currently_displaced" id="is_currently_displaced" class="form-control mt-2 header-font" required="required">
+                                                                    <option value="">اختر</option>
+                                                                    <option value="yes">نعم</option>
+                                                                    <option value="no">لا</option>
+                                                                </select>
+                                                            </div>
+
+                                                            <div class="col-lg-4 col-sm-12">
+                                                                <span class="header-font">مكان سكنك قبل النزوح : الحارة أو الحي <sup class="text-danger">*</sup></span>
+                                                                <input type="text" name="pre_displacement_area" id="pre_displacement_area" class="form-control mt-2 header-font" required="required"/>
+                                                            </div>
                                                         </div>
+
 
                                                         <!-- البريد الإلكتروني ورقم الهاتف -->
                                                         <div class="row mt-3">
@@ -104,7 +145,7 @@
                                                             </div>
 
                                                             <div class="col-lg-6 col-sm-12">
-                                                                <span class="header-font">رقم الهاتف <sup class="text-danger">*</sup></span>
+                                                                <span class="header-font">رقم الهاتف المحمول (واتساب) <sup class="text-danger">*</sup></span>
                                                                 <input type="tel"
                                                                        name="customer_phone_number"
                                                                        id="customer_phone_number"

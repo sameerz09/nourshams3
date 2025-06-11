@@ -427,6 +427,9 @@ class ProjectProject(models.Model):
     date_formatted = fields.Char(string='Created Date/Time', compute='_compute_date_formatted')
     time_formatted = fields.Char(string='Created Date/Time', compute='_compute_time_formatted')
 
+    id_number = fields.Char(string="رقم الهوية", required=True)
+    unrwa_card_number = fields.Char(string="رقم كرت UNRWA", required=True)
+
     @api.depends('create_date')
     def _compute_create_date_formatted(self):
         for record in self:
