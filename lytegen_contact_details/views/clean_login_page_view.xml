@@ -21,12 +21,12 @@
             <t></t>
         </xpath>
     </template>
-    <template id="hide_header" inherit_id="web.frontend_layout">
-        <xpath expr="//header" position="replace">
-            <!-- Completely hide the header -->
-            <t></t>
-        </xpath>
-    </template>
+<!--    <template id="hide_header" inherit_id="web.frontend_layout">-->
+<!--        <xpath expr="//header" position="replace">-->
+<!--            &lt;!&ndash; Completely hide the header &ndash;&gt;-->
+<!--            <t></t>-->
+<!--        </xpath>-->
+<!--    </template>-->
 <!--       <template id="custom_web_login" inherit_id="web.login" name="Custom Web Login">-->
 <!--        &lt;!&ndash; Hide the "oe_login_buttons" part &ndash;&gt;-->
 <!--        <xpath expr="//div[@class='oe_login_buttons text-center gap-1 d-grid mb-1 pt-3']" position="replace">-->
