@@ -5,8 +5,7 @@
             <t t-call="website.layout">
                 <t t-set="title">Project Onboarding</t>
 
-                <!-- Load Custom CSS -->
-<!--                <link rel="stylesheet" type="text/css" href="/lytegen_contact_details/static/src/css/ach_style.css"/>-->
+
                 <link rel="stylesheet" type="text/css" href="/lytegen_contact_details/static/src/css/credit_check_style.css"/>
                 <link rel="stylesheet" type="text/css" href="/lytegen_contact_details/static/src/css/project_style.css"/>
                 <link rel="stylesheet" type="text/css" href="/lytegen_contact_details/static/src/css/fonts.css"/>
@@ -32,12 +31,7 @@
                    <div class="row">
                        <div class="col-lg-8 mx-auto">
                             <div class="card">
-<!--                                <div class="text-center mt-4 mb-4">-->
-<!--    <h1 class="fw-bold">المهجرين من مخيم نورشمس والضواحي</h1>-->
-<!--</div>-->
-<!--                                <div class="text-center mt-4 mb-4">-->
-<!--                    <h1 class="fw-bold arabic-header">المهجرين من مخيم نورشمس والضواحي</h1>-->
-<!--                </div>-->
+
                                 <div class="card-body px-4">
 
 
@@ -99,10 +93,7 @@
                                                                 <input type="text" name="customer_last_name" id="customer_last_name" class="form-control mt-2 header-font" required="required"/>
                                                             </div>
 
-<!--                                                            <div class="col-lg-6 col-sm-12">-->
-<!--                                                                <span class="header-font">عدد أفراد العائلة <sup class="text-danger">*</sup></span>-->
-<!--                                                                <input type="number" name="family_member_count" id="family_member_count" class="form-control mt-2 header-font" min="1" required="required"/>-->
-<!--                                                            </div>-->
+
                                                         </div>
                                                         <div class="row mt-3">
                                                             <div class="col-lg-6 col-sm-12">
@@ -123,12 +114,14 @@
 
                                                             <div class="col-lg-4 col-sm-12">
                                                                 <span class="header-font">هل الأسرة نازحة حاليًا؟ <sup class="text-danger">*</sup></span>
-                                                                <select name="is_currently_displaced" id="is_currently_displaced" class="form-control mt-2 header-font" required="required">
-                                                                    <option value="">اختر</option>
-                                                                    <option value="yes">نعم</option>
-                                                                    <option value="no">لا</option>
+                                                                <select class="form-control mt-2 header-font" name="is_currently_displaced" id="is_currently_displaced" required="required">
+                                                                    <option value=""/>
+                                                                    <t t-foreach="is_currently_displaced" t-as="option">
+                                                                        <option t-att-value="option[0]"><t t-esc="option[1]"/></option>
+                                                                    </t>
                                                                 </select>
                                                             </div>
+
 
                                                             <div class="col-lg-4 col-sm-12">
                                                                 <span class="header-font">مكان سكنك قبل النزوح : الحارة أو الحي <sup class="text-danger">*</sup></span>
@@ -169,61 +162,7 @@
                                                           </button>
                                                      </h2>
 
-<!--                                                    <div id="projectSpecs" class="accordion-collapse collapse show" data-bs-parent="#projectSpecs">-->
-<!--                                                        <div class="accordion-body">-->
-<!--                                                            <div class="row mt-3">-->
-<!--                                                                <div class="col-lg-4 col-sm-12">-->
-<!--                                                                    <span class="header-font">تاريخ النزوح<sup class="text-danger">*</sup></span>-->
-<!--                                                                    <input type="date" name="displacement_date" id="displacement_date" class="form-control" required="required"/>-->
-<!--                                                                </div>-->
 
-<!--                                                                <div class="col-lg-4 col-sm-12">-->
-<!--                                                                <span class="header-font">أسباب النزوح<sup class="text-danger">*</sup></span>-->
-<!--                                                                <select class="form-control js-searchable-re-roof" name="displacement_reasons" id="displacement_reasons" required="required">-->
-<!--                                                                    <option value=""/>-->
-<!--                                                                    <t t-foreach="displacement_reasons" t-as="type">-->
-<!--                                                                        <option t-att-value="type[0]"><t t-esc="type[1]"/></option>-->
-<!--                                                                    </t>-->
-<!--                                                                </select>-->
-<!--                                                            </div>-->
-<!--                                                                <div class="col-lg-4 col-sm-12">-->
-<!--                                                                <span class="header-font"> مكان النزوح<sup class="text-danger">*</sup></span>-->
-<!--                                                                <select class="form-control js-searchable-re-roof" name="displacement_residences" id="displacement_residences" required="required">-->
-<!--                                                                    <option value=""/>-->
-<!--                                                                    <t t-foreach="displacement_residences" t-as="type">-->
-<!--                                                                        <option t-att-value="type[0]"><t t-esc="type[1]"/></option>-->
-<!--                                                                    </t>-->
-<!--                                                                </select>-->
-<!--                                                            </div>-->
-
-<!--                                                                <div class="col-lg-4 col-sm-12">-->
-<!--                                                                <span class="header-font">هل تعرّضتم لأكثر من حالة تهجير؟<sup class="text-danger">*</sup></span>-->
-<!--                                                                <select class="form-control js-searchable-re-roof" name="multiple_displacement_options" id="multiple_displacement_options" required="required">-->
-<!--                                                                    <option value=""/>-->
-<!--                                                                    <t t-foreach="multiple_displacement_options" t-as="type">-->
-<!--                                                                        <option t-att-value="type[0]"><t t-esc="type[1]"/></option>-->
-<!--                                                                    </t>-->
-<!--                                                                </select>-->
-<!--                                                            </div>-->
-
-
-
-
-
-
-
-
-<!--                                                            </div>-->
-
-
-
-
-
-
-
-
-<!--                                                        </div>-->
-<!--                                                    </div>-->
                                                  <div id="projectSpecs" class="accordion-collapse collapse show" data-bs-parent="#projectSpecs">
                                                         <div class="accordion-body">
 
@@ -275,6 +214,214 @@
 
                                                         </div>
                                                     </div>
+                                                 <h2 class="accordion-header mt-3">
+                                                        <button class="accordion-button" type="button" data-bs-target="#projectSpecs" aria-expanded="true" aria-controls="projectSpecs">
+                                                            السكن والوضع المعيشي
+                                                          </button>
+                                                 </h2>
+                                                 <div id="housingConditions" class="accordion-collapse collapse show" data-bs-parent="#housingConditions">
+                                                    <div class="accordion-body">
+                                                        <div class="row mt-3">
+                                                            <div class="col-lg-4 col-sm-12">
+                                                                <span class="header-font">نوع السكن الحالي <sup class="text-danger">*</sup></span>
+                                                                <select class="form-control mt-2 header-font" name="housing_type" id="housing_type" required="required">
+                                                                    <option value=""/>
+                                                                    <t t-foreach="housing_type_options" t-as="option">
+                                                                        <option t-att-value="option[0]"><t t-esc="option[1]"/></option>
+                                                                    </t>
+                                                                </select>
+                                                            </div>
+
+                                                            <div class="col-lg-4 col-sm-12">
+                                                                <span class="header-font">تعرض السكن لأضرار؟ <sup class="text-danger">*</sup></span>
+                                                                <select class="form-control mt-2 header-font" name="housing_damage_level" id="housing_damage_level" required="required">
+                                                                    <option value=""/>
+                                                                    <t t-foreach="housing_damage_level_options" t-as="option">
+                                                                        <option t-att-value="option[0]"><t t-esc="option[1]"/></option>
+                                                                    </t>
+                                                                </select>
+                                                            </div>
+
+                                                            <div class="col-lg-4 col-sm-12">
+                                                                <span class="header-font">هل تم توثيق الضرر؟ <sup class="text-danger">*</sup></span>
+                                                                <select class="form-control mt-2 header-font" name="damage_documented" id="damage_documented" required="required">
+                                                                    <option value=""/>
+                                                                    <t t-foreach="damage_documented_options" t-as="option">
+                                                                        <option t-att-value="option[0]"><t t-esc="option[1]"/></option>
+                                                                    </t>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                 <h2 class="accordion-header mt-3">
+                                                        <button class="accordion-button" type="button" data-bs-target="#projectSpecs" aria-expanded="true" aria-controls="projectSpecs">
+                                                            الاقتصاد والدخل
+                                                          </button>
+                                                 </h2>
+                                                 <div id="incomeSection" class="accordion-collapse collapse show" data-bs-parent="#incomeSection">
+                                                        <div class="accordion-body">
+                                                            <div class="row mt-3">
+                                                                <div class="col-lg-4 col-sm-12">
+                                                                    <span class="header-font">وضع الأسرة الاقتصادي الحالي <sup class="text-danger">*</sup></span>
+                                                                    <select class="form-control mt-2 header-font" name="economic_status" id="economic_status" required="required">
+                                                                        <option value=""/>
+                                                                        <t t-foreach="economic_status_options" t-as="option">
+                                                                            <option t-att-value="option[0]"><t t-esc="option[1]"/></option>
+                                                                        </t>
+                                                                    </select>
+                                                                </div>
+
+                                                                <div class="col-lg-4 col-sm-12">
+                                                                    <span class="header-font">هل كان يعمل أحد داخل فلسطين قبل النزوح؟ <sup class="text-danger">*</sup></span>
+                                                                    <select class="form-control mt-2 header-font" name="worked_inside_palestine_before" id="worked_inside_palestine_before" required="required">
+                                                                        <option value=""/>
+                                                                        <t t-foreach="worked_inside_palestine_options" t-as="option">
+                                                                            <option t-att-value="option[0]"><t t-esc="option[1]"/></option>
+                                                                        </t>
+                                                                    </select>
+                                                                </div>
+
+                                                                <div class="col-lg-4 col-sm-12">
+                                                                    <span class="header-font">عدد من كانوا يعملون <small class="text-muted">(إذا كانت الإجابة نعم)</small></span>
+                                                                    <select class="form-control mt-2 header-font" name="workers_count_before_displacement" id="workers_count_before_displacement">
+                                                                        <option value=""/>
+                                                                        <t t-foreach="workers_count_options" t-as="option">
+                                                                            <option t-att-value="option[0]"><t t-esc="option[1]"/></option>
+                                                                        </t>
+                                                                    </select>
+                                                                </div>
+
+                                                                <div class="col-lg-4 col-sm-12">
+                                                                    <span class="header-font">هل يوجد عاطلون؟ <sup class="text-danger">*</sup></span>
+                                                                    <select class="form-control mt-2 header-font" name="has_unemployed" id="has_unemployed" required="required">
+                                                                        <option value=""/>
+                                                                        <t t-foreach="unemployed_options" t-as="option">
+                                                                            <option t-att-value="option[0]"><t t-esc="option[1]"/></option>
+                                                                        </t>
+                                                                    </select>
+                                                                </div>
+
+                                                                <div class="col-lg-4 col-sm-12">
+                                                                    <span class="header-font">مهارات يتقنها أفراد العائلة (بناء، كهرباء، تعليم، صيانة، أخرى)</span>
+                                                                    <input type="text"
+                                                                           name="family_skills"
+                                                                           id="family_skills"
+                                                                           class="form-control mt-2 header-font"
+                                                                           placeholder="مثال: بناء، كهرباء، صيانة" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                 <h2 class="accordion-header mt-3">
+                                                        <button class="accordion-button" type="button" data-bs-target="#projectSpecs" aria-expanded="true" aria-controls="projectSpecs">
+                                                            التعليم للأطفال والشباب
+                                                          </button>
+                                                 </h2>
+                                                 <div id="educationSection" class="accordion-collapse collapse show" data-bs-parent="#educationSection">
+                                                    <div class="accordion-body">
+                                                        <div class="row mt-3">
+                                                            <div class="col-lg-4 col-sm-12">
+                                                                <span class="header-font">هل في الأسرة طلاب مدارس؟ <sup class="text-danger">*</sup></span>
+                                                                <select class="form-control mt-2 header-font" name="has_school_students" id="has_school_students" required="required">
+                                                                    <option value=""/>
+                                                                    <t t-foreach="school_students_options" t-as="option">
+                                                                        <option t-att-value="option[0]"><t t-esc="option[1]"/></option>
+                                                                    </t>
+                                                                </select>
+                                                            </div>
+
+                                                            <div class="col-lg-4 col-sm-12">
+                                                                <span class="header-font">وضع طلاب المدارس</span>
+                                                                <select class="form-control mt-2 header-font" name="school_attendance_status" id="school_attendance_status">
+                                                                    <option value=""/>
+                                                                    <t t-foreach="school_attendance_options" t-as="option">
+                                                                        <option t-att-value="option[0]"><t t-esc="option[1]"/></option>
+                                                                    </t>
+                                                                </select>
+                                                            </div>
+
+                                                            <div class="col-lg-4 col-sm-12">
+                                                                <span class="header-font">طلاب جامعات؟ <sup class="text-danger">*</sup></span>
+                                                                <select class="form-control mt-2 header-font" name="has_university_students" id="has_university_students" required="required">
+                                                                    <option value=""/>
+                                                                    <t t-foreach="university_students_options" t-as="option">
+                                                                        <option t-att-value="option[0]"><t t-esc="option[1]"/></option>
+                                                                    </t>
+                                                                </select>
+                                                            </div>
+
+                                                            <div class="col-lg-4 col-sm-12">
+                                                                <span class="header-font">وضع طلاب الجامعات</span>
+                                                                <select class="form-control mt-2 header-font" name="university_attendance_status" id="university_attendance_status">
+                                                                    <option value=""/>
+                                                                    <t t-foreach="university_attendance_options" t-as="option">
+                                                                        <option t-att-value="option[0]"><t t-esc="option[1]"/></option>
+                                                                    </t>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                 <h2 class="accordion-header mt-3">
+                                                        <button class="accordion-button" type="button" data-bs-target="#projectSpecs" aria-expanded="true" aria-controls="projectSpecs">
+                                                            ذوو الإعاقة والاحتياجات
+                                                          </button>
+                                                 </h2>
+                                                 <div id="disabilitySection" class="accordion-collapse collapse show" data-bs-parent="#disabilitySection">
+                                                        <div class="accordion-body">
+                                                            <div class="row mt-3">
+                                                                <div class="col-lg-4 col-sm-12">
+                                                                    <span class="header-font">عدد ذوي الإعاقة</span>
+                                                                    <input type="number" name="disabled_count" id="disabled_count" class="form-control mt-2 header-font" min="0"/>
+                                                                </div>
+
+                                                                <div class="col-lg-4 col-sm-12">
+                                                                    <span class="header-font">نوع الإعاقة</span>
+                                                                    <select class="form-control mt-2 header-font" name="disability_type" id="disability_type">
+                                                                        <option value=""/>
+                                                                        <t t-foreach="disability_type_options" t-as="option">
+                                                                            <option t-att-value="option[0]"><t t-esc="option[1]"/></option>
+                                                                        </t>
+                                                                    </select>
+                                                                </div>
+
+                                                                <div class="col-lg-4 col-sm-12">
+                                                                    <span class="header-font">هل يتلقون رعاية؟</span>
+                                                                    <select class="form-control mt-2 header-font" name="receiving_care" id="receiving_care">
+                                                                        <option value=""/>
+                                                                        <t t-foreach="receiving_care_options" t-as="option">
+                                                                            <option t-att-value="option[0]"><t t-esc="option[1]"/></option>
+                                                                        </t>
+                                                                    </select>
+                                                                </div>
+
+                                                                <div class="col-lg-4 col-sm-12">
+                                                                    <span class="header-font">هل تأثرت الرعاية بالنزوح؟</span>
+                                                                    <select class="form-control mt-2 header-font" name="care_affected_by_displacement" id="care_affected_by_displacement">
+                                                                        <option value=""/>
+                                                                        <t t-foreach="care_affected_options" t-as="option">
+                                                                            <option t-att-value="option[0]"><t t-esc="option[1]"/></option>
+                                                                        </t>
+                                                                    </select>
+                                                                </div>
+
+                                                                <div class="col-lg-4 col-sm-12">
+                                                                    <span class="header-font">الاحتياجات الأساسية</span>
+                                                                    <select class="form-control mt-2 header-font" name="basic_needs" id="basic_needs">
+                                                                        <option value=""/>
+                                                                        <t t-foreach="basic_needs_options" t-as="option">
+                                                                            <option t-att-value="option[0]"><t t-esc="option[1]"/></option>
+                                                                        </t>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+
 
 
 
@@ -285,35 +432,101 @@
                                                      </h2>
 
                                                     <div id="utilityBilling" class="accordion-collapse collapse show" data-bs-parent="#utilityBilling">
-                                                        <div class="accordion-body">
+                                                            <div class="accordion-body">
 
-                                                            <div class="row mt-3">
-                                                                <div class="col-lg-12">
-                                                                    <span class="header-font">صورة هوية رب الأسرة <sup class="text-danger">*</sup></span>
-                                                                    <input placeholder="Require full recent electric bill (PDF/JPG)" type="file" accept=".jpg, .jpeg, .png, .pdf" name="utility_bill[]" id="utility_bill" class="form-control mt-2 header-font" multiple="multiple" required="required"/>
+                                                                <!-- صورة هوية رب الأسرة -->
+                                                                <div class="row mt-3">
+                                                                    <div class="col-lg-12">
+                                                                        <span class="header-font">صورة هوية رب الأسرة <sup class="text-danger">*</sup></span>
+                                                                        <input placeholder="Require full recent electric bill (PDF/JPG)" type="file"
+                                                                               accept=".jpg, .jpeg, .png, .pdf"
+                                                                               name="utility_bill[]"
+                                                                               id="utility_bill"
+                                                                               class="form-control mt-2 header-font"
+                                                                               multiple="multiple"
+                                                                               required="required" />
+                                                                    </div>
                                                                 </div>
-                                                            </div>
 
-                                                            <div class="row mt-3">
-                                                                <div class="col-lg-12">
-                                                                    <span class="header-font">صور لموقع الاقامة الحالي</span>
-                                                                    <input placeholder="Ex: Title verification, mortgage statement, proof of income, driver's license front and back, green card, etc." type="file" accept=".jpg, .jpeg, .png, .pdf, .doc, .docx" name="additional_files[]" id="additional_files" class="form-control mt-2 header-font" multiple="multiple" required="required"/>
+                                                                <!-- صور لموقع الاقامة الحالي -->
+                                                                <div class="row mt-3">
+                                                                    <div class="col-lg-12">
+                                                                        <span class="header-font">صور لموقع الإقامة الحالي</span>
+                                                                        <input placeholder="Ex: Title verification, mortgage statement, proof of income, driver's license front and back, green card, etc." type="file"
+                                                                               accept=".jpg, .jpeg, .png, .pdf, .doc, .docx"
+                                                                               name="additional_files[]"
+                                                                               id="additional_files"
+                                                                               class="form-control mt-2 header-font"
+                                                                               multiple="multiple"
+                                                                               required="required" />
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="row mt-3">
+
                                                                 <!-- وثيقة الأونروا -->
-                                                                <div class="col-lg-12">
-                                                                    <span class="header-font">صورة وثيقة الأونروا</span>
-                                                                    <input type="file"
-                                                                           accept=".jpg, .jpeg, .png, .pdf"
-                                                                           name="unrwa_document"
-                                                                           id="unrwa_document"
-                                                                           class="form-control mt-2 header-font"
-                                                                           />
+                                                                <div class="row mt-3">
+                                                                    <div class="col-lg-12">
+                                                                        <span class="header-font">صورة وثيقة الأونروا</span>
+                                                                        <input type="file"
+                                                                               accept=".jpg, .jpeg, .png, .pdf"
+                                                                               name="unrwa_document"
+                                                                               id="unrwa_document"
+                                                                               class="form-control mt-2 header-font" />
+                                                                    </div>
                                                                 </div>
+
+                                                                <!-- صور أضرار البيت -->
+                                                                <div class="row mt-3">
+                                                                    <div class="col-lg-12">
+                                                                        <span class="header-font">صور أضرار البيت (اختياري)</span>
+                                                                        <input placeholder="Upload photos showing damage to the house" type="file"
+                                                                               accept=".jpg, .jpeg, .png, .pdf"
+                                                                               name="house_damage_photos[]"
+                                                                               id="house_damage_photos"
+                                                                               class="form-control mt-2 header-font"
+                                                                               multiple="multiple" />
+                                                                    </div>
+                                                                </div>
+
+                                                                <!-- تقارير -->
+                                                                <div class="row mt-3">
+                                                                    <div class="col-lg-12">
+                                                                        <span class="header-font">تقارير (اختياري)</span>
+                                                                        <input placeholder="Upload any relevant reports or documents" type="file"
+                                                                               accept=".jpg, .jpeg, .png, .pdf, .doc, .docx"
+                                                                               name="report_documents[]"
+                                                                               id="report_documents"
+                                                                               class="form-control mt-2 header-font"
+                                                                               multiple="multiple" />
+                                                                    </div>
+                                                                </div>
+
                                                             </div>
                                                         </div>
+                                                 <div id="consentSection" class="accordion-collapse collapse show" data-bs-parent="#consentSection">
+                                                    <div class="accordion-body">
+
+                                                        <div class="row mt-3">
+                                                            <div class="col-lg-6 col-sm-12">
+                                                                <span class="header-font">هل توافق على مشاركة البيانات؟ <sup class="text-danger">*</sup></span>
+                                                                <select class="form-control mt-2 header-font" name="data_sharing_consent" id="data_sharing_consent" required="required">
+                                                                    <option value=""/>
+                                                                    <t t-foreach="data_sharing_consent_options" t-as="option">
+                                                                        <option t-att-value="option[0]"><t t-esc="option[1]"/></option>
+                                                                    </t>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row mt-3">
+                                                            <div class="col-lg-12 col-sm-12">
+                                                                <span class="header-font">ملاحظات إضافية</span>
+                                                                <textarea name="additional_notes" id="additional_notes" class="form-control mt-2 header-font" rows="3" placeholder="اكتب ملاحظاتك هنا (اختياري)"></textarea>
+                                                            </div>
+                                                        </div>
+
                                                     </div>
+                                                </div>
+
 
 
 

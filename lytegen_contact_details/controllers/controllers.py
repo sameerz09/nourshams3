@@ -670,6 +670,114 @@ class CustomAppointmentController(AppointmentController):
             ('yes', 'نعم'),
             ('no', 'لا'),
         ]
+        is_currently_displaced = [
+            ('yes', 'نعم'),
+            ('no', 'لا'),
+        ]
+        housing_type_options = [
+            ('inside_camp', 'بيت داخل المخيم'),
+            ('outside_camp', 'بيت خارج المخيم'),
+            ('with_relatives', 'عند أقارب'),
+            ('shelter_center', 'مركز إيواء (مدرسة أو مسجد…)'),
+            ('no_fixed_housing', 'بدون سكن ثابت'),
+        ]
+
+        housing_damage_level_options = [
+            ('none', 'لا'),
+            ('minor', 'بسيط'),
+            ('moderate', 'متوسط'),
+            ('destroyed', 'دمار كلي'),
+        ]
+
+        damage_documented_options = [
+            ('yes', 'نعم'),
+            ('no', 'لا'),
+        ]
+
+        economic_status_options = [
+            ('no_income', 'لا دخل'),
+            ('aid_only', 'مساعدات فقط'),
+            ('one_working', 'شخص واحد يعمل'),
+            ('multiple_working', 'أكثر من شخص يعمل'),
+        ]
+
+        worked_inside_palestine_options = [
+            ('yes', 'نعم'),
+            ('no', 'لا'),
+        ]
+
+        workers_count_options = [
+            ('1', '1'),
+            ('2', '2'),
+            ('3_plus', '3+'),
+        ]
+
+        unemployed_options = [
+            ('yes', 'نعم'),
+            ('no', 'لا'),
+        ]
+        school_students_options = [
+            ('yes', 'نعم'),
+            ('no', 'لا'),
+        ]
+
+        school_attendance_options = [
+            ('all_continuing', 'مستمرون'),
+            ('some_stopped', 'بعضهم توقف'),
+        ]
+
+        university_students_options = [
+            ('yes', 'نعم'),
+            ('no', 'لا'),
+        ]
+
+        university_attendance_options = [
+            ('continuing', 'التعليم مستمر'),
+            ('stopped', 'توقف'),
+        ]
+
+        disability_type_options = [
+            ('visual', 'الإعاقة البصرية'),
+            ('hearing', 'الإعاقة السمعية'),
+            ('speech', 'الإعاقة النطقية'),
+            ('mental', 'الإعاقة العقلية'),
+            ('physical', 'الإعاقة الجسمية والحركية'),
+            ('chronic', 'مرض مزمن'),
+        ]
+
+        receiving_care_options = [
+            ('yes', 'نعم'),
+            ('no', 'لا'),
+        ]
+
+        care_affected_options = [
+            ('yes', 'نعم'),
+            ('no', 'لا'),
+        ]
+
+        basic_needs_options = [
+            ('shelter', 'مسكن'),
+            ('food', 'غذاء'),
+            ('treatment', 'علاج'),
+            ('clothing', 'ملابس'),
+            ('financial_aid', 'مساعدات مالية'),
+            ('baby_supplies', 'مستلزمات أطفال'),
+            ('support', 'دعم تعليمي/نفسي/لذوي الإعاقة'),
+            ('other', 'أخرى'),
+        ]
+
+        family_skills_options = [
+            ('construction', 'بناء'),
+            ('electricity', 'كهرباء'),
+            ('education', 'تعليم'),
+            ('maintenance', 'صيانة'),
+            ('other', 'آخر'),
+        ]
+
+        data_sharing_consent_options = [
+            ('yes', 'نعم'),
+            ('no', 'لا'),
+        ]
 
         sp1s = [(emp.id, emp.name) for emp in sales_consultants]
 
@@ -691,6 +799,25 @@ class CustomAppointmentController(AppointmentController):
             'displacement_reasons': displacement_reasons,
             'displacement_residences': displacement_residences,
             'multiple_displacement_options': multiple_displacement_options,
+            'is_currently_displaced': is_currently_displaced,
+            'housing_type_options': housing_type_options,
+            'housing_damage_level_options': housing_damage_level_options,
+            'damage_documented_options': damage_documented_options,
+            'economic_status_options': economic_status_options,
+            'worked_inside_palestine_options': worked_inside_palestine_options,
+            'workers_count_options': workers_count_options,
+            'unemployed_options': unemployed_options,
+            'school_students_options': school_students_options,
+            'school_attendance_options': school_attendance_options,
+            'university_students_options': university_students_options,
+            'university_attendance_options': university_attendance_options,
+            'disability_type_options': disability_type_options,
+            'receiving_care_options': receiving_care_options,
+            'care_affected_options': care_affected_options,
+            'basic_needs_options': basic_needs_options,
+            'data_sharing_consent_options': data_sharing_consent_options,
+            'family_skills_options': family_skills_options,
+
         })
 
 
@@ -712,6 +839,7 @@ class CustomAppointmentController(AppointmentController):
             multiple_displacements = post.get('multiple_displacement_options')
             displacement_residence_type = post.get('displacement_residences')
             family_member_count = post.get('family_member_count')
+
 
             # Create Project
             project = request.env['project.project'].sudo().create({
@@ -757,68 +885,41 @@ class CustomAppointmentController(AppointmentController):
                 'multiple_displacements': multiple_displacements,
                 'displacement_residence_type': displacement_residence_type,
                 'family_member_count': family_member_count,
+                'pre_displacement_area': post.get('pre_displacement_area'),
+                'unrwa_card_number': post.get('unrwa_card_number'),
+                'id_number': post.get('id_number'),
+                'is_currently_displaced': post.get('is_currently_displaced'),
+                'housing_type': post.get('housing_type'),
+                'housing_damage_level': post.get('housing_damage_level'),
+                'damage_documented': post.get('damage_documented'),
+                'economic_status_options': post.get('economic_status_options'),
+                'worked_inside_palestine_options': post.get('worked_inside_palestine_options'),
+                'workers_count_options': post.get('workers_count_options'),
+                'unemployed_options': post.get('unemployed_options'),
+                'school_students_options': post.get('school_students_options'),
+                'school_attendance_options': post.get('school_attendance_options'),
+                'university_students_options': post.get('university_students_options'),
+                'university_attendance_options': post.get('university_attendance_options'),
+                'disability_type_options': post.get('disability_type_options'),
+                'receiving_care_options': post.get('receiving_care_options'),
+                'care_affected_options': post.get('care_affected_options'),
+                'basic_needs_options': post.get('basic_needs_options'),
+                'data_sharing_consent_options': post.get('data_sharing_consent_options'),
+                'additional_notes': post.get('additional_notes'),
+                'family_skills_options': post.get('family_skills_options'),
             })
-
-            # # Handle attachments
-            # usage_file_ids = []
-            # additional_file_ids = []
-            # attached_files = {}
-            # Attachment = request.env['ir.attachment'].sudo()
-            #
-            # utility_files = request.httprequest.files.getlist('utility_bill[]')
-            # field_id = '2nvUQ4BJTvoGvoQc8DG4' if self.getEnv() == 'prod' else 'eG2AcvDmorpR5oa0vqY4'
-            # for file in utility_files:
-            #     file_content = file.read()
-            #     attachment = Attachment.create({
-            #         'name': file.filename,
-            #         'datas': base64.b64encode(file_content),
-            #         'res_model': 'project.project',
-            #         'res_id': project.id,
-            #         'type': 'binary',
-            #         'mimetype': file.mimetype,
-            #         'public': True,
-            #     })
-            #     usage_file_ids.append(attachment.id)
-            #     if field_id not in attached_files.keys():
-            #         attached_files[field_id] = [f'{attachment.id}/{file.filename}']
-            #     else:
-            #         attached_files[field_id].append(f'{attachment.id}/{file.filename}')
-            #
-            # additional_files = request.httprequest.files.getlist('additional_files[]')
-            #
-            # field_id = 'xndMS4IWYMUnY9341RKJ' if self.getEnv() == 'prod' else 'eG2AcvDmorpR5oa0vqY4'
-            # for file in additional_files:
-            #     file_content = file.read()
-            #     attachment = Attachment.create({
-            #         'name': file.filename,
-            #         'datas': base64.b64encode(file_content),
-            #         'res_model': 'project.project',
-            #         'res_id': project.id,
-            #         'type': 'binary',
-            #         'mimetype': file.mimetype,
-            #         'public': True,
-            #     })
-            #     additional_file_ids.append(attachment.id)
-            #     if field_id not in attached_files.keys():
-            #         attached_files[field_id] = [f'{attachment.id}/{file.filename}']
-            #     else:
-            #         attached_files[field_id].append(f'{attachment.id}/{file.filename}')
-            #
-            # # Link attachments to project
-            # project.write({
-            #     'usage_files': [(6, 0, usage_file_ids)],
-            #     'additional_files': [(6, 0, additional_file_ids)],
-            # })
 
             # Handle attachments
             usage_file_ids = []
             additional_file_ids = []
             unrwa_file_ids = []
+            house_damage_file_ids = []
+            report_file_ids = []
             attached_files = {}
 
             Attachment = request.env['ir.attachment'].sudo()
 
-            # Handle utility bills
+            # Handle utility bills (usage files)
             utility_files = request.httprequest.files.getlist('utility_bill[]')
             field_id = '2nvUQ4BJTvoGvoQc8DG4' if self.getEnv() == 'prod' else 'eG2AcvDmorpR5oa0vqY4'
             for file in utility_files:
@@ -867,28 +968,44 @@ class CustomAppointmentController(AppointmentController):
                 })
                 unrwa_file_ids.append(attachment.id)
 
+            # Handle house damage photos (optional)
+            house_damage_files = request.httprequest.files.getlist('house_damage_photos[]')
+            for file in house_damage_files:
+                file_content = file.read()
+                attachment = Attachment.create({
+                    'name': file.filename,
+                    'datas': base64.b64encode(file_content),
+                    'res_model': 'project.project',
+                    'res_id': project.id,
+                    'type': 'binary',
+                    'mimetype': file.mimetype,
+                    'public': True,
+                })
+                house_damage_file_ids.append(attachment.id)
+
+            # Handle report documents (optional)
+            report_files = request.httprequest.files.getlist('report_documents[]')
+            for file in report_files:
+                file_content = file.read()
+                attachment = Attachment.create({
+                    'name': file.filename,
+                    'datas': base64.b64encode(file_content),
+                    'res_model': 'project.project',
+                    'res_id': project.id,
+                    'type': 'binary',
+                    'mimetype': file.mimetype,
+                    'public': True,
+                })
+                report_file_ids.append(attachment.id)
+
             # Link all attachments to project
             project.write({
                 'usage_files': [(6, 0, usage_file_ids)],
                 'additional_files': [(6, 0, additional_file_ids)],
                 'unrwa_document': [(6, 0, unrwa_file_ids)],
+                'house_damage_photos': [(6, 0, house_damage_file_ids)],
+                'report_documents': [(6, 0, report_file_ids)],
             })
-
-
-
-
-            # sp1 = contact.setter_2 if contact else ''
-            # opener = contact.opener_2 if contact else ''
-            # source_file = contact.source_file if contact else ''
-            # project_search = request.env['project.project'].sudo().search([
-            #     ('phone', '=', phone)
-            # ], limit=1)
-            #
-            # sp2 = project_search.sales_consultant_employee_id.name if project_search.sales_consultant_employee_id else ''
-            # base_url = "https://odoo.lytegen.com"
-            # project_url = f"{base_url}/web#id={project_search.id}&model=project.project&view_type=form" if project_search else ''
-
-
 
             return request.render("lytegen_contact_details.project_onboarding_success", {'project': project})
 

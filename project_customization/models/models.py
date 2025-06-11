@@ -429,6 +429,134 @@ class ProjectProject(models.Model):
 
     id_number = fields.Char(string="رقم الهوية", required=True)
     unrwa_card_number = fields.Char(string="رقم كرت UNRWA", required=True)
+    family_member_count = fields.Integer(string="عدد أفراد العائلة", required=True)
+    is_currently_displaced = fields.Selection([
+        ('yes', 'نعم'),
+        ('no', 'لا'),
+    ], string="هل الأسرة نازحة حاليًا؟", required=True)
+    pre_displacement_area = fields.Char(string="مكان السكن قبل النزوح", required=True)
+
+    housing_type = fields.Selection([
+        ('inside_camp', 'بيت داخل المخيم'),
+        ('outside_camp', 'بيت خارج المخيم'),
+        ('with_relatives', 'عند أقارب'),
+        ('shelter_center', 'مركز إيواء (مدرسة أو مسجد…)'),
+        ('no_fixed_housing', 'بدون سكن ثابت'),
+    ], string="نوع السكن الحالي", required=True)
+
+    housing_damage_level = fields.Selection([
+        ('none', 'لا'),
+        ('minor', 'بسيط'),
+        ('moderate', 'متوسط'),
+        ('destroyed', 'دمار كلي'),
+    ], string="تعرض السكن لأضرار؟", required=True)
+
+    damage_documented = fields.Selection([
+        ('yes', 'نعم'),
+        ('no', 'لا'),
+    ], string="هل تم توثيق الضرر؟", required=True)
+
+    economic_status = fields.Selection([
+        ('no_income', 'لا دخل'),
+        ('aid_only', 'مساعدات فقط'),
+        ('one_working', 'شخص واحد يعمل'),
+        ('multiple_working', 'أكثر من شخص يعمل'),
+    ], string="وضع الأسرة الاقتصادي الحالي", required=True)
+
+    worked_inside_palestine_before = fields.Selection([
+        ('yes', 'نعم'),
+        ('no', 'لا'),
+    ], string="هل كان يعمل أحد داخل فلسطين قبل النزوح؟", required=True)
+
+    workers_count_before_displacement = fields.Selection([
+        ('1', '1'),
+        ('2', '2'),
+        ('3_plus', '3+'),
+    ], string="عدد من كانوا يعملون", required=False)
+
+    has_unemployed = fields.Selection([
+        ('yes', 'نعم'),
+        ('no', 'لا'),
+    ], string="هل يوجد عاطلون؟", required=True)
+    has_school_students = fields.Selection([
+        ('yes', 'نعم'),
+        ('no', 'لا'),
+    ], string="هل في الأسرة طلاب مدارس؟", required=True)
+
+    school_attendance_status = fields.Selection([
+        ('all_continuing', 'مستمرون'),
+        ('some_stopped', 'بعضهم توقف'),
+    ], string="وضع طلاب المدارس", required=False)
+
+    has_university_students = fields.Selection([
+        ('yes', 'نعم'),
+        ('no', 'لا'),
+    ], string="طلاب جامعات؟", required=True)
+
+    university_attendance_status = fields.Selection([
+        ('continuing', 'التعليم مستمر'),
+        ('stopped', 'توقف'),
+    ], string="وضع طلاب الجامعات", required=False)
+
+    disabled_count = fields.Integer(string="عدد ذوي الإعاقة", required=False)
+
+    disability_type = fields.Selection([
+        ('visual', 'الإعاقة البصرية'),
+        ('hearing', 'الإعاقة السمعية'),
+        ('speech', 'الإعاقة النطقية'),
+        ('mental', 'الإعاقة العقلية'),
+        ('physical', 'الإعاقة الجسمية والحركية'),
+        ('chronic', 'مرض مزمن'),
+    ], string="نوع الإعاقة", required=False)
+
+    receiving_care = fields.Selection([
+        ('yes', 'نعم'),
+        ('no', 'لا'),
+    ], string="هل يتلقون رعاية؟", required=False)
+
+    care_affected_by_displacement = fields.Selection([
+        ('yes', 'نعم'),
+        ('no', 'لا'),
+    ], string="هل تأثرت الرعاية بالنزوح؟", required=False)
+
+    basic_needs = fields.Selection([
+        ('shelter', 'مسكن'),
+        ('food', 'غذاء'),
+        ('treatment', 'علاج'),
+        ('clothing', 'ملابس'),
+        ('financial_aid', 'مساعدات مالية'),
+        ('baby_supplies', 'مستلزمات أطفال'),
+        ('support', 'دعم تعليمي/نفسي/لذوي الإعاقة'),
+        ('other', 'أخرى'),
+    ], string="الاحتياجات الأساسية", required=False)
+
+    data_sharing_consent = fields.Selection([
+        ('yes', 'نعم'),
+        ('no', 'لا'),
+    ], string="هل توافق على مشاركة البيانات؟", required=True)
+
+    additional_notes = fields.Text(string="ملاحظات إضافية")
+
+    house_damage_photos = fields.Many2many(
+        'ir.attachment',
+        relation="project_house_damage_photos_rel",
+        string="صور أضرار البيت",
+        tracking=True
+    )
+
+    report_documents = fields.Many2many(
+        'ir.attachment',
+        relation="project_report_documents_rel",
+        string="تقارير",
+        tracking=True
+    )
+    family_skills = fields.Selection([
+        ('construction', 'بناء'),
+        ('electricity', 'كهرباء'),
+        ('education', 'تعليم'),
+        ('maintenance', 'صيانة'),
+        ('other', 'آخر'),
+    ], string="مهارات يتقنها أفراد العائلة", required=False)
 
     @api.depends('create_date')
     def _compute_create_date_formatted(self):

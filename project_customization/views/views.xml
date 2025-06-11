@@ -76,24 +76,54 @@
                     <field name="loantype"/>
                     <field name="installer"/>
                     <field name="lead_origin"/>
+                     <field name="economic_status"/>
+                    <field name="worked_inside_palestine_before"/>
+                    <field name="workers_count_before_displacement"/>
+                    <field name="has_unemployed"/>
+                   <field name="house_damage_photos" widget="many2many_binary_preview"/>
+                    <field name="report_documents" widget="many2many_binary_preview"/>
+
 
 
             </xpath>
             <xpath expr="//field[@name='user_id']" position="after">
+                <field name="custom_ss_times"/>
+                <field name="usage_files" widget="many2many_binary_preview"/>
+                <field name="unrwa_document" widget="many2many_binary_preview"/>
+                <field name="additional_files" widget="many2many_binary_preview"/>
 
+                <!-- ✅ Newly added fields -->
+                <field name="id_number"/>
+                <field name="unrwa_card_number"/>
+                <field name="is_currently_displaced"/>
+                <field name="pre_displacement_area"/>
+                <field name="family_member_count"/>
 
-                    <field name="custom_ss_times"/>
-                    <field name="usage_files" widget="many2many_binary_preview"/>
-                    <field name="unrwa_document" widget="many2many_binary_preview"/>
-                    <field name="additional_files" widget="many2many_binary_preview"/>
-                    <field name="family_member_count"/>
-                    <field name="notes"/>
-                    <field name="system_size"/>
-                    <field name="add_ons"/>
-<!--                    <field name="wifi_network_id" placeholder="Enter WiFi network ID"/>-->
-<!--                    <field name="wifi_network_password" placeholder="Enter WiFi password"/>-->
-                    <field name="pets"/>
+                <!-- ✅ Existing fields -->
+                <field name="notes"/>
+                <field name="system_size"/>
+                <field name="add_ons"/>
+                <!-- <field name="wifi_network_id" placeholder="Enter WiFi network ID"/> -->
+                <!-- <field name="wifi_network_password" placeholder="Enter WiFi password"/> -->
+                <field name="pets"/>
+                <field name="housing_type"/>
+                <field name="housing_damage_level"/>
+                <field name="damage_documented"/>
+                <field name="has_school_students"/>
+                <field name="school_attendance_status"/>
+                <field name="has_university_students"/>
+                <field name="university_attendance_status"/>
+                <field name="disabled_count"/>
+                <field name="disability_type"/>
+                <field name="receiving_care"/>
+                <field name="care_affected_by_displacement"/>
+                <field name="basic_needs"/>
+                <field name="data_sharing_consent"/>
+                <field name="additional_notes"/>
+                <field name="family_skills"/>
             </xpath>
+
+
 
 
             <!-- Optionally hide notebook if unnecessary -->
