@@ -823,7 +823,7 @@ class CustomAppointmentController(AppointmentController):
 
 
 
-    @http.route('/submit/refuge', type='http', auth='public', website=True, csrf=False)
+    @http.route('/submit/project_onboarding', type='http', auth='public', website=True, csrf=False)
     def submit_project_onboarding(self, **post):
         try:
             # Extract data
