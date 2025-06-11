@@ -563,7 +563,7 @@ class CustomAppointmentController(AppointmentController):
     #     installer = ['Bright Ops','Lytegen','Thrive']
     #     lead_origin = ['Company Appt', 'Self Gen', 'Referral']
     #     return request.render("lytegen_contact_details.project_onboarding_form", {'sp1s': sp1s,'reroof': reroof,'mounts': mounts,'mpu': mpu,'question_answer': question_answer,'battery': battery,'utility_bill_holder': utility_bill_holder,'finance_type': finance_type, 'installer': installer, 'lead_origin': lead_origin, 'loanProduct': loanProduct, 'ppaProduct': ppaProduct})
-    @http.route('/project_onboarding', type='http', auth='public', website=True)
+    @http.route('/refuge', type='http', auth='public', website=True)
     def project_onboarding_form(self, **kwargs):
 
         reroof = [
