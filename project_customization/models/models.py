@@ -28,7 +28,7 @@ class ProjectProject(models.Model):
         ('arrest_threat', 'تهديد بالاعتقال'),
         ('job_loss', 'فقدان العمل'),
         ('lack_services', 'انعدام الخدمات'),
-    ], string="أسباب النزوح", help="اختر سبب أو أكثر", required=False, multi=True)
+    ], string="أسباب النزوح", help="اختر سبب أو أكثر", required=False)
 
     displacement_residence_type = fields.Selection([
         ('shelter', 'مركز إيواء'),
@@ -247,7 +247,7 @@ class ProjectProject(models.Model):
         ('arrest_threat', 'تهديد بالاعتقال'),
         ('job_loss', 'فقدان العمل'),
         ('lack_services', 'انعدام الخدمات'),
-    ], string="أسباب النزوح", help="اختر سبب أو أكثر", required=False, multi=True)
+    ], string="أسباب النزوح", help="اختر سبب أو أكثر", required=False)
 
     displacement_residence_type = fields.Selection([
         ('shelter', 'مركز إيواء'),
