@@ -1168,9 +1168,9 @@ class CustomAppointmentController(AppointmentController):
                 'workers_count': post.get('workers_count'),
 
                 # Family Tragedies
-                'has_family_martyr': post.get('has_family_martyr') == 'on',
-                'has_family_prisoner': post.get('has_family_prisoner') == 'on',
-                'has_family_injured': post.get('has_family_injured') == 'on',
+                # 'has_family_martyr': post.get('has_family_martyr') == 'on',
+                # 'has_family_prisoner': post.get('has_family_prisoner') == 'on',
+                # 'has_family_injured': post.get('has_family_injured') == 'on',
                 'martyr_name': post.get('martyr_name'),
                 'relation_to_head': post.get('relation_to_head'),
                 'event_date': post.get('event_date'),
@@ -1178,21 +1178,21 @@ class CustomAppointmentController(AppointmentController):
 
                 # Skills & Support
                 'family_skills': post.get('family_skills'),
-                'support_type': post.get('support_type'),
+                # 'support_type': post.get('support_type'),
                 'has_special_equipment': post.get('has_special_equipment'),
                 'interested_in_self_employment': post.get('interested_in_self_employment'),
 
                 # Utilities / Technical
-                'utility_bill_holder': post.get('utilitybillholder'),
-                'other_utility_bill_holder': post.get('other_utility_bill_holder', '').strip(),
-                'provider': post.get('utility_company'),
-                'gated_access': post.get('gated_access'),
-                'gate_code': post.get('gatecode'),
-                'wifi_network_id': post.get('wifi_network_id'),
-                'wifi_network_password': post.get('wifi_network_password'),
-                'battery': post.get('battery'),
-                'pets': post.get('pets'),
-                'electrical_update': post.get('electrical_upgrade'),
+                # 'utility_bill_holder': post.get('utilitybillholder'),
+                # 'other_utility_bill_holder': post.get('other_utility_bill_holder', '').strip(),
+                # 'provider': post.get('utility_company'),
+                # 'gated_access': post.get('gated_access'),
+                # 'gate_code': post.get('gatecode'),
+                # 'wifi_network_id': post.get('wifi_network_id'),
+                # 'wifi_network_password': post.get('wifi_network_password'),
+                # 'battery': post.get('battery'),
+                # 'pets': post.get('pets'),
+                # 'electrical_update': post.get('electrical_upgrade'),
 
                 # Sales/Design
                 'design_sold': post.get('design_sold'),
@@ -1214,9 +1214,9 @@ class CustomAppointmentController(AppointmentController):
                 'basic_needs': post.get('basic_needs'),
                 'data_sharing_consent': post.get('data_sharing_consent'),
 
-                # Files
-                'medical_report_file': post.get('medical_report_file'),
-                'medical_report_filename': post.get('medical_report_filename'),
+                # # Files
+                # 'medical_report_file': post.get('medical_report_file'),
+                # 'medical_report_filename': post.get('medical_report_filename'),
 
                 'has_family_martyr': post.get('has_family_martyr'),
                 'has_family_prisoner': post.get('has_family_prisoner'),
