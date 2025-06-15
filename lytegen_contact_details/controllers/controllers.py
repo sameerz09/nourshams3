@@ -778,6 +778,149 @@ class CustomAppointmentController(AppointmentController):
             ('yes', 'نعم'),
             ('no', 'لا'),
         ]
+        pre_displacement_house_type_options = [
+            ('independent', 'بيت مستقل'),
+            ('apartment', 'شقة'),
+            ('shared_building', 'بناية مشتركة'),
+        ]
+
+        house_ownership_status_options = [
+            ('owned', 'ملك'),
+            ('rented', 'مستأجر'),
+        ]
+
+        other_families_on_floor_options = [
+            ('yes', 'نعم'),
+            ('no', 'لا'),
+        ]
+
+        support_type_options = [
+            ('support', 'دعم تعليمي/نفسي/لذوي الإعاقة'),
+            ('other', 'أخرى'),
+        ]
+
+        family_skills_options = [
+            ('construction', 'بناء'),
+            ('electricity', 'كهرباء'),
+            ('education', 'تعليم'),
+            ('maintenance', 'صيانة'),
+            ('other', 'آخر'),
+        ]
+
+        data_sharing_consent_options = [
+            ('yes', 'نعم'),
+            ('no', 'لا'),
+        ]
+
+        pre_displacement_house_type_options = [
+            ('independent', 'بيت مستقل'),
+            ('apartment', 'شقة'),
+            ('shared_building', 'بناية مشتركة'),
+        ]
+
+        house_ownership_status_options = [
+            ('owned', 'ملك'),
+            ('rented', 'مستأجر'),
+        ]
+
+        other_families_on_floor_options = [
+            ('yes', 'نعم'),
+            ('no', 'لا'),
+        ]
+
+        support_type_options = [
+            ('support', 'دعم تعليمي/نفسي/لذوي الإعاقة'),
+            ('other', 'أخرى'),
+        ]
+
+        family_skills_options = [
+            ('construction', 'بناء'),
+            ('electricity', 'كهرباء'),
+            ('education', 'تعليم'),
+            ('maintenance', 'صيانة'),
+            ('other', 'آخر'),
+        ]
+
+        data_sharing_consent_options = [
+            ('yes', 'نعم'),
+            ('no', 'لا'),
+        ]
+
+        pre_displacement_house_type_options = [
+            ('independent', 'بيت مستقل'),
+            ('apartment', 'شقة'),
+            ('shared_building', 'بناية مشتركة'),
+        ]
+
+        house_ownership_status_options = [
+            ('owned', 'ملك'),
+            ('rented', 'مستأجر'),
+        ]
+
+        other_families_on_floor_options = [
+            ('yes', 'نعم'),
+            ('no', 'لا'),
+        ]
+
+        support_type_options = [
+            ('support', 'دعم تعليمي/نفسي/لذوي الإعاقة'),
+            ('other', 'أخرى'),
+        ]
+
+        family_skills_options = [
+            ('construction', 'بناء'),
+            ('electricity', 'كهرباء'),
+            ('education', 'تعليم'),
+            ('maintenance', 'صيانة'),
+            ('other', 'آخر'),
+        ]
+
+        data_sharing_consent_options = [
+            ('yes', 'نعم'),
+            ('no', 'لا'),
+        ]
+
+        pre_displacement_house_type_options = [
+            ('independent', 'بيت مستقل'),
+            ('apartment', 'شقة'),
+            ('shared_building', 'بناية مشتركة'),
+        ]
+
+        house_ownership_status_options = [
+            ('owned', 'ملك'),
+            ('rented', 'مستأجر'),
+        ]
+
+        other_families_on_floor_options = [
+            ('yes', 'نعم'),
+            ('no', 'لا'),
+        ]
+
+        housing_condition_options = [('habitable', 'صالح للسكن'), ('uninhabitable', 'غير صالح')]
+        employment_type_options = [('gov', 'موظف حكومي'), ('agency', 'موظف وكالة'), ('private', 'قطاع خاص'),
+                                   ('interior_worker', 'عامل في الداخل')]
+        stable_income_options = [('yes', 'نعم'), ('no', 'لا')]
+        interior_workers_options = [('yes', 'نعم'), ('no', 'لا')]
+        can_still_work_options = [('yes', 'نعم'), ('no', 'لا')]
+        lost_shop_options = [('yes', 'نعم'), ('no', 'لا')]
+        shop_ownership_options = [('owned', 'ملك'), ('rented', 'مستأجر')]
+        main_income_source_options = [('yes', 'نعم'), ('no', 'لا')]
+        special_equipment_options = [('yes', 'نعم'), ('no', 'لا')]
+        self_employment_options = [('yes', 'نعم'), ('no', 'لا')]
+        has_family_martyr_options = [
+            ('yes', 'نعم'),
+            ('no', 'لا'),
+        ]
+
+        has_family_prisoner_options = [
+            ('yes', 'نعم'),
+            ('no', 'لا'),
+        ]
+
+        has_family_injured_options = [
+            ('yes', 'نعم'),
+            ('no', 'لا'),
+        ]
 
         sp1s = [(emp.id, emp.name) for emp in sales_consultants]
 
@@ -817,6 +960,26 @@ class CustomAppointmentController(AppointmentController):
             'basic_needs_options': basic_needs_options,
             'data_sharing_consent_options': data_sharing_consent_options,
             'family_skills_options': family_skills_options,
+            'pre_displacement_house_type_options': pre_displacement_house_type_options,
+            'house_ownership_status_options': house_ownership_status_options,
+            'other_families_on_floor_options': other_families_on_floor_options,
+            'support_type_options': support_type_options,
+            # 'support_type_options': support_type_options,
+            # 'family_skills_options': family_skills_options,
+            'housing_condition_options': housing_condition_options,
+            'employment_type_options': employment_type_options,
+            'stable_income_options': stable_income_options,
+            'interior_workers_options': interior_workers_options,
+            'can_still_work_options': can_still_work_options,
+            'lost_shop_options': lost_shop_options,
+            'shop_ownership_options': shop_ownership_options,
+            'main_income_source_options': main_income_source_options,
+            'special_equipment_options': special_equipment_options,
+            'self_employment_options': self_employment_options,
+            'has_family_martyr_options': has_family_martyr_options,
+            'has_family_prisoner_options': has_family_prisoner_options,
+            'has_family_injured_options': has_family_injured_options,
+
 
         })
 
@@ -841,72 +1004,226 @@ class CustomAppointmentController(AppointmentController):
             family_member_count = post.get('family_member_count')
 
 
-            # Create Project
+            # # Create Project
+            # project = request.env['project.project'].sudo().create({
+            #     'name': f"{full_name}'s Project",
+            #     'customer_name': full_name,
+            #     'phone': phone,
+            #     'email': email,
+            #     'secondary_customer_name': post.get('secondary_contact_name'),
+            #     'secondary_phone': f"+{secondary_country_code}{post.get('secondary_contact_phone')}" if post.get('secondary_contact_phone') else False,
+            #     'secondary_email': post.get('secondary_contact_email'),
+            #     'street_address': post.get('street_address'),
+            #     # 'city': post.get('city'),
+            #     # 'state': post.get('state'),
+            #     # 'zip_code': post.get('zipcode'),
+            #     'reroof': post.get('reroof'),
+            #     'mount': post.get('mount'),
+            #     'hoa': post.get('hoa'),
+            #     # 'gated_access': post.get('gatedaccess'),
+            #     'battery': post.get('battery'),
+            #     'pets': post.get('pets'),
+            #     'electrical_update': post.get('electrical_upgrade'),
+            #     'utility_bill_holder': post.get('utilitybillholder'),
+            #     'other_utility_bill_holder': post.get('other_utility_bill_holder', '').strip(),
+            #     'provider': post.get('utility_company'),
+            #     'finance_type': post.get('finance_type'),
+            #     'loantype': product_type,
+            #     'lead_origin': post.get('lead_origin'),
+            #     'custom_ss_times': post.get('call_window'),
+            #     'notes': post.get('notes'),
+            #     'special_request': post.get('notes'),
+            #     'wifi_network_id': post.get('wifi_network_id'),
+            #     'wifi_network_password': post.get('wifi_network_password'),
+            #     'gated_access': post.get('gated_access'),
+            #     'gate_code': post.get('gatecode'),
+            #     'design_sold': post.get('design_sold'),
+            #     'add_ons': post.get('addons'),
+            #     # 'site_survey_date1': post.get('site_survey_date1'),
+            #     # 'site_survey_date2': post.get('site_survey_date2'),
+            #     # 'site_survey_date3': post.get('site_survey_date3'),
+            #     'date_start': date.today(),
+            #     'displacement_date': displacement_date,
+            #     'sales_consultant_employee_id': int(post.get('sp2')) if post.get('sp2') else False,
+            #     'multiple_displacements': multiple_displacements,
+            #     'displacement_residence_type': displacement_residence_type,
+            #     'family_member_count': family_member_count,
+            #     'pre_displacement_area': post.get('pre_displacement_area'),
+            #     'unrwa_card_number': post.get('unrwa_card_number'),
+            #     'id_number': post.get('id_number'),
+            #     'is_currently_displaced': post.get('is_currently_displaced'),
+            #     'housing_type': post.get('housing_type'),
+            #     'housing_damage_level': post.get('housing_damage_level'),
+            #     'damage_documented': post.get('damage_documented'),
+            #     'economic_status': post.get('economic_status'),
+            #     'worked_inside_palestine_before': post.get('worked_inside_palestine_before'),
+            #     'workers_count_before_displacement': post.get('workers_count_before_displacement'),
+            #     'has_unemployed': post.get('has_unemployed'),
+            #     'has_school_students': post.get('has_school_students'),
+            #     'school_attendance_status': post.get('school_attendance_status'),
+            #     'has_university_students': post.get('has_university_students'),
+            #     'university_attendance_status': post.get('university_attendance_status'),
+            #     'disability_type': post.get('disability_type'),
+            #     'receiving_care': post.get('receiving_care'),
+            #     'care_affected_by_displacement': post.get('care_affected_by_displacement'),
+            #     'basic_needs': post.get('basic_needs'),
+            #     'data_sharing_consent': post.get('data_sharing_consent'),
+            #     'additional_notes': post.get('additional_notes'),
+            #     'family_skills': post.get('family_skills'),
+            #     'pre_displacement_address': post.get('pre_displacement_address') or '',
+            #     'pre_displacement_house_type': post.get('pre_displacement_house_type'),
+            #     'house_ownership_status': post.get('house_ownership_status'),
+            #     'shared_with': post.get('shared_with') or '',
+            #     'other_families_on_floor': post.get('other_families_on_floor'),
+            #     'pre_displacement_description': post.get('pre_displacement_description') or '',
+            #     'housing_condition': post.get('housing_condition'),
+            #     'employment_type': post.get('employment_type'),
+            #     'stable_income': post.get('stable_income'),
+            #     'interior_workers': post.get('interior_workers'),
+            #     'can_still_work': post.get('can_still_work'),
+            #     'lost_shop': post.get('lost_shop'),
+            #     'shop_name': post.get('shop_name'),
+            #     'shop_location': post.get('shop_location'),
+            #     'shop_business_type': post.get('shop_business_type'),
+            #     'shop_ownership': post.get('shop_ownership'),
+            #     'shop_main_income_source': post.get('shop_main_income_source'),
+            #     'workers_count': post.get('workers_count'),
+            #     'has_family_martyr': post.get('has_family_martyr') == 'on',
+            #     'has_family_prisoner': post.get('has_family_prisoner') == 'on',
+            #     'has_family_injured': post.get('has_family_injured') == 'on',
+            #     'martyr_name': post.get('martyr_name'),
+            #     'relation_to_head': post.get('relation_to_head'),
+            #     'event_date': post.get('event_date'),
+            #     'event_details': post.get('event_details'),
+            #     'has_special_equipment': post.get('has_special_equipment'),
+            #     'interested_in_self_employment': post.get('interested_in_self_employment'),
+            #     'medical_report_file': post.get('medical_report_file'),
+            #     'medical_report_filename': post.get('medical_report_filename'),
+            # })
+
             project = request.env['project.project'].sudo().create({
+
+                # Contact & Identification
                 'name': f"{full_name}'s Project",
                 'customer_name': full_name,
                 'phone': phone,
                 'email': email,
                 'secondary_customer_name': post.get('secondary_contact_name'),
-                'secondary_phone': f"+{secondary_country_code}{post.get('secondary_contact_phone')}" if post.get('secondary_contact_phone') else False,
+                'secondary_phone': f"+{secondary_country_code}{post.get('secondary_contact_phone')}" if post.get(
+                    'secondary_contact_phone') else False,
                 'secondary_email': post.get('secondary_contact_email'),
-                'street_address': post.get('street_address'),
-                # 'city': post.get('city'),
-                # 'state': post.get('state'),
-                # 'zip_code': post.get('zipcode'),
-                'reroof': post.get('reroof'),
-                'mount': post.get('mount'),
-                'hoa': post.get('hoa'),
-                # 'gated_access': post.get('gatedaccess'),
-                'battery': post.get('battery'),
-                'pets': post.get('pets'),
-                'electrical_update': post.get('electrical_upgrade'),
-                'utility_bill_holder': post.get('utilitybillholder'),
-                'other_utility_bill_holder': post.get('other_utility_bill_holder', '').strip(),
-                'provider': post.get('utility_company'),
-                'finance_type': post.get('finance_type'),
-                'loantype': product_type,
-                'lead_origin': post.get('lead_origin'),
-                'custom_ss_times': post.get('call_window'),
-                'notes': post.get('notes'),
-                'special_request': post.get('notes'),
-                'wifi_network_id': post.get('wifi_network_id'),
-                'wifi_network_password': post.get('wifi_network_password'),
-                'gated_access': post.get('gated_access'),
-                'gate_code': post.get('gatecode'),
-                'design_sold': post.get('design_sold'),
-                'add_ons': post.get('addons'),
-                # 'site_survey_date1': post.get('site_survey_date1'),
-                # 'site_survey_date2': post.get('site_survey_date2'),
-                # 'site_survey_date3': post.get('site_survey_date3'),
-                'date_start': date.today(),
-                'displacement_date': displacement_date,
-                'sales_consultant_employee_id': int(post.get('sp2')) if post.get('sp2') else False,
-                'multiple_displacements': multiple_displacements,
-                'displacement_residence_type': displacement_residence_type,
-                'family_member_count': family_member_count,
-                'pre_displacement_area': post.get('pre_displacement_area'),
-                'unrwa_card_number': post.get('unrwa_card_number'),
                 'id_number': post.get('id_number'),
+                'unrwa_card_number': post.get('unrwa_card_number'),
+                'sales_consultant_employee_id': int(post.get('sp2')) if post.get('sp2') else False,
+
+                # Address & Location
+                'street_address': post.get('street_address'),
+                'pre_displacement_area': post.get('pre_displacement_area'),
+                'pre_displacement_address': post.get('pre_displacement_address') or '',
+                'shared_with': post.get('shared_with') or '',
+                'pre_displacement_description': post.get('pre_displacement_description') or '',
+
+                # Displacement Info
+                'displacement_date': displacement_date,
                 'is_currently_displaced': post.get('is_currently_displaced'),
+                'multiple_displacements': post.get('multiple_displacements'),
+                'displacement_residence_type': post.get('displacement_residence_type'),
+                'pre_displacement_house_type': post.get('pre_displacement_house_type'),
+                'house_ownership_status': post.get('house_ownership_status'),
+                'other_families_on_floor': post.get('other_families_on_floor'),
+
+                # Household Info
+                'family_member_count': post.get('family_member_count'),
+                'has_unemployed': post.get('has_unemployed'),
+                'has_school_students': post.get('has_school_students'),
+                'school_attendance_status': post.get('school_attendance_status'),
+                'has_university_students': post.get('has_university_students'),
+                'university_attendance_status': post.get('university_attendance_status'),
+                'disability_type': post.get('disability_type'),
+                'receiving_care': post.get('receiving_care'),
+                'care_affected_by_displacement': post.get('care_affected_by_displacement'),
+
+                # Housing Status
                 'housing_type': post.get('housing_type'),
                 'housing_damage_level': post.get('housing_damage_level'),
                 'damage_documented': post.get('damage_documented'),
-                'economic_status_options': post.get('economic_status_options'),
-                'worked_inside_palestine_options': post.get('worked_inside_palestine_options'),
-                'workers_count_options': post.get('workers_count_options'),
-                'unemployed_options': post.get('unemployed_options'),
-                'school_students_options': post.get('school_students_options'),
-                'school_attendance_options': post.get('school_attendance_options'),
-                'university_students_options': post.get('university_students_options'),
-                'university_attendance_options': post.get('university_attendance_options'),
-                'disability_type_options': post.get('disability_type_options'),
-                'receiving_care_options': post.get('receiving_care_options'),
-                'care_affected_options': post.get('care_affected_options'),
-                'basic_needs_options': post.get('basic_needs_options'),
-                'data_sharing_consent_options': post.get('data_sharing_consent_options'),
+                'housing_condition': post.get('housing_condition'),
+
+                # Economic / Employment
+                'economic_status': post.get('economic_status'),
+                'employment_type': post.get('employment_type'),
+                'stable_income': post.get('stable_income'),
+                'interior_workers': post.get('interior_workers'),
+                'can_still_work': post.get('can_still_work'),
+                'worked_inside_palestine_before': post.get('worked_inside_palestine_before'),
+
+                # Business Loss
+                'lost_shop': post.get('lost_shop'),
+                'shop_name': post.get('shop_name'),
+                'shop_location': post.get('shop_location'),
+                'shop_business_type': post.get('shop_business_type'),
+                'shop_ownership': post.get('shop_ownership'),
+                'shop_main_income_source': post.get('shop_main_income_source'),
+                'workers_count_before_displacement': post.get('workers_count_before_displacement'),
+                'workers_count': post.get('workers_count'),
+
+                # Family Tragedies
+                'has_family_martyr': post.get('has_family_martyr') == 'on',
+                'has_family_prisoner': post.get('has_family_prisoner') == 'on',
+                'has_family_injured': post.get('has_family_injured') == 'on',
+                'martyr_name': post.get('martyr_name'),
+                'relation_to_head': post.get('relation_to_head'),
+                'event_date': post.get('event_date'),
+                'event_details': post.get('event_details'),
+
+                # Skills & Support
+                'family_skills': post.get('family_skills'),
+                'support_type': post.get('support_type'),
+                'has_special_equipment': post.get('has_special_equipment'),
+                'interested_in_self_employment': post.get('interested_in_self_employment'),
+
+                # Utilities / Technical
+                'utility_bill_holder': post.get('utilitybillholder'),
+                'other_utility_bill_holder': post.get('other_utility_bill_holder', '').strip(),
+                'provider': post.get('utility_company'),
+                'gated_access': post.get('gated_access'),
+                'gate_code': post.get('gatecode'),
+                'wifi_network_id': post.get('wifi_network_id'),
+                'wifi_network_password': post.get('wifi_network_password'),
+                'battery': post.get('battery'),
+                'pets': post.get('pets'),
+                'electrical_update': post.get('electrical_upgrade'),
+
+                # Sales/Design
+                'design_sold': post.get('design_sold'),
+                'add_ons': post.get('addons'),
+                'lead_origin': post.get('lead_origin'),
+                'reroof': post.get('reroof'),
+                'mount': post.get('mount'),
+                'hoa': post.get('hoa'),
+
+                # Finance
+                'finance_type': post.get('finance_type'),
+                'loantype': product_type,
+
+                # Other Notes
+                'custom_ss_times': post.get('call_window'),
+                'notes': post.get('notes'),
+                'special_request': post.get('notes'),
                 'additional_notes': post.get('additional_notes'),
-                'family_skills_options': post.get('family_skills_options'),
+                'basic_needs': post.get('basic_needs'),
+                'data_sharing_consent': post.get('data_sharing_consent'),
+
+                # Files
+                'medical_report_file': post.get('medical_report_file'),
+                'medical_report_filename': post.get('medical_report_filename'),
+
+                'has_family_martyr': post.get('has_family_martyr'),
+                'has_family_prisoner': post.get('has_family_prisoner'),
+                'has_family_injured': post.get('has_family_injured'),
+
+                # Meta
+                'date_start': date.today(),
             })
 
             # Handle attachments

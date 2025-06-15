@@ -82,6 +82,18 @@
                     <field name="has_unemployed"/>
                    <field name="house_damage_photos" widget="many2many_binary_preview"/>
                     <field name="report_documents" widget="many2many_binary_preview"/>
+                   <field name="housing_condition"/>
+                    <field name="employment_type"/>
+                    <field name="stable_income"/>
+                    <field name="interior_workers"/>
+                    <field name="can_still_work"/>
+                    <field name="lost_shop"/>
+                    <field name="shop_name"/>
+                    <field name="shop_location"/>
+                    <field name="shop_business_type"/>
+                    <field name="shop_ownership"/>
+                    <field name="shop_main_income_source"/>
+                    <field name="workers_count"/>
 
 
 
@@ -121,6 +133,23 @@
                 <field name="data_sharing_consent"/>
                 <field name="additional_notes"/>
                 <field name="family_skills"/>
+                <field name="pre_displacement_address"/>
+                <field name="pre_displacement_house_type"/>
+                <field name="pre_displacement_floors"/>
+                <field name="pre_displacement_rooms"/>
+                <field name="house_ownership_status"/>
+                <field name="shared_with"/>
+                <field name="other_families_on_floor"/>
+                <field name="pre_displacement_description"/>
+                 <field name="has_family_martyr"/>
+                <field name="has_family_prisoner"/>
+                <field name="has_family_injured"/>
+                <field name="martyr_name"/>
+                <field name="relation_to_head"/>
+                <field name="event_date"/>
+                <field name="event_details"/>
+                 <field name="has_special_equipment"/>
+                <field name="interested_in_self_employment"/>
             </xpath>
 
 

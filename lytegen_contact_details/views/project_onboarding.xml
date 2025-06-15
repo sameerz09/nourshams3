@@ -37,8 +37,12 @@
 
                                     <!-- Logo & Title -->
                                     <div class="text-center mb-4">
-                                        <img src="/lytegen_contact_details/static/src/img/nurshams.jpg" alt="Project OnBoarding" class="form-logo"/>
+                                        <img src="/lytegen_contact_details/static/src/img/org.jpg" alt="Project OnBoarding" class="form-logo"/>
                                     </div>
+                                    <div class="mt-3">
+                                        <p class="header-font fw-bold fs-4 text-center text-dark">اللجنة الشعبية لخدمات مخيم نورشمس</p>
+                                    </div>
+
 
 
                                     <div class="alert alert-primary text-justify" style="background-color: #e6f0ff; border-color: #b3d1ff; direction: rtl; text-align: right;">
@@ -128,6 +132,51 @@
                                                                 <input type="text" name="pre_displacement_area" id="pre_displacement_area" class="form-control mt-2 header-font" required="required"/>
                                                             </div>
                                                         </div>
+                                                        <div class="row mt-3">
+                                                            <!-- هل يوجد شهيد؟ -->
+                                                            <div class="col-lg-4 col-sm-12">
+                                                                <span class="header-font">هل يوجد شهيد؟</span>
+                                                                <select class="form-control mt-2 header-font" name="has_family_martyr" id="has_family_martyr">
+                                                                    <option value=""/>
+                                                                    <t t-foreach="has_family_martyr_options" t-as="option">
+                                                                        <option t-att-value="option[0]"><t t-esc="option[1]"/></option>
+                                                                    </t>
+                                                                </select>
+                                                            </div>
+
+                                                            <div class="col-lg-4 col-sm-12">
+                                                                <span class="header-font">هل يوجد أسير؟</span>
+                                                                <select class="form-control mt-2 header-font" name="has_family_prisoner" id="has_family_prisoner">
+                                                                    <option value=""/>
+                                                                    <t t-foreach="has_family_prisoner_options" t-as="option">
+                                                                        <option t-att-value="option[0]"><t t-esc="option[1]"/></option>
+                                                                    </t>
+                                                                </select>
+                                                            </div>
+
+                                                            <div class="col-lg-4 col-sm-12">
+                                                                <span class="header-font">هل يوجد جريح؟</span>
+                                                                <select class="form-control mt-2 header-font" name="has_family_injured" id="has_family_injured">
+                                                                    <option value=""/>
+                                                                    <t t-foreach="has_family_injured_options" t-as="option">
+                                                                        <option t-att-value="option[0]"><t t-esc="option[1]"/></option>
+                                                                    </t>
+                                                                </select>
+                                                            </div>
+
+
+                                                            <!-- الاسم الكامل -->
+                                                            <div class="col-lg-4 col-sm-12 mt-3">
+                                                                <label class="header-font">الاسم الكامل (للشهيد أو الاسير أو الجريح)</label>
+                                                                <input type="text" class="form-control header-font" name="martyr_name"/>
+                                                            </div>
+
+                                                            <!-- العلاقة برب الأسرة -->
+                                                            <div class="col-lg-4 col-sm-12 mt-3">
+                                                                <label class="header-font">العلاقة برب الأسرة</label>
+                                                                <input type="text" class="form-control header-font" name="relation_to_head"/>
+                                                            </div>
+                                                        </div>
 
 
                                                         <!-- البريد الإلكتروني ورقم الهاتف -->
@@ -152,6 +201,107 @@
 
                                                     </div>
                                                 </div>
+                                                 <h2 class="accordion-header mt-3">
+                                                        <button class="accordion-button" type="button" data-bs-target="#customerDetails" aria-expanded="true" aria-controls="customerDetails">
+                                                            بيانات السكن ما قبل النزوح
+                                                          </button>
+                                                 </h2>
+                                                 <div id="preDisplacementHousing" class="accordion-collapse collapse show" data-bs-parent="#preDisplacementHousing">
+                                                        <div class="accordion-body">
+
+                                                            <!-- العنوان الكامل -->
+                                                            <div class="row mt-3">
+                                                                <div class="col-lg-12">
+                                                                    <span class="header-font">العنوان الكامل قبل النزوح (الشارع، الحارة، بجانب ماذا؟)</span>
+                                                                    <textarea name="pre_displacement_address" class="form-control mt-2 header-font" rows="2" placeholder="اكتب العنوان الكامل هنا"></textarea>
+                                                                </div>
+                                                            </div>
+
+                                                            <!-- نوع البيت -->
+                                                            <div class="row mt-3">
+                                                                <div class="col-lg-6">
+                                                                    <span class="header-font">نوع البيت</span>
+                                                                    <select class="form-control mt-2 header-font" name="pre_displacement_house_type">
+                                                                        <option value=""/>
+                                                                        <option value="independent">بيت مستقل</option>
+                                                                        <option value="apartment">شقة</option>
+                                                                        <option value="shared_building">بناية مشتركة</option>
+                                                                    </select>
+                                                                </div>
+
+                                                                <!-- الملكية -->
+                                                                <div class="col-lg-6">
+                                                                    <span class="header-font">هل كان ملكاً أم مستأجراً؟</span>
+                                                                    <select class="form-control mt-2 header-font" name="house_ownership_status">
+                                                                        <option value=""/>
+                                                                        <option value="owned">ملك</option>
+                                                                        <option value="rented">مستأجر</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+
+                                                            <!-- الطوابق والغرف -->
+                                                            <div class="row mt-3">
+                                                                <div class="col-lg-6">
+                                                                    <span class="header-font">عدد الطوابق</span>
+                                                                    <input type="number" min="0" name="pre_displacement_floors" class="form-control mt-2 header-font"/>
+                                                                </div>
+                                                                <div class="col-lg-6">
+                                                                    <span class="header-font">عدد الغرف</span>
+                                                                    <input type="number" min="0" name="pre_displacement_rooms" class="form-control mt-2 header-font"/>
+                                                                </div>
+                                                            </div>
+
+                                                            <!-- من كان يقطن معكم -->
+                                                            <div class="row mt-3">
+                                                                <div class="col-lg-6">
+                                                                    <span class="header-font">من كان يقطن معكم؟ (عدد الأسر، الأفراد)</span>
+                                                                    <input type="text" name="shared_with" class="form-control mt-2 header-font"/>
+                                                                </div>
+
+                                                                <!-- هل في الطابق سكان غيركم -->
+                                                                <div class="col-lg-6">
+                                                                    <span class="header-font">هل كان في الطابق سكّان غيركم؟</span>
+                                                                    <select name="other_families_on_floor" class="form-control mt-2 header-font">
+                                                                        <option value=""/>
+                                                                        <option value="yes">نعم</option>
+                                                                        <option value="no">لا</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row mt-3">
+                                                            <div class="col-lg-6">
+                                                                <span class="header-font">تعرض السكن لأضرار؟ <sup class="text-danger">*</sup></span>
+                                                                <select class="form-control mt-2 header-font" name="housing_damage_level" id="housing_damage_level" required="required">
+                                                                    <option value=""/>
+                                                                    <t t-foreach="housing_damage_level_options" t-as="option">
+                                                                        <option t-att-value="option[0]"><t t-esc="option[1]"/></option>
+                                                                    </t>
+                                                                </select>
+                                                            </div>
+
+                                                            <div class="col-lg-6">
+                                                                <span class="header-font">هل تم توثيق الضرر؟ <sup class="text-danger">*</sup></span>
+                                                                <select class="form-control mt-2 header-font" name="damage_documented" id="damage_documented" required="required">
+                                                                    <option value=""/>
+                                                                    <t t-foreach="damage_documented_options" t-as="option">
+                                                                        <option t-att-value="option[0]"><t t-esc="option[1]"/></option>
+                                                                    </t>
+                                                                </select>
+                                                            </div>
+                                                            </div>
+
+                                                            <!-- وصف الموقع -->
+                                                            <div class="row mt-3">
+                                                                <div class="col-lg-12">
+                                                                    <span class="header-font">وصف موجز للموقع (أقرب معلم، موقعه في المخيم، ساحة، مسجد، مدرسة…)</span>
+                                                                    <textarea name="pre_displacement_description" class="form-control mt-2 header-font" rows="2"></textarea>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+
 
 
 
@@ -231,26 +381,17 @@
                                                                     </t>
                                                                 </select>
                                                             </div>
-
                                                             <div class="col-lg-4 col-sm-12">
-                                                                <span class="header-font">تعرض السكن لأضرار؟ <sup class="text-danger">*</sup></span>
-                                                                <select class="form-control mt-2 header-font" name="housing_damage_level" id="housing_damage_level" required="required">
+                                                                <span class="header-font">حالة السكن</span>
+                                                                <select class="form-control header-font" name="housing_condition" id="housing_condition">
                                                                     <option value=""/>
-                                                                    <t t-foreach="housing_damage_level_options" t-as="option">
-                                                                        <option t-att-value="option[0]"><t t-esc="option[1]"/></option>
+                                                                    <t t-foreach="housing_condition_options" t-as="opt">
+                                                                        <option t-att-value="opt[0]"><t t-esc="opt[1]"/></option>
                                                                     </t>
                                                                 </select>
                                                             </div>
 
-                                                            <div class="col-lg-4 col-sm-12">
-                                                                <span class="header-font">هل تم توثيق الضرر؟ <sup class="text-danger">*</sup></span>
-                                                                <select class="form-control mt-2 header-font" name="damage_documented" id="damage_documented" required="required">
-                                                                    <option value=""/>
-                                                                    <t t-foreach="damage_documented_options" t-as="option">
-                                                                        <option t-att-value="option[0]"><t t-esc="option[1]"/></option>
-                                                                    </t>
-                                                                </select>
-                                                            </div>
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -273,7 +414,7 @@
                                                                 </div>
 
                                                                 <div class="col-lg-4 col-sm-12">
-                                                                    <span class="header-font">هل كان يعمل أحد داخل فلسطين قبل النزوح؟ <sup class="text-danger">*</sup></span>
+                                                                    <span class="header-font">هل كان أحد أفراد الأسرة يعمل قبل النزوح؟  <sup class="text-danger">*</sup></span>
                                                                     <select class="form-control mt-2 header-font" name="worked_inside_palestine_before" id="worked_inside_palestine_before" required="required">
                                                                         <option value=""/>
                                                                         <t t-foreach="worked_inside_palestine_options" t-as="option">
@@ -291,6 +432,28 @@
                                                                         </t>
                                                                     </select>
                                                                 </div>
+                                                                <!-- طبيعة العمل -->
+                                                                <div class="col-lg-4 col-sm-12">
+                                                                    <span class="header-font">طبيعة العمل</span>
+                                                                    <select class="form-control header-font" name="employment_type" id="employment_type">
+                                                                        <option value=""/>
+                                                                        <t t-foreach="employment_type_options" t-as="opt">
+                                                                            <option t-att-value="opt[0]"><t t-esc="opt[1]"/></option>
+                                                                        </t>
+                                                                    </select>
+                                                                </div>
+
+                                                                <!-- هل يوجد مصدر دخل ثابت؟ -->
+                                                                <div class="col-lg-4 col-sm-12">
+                                                                    <span class="header-font">هل يوجد مصدر دخل ثابت؟</span>
+                                                                    <select class="form-control header-font" name="stable_income" id="stable_income">
+                                                                        <option value=""/>
+                                                                        <t t-foreach="stable_income_options" t-as="opt">
+                                                                            <option t-att-value="opt[0]"><t t-esc="opt[1]"/></option>
+                                                                        </t>
+                                                                    </select>
+                                                                </div>
+
 
                                                                 <div class="col-lg-4 col-sm-12">
                                                                     <span class="header-font">هل يوجد عاطلون؟ <sup class="text-danger">*</sup></span>
@@ -302,14 +465,119 @@
                                                                     </select>
                                                                 </div>
 
+
                                                                 <div class="col-lg-4 col-sm-12">
-                                                                    <span class="header-font">مهارات يتقنها أفراد العائلة (بناء، كهرباء، تعليم، صيانة، أخرى)</span>
-                                                                    <input type="text"
-                                                                           name="family_skills"
-                                                                           id="family_skills"
-                                                                           class="form-control mt-2 header-font"
-                                                                           placeholder="مثال: بناء، كهرباء، صيانة" />
-                                                                </div>
+                                                                <span class="header-font">مهارات يتقنها أفراد العائلة <small class="text-muted">(اختيارات متعددة)</small></span>
+                                                                <select name="family_skills" id="family_skills" class="form-control mt-2 header-font">
+                                                                    <option value=""/>
+                                                                    <t t-foreach="family_skills_options" t-as="option">
+                                                                        <option t-att-value="option[0]"><t t-esc="option[1]"/></option>
+                                                                    </t>
+                                                                </select>
+                                                            </div>
+                                                                 <!-- هل يوجد عمال في الداخل؟ -->
+                                                            <div class="col-lg-4 col-sm-12">
+                                                                <span class="header-font">هل يوجد عمال في الداخل المحتل؟</span>
+                                                                <select class="form-control header-font" name="interior_workers" id="interior_workers">
+                                                                    <option value=""/>
+                                                                    <t t-foreach="interior_workers_options" t-as="opt">
+                                                                        <option t-att-value="opt[0]"><t t-esc="opt[1]"/></option>
+                                                                    </t>
+                                                                </select>
+                                                            </div>
+
+                                                            <!-- هل لا يزالون قادرين على العمل؟ -->
+                                                            <div class="col-lg-4 col-sm-12">
+                                                                <span class="header-font">هل لا يزالون قادرين على العمل؟</span>
+                                                                <select class="form-control header-font" name="can_still_work" id="can_still_work">
+                                                                    <option value=""/>
+                                                                    <t t-foreach="can_still_work_options" t-as="opt">
+                                                                        <option t-att-value="opt[0]"><t t-esc="opt[1]"/></option>
+                                                                    </t>
+                                                                </select>
+                                                            </div>
+
+                                                            <!-- هل فقدتم محلاً تجارياً؟ -->
+                                                            <div class="col-lg-4 col-sm-12">
+                                                                <span class="header-font">هل فقدتم محلاً تجارياً؟</span>
+                                                                <select class="form-control header-font" name="lost_shop" id="lost_shop">
+                                                                    <option value=""/>
+                                                                    <t t-foreach="lost_shop_options" t-as="opt">
+                                                                        <option t-att-value="opt[0]"><t t-esc="opt[1]"/></option>
+                                                                    </t>
+                                                                </select>
+                                                            </div>
+
+                                                            <!-- اسم المحل -->
+                                                            <div class="col-lg-4 col-sm-12">
+                                                                <label class="header-font">اسم المحل</label>
+                                                                <input type="text" class="form-control header-font" name="shop_name"/>
+                                                            </div>
+
+                                                            <!-- موقعه بالتفصيل -->
+                                                            <div class="col-lg-4 col-sm-12">
+                                                                <label class="header-font">موقعه بالتفصيل</label>
+                                                                <input type="text" class="form-control header-font" name="shop_location"/>
+                                                            </div>
+
+                                                            <!-- نوع العمل -->
+                                                            <div class="col-lg-4 col-sm-12">
+                                                                <label class="header-font">نوع عمل المحل</label>
+                                                                <input type="text" class="form-control header-font" name="shop_business_type"/>
+                                                            </div>
+
+                                                            <!-- ملك أم مستأجر -->
+                                                            <div class="col-lg-4 col-sm-12">
+                                                                <span class="header-font">ملك أم مستأجر</span>
+                                                                <select class="form-control header-font" name="shop_ownership" id="shop_ownership">
+                                                                    <option value=""/>
+                                                                    <t t-foreach="shop_ownership_options" t-as="opt">
+                                                                        <option t-att-value="opt[0]"><t t-esc="opt[1]"/></option>
+                                                                    </t>
+                                                                </select>
+                                                            </div>
+
+                                                            <!-- هل كان مصدر الدخل الأساسي؟ -->
+                                                            <div class="col-lg-4 col-sm-12">
+                                                                <span class="header-font">هل كان مصدر الدخل الأساسي؟</span>
+                                                                <select class="form-control header-font" name="shop_main_income_source" id="shop_main_income_source">
+                                                                    <option value=""/>
+                                                                    <t t-foreach="main_income_source_options" t-as="opt">
+                                                                        <option t-att-value="opt[0]"><t t-esc="opt[1]"/></option>
+                                                                    </t>
+                                                                </select>
+                                                            </div>
+
+                                                            <!-- عددهم -->
+                                                            <div class="col-lg-4 col-sm-12">
+                                                                <label class="header-font">عدد المحلات المفقودة</label>
+                                                                <input type="number" class="form-control header-font" name="workers_count"/>
+                                                            </div>
+
+                                                            <!-- هل لديكم أدوات أو معدات متخصصة؟ -->
+                                                            <div class="col-lg-4 col-sm-12">
+                                                                <span class="header-font">هل لديكم أدوات أو معدات متخصصة؟</span>
+                                                                <select class="form-control header-font" name="has_special_equipment" id="has_special_equipment">
+                                                                    <option value=""/>
+                                                                    <t t-foreach="special_equipment_options" t-as="opt">
+                                                                        <option t-att-value="opt[0]"><t t-esc="opt[1]"/></option>
+                                                                    </t>
+                                                                </select>
+                                                            </div>
+
+                                                            <!-- هل ترغبون في مشاريع تشغيل ذاتي؟ -->
+                                                            <div class="col-lg-4 col-sm-12">
+                                                                <span class="header-font">هل ترغبون في مشاريع تشغيل ذاتي؟</span>
+                                                                <select class="form-control header-font" name="interested_in_self_employment" id="interested_in_self_employment">
+                                                                    <option value=""/>
+                                                                    <t t-foreach="self_employment_options" t-as="opt">
+                                                                        <option t-att-value="opt[0]"><t t-esc="opt[1]"/></option>
+                                                                    </t>
+                                                                </select>
+                                                            </div>
+
+
+
                                                             </div>
                                                         </div>
                                                     </div>
@@ -490,7 +758,7 @@
                                                                 <!-- تقارير -->
                                                                 <div class="row mt-3">
                                                                     <div class="col-lg-12">
-                                                                        <span class="header-font">تقارير (اختياري)</span>
+                                                                        <span class="header-font">تقارير طبية(اختياري)</span>
                                                                         <input placeholder="Upload any relevant reports or documents" type="file"
                                                                                accept=".jpg, .jpeg, .png, .pdf, .doc, .docx"
                                                                                name="report_documents[]"

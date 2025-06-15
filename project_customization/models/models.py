@@ -558,6 +558,111 @@ class ProjectProject(models.Model):
         ('other', 'آخر'),
     ], string="مهارات يتقنها أفراد العائلة", required=False)
 
+    pre_displacement_address = fields.Text(string="العنوان الكامل قبل النزوح")
+    pre_displacement_house_type = fields.Selection([
+        ('independent', 'بيت مستقل'),
+        ('apartment', 'شقة'),
+        ('shared_building', 'بناية مشتركة'),
+    ], string="نوع البيت")
+
+    pre_displacement_floors = fields.Integer(string="عدد الطوابق")
+    pre_displacement_rooms = fields.Integer(string="عدد الغرف")
+
+    house_ownership_status = fields.Selection([
+        ('owned', 'ملك'),
+        ('rented', 'مستأجر'),
+    ], string="هل كان ملكاً أم مستأجراً؟")
+
+    shared_with = fields.Char(string="من كان يقطن معكم؟ (عدد الأسر، الأفراد)")
+    other_families_on_floor = fields.Selection([
+        ('yes', 'نعم'),
+        ('no', 'لا'),
+    ], string="هل كان في الطابق سكّان غيركم؟")
+
+    pre_displacement_description = fields.Text(string="وصف موجز للموقع")
+
+    housing_condition = fields.Selection([
+        ('habitable', 'صالح للسكن'),
+        ('uninhabitable', 'غير صالح'),
+    ], string="حالة السكن")
+
+    employment_type = fields.Selection([
+        ('gov', 'موظف حكومي'),
+        ('agency', 'موظف وكالة'),
+        ('private', 'قطاع خاص'),
+        ('interior_worker', 'عامل في الداخل'),
+    ], string="طبيعة العمل")
+
+    stable_income = fields.Selection([
+        ('yes', 'نعم'),
+        ('no', 'لا'),
+    ], string="هل يوجد مصدر دخل ثابت؟")
+
+    interior_workers = fields.Selection([
+        ('yes', 'نعم'),
+        ('no', 'لا'),
+    ], string="هل يوجد عمال في الداخل؟")
+
+    can_still_work = fields.Selection([
+        ('yes', 'نعم'),
+        ('no', 'لا'),
+    ], string="هل لا يزالون قادرين على العمل؟")
+
+    lost_shop = fields.Selection([
+        ('yes', 'نعم'),
+        ('no', 'لا'),
+    ], string="هل فقدتم محلاً تجارياً؟")
+
+    shop_name = fields.Char(string="اسم المحل")
+    shop_location = fields.Char(string="موقع المحل")
+    shop_business_type = fields.Char(string="نوع العمل")
+    shop_ownership = fields.Selection([
+        ('owned', 'ملك'),
+        ('rented', 'مستأجر'),
+    ], string="ملك أم مستأجر")
+
+    shop_main_income_source = fields.Selection([
+        ('yes', 'نعم'),
+        ('no', 'لا'),
+    ], string="هل كان مصدر الدخل الأساسي؟")
+
+    workers_count = fields.Integer(string="عددهم")
+
+    has_family_martyr = fields.Selection([
+        ('yes', 'نعم'),
+        ('no', 'لا'),
+    ], string="هل يوجد شهيد؟", tracking=True)
+
+    has_family_prisoner = fields.Selection([
+        ('yes', 'نعم'),
+        ('no', 'لا'),
+    ], string="هل يوجد أسير؟", tracking=True)
+
+    has_family_injured = fields.Selection([
+        ('yes', 'نعم'),
+        ('no', 'لا'),
+    ], string="هل يوجد جريح؟", tracking=True)
+
+    martyr_name = fields.Char(string="الاسم الكامل")
+    relation_to_head = fields.Char(string="العلاقة برب الأسرة")
+    event_date = fields.Date(string="تاريخ الحدث")
+    event_details = fields.Text(string="تفاصيل إضافية")
+
+    has_special_equipment = fields.Selection([
+        ('yes', 'نعم'),
+        ('no', 'لا'),
+    ], string="هل لديكم أدوات أو معدات متخصصة؟")
+
+    interested_in_self_employment = fields.Selection([
+        ('yes', 'نعم'),
+        ('no', 'لا'),
+    ], string="هل ترغبون في مشاريع تشغيل ذاتي؟")
+
+    medical_report_file = fields.Binary(string="ملف طبي/توثيقي")
+    medical_report_filename = fields.Char(string="اسم الملف")
+
+
+
     @api.depends('create_date')
     def _compute_create_date_formatted(self):
         for record in self:
