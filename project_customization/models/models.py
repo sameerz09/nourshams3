@@ -662,7 +662,8 @@ class ProjectProject(models.Model):
     medical_report_file = fields.Binary(string="ملف طبي/توثيقي")
     medical_report_filename = fields.Char(string="اسم الملف")
 
-
+    wife_full_name = fields.Char(string="اسم الزوجة الرباعي")
+    wife_id_number = fields.Char(string="رقم هوية الزوجة")
 
     @api.depends('create_date')
     def _compute_create_date_formatted(self):

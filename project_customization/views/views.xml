@@ -95,6 +95,11 @@
                     <field name="shop_main_income_source"/>
                     <field name="workers_count"/>
                    <field name="post_displacement_area"/>
+                   <field name="wife_full_name"/>
+                    <field name="wife_id_number"/>
+
+
+
 
 
 
@@ -148,7 +153,7 @@
                 <field name="martyr_name"/>
                 <field name="relation_to_head"/>
                 <field name="event_date"/>
-                <field name="event_details"/>
+                 <field name="additional_notes"/>
                  <field name="has_special_equipment"/>
                 <field name="interested_in_self_employment"/>
             </xpath>

@@ -22,12 +22,12 @@
     </record>
 
     <!-- Contacts Menu -->
-    <record id="contacts.menu_contacts" model="ir.ui.menu">
-    <field name="groups_id" eval="[(6, 0, [
-            ref('base.group_system'),
-            ref('lytegen_contact_details.group_user_hide_menu')
-        ])]"/>
-    </record>
+<!--    <record id="contacts.menu_contacts" model="ir.ui.menu">-->
+<!--    <field name="groups_id" eval="[(6, 0, [-->
+<!--            ref('base.group_system'),-->
+<!--            ref('lytegen_contact_details.group_user_hide_menu')-->
+<!--        ])]"/>-->
+<!--    </record>-->
 
 
     <!-- Misc Menus -->
@@ -60,30 +60,30 @@
         <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>
     </record>
 
-    <record id="hr_timesheet.timesheet_menu_root" model="ir.ui.menu">
-        <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>
-    </record>
+<!--    <record id="hr_timesheet.timesheet_menu_root" model="ir.ui.menu">-->
+<!--        <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>-->
+<!--    </record>-->
 
-    <record id="industry_fsm.fsm_menu_root" model="ir.ui.menu">
-        <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>
-    </record>
-    <record id="base.menu_calendar_root" model="ir.ui.menu">
-        <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>
-    </record>
+<!--    <record id="industry_fsm.fsm_menu_root" model="ir.ui.menu">-->
+<!--        <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>-->
+<!--    </record>-->
+<!--    <record id="base.menu_calendar_root" model="ir.ui.menu">-->
+<!--        <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>-->
+<!--    </record>-->
     <!-- Email Marketing App: Only Admin -->
-    <record id="mass_mailing.mass_mailing_menu_root" model="ir.ui.menu">
-        <field name="groups_id" eval="[(6, 0, [ref('base.group_nobody')])]"/>
-    </record>
+<!--    <record id="mass_mailing.mass_mailing_menu_root" model="ir.ui.menu">-->
+<!--        <field name="groups_id" eval="[(6, 0, [ref('base.group_nobody')])]"/>-->
+<!--    </record>-->
 
     <!-- Surveys App: Only Admin -->
-    <record id="survey.menu_root" model="ir.ui.menu">
-        <field name="groups_id" eval="[(6, 0, [ref('base.group_nobody')])]"/>
-    </record>
+<!--    <record id="survey.menu_root" model="ir.ui.menu">-->
+<!--        <field name="groups_id" eval="[(6, 0, [ref('base.group_nobody')])]"/>-->
+<!--    </record>-->
 
     <!-- Sign App: Only Admin -->
-    <record id="sign.sign_menu_root" model="ir.ui.menu">
-        <field name="groups_id" eval="[(6, 0, [ref('base.group_nobody')])]"/>
-    </record>
+<!--    <record id="sign.sign_menu_root" model="ir.ui.menu">-->
+<!--        <field name="groups_id" eval="[(6, 0, [ref('base.group_nobody')])]"/>-->
+<!--    </record>-->
     <record id="account.menu_finance" model="ir.ui.menu">
         <field name="groups_id" eval="[(6, 0, [])]"/>
     </record>

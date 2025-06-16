@@ -1108,6 +1108,8 @@ class CustomAppointmentController(AppointmentController):
                 'additional_notes': post.get('additional_notes'),
                 'basic_needs': post.get('basic_needs'),
                 'data_sharing_consent': post.get('data_sharing_consent'),
+                'wife_full_name': post.get('wife_full_name'),
+                'wife_id_number': post.get('wife_id_number'),
 
                 # Meta
                 'date_start': date.today(),

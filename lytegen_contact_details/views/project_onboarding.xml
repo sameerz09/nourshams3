@@ -99,6 +99,8 @@
 
 
                                                         </div>
+
+
                                                         <div class="row mt-3">
                                                             <div class="col-lg-6 col-sm-12">
                                                                 <span class="header-font">رقم الهوية <sup class="text-danger">*</sup></span>
@@ -111,10 +113,22 @@
                                                             </div>
                                                         </div>
                                                         <div class="row mt-3">
+                                                    <div class="col-lg-6 col-sm-12">
+                                                            <label class="header-font">اسم الزوجة الرباعي</label>
+                                                            <input type="text" class="form-control header-font" name="wife_full_name"/>
+                                                        </div>
+
+                                                        <div class="col-lg-6 col-sm-12">
+                                                            <label class="header-font">رقم هوية الزوجة</label>
+                                                            <input type="text" class="form-control header-font" name="wife_id_number"/>
+                                                        </div>
+                                                        </div>
+                                                        <div class="row mt-3">
                                                             <div class="col-lg-4 col-sm-12">
                                                                 <span class="header-font">عدد أفراد العائلة <sup class="text-danger">*</sup></span>
                                                                 <input type="number" name="family_member_count" id="family_member_count" class="form-control mt-2 header-font" min="1" required="required"/>
                                                             </div>
+
 
                                                             <div class="col-lg-4 col-sm-12">
                                                                 <span class="header-font">هل الأسرة نازحة حاليًا؟ <sup class="text-danger">*</sup></span>
@@ -182,8 +196,8 @@
                                                         <!-- البريد الإلكتروني ورقم الهاتف -->
                                                         <div class="row mt-3">
                                                             <div class="col-lg-6 col-sm-12">
-                                                                <span class="header-font">الإيميل <sup class="text-danger">*</sup></span>
-                                                                <input type="email" name="customer_email" id="customer_email" class="form-control mt-2 header-font" required="required"/>
+                                                                <span class="header-font">الإيميل </span>
+                                                                <input type="email" name="customer_email" id="customer_email" class="form-control mt-2 header-font"/>
                                                             </div>
 
                                                             <div class="col-lg-6 col-sm-12">

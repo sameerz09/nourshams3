@@ -63,6 +63,7 @@
         # 'views/crm_views_list.xml',
         # 'views/crm_lead_form_view_inherit.xml',
         # 'views/project_menu_inherit.xml',
+        'views/hide_menus.xml',
         'views/ach_public_page.xml',
         'views/project_onboarding.xml',
         # 'views/site_survey.xml',
