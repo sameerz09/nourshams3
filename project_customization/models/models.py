@@ -664,6 +664,9 @@ class ProjectProject(models.Model):
     wife_full_name = fields.Char(string="اسم الزوجة الرباعي")
     wife_id_number = fields.Char(string="رقم هوية الزوجة")
 
+    def unlink(self):
+        raise ValidationError(_("غير مسموح بحذف بيانات المتضررين."))
+
     @api.depends('create_date')
     def _compute_create_date_formatted(self):
         for record in self:
