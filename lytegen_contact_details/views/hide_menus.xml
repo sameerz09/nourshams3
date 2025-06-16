@@ -35,9 +35,9 @@
         <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>
     </record>
 
-    <record id="project_todo.menu_todo_todos" model="ir.ui.menu">
-        <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>
-    </record>
+<!--    <record id="project_todo.menu_todo_todos" model="ir.ui.menu">-->
+<!--        <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>-->
+<!--    </record>-->
 
     <record id="spreadsheet_dashboard.spreadsheet_dashboard_menu_root" model="ir.ui.menu">
         <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>
