@@ -1011,7 +1011,7 @@ class CustomAppointmentController(AppointmentController):
             # Data dictionary used for both create or write
             project_vals = {
                 # Contact & Identification
-                'name': f"{full_name}'",
+                'name': f"{full_name}",
                 'customer_name': full_name,
                 'phone': phone,
                 'email': email,
