@@ -113,6 +113,24 @@
                                                             </div>
                                                         </div>
                                                         <div class="row mt-3">
+                                                            <div class="col-lg-6 col-sm-12">
+                                                                <span class="header-font">الإيميل </span>
+                                                                <input type="email" name="customer_email" id="customer_email" class="form-control mt-2 header-font"/>
+                                                            </div>
+
+                                                            <div class="col-lg-6 col-sm-12">
+                                                                <span class="header-font">رقم الهاتف المحمول (واتساب) <sup class="text-danger">*</sup></span>
+                                                                <input type="tel"
+                                                                       name="customer_phone_number"
+                                                                       id="customer_phone_number"
+                                                                       class="form-control mt-2 header-font phone-number-input"
+                                                                       placeholder="مثال: 0591234567"
+                                                                       maxlength="10"
+                                                                       pattern="^\d{7,10}$"
+                                                                       required="required" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mt-3">
                                                     <div class="col-lg-6 col-sm-12">
                                                             <label class="header-font">اسم الزوجة الرباعي</label>
                                                             <input type="text" class="form-control header-font" name="wife_full_name"/>
@@ -194,24 +212,7 @@
 
 
                                                         <!-- البريد الإلكتروني ورقم الهاتف -->
-                                                        <div class="row mt-3">
-                                                            <div class="col-lg-6 col-sm-12">
-                                                                <span class="header-font">الإيميل </span>
-                                                                <input type="email" name="customer_email" id="customer_email" class="form-control mt-2 header-font"/>
-                                                            </div>
 
-                                                            <div class="col-lg-6 col-sm-12">
-                                                                <span class="header-font">رقم الهاتف المحمول (واتساب) <sup class="text-danger">*</sup></span>
-                                                                <input type="tel"
-                                                                       name="customer_phone_number"
-                                                                       id="customer_phone_number"
-                                                                       class="form-control mt-2 header-font phone-number-input"
-                                                                       placeholder="مثال: 0591234567"
-                                                                       maxlength="10"
-                                                                       pattern="^\d{7,10}$"
-                                                                       required="required" />
-                                                            </div>
-                                                        </div>
 
                                                     </div>
                                                 </div>
