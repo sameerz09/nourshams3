@@ -61,7 +61,7 @@
                    <field name="request_date"/>
                    <field name="displacement_reasons"/>
                     <field name="design_sold" widget="url"/>
-                    <field name="sales_consultant_employee_id" required="1"/>
+<!--                    <field name="sales_consultant_employee_id" required="1"/>-->
                     <field name="reroof"/>
                     <field name="mount"/>
                     <field name="electrical_update"/>
