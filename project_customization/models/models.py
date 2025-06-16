@@ -242,12 +242,11 @@ class ProjectProject(models.Model):
     time_formatted = fields.Char(string='Created Date/Time', compute='_compute_time_formatted')
 
     displacement_reasons = fields.Selection([
-        ('house_demolition', 'هدم المنزل'),
-        ('direct_bombing', 'قصف مباشر'),
-        ('arrest_threat', 'تهديد بالاعتقال'),
-        ('job_loss', 'فقدان العمل'),
-        ('lack_services', 'انعدام الخدمات'),
-    ], string="أسباب النزوح", help="اختر سبب أو أكثر", required=False)
+        ('forced_displacement', 'تهجير قسري'),
+        ('house_demolition', 'هدم بيت'),
+        ('house_damage', 'تضرر بيت'),
+        ('lack_of_services', 'انعدام الخدمات'),
+    ], string="أسباب النزوح", help="اختر سبب النزوح", required=False)
 
     displacement_residence_type = fields.Selection([
         ('shelter', 'مركز إيواء'),

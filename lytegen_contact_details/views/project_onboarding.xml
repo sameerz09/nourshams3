@@ -3,7 +3,7 @@
     <data>
         <template id="project_onboarding_form" name="Project Onboarding Form">
             <t t-call="website.layout">
-                <t t-set="title">Project Onboarding</t>
+                <t t-set="title">اللجنة الشعبية لخدمات مخيم نورشمس</t>
 
 
                 <link rel="stylesheet" type="text/css" href="/lytegen_contact_details/static/src/css/credit_check_style.css"/>
@@ -381,7 +381,7 @@
                                                     </div>
                                                  <h2 class="accordion-header mt-3">
                                                         <button class="accordion-button" type="button" data-bs-target="#projectSpecs" aria-expanded="true" aria-controls="projectSpecs">
-                                                            السكن والوضع المعيشي
+السكن والوضع المعيشي بعد النزوح
                                                           </button>
                                                  </h2>
                                                  <div id="housingConditions" class="accordion-collapse collapse show" data-bs-parent="#housingConditions">

@@ -653,12 +653,12 @@ class CustomAppointmentController(AppointmentController):
         ]
 
         displacement_reasons = [
-            ('house_demolition', 'هدم المنزل'),
-            ('direct_bombing', 'قصف مباشر'),
-            ('arrest_threat', 'تهديد بالاعتقال'),
-            ('job_loss', 'فقدان العمل'),
-            ('lack_services', 'انعدام الخدمات')
+            ('forced_displacement', 'تهجير قسري'),
+            ('house_demolition', 'هدم بيت'),
+            ('house_damage', 'تضرر بيت'),
+            ('lack_of_services', 'انعدام الخدمات')
         ]
+
         displacement_residences = [
             ('shelter', 'مركز إيواء'),
             ('relatives', 'لدى أقارب'),
