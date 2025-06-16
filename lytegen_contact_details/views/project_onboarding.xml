@@ -745,7 +745,7 @@
                                                                                id="additional_files"
                                                                                class="form-control mt-2 header-font"
                                                                                multiple="multiple"
-                                                                               required="required" />
+                                                                               />
                                                                     </div>
                                                                 </div>
 
