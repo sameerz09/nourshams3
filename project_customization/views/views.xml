@@ -54,109 +54,58 @@
 
             <!-- Inject Custom Fields Before User Field -->
            <xpath expr="//field[@name='partner_id']" position="after">
-                   <field name="displacement_date"/>
-                   <field name="displacement_residence_type"/>
-                   <field name="multiple_displacements"/>
-                   <field name="phone"/>
-                   <field name="request_date"/>
-                   <field name="displacement_reasons"/>
-                    <field name="design_sold" widget="url"/>
-<!--                    <field name="sales_consultant_employee_id" required="1"/>-->
-                    <field name="reroof"/>
-                    <field name="mount"/>
-                    <field name="electrical_update"/>
-                    <field name="hoa"/>
-                    <field name="gated_access"/>
-                    <field name="gate_code"/>
-                    <field name="battery"/>
-                    <field name="utility_bill_holder"/>
-                    <field name="other_utility_bill_holder"/>
-                    <field name="provider"/>
-                    <field name="finance_type"/>
-                    <field name="loantype"/>
-                    <field name="installer"/>
-                    <field name="lead_origin"/>
-                     <field name="economic_status"/>
-                    <field name="worked_inside_palestine_before"/>
-                    <field name="workers_count_before_displacement"/>
-                    <field name="has_unemployed"/>
-                   <field name="house_damage_photos" widget="many2many_binary_preview"/>
-                    <field name="report_documents" widget="many2many_binary_preview"/>
-                   <field name="housing_condition"/>
-                    <field name="employment_type"/>
-                    <field name="stable_income"/>
-                    <field name="interior_workers"/>
-                    <field name="can_still_work"/>
-                    <field name="lost_shop"/>
-                    <field name="shop_name"/>
-                    <field name="shop_location"/>
-                    <field name="shop_business_type"/>
-                    <field name="shop_ownership"/>
-                    <field name="shop_main_income_source"/>
-                    <field name="workers_count"/>
-                   <field name="post_displacement_area"/>
-                   <field name="wife_full_name"/>
-                    <field name="wife_id_number"/>
+    <group string="معلومات النزوح">
+        <field name="displacement_date"/>
+        <field name="displacement_residence_type"/>
+        <field name="multiple_displacements"/>
+        <field name="request_date"/>
+        <field name="displacement_reasons"/>
+        <field name="post_displacement_area"/>
+    </group>
+
+    <group string="معلومات الاتصال">
+        <field name="phone"/>
+    </group>
+
+<!--    <group string="تفاصيل البيع">-->
+<!--        <field name="design_sold" widget="url"/>-->
+<!--        &lt;!&ndash; <field name="sales_consultant_employee_id" required="1"/> &ndash;&gt;-->
 
 
+    <group string="الوضع الاقتصادي">
+        <field name="economic_status"/>
+        <field name="worked_inside_palestine_before"/>
+        <field name="workers_count_before_displacement"/>
+        <field name="has_unemployed"/>
+    </group>
 
+    <group string="الصور والمرفقات">
+        <field name="house_damage_photos" widget="many2many_binary_preview"/>
+        <field name="report_documents" widget="many2many_binary_preview"/>
+    </group>
 
+    <group string="معلومات العمل والدخل">
+        <field name="employment_type"/>
+        <field name="stable_income"/>
+        <field name="interior_workers"/>
+        <field name="can_still_work"/>
+    </group>
 
+    <group string="خسارة المشروع">
+        <field name="lost_shop"/>
+        <field name="shop_name"/>
+        <field name="shop_location"/>
+        <field name="shop_business_type"/>
+        <field name="shop_ownership"/>
+        <field name="shop_main_income_source"/>
+        <field name="workers_count"/>
+    </group>
 
-            </xpath>
-            <xpath expr="//field[@name='user_id']" position="after">
-                <field name="custom_ss_times"/>
-                <field name="usage_files" widget="many2many_binary_preview"/>
-                <field name="unrwa_document" widget="many2many_binary_preview"/>
-                <field name="additional_files" widget="many2many_binary_preview"/>
-
-                <!-- ✅ Newly added fields -->
-                <field name="id_number"/>
-                <field name="unrwa_card_number"/>
-                <field name="is_currently_displaced"/>
-                <field name="pre_displacement_area"/>
-                <field name="family_member_count"/>
-
-                <!-- ✅ Existing fields -->
-                <field name="notes"/>
-                <field name="system_size"/>
-                <field name="add_ons"/>
-                <!-- <field name="wifi_network_id" placeholder="Enter WiFi network ID"/> -->
-                <!-- <field name="wifi_network_password" placeholder="Enter WiFi password"/> -->
-                <field name="pets"/>
-                <field name="housing_type"/>
-                <field name="housing_damage_level"/>
-                <field name="damage_documented"/>
-                <field name="has_school_students"/>
-                <field name="school_attendance_status"/>
-                <field name="has_university_students"/>
-                <field name="university_attendance_status"/>
-                <field name="disabled_count"/>
-                <field name="disability_type"/>
-                <field name="receiving_care"/>
-                <field name="care_affected_by_displacement"/>
-                <field name="basic_needs"/>
-                <field name="data_sharing_consent"/>
-                <field name="additional_notes"/>
-                <field name="family_skills"/>
-                <field name="pre_displacement_address"/>
-                <field name="pre_displacement_house_type"/>
-                <field name="pre_displacement_floors"/>
-                <field name="pre_displacement_rooms"/>
-                <field name="house_ownership_status"/>
-                <field name="shared_with"/>
-                <field name="other_families_on_floor"/>
-                <field name="pre_displacement_description"/>
-                 <field name="has_family_martyr"/>
-                <field name="has_family_prisoner"/>
-                <field name="has_family_injured"/>
-                <field name="martyr_name"/>
-                <field name="relation_to_head"/>
-                <field name="event_date"/>
-                 <field name="additional_notes"/>
-                 <field name="has_special_equipment"/>
-                <field name="interested_in_self_employment"/>
-            </xpath>
+    <group string="معلومات الزوجة">
+        <field name="wife_full_name"/>
+        <field name="wife_id_number"/>
+    </group>
+</xpath>
 
 
 

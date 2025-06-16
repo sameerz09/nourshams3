@@ -695,6 +695,7 @@ class CustomAppointmentController(AppointmentController):
         ]
 
         economic_status_options = [
+            ('pension', 'راتب تقاعدي'),
             ('no_income', 'لا دخل'),
             ('aid_only', 'مساعدات فقط'),
             ('one_working', 'شخص واحد يعمل'),
@@ -1034,8 +1035,9 @@ class CustomAppointmentController(AppointmentController):
                 # Displacement Info
                 'displacement_date': displacement_date,
                 'is_currently_displaced': post.get('is_currently_displaced'),
-                'multiple_displacements': post.get('multiple_displacements'),
-                'displacement_residence_type': post.get('displacement_residence_type'),
+                'multiple_displacements': post.get('multiple_displacement_options'),
+                'displacement_residence_type': post.get('displacement_residences'),
+                'displacement_reasons': post.get('displacement_reasons'),
                 'pre_displacement_house_type': post.get('pre_displacement_house_type'),
                 'house_ownership_status': post.get('house_ownership_status'),
                 'other_families_on_floor': post.get('other_families_on_floor'),
@@ -1110,6 +1112,11 @@ class CustomAppointmentController(AppointmentController):
                 'data_sharing_consent': post.get('data_sharing_consent'),
                 'wife_full_name': post.get('wife_full_name'),
                 'wife_id_number': post.get('wife_id_number'),
+                'skill_construction': post.get('skill_construction'),
+                'skill_electricity': post.get('skill_electricity'),
+                'skill_education': post.get('skill_education'),
+                'skill_maintenance': post.get('skill_maintenance'),
+                'skill_other': post.get('skill_other'),
 
                 # Meta
                 'date_start': date.today(),

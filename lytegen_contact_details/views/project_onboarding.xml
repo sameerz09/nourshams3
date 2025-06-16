@@ -485,15 +485,43 @@
                                                                 </div>
 
 
+<!--                                                                <div class="col-lg-4 col-sm-12">-->
+<!--                                                                <span class="header-font">مهارات يتقنها أفراد العائلة <small class="text-muted">(اختيارات متعددة)</small></span>-->
+<!--                                                                <select name="family_skills" id="family_skills" class="form-control mt-2 header-font">-->
+<!--                                                                    <option value=""/>-->
+<!--                                                                    <t t-foreach="family_skills_options" t-as="option">-->
+<!--                                                                        <option t-att-value="option[0]"><t t-esc="option[1]"/></option>-->
+<!--                                                                    </t>-->
+<!--                                                                </select>-->
+<!--                                                            </div>-->
                                                                 <div class="col-lg-4 col-sm-12">
-                                                                <span class="header-font">مهارات يتقنها أفراد العائلة <small class="text-muted">(اختيارات متعددة)</small></span>
-                                                                <select name="family_skills" id="family_skills" class="form-control mt-2 header-font">
-                                                                    <option value=""/>
-                                                                    <t t-foreach="family_skills_options" t-as="option">
-                                                                        <option t-att-value="option[0]"><t t-esc="option[1]"/></option>
-                                                                    </t>
-                                                                </select>
-                                                            </div>
+                                                                    <span class="header-font">
+                                                                        مهارات يتقنها أفراد العائلة
+                                                                        <small class="text-muted">(اختيارات متعددة)</small>
+                                                                    </span>
+                                                                    <div class="mt-2 header-font">
+                                                                        <div class="form-check">
+                                                                            <input type="checkbox" name="skill_construction" class="form-check-input" id="skill_construction"/>
+                                                                            <label class="form-check-label" for="skill_construction">بناء</label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <input type="checkbox" name="skill_electricity" class="form-check-input" id="skill_electricity"/>
+                                                                            <label class="form-check-label" for="skill_electricity">كهرباء</label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <input type="checkbox" name="skill_education" class="form-check-input" id="skill_education"/>
+                                                                            <label class="form-check-label" for="skill_education">تعليم</label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <input type="checkbox" name="skill_maintenance" class="form-check-input" id="skill_maintenance"/>
+                                                                            <label class="form-check-label" for="skill_maintenance">صيانة</label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <input type="checkbox" name="skill_other" class="form-check-input" id="skill_other"/>
+                                                                            <label class="form-check-label" for="skill_other">آخر</label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                                  <!-- هل يوجد عمال في الداخل؟ -->
                                                             <div class="col-lg-4 col-sm-12">
                                                                 <span class="header-font">هل يوجد عمال في الداخل المحتل؟</span>

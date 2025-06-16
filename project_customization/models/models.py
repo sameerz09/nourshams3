@@ -457,11 +457,13 @@ class ProjectProject(models.Model):
     ], string="هل تم توثيق الضرر؟", required=True)
 
     economic_status = fields.Selection([
+        ('pension', 'راتب تقاعدي'),
         ('no_income', 'لا دخل'),
         ('aid_only', 'مساعدات فقط'),
         ('one_working', 'شخص واحد يعمل'),
         ('multiple_working', 'أكثر من شخص يعمل'),
     ], string="وضع الأسرة الاقتصادي الحالي", required=True)
+
 
     worked_inside_palestine_before = fields.Selection([
         ('yes', 'نعم'),
@@ -663,6 +665,14 @@ class ProjectProject(models.Model):
 
     wife_full_name = fields.Char(string="اسم الزوجة الرباعي")
     wife_id_number = fields.Char(string="رقم هوية الزوجة")
+
+    skill_construction = fields.Boolean(string="بناء")
+    skill_electricity = fields.Boolean(string="كهرباء")
+    skill_education = fields.Boolean(string="تعليم")
+    skill_maintenance = fields.Boolean(string="صيانة")
+    skill_other = fields.Boolean(string="آخر")
+
+
 
     def unlink(self):
         raise ValidationError(_("غير مسموح بحذف بيانات المتضررين."))
