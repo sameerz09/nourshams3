@@ -94,6 +94,7 @@
                     <field name="shop_ownership"/>
                     <field name="shop_main_income_source"/>
                     <field name="workers_count"/>
+                   <field name="post_displacement_area"/>
 
 
 

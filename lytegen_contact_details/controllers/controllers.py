@@ -1003,108 +1003,15 @@ class CustomAppointmentController(AppointmentController):
             displacement_residence_type = post.get('displacement_residences')
             family_member_count = post.get('family_member_count')
 
+            # Try to find an existing project (e.g. by ID number)
+            existing_project = request.env['project.project'].sudo().search([
+                ('id_number', '=', post.get('id_number'))
+            ], limit=1)
 
-            # # Create Project
-            # project = request.env['project.project'].sudo().create({
-            #     'name': f"{full_name}'s Project",
-            #     'customer_name': full_name,
-            #     'phone': phone,
-            #     'email': email,
-            #     'secondary_customer_name': post.get('secondary_contact_name'),
-            #     'secondary_phone': f"+{secondary_country_code}{post.get('secondary_contact_phone')}" if post.get('secondary_contact_phone') else False,
-            #     'secondary_email': post.get('secondary_contact_email'),
-            #     'street_address': post.get('street_address'),
-            #     # 'city': post.get('city'),
-            #     # 'state': post.get('state'),
-            #     # 'zip_code': post.get('zipcode'),
-            #     'reroof': post.get('reroof'),
-            #     'mount': post.get('mount'),
-            #     'hoa': post.get('hoa'),
-            #     # 'gated_access': post.get('gatedaccess'),
-            #     'battery': post.get('battery'),
-            #     'pets': post.get('pets'),
-            #     'electrical_update': post.get('electrical_upgrade'),
-            #     'utility_bill_holder': post.get('utilitybillholder'),
-            #     'other_utility_bill_holder': post.get('other_utility_bill_holder', '').strip(),
-            #     'provider': post.get('utility_company'),
-            #     'finance_type': post.get('finance_type'),
-            #     'loantype': product_type,
-            #     'lead_origin': post.get('lead_origin'),
-            #     'custom_ss_times': post.get('call_window'),
-            #     'notes': post.get('notes'),
-            #     'special_request': post.get('notes'),
-            #     'wifi_network_id': post.get('wifi_network_id'),
-            #     'wifi_network_password': post.get('wifi_network_password'),
-            #     'gated_access': post.get('gated_access'),
-            #     'gate_code': post.get('gatecode'),
-            #     'design_sold': post.get('design_sold'),
-            #     'add_ons': post.get('addons'),
-            #     # 'site_survey_date1': post.get('site_survey_date1'),
-            #     # 'site_survey_date2': post.get('site_survey_date2'),
-            #     # 'site_survey_date3': post.get('site_survey_date3'),
-            #     'date_start': date.today(),
-            #     'displacement_date': displacement_date,
-            #     'sales_consultant_employee_id': int(post.get('sp2')) if post.get('sp2') else False,
-            #     'multiple_displacements': multiple_displacements,
-            #     'displacement_residence_type': displacement_residence_type,
-            #     'family_member_count': family_member_count,
-            #     'pre_displacement_area': post.get('pre_displacement_area'),
-            #     'unrwa_card_number': post.get('unrwa_card_number'),
-            #     'id_number': post.get('id_number'),
-            #     'is_currently_displaced': post.get('is_currently_displaced'),
-            #     'housing_type': post.get('housing_type'),
-            #     'housing_damage_level': post.get('housing_damage_level'),
-            #     'damage_documented': post.get('damage_documented'),
-            #     'economic_status': post.get('economic_status'),
-            #     'worked_inside_palestine_before': post.get('worked_inside_palestine_before'),
-            #     'workers_count_before_displacement': post.get('workers_count_before_displacement'),
-            #     'has_unemployed': post.get('has_unemployed'),
-            #     'has_school_students': post.get('has_school_students'),
-            #     'school_attendance_status': post.get('school_attendance_status'),
-            #     'has_university_students': post.get('has_university_students'),
-            #     'university_attendance_status': post.get('university_attendance_status'),
-            #     'disability_type': post.get('disability_type'),
-            #     'receiving_care': post.get('receiving_care'),
-            #     'care_affected_by_displacement': post.get('care_affected_by_displacement'),
-            #     'basic_needs': post.get('basic_needs'),
-            #     'data_sharing_consent': post.get('data_sharing_consent'),
-            #     'additional_notes': post.get('additional_notes'),
-            #     'family_skills': post.get('family_skills'),
-            #     'pre_displacement_address': post.get('pre_displacement_address') or '',
-            #     'pre_displacement_house_type': post.get('pre_displacement_house_type'),
-            #     'house_ownership_status': post.get('house_ownership_status'),
-            #     'shared_with': post.get('shared_with') or '',
-            #     'other_families_on_floor': post.get('other_families_on_floor'),
-            #     'pre_displacement_description': post.get('pre_displacement_description') or '',
-            #     'housing_condition': post.get('housing_condition'),
-            #     'employment_type': post.get('employment_type'),
-            #     'stable_income': post.get('stable_income'),
-            #     'interior_workers': post.get('interior_workers'),
-            #     'can_still_work': post.get('can_still_work'),
-            #     'lost_shop': post.get('lost_shop'),
-            #     'shop_name': post.get('shop_name'),
-            #     'shop_location': post.get('shop_location'),
-            #     'shop_business_type': post.get('shop_business_type'),
-            #     'shop_ownership': post.get('shop_ownership'),
-            #     'shop_main_income_source': post.get('shop_main_income_source'),
-            #     'workers_count': post.get('workers_count'),
-            #     'has_family_martyr': post.get('has_family_martyr') == 'on',
-            #     'has_family_prisoner': post.get('has_family_prisoner') == 'on',
-            #     'has_family_injured': post.get('has_family_injured') == 'on',
-            #     'martyr_name': post.get('martyr_name'),
-            #     'relation_to_head': post.get('relation_to_head'),
-            #     'event_date': post.get('event_date'),
-            #     'event_details': post.get('event_details'),
-            #     'has_special_equipment': post.get('has_special_equipment'),
-            #     'interested_in_self_employment': post.get('interested_in_self_employment'),
-            #     'medical_report_file': post.get('medical_report_file'),
-            #     'medical_report_filename': post.get('medical_report_filename'),
-            # })
-
-            project = request.env['project.project'].sudo().create({
-
+            # Data dictionary used for both create or write
+            project_vals = {
                 # Contact & Identification
-                'name': f"{full_name}'s Project",
+                'name': f"{full_name}'",
                 'customer_name': full_name,
                 'phone': phone,
                 'email': email,
@@ -1122,6 +1029,7 @@ class CustomAppointmentController(AppointmentController):
                 'pre_displacement_address': post.get('pre_displacement_address') or '',
                 'shared_with': post.get('shared_with') or '',
                 'pre_displacement_description': post.get('pre_displacement_description') or '',
+                'post_displacement_area': post.get('post_displacement_area'),
 
                 # Displacement Info
                 'displacement_date': displacement_date,
@@ -1168,9 +1076,9 @@ class CustomAppointmentController(AppointmentController):
                 'workers_count': post.get('workers_count'),
 
                 # Family Tragedies
-                # 'has_family_martyr': post.get('has_family_martyr') == 'on',
-                # 'has_family_prisoner': post.get('has_family_prisoner') == 'on',
-                # 'has_family_injured': post.get('has_family_injured') == 'on',
+                'has_family_martyr': post.get('has_family_martyr'),
+                'has_family_prisoner': post.get('has_family_prisoner'),
+                'has_family_injured': post.get('has_family_injured'),
                 'martyr_name': post.get('martyr_name'),
                 'relation_to_head': post.get('relation_to_head'),
                 'event_date': post.get('event_date'),
@@ -1178,29 +1086,16 @@ class CustomAppointmentController(AppointmentController):
 
                 # Skills & Support
                 'family_skills': post.get('family_skills'),
-                # 'support_type': post.get('support_type'),
                 'has_special_equipment': post.get('has_special_equipment'),
                 'interested_in_self_employment': post.get('interested_in_self_employment'),
 
-                # Utilities / Technical
-                # 'utility_bill_holder': post.get('utilitybillholder'),
-                # 'other_utility_bill_holder': post.get('other_utility_bill_holder', '').strip(),
-                # 'provider': post.get('utility_company'),
-                # 'gated_access': post.get('gated_access'),
-                # 'gate_code': post.get('gatecode'),
-                # 'wifi_network_id': post.get('wifi_network_id'),
-                # 'wifi_network_password': post.get('wifi_network_password'),
-                # 'battery': post.get('battery'),
-                # 'pets': post.get('pets'),
-                # 'electrical_update': post.get('electrical_upgrade'),
-
                 # Sales/Design
-                'design_sold': post.get('design_sold'),
-                'add_ons': post.get('addons'),
-                'lead_origin': post.get('lead_origin'),
-                'reroof': post.get('reroof'),
-                'mount': post.get('mount'),
-                'hoa': post.get('hoa'),
+                # 'design_sold': post.get('design_sold'),
+                # 'add_ons': post.get('addons'),
+                # 'lead_origin': post.get('lead_origin'),
+                # 'reroof': post.get('reroof'),
+                # 'mount': post.get('mount'),
+                # 'hoa': post.get('hoa'),
 
                 # Finance
                 'finance_type': post.get('finance_type'),
@@ -1214,17 +1109,16 @@ class CustomAppointmentController(AppointmentController):
                 'basic_needs': post.get('basic_needs'),
                 'data_sharing_consent': post.get('data_sharing_consent'),
 
-                # # Files
-                # 'medical_report_file': post.get('medical_report_file'),
-                # 'medical_report_filename': post.get('medical_report_filename'),
-
-                'has_family_martyr': post.get('has_family_martyr'),
-                'has_family_prisoner': post.get('has_family_prisoner'),
-                'has_family_injured': post.get('has_family_injured'),
-
                 # Meta
                 'date_start': date.today(),
-            })
+            }
+
+            # Create or update
+            if existing_project:
+                existing_project.write(project_vals)
+                project = existing_project
+            else:
+                project = request.env['project.project'].sudo().create(project_vals)
 
             # Handle attachments
             usage_file_ids = []

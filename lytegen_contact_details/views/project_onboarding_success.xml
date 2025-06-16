@@ -5,7 +5,7 @@
             <div class="alert alert-success text-center">
                 <h2>✅ تم ارسال البيانات بنجاح</h2>
                 <p>شكرا لك</p>
-                <a href="/project_onboarding" class="btn btn-primary mt-3">العودة للخلف</a>
+                <a href="/refuge" class="btn btn-primary mt-3">العودة للخلف</a>
             </div>
         </div>
     </t>

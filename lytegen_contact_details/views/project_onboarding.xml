@@ -390,6 +390,10 @@
                                                                     </t>
                                                                 </select>
                                                             </div>
+                                                            <div class="col-lg-4 col-sm-12">
+                                                                <label class="header-font">العنوان الحالي بعد النزوح</label>
+                                                                <input type="text" class="form-control header-font" name="post_displacement_area" required="required"/>
+                                                            </div>
 
 
                                                         </div>

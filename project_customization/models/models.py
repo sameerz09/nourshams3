@@ -435,6 +435,7 @@ class ProjectProject(models.Model):
         ('no', 'لا'),
     ], string="هل الأسرة نازحة حاليًا؟", required=True)
     pre_displacement_area = fields.Char(string="مكان السكن قبل النزوح", required=True)
+    post_displacement_area = fields.Char(string="العنوان الحالي بعد النزوح", required=True)
 
     housing_type = fields.Selection([
         ('inside_camp', 'بيت داخل المخيم'),
