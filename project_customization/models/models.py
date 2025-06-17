@@ -146,7 +146,7 @@ class ProjectProject(models.Model):
     usage_files = fields.Many2many(
         'ir.attachment',
         relation="project_usage_files_rel",
-        string="Usage Files",
+        string="صورة الهوية",
         tracking=True
     )
     additional_files = fields.Many2many(
