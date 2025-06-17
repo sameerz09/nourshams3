@@ -11,7 +11,6 @@
                 <field name="name" string="اسم رب الأسرة"/>
                 <field name="id_number" string="رقم هوية رب الأسرة"/>
                 <field name="date_formatted" string="تاريخ الإنشاء"/>
-                <field name="date_formatted" string="تاريخ الإنشاء"/>
                 <field name="time_formatted" string="وقت الإنشاء"/>
                 <field name="displacement_date" string="تاريخ النزوح"/>
                 <field name="displacement_residence_type" string="نوع السكن بعد النزوح"/>
