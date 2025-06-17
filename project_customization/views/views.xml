@@ -59,9 +59,13 @@
             <xpath expr="//field[@name='user_id']" position="attributes">
                 <attribute name="invisible">1</attribute>
             </xpath>
+            <xpath expr="//field[@name='partner_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
             <xpath expr="//button[@name='action_open_share_project_wizard']" position="attributes">
                 <attribute name="invisible">1</attribute>
             </xpath>
+
 
             <!-- Inject Custom Fields Before User Field -->
           <!-- Inject Custom Fields -->
@@ -96,6 +100,14 @@
                 <field name="can_still_work"/>
             </group>
 
+            <group string="مهارات تتقنها العائلة">
+                    <field name="skill_construction"/>
+                    <field name="skill_electricity"/>
+                    <field name="skill_education"/>
+                    <field name="skill_maintenance"/>
+                    <field name="skill_other"/>
+            </group>
+
             <group string="خسارة المشروع">
                 <field name="lost_shop"/>
                 <field name="shop_name"/>
@@ -106,13 +118,16 @@
                 <field name="workers_count"/>
             </group>
 
+
             <group string="معلومات الزوجة">
                 <field name="wife_full_name"/>
                 <field name="wife_id_number"/>
             </group>
 
             <group string="الصور والمرفقات">
+                <field name="unrwa_document" widget="many2many_binary_preview"/>
                 <field name="house_damage_photos" widget="many2many_binary_preview"/>
+                <field name="additional_files" widget="many2many_binary_preview"/>
                 <field name="report_documents" widget="many2many_binary_preview"/>
             </group>
         </xpath>

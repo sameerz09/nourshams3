@@ -152,7 +152,7 @@ class ProjectProject(models.Model):
     additional_files = fields.Many2many(
         'ir.attachment',
         relation="project_additional_files_rel",
-        string="Additional Files",
+        string=" صور لموقع الإقامة الحالي",
         tracking=True
     )
 
@@ -549,7 +549,7 @@ class ProjectProject(models.Model):
     report_documents = fields.Many2many(
         'ir.attachment',
         relation="project_report_documents_rel",
-        string="تقارير",
+        string="تقارير طبية",
         tracking=True
     )
     family_skills = fields.Selection([
