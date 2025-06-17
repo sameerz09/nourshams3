@@ -238,8 +238,8 @@ class ProjectProject(models.Model):
     )
 
     create_date_formatted = fields.Char(string='Created Date/Time', compute='_compute_create_date_formatted')
-    date_formatted = fields.Char(string='Created Date/Time', compute='_compute_date_formatted')
-    time_formatted = fields.Char(string='Created Date/Time', compute='_compute_time_formatted')
+    date_formatted = fields.Char(string='تاريخ انشاء الطلب', compute='_compute_date_formatted')
+    time_formatted = fields.Char(string='وقت انشاء الطلب', compute='_compute_time_formatted')
 
     displacement_reasons = fields.Selection([
         ('forced_displacement', 'تهجير قسري'),
@@ -274,8 +274,8 @@ class ProjectProject(models.Model):
                                    tracking=True, required=False)
 
     customer_name = fields.Char(string="Customer Name", required=False, tracking=True)
-    phone = fields.Char(string="Phone", required=False, tracking=True)
-    email = fields.Char(string="Email", required=False, tracking=True)
+    phone = fields.Char(string="رقم الهاتف المحمول", required=False, tracking=True)
+    email = fields.Char(string="الايميل", required=False, tracking=True)
     secondary_customer_name = fields.Char(string="Secondary Customer Name", tracking=True, required=False)
     secondary_phone = fields.Char(string="Secondary Phone", tracking=True, required=False)
     secondary_email = fields.Char(string="Secondary Email", tracking=True, required=False)

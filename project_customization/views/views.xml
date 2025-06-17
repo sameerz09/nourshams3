@@ -17,9 +17,24 @@
 
             <!-- Insert Created Date and Time before Street Address (adjusted to avoid missing XPath errors) -->
             <xpath expr="//field[@name='name']" position="after">
-                <field name="date_formatted" string="Created Date"/>
-                <field name="time_formatted" string="Created Time"/>
-                <field name="street_address"/>
+                        <field name="" string="تاريخ الانشاء"/>
+                        <field name="date_formatted" string="تاريخ الانشاء"/>
+                        <field name="time_formatted" string="وقت الانشاء"/>
+<!--                        <field name="street_address"/>-->
+
+                        <!-- Additional fields -->
+                        <field name="displacement_date"/>
+                        <field name="displacement_residence_type"/>
+                        <field name="displacement_reasons"/>
+                        <field name="phone"/>
+                        <field name="economic_status"/>
+                        <field name="worked_inside_palestine_before"/>
+                        <field name="employment_type"/>
+                        <field name="stable_income"/>
+                        <field name="lost_shop"/>
+                        <field name="shop_name"/>
+                        <field name="shop_business_type"/>
+                        <field name="wife_full_name"/>
             </xpath>
         </field>
     </record>
@@ -53,59 +68,58 @@
             </xpath>
 
             <!-- Inject Custom Fields Before User Field -->
-           <xpath expr="//field[@name='partner_id']" position="after">
-    <group string="معلومات النزوح">
-        <field name="displacement_date"/>
-        <field name="displacement_residence_type"/>
-        <field name="multiple_displacements"/>
-        <field name="request_date"/>
-        <field name="displacement_reasons"/>
-        <field name="post_displacement_area"/>
-    </group>
+          <!-- Inject Custom Fields -->
+        <xpath expr="//sheet" position="inside">
+            <group string="معلومات النزوح">
+                <field name="displacement_date"/>
+                <field name="displacement_residence_type"/>
+                <field name="multiple_displacements"/>
+                <field name="request_date"/>
+                <field name="displacement_reasons"/>
+                <field name="post_displacement_area"/>
+            </group>
 
-    <group string="معلومات الاتصال">
-        <field name="phone"/>
-    </group>
+            <group string="معلومات الاتصال">
+                <field name="phone"/>
+            </group>
 
-<!--    <group string="تفاصيل البيع">-->
-<!--        <field name="design_sold" widget="url"/>-->
-<!--        &lt;!&ndash; <field name="sales_consultant_employee_id" required="1"/> &ndash;&gt;-->
+            <group string="الوضع الاقتصادي">
+                <field name="economic_status"/>
+                <field name="worked_inside_palestine_before"/>
+                <field name="workers_count_before_displacement"/>
+                <field name="has_unemployed"/>
+            </group>
 
 
-    <group string="الوضع الاقتصادي">
-        <field name="economic_status"/>
-        <field name="worked_inside_palestine_before"/>
-        <field name="workers_count_before_displacement"/>
-        <field name="has_unemployed"/>
-    </group>
 
-    <group string="الصور والمرفقات">
-        <field name="house_damage_photos" widget="many2many_binary_preview"/>
-        <field name="report_documents" widget="many2many_binary_preview"/>
-    </group>
+            <group string="معلومات العمل والدخل">
+                <field name="employment_type"/>
+                <field name="stable_income"/>
+                <field name="interior_workers"/>
+                <field name="can_still_work"/>
+            </group>
 
-    <group string="معلومات العمل والدخل">
-        <field name="employment_type"/>
-        <field name="stable_income"/>
-        <field name="interior_workers"/>
-        <field name="can_still_work"/>
-    </group>
+            <group string="خسارة المشروع">
+                <field name="lost_shop"/>
+                <field name="shop_name"/>
+                <field name="shop_location"/>
+                <field name="shop_business_type"/>
+                <field name="shop_ownership"/>
+                <field name="shop_main_income_source"/>
+                <field name="workers_count"/>
+            </group>
 
-    <group string="خسارة المشروع">
-        <field name="lost_shop"/>
-        <field name="shop_name"/>
-        <field name="shop_location"/>
-        <field name="shop_business_type"/>
-        <field name="shop_ownership"/>
-        <field name="shop_main_income_source"/>
-        <field name="workers_count"/>
-    </group>
+            <group string="معلومات الزوجة">
+                <field name="wife_full_name"/>
+                <field name="wife_id_number"/>
+            </group>
 
-    <group string="معلومات الزوجة">
-        <field name="wife_full_name"/>
-        <field name="wife_id_number"/>
-    </group>
-</xpath>
+            <group string="الصور والمرفقات">
+                <field name="house_damage_photos" widget="many2many_binary_preview"/>
+                <field name="report_documents" widget="many2many_binary_preview"/>
+            </group>
+        </xpath>
+
 
 
 
