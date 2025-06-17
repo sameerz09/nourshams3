@@ -504,7 +504,7 @@ class ProjectProject(models.Model):
     has_disabled_members = fields.Selection([
         ('yes', 'نعم'),
         ('no', 'لا'),
-    ], string="هل في الأسرة ذوي إعاقة؟", required=True)
+    ], string="هل في الأسرة ذوي إعاقة؟", required=False)
 
     disabled_count = fields.Integer(string="عدد ذوي الإعاقة", required=False)
 
