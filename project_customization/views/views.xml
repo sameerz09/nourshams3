@@ -1,46 +1,36 @@
 <odoo>
     <!-- Customized Tree View for Project -->
     <record id="view_project_tree_custom" model="ir.ui.view">
-        <field name="name">project.project.tree.custom</field>
-        <field name="model">project.project</field>
-        <field name="inherit_id" ref="project.view_project"/>
-        <field name="arch" type="xml">
-            <!-- Disable creation from tree view -->
-            <xpath expr="//list" position="attributes">
-                <attribute name="create">false</attribute>
-            </xpath>
-            <xpath expr="//field[@name='user_id']" position="attributes">
-                <attribute name="invisible">1</attribute>
-            </xpath>
+    <field name="name">project.project.tree.custom</field>
+    <field name="model">project.project</field>
+    <field name="inherit_id" ref="project.view_project"/>
+    <field name="arch" type="xml">
+        <!-- Replace the entire tree/list structure -->
+        <xpath expr="//list" position="replace">
+            <list create="false" string="المتضررين">
+                <field name="name" string="اسم رب الأسرة"/>
+                <field name="id_number" string="رقم هوية رب الأسرة"/>
+                <field name="date_formatted" string="تاريخ الإنشاء"/>
+                <field name="date_formatted" string="تاريخ الإنشاء"/>
+                <field name="time_formatted" string="وقت الإنشاء"/>
+                <field name="displacement_date" string="تاريخ النزوح"/>
+                <field name="displacement_residence_type" string="نوع السكن بعد النزوح"/>
+                <field name="displacement_reasons" string="أسباب النزوح"/>
+                <field name="phone" string="رقم الهاتف"/>
+                <field name="economic_status" string="الوضع الاقتصادي"/>
+                <field name="worked_inside_palestine_before" string="هل عمل سابقاً داخل فلسطين؟"/>
+                <field name="employment_type" string="نوع العمل"/>
+                <field name="stable_income" string="دخل ثابت"/>
+                <field name="lost_shop" string="هل فقد المشروع؟"/>
+                <field name="shop_name" string="اسم المشروع"/>
+                <field name="shop_business_type" string="نوع النشاط"/>
+                <field name="wife_full_name" string="اسم الزوجة"/>
+                <field name="wife_id_number" string="رقم هوية الزوجة"/>
+            </list>
+        </xpath>
+    </field>
+</record>
 
-            <!-- Insert Project ID before Display Name -->
-<!--            <xpath expr="//field[@name='display_name']" position="before">-->
-<!--                <field name="id" string="Project ID"/>-->
-<!--            </xpath>-->
-
-            <!-- Insert Created Date and Time before Street Address (adjusted to avoid missing XPath errors) -->
-            <xpath expr="//field[@name='name']" position="after">
-<!--                <field name="date_formatted" string="تاريخ الانشاء"/>-->
-                        <field name="date_formatted" string="تاريخ الانشاء"/>
-                        <field name="time_formatted" string="وقت الانشاء"/>
-<!--                        <field name="street_address"/>-->
-
-                        <!-- Additional fields -->
-                        <field name="displacement_date"/>
-                        <field name="displacement_residence_type"/>
-                        <field name="displacement_reasons"/>
-                        <field name="phone"/>
-                        <field name="economic_status"/>
-                        <field name="worked_inside_palestine_before"/>
-                        <field name="employment_type"/>
-                        <field name="stable_income"/>
-                        <field name="lost_shop"/>
-                        <field name="shop_name"/>
-                        <field name="shop_business_type"/>
-                        <field name="wife_full_name"/>
-            </xpath>
-        </field>
-    </record>
 
     <!-- Customized Form View for Project -->
     <record id="view_project_form_inherited" model="ir.ui.view">
@@ -77,6 +67,7 @@
           <!-- Inject Custom Fields -->
         <xpath expr="//sheet" position="inside">
             <group string="معلومات النزوح">
+                <field name="id_number" string="رقم هوية رب الأسرة"/>
                 <field name="displacement_date"/>
                 <field name="displacement_residence_type"/>
                 <field name="multiple_displacements"/>
