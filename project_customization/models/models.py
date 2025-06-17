@@ -433,6 +433,7 @@ class ProjectProject(models.Model):
         ('yes', 'نعم'),
         ('no', 'لا'),
     ], string="هل الأسرة نازحة حاليًا؟", required=True)
+
     pre_displacement_area = fields.Char(string="مكان السكن قبل النزوح", required=True)
     post_displacement_area = fields.Char(string="العنوان الحالي بعد النزوح", required=True)
 
@@ -499,6 +500,11 @@ class ProjectProject(models.Model):
         ('continuing', 'التعليم مستمر'),
         ('stopped', 'توقف'),
     ], string="وضع طلاب الجامعات", required=False)
+
+    has_disabled_members = fields.Selection([
+        ('yes', 'نعم'),
+        ('no', 'لا'),
+    ], string="هل في الأسرة ذوي إعاقة؟", required=True)
 
     disabled_count = fields.Integer(string="عدد ذوي الإعاقة", required=False)
 

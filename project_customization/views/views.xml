@@ -123,6 +123,14 @@
                 <field name="wife_id_number"/>
             </group>
 
+            <group string="ذوي الإعاقة">
+                <field name="has_disabled_members"/>
+                <field name="disabled_count"/>
+                <field name="disability_type"/>
+                <field name="receiving_care"/>
+                <field name="care_affected_by_displacement"/>
+            </group>
+
             <group string="الصور والمرفقات">
                 <field name="unrwa_document" widget="many2many_binary_preview"/>
                 <field name="house_damage_photos" widget="many2many_binary_preview"/>

@@ -751,6 +751,11 @@ class CustomAppointmentController(AppointmentController):
             ('no', 'لا'),
         ]
 
+        has_disabled_members_options = [
+            ('yes', 'نعم'),
+            ('no', 'لا'),
+        ]
+
         care_affected_options = [
             ('yes', 'نعم'),
             ('no', 'لا'),
@@ -980,6 +985,7 @@ class CustomAppointmentController(AppointmentController):
             'has_family_martyr_options': has_family_martyr_options,
             'has_family_prisoner_options': has_family_prisoner_options,
             'has_family_injured_options': has_family_injured_options,
+            'has_disabled_members_options': has_disabled_members_options,
 
 
         })
@@ -1049,6 +1055,8 @@ class CustomAppointmentController(AppointmentController):
                 'school_attendance_status': post.get('school_attendance_status'),
                 'has_university_students': post.get('has_university_students'),
                 'university_attendance_status': post.get('university_attendance_status'),
+                'has_disabled_members': post.get('has_disabled_members'),
+                'disabled_count': post.get('disabled_count'),
                 'disability_type': post.get('disability_type'),
                 'receiving_care': post.get('receiving_care'),
                 'care_affected_by_displacement': post.get('care_affected_by_displacement'),

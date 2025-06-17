@@ -680,59 +680,71 @@
                                                 </div>
                                                  <h2 class="accordion-header mt-3">
                                                         <button class="accordion-button" type="button" data-bs-target="#projectSpecs" aria-expanded="true" aria-controls="projectSpecs">
-                                                            ذوو الإعاقة والاحتياجات
+                                                           ذوو الإعاقة والاحتياجات الخاصة
                                                           </button>
                                                  </h2>
                                                  <div id="disabilitySection" class="accordion-collapse collapse show" data-bs-parent="#disabilitySection">
-                                                        <div class="accordion-body">
-                                                            <div class="row mt-3">
-                                                                <div class="col-lg-4 col-sm-12">
-                                                                    <span class="header-font">عدد ذوي الإعاقة</span>
-                                                                    <input type="number" name="disabled_count" id="disabled_count" class="form-control mt-2 header-font" min="0"/>
-                                                                </div>
+                                                    <div class="accordion-body">
+                                                        <div class="row mt-3">
+                                                            <div class="col-lg-4 col-sm-12">
+                                                                <span class="header-font">هل في الأسرة ذوي إعاقة؟</span>
+                                                                <select class="form-control mt-2 header-font" name="has_disabled_members" id="has_disabled_members">
+                                                                    <option value=""/>
+                                                                    <t t-foreach="has_disabled_members_options" t-as="option">
+                                                                        <option t-att-value="option[0]"><t t-esc="option[1]"/></option>
+                                                                    </t>
+                                                                </select>
+                                                            </div>
 
-                                                                <div class="col-lg-4 col-sm-12">
-                                                                    <span class="header-font">نوع الإعاقة</span>
-                                                                    <select class="form-control mt-2 header-font" name="disability_type" id="disability_type">
-                                                                        <option value=""/>
-                                                                        <t t-foreach="disability_type_options" t-as="option">
-                                                                            <option t-att-value="option[0]"><t t-esc="option[1]"/></option>
-                                                                        </t>
-                                                                    </select>
-                                                                </div>
+                                                            <div class="col-lg-4 col-sm-12">
+                                                                <span class="header-font">عدد ذوي الإعاقة</span>
+                                                                <input type="number" name="disabled_count" id="disabled_count" class="form-control mt-2 header-font" min="0"/>
+                                                            </div>
 
-                                                                <div class="col-lg-4 col-sm-12">
-                                                                    <span class="header-font">هل يتلقون رعاية؟</span>
-                                                                    <select class="form-control mt-2 header-font" name="receiving_care" id="receiving_care">
-                                                                        <option value=""/>
-                                                                        <t t-foreach="receiving_care_options" t-as="option">
-                                                                            <option t-att-value="option[0]"><t t-esc="option[1]"/></option>
-                                                                        </t>
-                                                                    </select>
-                                                                </div>
+                                                            <div class="col-lg-4 col-sm-12">
+                                                                <span class="header-font">نوع الإعاقة</span>
+                                                                <select class="form-control mt-2 header-font" name="disability_type" id="disability_type">
+                                                                    <option value=""/>
+                                                                    <t t-foreach="disability_type_options" t-as="option">
+                                                                        <option t-att-value="option[0]"><t t-esc="option[1]"/></option>
+                                                                    </t>
+                                                                </select>
+                                                            </div>
 
-                                                                <div class="col-lg-4 col-sm-12">
-                                                                    <span class="header-font">هل تأثرت الرعاية بالنزوح؟</span>
-                                                                    <select class="form-control mt-2 header-font" name="care_affected_by_displacement" id="care_affected_by_displacement">
-                                                                        <option value=""/>
-                                                                        <t t-foreach="care_affected_options" t-as="option">
-                                                                            <option t-att-value="option[0]"><t t-esc="option[1]"/></option>
-                                                                        </t>
-                                                                    </select>
-                                                                </div>
+                                                            <div class="col-lg-4 col-sm-12">
+                                                                <span class="header-font">هل يتلقون رعاية؟</span>
+                                                                <select class="form-control mt-2 header-font" name="receiving_care" id="receiving_care">
+                                                                    <option value=""/>
+                                                                    <t t-foreach="receiving_care_options" t-as="option">
+                                                                        <option t-att-value="option[0]"><t t-esc="option[1]"/></option>
+                                                                    </t>
+                                                                </select>
+                                                            </div>
 
-                                                                <div class="col-lg-4 col-sm-12">
-                                                                    <span class="header-font">الاحتياجات الأساسية</span>
-                                                                    <select class="form-control mt-2 header-font" name="basic_needs" id="basic_needs">
-                                                                        <option value=""/>
-                                                                        <t t-foreach="basic_needs_options" t-as="option">
-                                                                            <option t-att-value="option[0]"><t t-esc="option[1]"/></option>
-                                                                        </t>
-                                                                    </select>
-                                                                </div>
+                                                            <div class="col-lg-4 col-sm-12">
+                                                                <span class="header-font">هل تأثرت الرعاية بالنزوح؟</span>
+                                                                <select class="form-control mt-2 header-font" name="care_affected_by_displacement" id="care_affected_by_displacement">
+                                                                    <option value=""/>
+                                                                    <t t-foreach="care_affected_options" t-as="option">
+                                                                        <option t-att-value="option[0]"><t t-esc="option[1]"/></option>
+                                                                    </t>
+                                                                </select>
+                                                            </div>
+
+                                                            <div class="col-lg-4 col-sm-12">
+                                                                <span class="header-font">الاحتياجات الأساسية</span>
+                                                                <select class="form-control mt-2 header-font" name="basic_needs" id="basic_needs">
+                                                                    <option value=""/>
+                                                                    <t t-foreach="basic_needs_options" t-as="option">
+                                                                        <option t-att-value="option[0]"><t t-esc="option[1]"/></option>
+                                                                    </t>
+                                                                </select>
                                                             </div>
                                                         </div>
                                                     </div>
+                                                </div>
+
+
 
 
 
