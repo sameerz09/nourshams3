@@ -70,74 +70,71 @@
           <!-- Inject Custom Fields -->
         <xpath expr="//sheet" position="inside">
             <group string="معلومات النزوح">
-                <field name="id_number" string="رقم هوية رب الأسرة"/>
-                <field name="displacement_date"/>
-                <field name="displacement_residence_type"/>
-                <field name="multiple_displacements"/>
-                <field name="request_date"/>
-                <field name="displacement_reasons"/>
-                <field name="post_displacement_area"/>
-            </group>
+                    <field name="id_number" string="رقم هوية رب الأسرة" readonly="1"/>
+                    <field name="displacement_date" readonly="1"/>
+                    <field name="displacement_residence_type" readonly="1"/>
+                    <field name="multiple_displacements" readonly="1"/>
+                    <field name="request_date" readonly="1"/>
+                    <field name="displacement_reasons" readonly="1"/>
+                    <field name="post_displacement_area" readonly="1"/>
+                </group>
 
-            <group string="معلومات الاتصال">
-                <field name="phone"/>
-            </group>
+                <group string="معلومات الاتصال">
+                    <field name="phone" readonly="1"/>
+                </group>
 
-            <group string="الوضع الاقتصادي">
-                <field name="economic_status"/>
-                <field name="worked_inside_palestine_before"/>
-                <field name="workers_count_before_displacement"/>
-                <field name="has_unemployed"/>
-            </group>
+                <group string="الوضع الاقتصادي">
+                    <field name="economic_status" readonly="1"/>
+                    <field name="worked_inside_palestine_before" readonly="1"/>
+                    <field name="workers_count_before_displacement" readonly="1"/>
+                    <field name="has_unemployed" readonly="1"/>
+                </group>
 
+                <group string="معلومات العمل والدخل">
+                    <field name="employment_type" readonly="1"/>
+                    <field name="stable_income" readonly="1"/>
+                    <field name="interior_workers" readonly="1"/>
+                    <field name="can_still_work" readonly="1"/>
+                </group>
 
+                <group string="مهارات تتقنها العائلة">
+                    <field name="skill_construction" readonly="1"/>
+                    <field name="skill_electricity" readonly="1"/>
+                    <field name="skill_education" readonly="1"/>
+                    <field name="skill_maintenance" readonly="1"/>
+                    <field name="skill_other" readonly="1"/>
+                </group>
 
-            <group string="معلومات العمل والدخل">
-                <field name="employment_type"/>
-                <field name="stable_income"/>
-                <field name="interior_workers"/>
-                <field name="can_still_work"/>
-            </group>
+                <group string="خسارة المشروع">
+                    <field name="lost_shop" readonly="1"/>
+                    <field name="shop_name" readonly="1"/>
+                    <field name="shop_location" readonly="1"/>
+                    <field name="shop_business_type" readonly="1"/>
+                    <field name="shop_ownership" readonly="1"/>
+                    <field name="shop_main_income_source" readonly="1"/>
+                    <field name="workers_count" readonly="1"/>
+                </group>
 
-            <group string="مهارات تتقنها العائلة">
-                    <field name="skill_construction"/>
-                    <field name="skill_electricity"/>
-                    <field name="skill_education"/>
-                    <field name="skill_maintenance"/>
-                    <field name="skill_other"/>
-            </group>
+                <group string="معلومات الزوجة">
+                    <field name="wife_full_name" readonly="1"/>
+                    <field name="wife_id_number" readonly="1"/>
+                </group>
 
-            <group string="خسارة المشروع">
-                <field name="lost_shop"/>
-                <field name="shop_name"/>
-                <field name="shop_location"/>
-                <field name="shop_business_type"/>
-                <field name="shop_ownership"/>
-                <field name="shop_main_income_source"/>
-                <field name="workers_count"/>
-            </group>
+                <group string="ذوي الإعاقة">
+                    <field name="has_disabled_members" readonly="1"/>
+                    <field name="disabled_count" readonly="1"/>
+                    <field name="disability_type" readonly="1"/>
+                    <field name="receiving_care" readonly="1"/>
+                    <field name="care_affected_by_displacement" readonly="1"/>
+                </group>
 
-
-            <group string="معلومات الزوجة">
-                <field name="wife_full_name"/>
-                <field name="wife_id_number"/>
-            </group>
-
-            <group string="ذوي الإعاقة">
-                <field name="has_disabled_members"/>
-                <field name="disabled_count"/>
-                <field name="disability_type"/>
-                <field name="receiving_care"/>
-                <field name="care_affected_by_displacement"/>
-            </group>
-
-            <group string="الصور والمرفقات">
-                <field name="usage_files" widget="many2many_binary_preview"/>
-                <field name="unrwa_document" widget="many2many_binary_preview"/>
-                <field name="house_damage_photos" widget="many2many_binary_preview"/>
-                <field name="additional_files" widget="many2many_binary_preview"/>
-                <field name="report_documents" widget="many2many_binary_preview"/>
-            </group>
+                <group string="الصور والمرفقات">
+                    <field name="usage_files" widget="many2many_binary_preview" readonly="1"/>
+                    <field name="unrwa_document" widget="many2many_binary_preview" readonly="1"/>
+                    <field name="house_damage_photos" widget="many2many_binary_preview" readonly="1"/>
+                    <field name="additional_files" widget="many2many_binary_preview" readonly="1"/>
+                    <field name="report_documents" widget="many2many_binary_preview" readonly="1"/>
+                </group>
         </xpath>
 
 
