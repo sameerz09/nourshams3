@@ -132,7 +132,7 @@
             </group>
 
             <group string="الصور والمرفقات">
-                <field name="unrwa_document" widget="many2many_binary_preview"/>
+                <field name="usage_files" widget="many2many_binary_preview"/>
                 <field name="unrwa_document" widget="many2many_binary_preview"/>
                 <field name="house_damage_photos" widget="many2many_binary_preview"/>
                 <field name="additional_files" widget="many2many_binary_preview"/>
