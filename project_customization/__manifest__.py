@@ -3,7 +3,7 @@
     'name': "project_customization",
     'author': "Abdelaziz",
 
-    'depends': ['base', 'hr_attendance', 'project', 'calendar', 'mail', 'contacts', 'attachment_indexation','lytegen_contact_details'],
+    'depends': ['lytegen_contact_details'],
 
 
     'data': [
