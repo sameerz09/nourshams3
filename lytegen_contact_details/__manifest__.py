@@ -44,7 +44,7 @@
         # 'web',
         # 'slack_integration',
         # 'spreadsheet_dashboard',
-        'crm',
+        # 'crm',
         # 'timesheet_grid',
         # 'industry_fsm',
     ],
