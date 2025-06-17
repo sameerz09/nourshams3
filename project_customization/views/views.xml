@@ -77,6 +77,7 @@
                     <field name="request_date" readonly="1"/>
                     <field name="displacement_reasons" readonly="1"/>
                     <field name="post_displacement_area" readonly="1"/>
+                    <field name="family_member_count" readonly="1"/>
                 </group>
 
                 <group string="معلومات الاتصال">
