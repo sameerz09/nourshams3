@@ -11,13 +11,13 @@
             </xpath>
 
             <!-- Insert Project ID before Display Name -->
-            <xpath expr="//field[@name='display_name']" position="before">
-                <field name="id" string="Project ID"/>
-            </xpath>
+<!--            <xpath expr="//field[@name='display_name']" position="before">-->
+<!--                <field name="id" string="Project ID"/>-->
+<!--            </xpath>-->
 
             <!-- Insert Created Date and Time before Street Address (adjusted to avoid missing XPath errors) -->
             <xpath expr="//field[@name='name']" position="after">
-                        <field name="" string="تاريخ الانشاء"/>
+<!--                <field name="date_formatted" string="تاريخ الانشاء"/>-->
                         <field name="date_formatted" string="تاريخ الانشاء"/>
                         <field name="time_formatted" string="وقت الانشاء"/>
 <!--                        <field name="street_address"/>-->
