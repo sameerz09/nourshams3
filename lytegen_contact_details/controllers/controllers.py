@@ -1125,7 +1125,7 @@ class CustomAppointmentController(AppointmentController):
                 'skill_education': post.get('skill_education'),
                 'skill_maintenance': post.get('skill_maintenance'),
                 'skill_other': post.get('skill_other'),
-
+                'date_of_birth': post.get('date_of_birth'),
                 # Meta
                 'date_start': date.today(),
             }

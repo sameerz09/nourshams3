@@ -4,6 +4,7 @@ import requests
 import json
 import logging
 from datetime import datetime, timedelta
+from datetime import date
 from oauth2client.service_account import ServiceAccountCredentials
 import gspread
 import traceback
@@ -21,6 +22,8 @@ class ProjectFile(models.Model):
 
 class ProjectProject(models.Model):
     _inherit = 'project.project'
+
+    date_of_birth = fields.Date(string="تاريخ الميلاد")
 
     displacement_reasons = fields.Selection([
         ('house_demolition', 'هدم المنزل'),
@@ -677,6 +680,19 @@ class ProjectProject(models.Model):
     skill_education = fields.Boolean(string="تعليم")
     skill_maintenance = fields.Boolean(string="صيانة")
     skill_other = fields.Boolean(string="آخر")
+
+    age = fields.Integer(string="العمر", compute='_compute_age', store=True)
+
+    @api.depends('date_of_birth')
+    def _compute_age(self):
+        for record in self:
+            if record.date_of_birth:
+                today = date.today()
+                dob = record.date_of_birth
+                age = today.year - dob.year - ((today.month, today.day) < (dob.month, dob.day))
+                record.age = age
+            else:
+                record.age = 0
 
 
 

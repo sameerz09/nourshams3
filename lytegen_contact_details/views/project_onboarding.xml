@@ -102,16 +102,24 @@
 
 
                                                         <div class="row mt-3">
-                                                            <div class="col-lg-6 col-sm-12">
+                                                            <div class="col-lg-4 col-sm-12">
                                                                 <span class="header-font">رقم الهوية <sup class="text-danger">*</sup></span>
                                                                 <input type="text" name="id_number" id="id_number" class="form-control mt-2 header-font" required="required"/>
                                                             </div>
 
-                                                            <div class="col-lg-6 col-sm-12">
-                                                                <span class="header-font">رقم كرت UNRWA </span>
+                                                            <div class="col-lg-4 col-sm-12">
+                                                                <span class="header-font">رقم كرت UNRWA</span>
                                                                 <input type="text" name="unrwa_card_number" id="unrwa_card_number" class="form-control mt-2 header-font"/>
                                                             </div>
+
+                                                            <div class="col-lg-4 col-sm-12">
+                                                                <span class="header-font">تاريخ ميلاد رب الأسرة <sup class="text-danger">*</sup></span>
+                                                                <input type="date" name="date_of_birth" id="date_of_birth" class="form-control mt-2 header-font" required="required"/>
+                                                            </div>
+
+
                                                         </div>
+
                                                         <div class="row mt-3">
                                                             <div class="col-lg-6 col-sm-12">
                                                                 <span class="header-font">الإيميل </span>
