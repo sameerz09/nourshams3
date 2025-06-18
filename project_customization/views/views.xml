@@ -71,8 +71,8 @@
         <xpath expr="//sheet" position="inside">
             <group string="معلومات النزوح">
                     <field name="id_number" string="رقم هوية رب الأسرة" readonly="1"/>
-<!--                    <field name="date_of_birth" string="تاريخ ميلاد رب الأسرة" readonly="1"/>-->
-<!--                    <field name="age" string="عمر رب ألأسرة" readonly="1"/>-->
+                    <field name="date_of_birth" string="تاريخ ميلاد رب الأسرة" readonly="1"/>
+                    <field name="age" string="عمر رب ألأسرة" readonly="1"/>
                     <field name="displacement_date" readonly="1"/>
                     <field name="displacement_residence_type" readonly="1"/>
                     <field name="multiple_displacements" readonly="1"/>
