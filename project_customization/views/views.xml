@@ -80,7 +80,7 @@
                     <field name="displacement_reasons" readonly="1"/>
                     <field name="post_displacement_area" readonly="1"/>
                     <field name="family_member_count" readonly="1"/>
-                    <field name="unrwa_document" readonly="0"/>
+                    <field name="unrwa_card_number" readonly="0"/>
                 </group>
 
                 <group string="معلومات الاتصال">
