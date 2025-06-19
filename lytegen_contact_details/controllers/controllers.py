@@ -990,56 +990,49 @@ class CustomAppointmentController(AppointmentController):
 
         })
 
-
-
-
     @http.route('/submit/project_onboarding', type='http', auth='public', website=True, csrf=False)
     def submit_project_onboarding(self, **post):
         try:
-            # Extract data
-            # full_name = f"{post.get('customer_first_name', '')} {post.get('customer_middle_name', '')} {post.get('customer_last_name', '')}".strip()
             full_name = f"{post.get('customer_first_name', '')} {post.get('customer_middle_name', '')} {post.get('customer_grandfather_name', '')} {post.get('customer_last_name', '')}".strip()
-            country_code = post.get('country_code')
-            # phone = f"+{country_code}{post.get('customer_phone_number')}"
-            phone = f"{post.get('customer_phone_number')}"
-            email = post.get('customer_email')
-            secondary_country_code = post.get('secondary_country_code')
-            displacement_date = post.get('displacement_date')
-            product_type = post.get('ppa_type') if str(post.get('finance_type')).lower() == 'ppa' else post.get('loantype') if str(post.get('finance_type')).lower() == 'loan' else ""
-            multiple_displacements = post.get('multiple_displacement_options')
-            displacement_residence_type = post.get('displacement_residences')
-            family_member_count = post.get('family_member_count')
+            phone = post.get('customer_phone_number', '')
+            email = post.get('customer_email', '')
+            secondary_phone = post.get('secondary_contact_phone', '')
+            secondary_country_code = post.get('secondary_country_code', '')
+            product_type = ''
+            if post.get('finance_type', '').lower() == 'ppa':
+                product_type = post.get('ppa_type', '')
+            elif post.get('finance_type', '').lower() == 'loan':
+                product_type = post.get('loantype', '')
 
-            # Try to find an existing project (e.g. by ID number)
             existing_project = request.env['project.project'].sudo().search([
                 ('id_number', '=', post.get('id_number'))
             ], limit=1)
 
-            # Data dictionary used for both create or write
+            # Parse relational field safely
+            consultant_id = int(post['sp2']) if post.get('sp2') and post['sp2'].isdigit() else False
+
+            # Clean optional phone field
+            secondary_full_phone = f"+{secondary_country_code}{secondary_phone}" if secondary_phone else False
+
+            # Build values
             project_vals = {
-                # Contact & Identification
-                'name': f"{full_name}",
+                'name': full_name,
                 'customer_name': full_name,
                 'phone': phone,
                 'email': email,
-                'secondary_customer_name': post.get('secondary_contact_name'),
-                'secondary_phone': f"+{secondary_country_code}{post.get('secondary_contact_phone')}" if post.get(
-                    'secondary_contact_phone') else False,
-                'secondary_email': post.get('secondary_contact_email'),
+                'secondary_customer_name': post.get('secondary_contact_name') or '',
+                'secondary_phone': secondary_full_phone,
+                'secondary_email': post.get('secondary_contact_email') or '',
                 'id_number': post.get('id_number'),
-                'unrwa_card_number': post.get('unrwa_card_number'),
-                'sales_consultant_employee_id': int(post.get('sp2')) if post.get('sp2') else False,
-
-                # Address & Location
-                'street_address': post.get('street_address'),
-                'pre_displacement_area': post.get('pre_displacement_area'),
+                'unrwa_card_number': post.get('unrwa_card_number') or '',
+                'sales_consultant_employee_id': consultant_id,
+                'street_address': post.get('street_address') or '',
+                'pre_displacement_area': post.get('pre_displacement_area') or '',
                 'pre_displacement_address': post.get('pre_displacement_address') or '',
                 'shared_with': post.get('shared_with') or '',
                 'pre_displacement_description': post.get('pre_displacement_description') or '',
-                'post_displacement_area': post.get('post_displacement_area'),
-
-                # Displacement Info
-                'displacement_date': displacement_date,
+                'post_displacement_area': post.get('post_displacement_area') or '',
+                'displacement_date': post.get('displacement_date'),
                 'is_currently_displaced': post.get('is_currently_displaced'),
                 'multiple_displacements': post.get('multiple_displacement_options'),
                 'displacement_residence_type': post.get('displacement_residences'),
@@ -1047,8 +1040,6 @@ class CustomAppointmentController(AppointmentController):
                 'pre_displacement_house_type': post.get('pre_displacement_house_type'),
                 'house_ownership_status': post.get('house_ownership_status'),
                 'other_families_on_floor': post.get('other_families_on_floor'),
-
-                # Household Info
                 'family_member_count': post.get('family_member_count'),
                 'has_unemployed': post.get('has_unemployed'),
                 'has_school_students': post.get('has_school_students'),
@@ -1060,22 +1051,16 @@ class CustomAppointmentController(AppointmentController):
                 'disability_type': post.get('disability_type'),
                 'receiving_care': post.get('receiving_care'),
                 'care_affected_by_displacement': post.get('care_affected_by_displacement'),
-
-                # Housing Status
                 'housing_type': post.get('housing_type'),
                 'housing_damage_level': post.get('housing_damage_level'),
                 'damage_documented': post.get('damage_documented'),
                 'housing_condition': post.get('housing_condition'),
-
-                # Economic / Employment
                 'economic_status': post.get('economic_status'),
                 'employment_type': post.get('employment_type'),
                 'stable_income': post.get('stable_income'),
                 'interior_workers': post.get('interior_workers'),
                 'can_still_work': post.get('can_still_work'),
                 'worked_inside_palestine_before': post.get('worked_inside_palestine_before'),
-
-                # Business Loss
                 'lost_shop': post.get('lost_shop'),
                 'shop_name': post.get('shop_name'),
                 'shop_location': post.get('shop_location'),
@@ -1084,8 +1069,6 @@ class CustomAppointmentController(AppointmentController):
                 'shop_main_income_source': post.get('shop_main_income_source'),
                 'workers_count_before_displacement': post.get('workers_count_before_displacement'),
                 'workers_count': post.get('workers_count'),
-
-                # Family Tragedies
                 'has_family_martyr': post.get('has_family_martyr'),
                 'has_family_prisoner': post.get('has_family_prisoner'),
                 'has_family_injured': post.get('has_family_injured'),
@@ -1093,28 +1076,14 @@ class CustomAppointmentController(AppointmentController):
                 'relation_to_head': post.get('relation_to_head'),
                 'event_date': post.get('event_date'),
                 'event_details': post.get('event_details'),
-
-                # Skills & Support
                 'family_skills': post.get('family_skills'),
                 'has_special_equipment': post.get('has_special_equipment'),
                 'interested_in_self_employment': post.get('interested_in_self_employment'),
-
-                # Sales/Design
-                # 'design_sold': post.get('design_sold'),
-                # 'add_ons': post.get('addons'),
-                # 'lead_origin': post.get('lead_origin'),
-                # 'reroof': post.get('reroof'),
-                # 'mount': post.get('mount'),
-                # 'hoa': post.get('hoa'),
-
-                # Finance
                 'finance_type': post.get('finance_type'),
                 'loantype': product_type,
-
-                # Other Notes
                 'custom_ss_times': post.get('call_window'),
                 'notes': post.get('notes'),
-                'special_request': post.get('notes'),
+                'special_request': post.get('special_request'),
                 'additional_notes': post.get('additional_notes'),
                 'basic_needs': post.get('basic_needs'),
                 'data_sharing_consent': post.get('data_sharing_consent'),
@@ -1126,119 +1095,48 @@ class CustomAppointmentController(AppointmentController):
                 'skill_maintenance': post.get('skill_maintenance'),
                 'skill_other': post.get('skill_other'),
                 'date_of_birth': post.get('date_of_birth'),
-                # Meta
                 'date_start': date.today(),
             }
 
-            # Create or update
-            if existing_project:
-                existing_project.write(project_vals)
-                project = existing_project
-            else:
-                project = request.env['project.project'].sudo().create(project_vals)
+            # Update or create project safely
+            project = existing_project.write(project_vals) and existing_project or \
+                      request.env['project.project'].sudo().create(project_vals)
 
-            # Handle attachments
-            usage_file_ids = []
-            additional_file_ids = []
-            unrwa_file_ids = []
-            house_damage_file_ids = []
-            report_file_ids = []
-            attached_files = {}
+            # ✅ Write attachments safely
+            attachment_vals = {}
 
-            Attachment = request.env['ir.attachment'].sudo()
+            def add_attachments(field_name, file_list):
+                ids = []
+                for f in file_list:
+                    if f:
+                        content = f.read()
+                        att = request.env['ir.attachment'].sudo().create({
+                            'name': f.filename,
+                            'datas': base64.b64encode(content),
+                            'res_model': 'project.project',
+                            'res_id': project.id,
+                            'type': 'binary',
+                            'mimetype': f.mimetype,
+                            'public': True,
+                        })
+                        ids.append(att.id)
+                if ids:
+                    attachment_vals[field_name] = [(6, 0, ids)]
 
-            # Handle utility bills (usage files)
-            utility_files = request.httprequest.files.getlist('utility_bill[]')
-            field_id = '2nvUQ4BJTvoGvoQc8DG4' if self.getEnv() == 'prod' else 'eG2AcvDmorpR5oa0vqY4'
-            for file in utility_files:
-                file_content = file.read()
-                attachment = Attachment.create({
-                    'name': file.filename,
-                    'datas': base64.b64encode(file_content),
-                    'res_model': 'project.project',
-                    'res_id': project.id,
-                    'type': 'binary',
-                    'mimetype': file.mimetype,
-                    'public': True,
-                })
-                usage_file_ids.append(attachment.id)
-                attached_files.setdefault(field_id, []).append(f'{attachment.id}/{file.filename}')
+            add_attachments('usage_files', request.httprequest.files.getlist('utility_bill[]'))
+            add_attachments('additional_files', request.httprequest.files.getlist('additional_files[]'))
+            add_attachments('unrwa_document', [request.httprequest.files.get('unrwa_document')])
+            add_attachments('house_damage_photos', request.httprequest.files.getlist('house_damage_photos[]'))
+            add_attachments('report_documents', request.httprequest.files.getlist('report_documents[]'))
 
-            # Handle additional files
-            additional_files = request.httprequest.files.getlist('additional_files[]')
-            field_id = 'xndMS4IWYMUnY9341RKJ' if self.getEnv() == 'prod' else 'eG2AcvDmorpR5oa0vqY4'
-            for file in additional_files:
-                file_content = file.read()
-                attachment = Attachment.create({
-                    'name': file.filename,
-                    'datas': base64.b64encode(file_content),
-                    'res_model': 'project.project',
-                    'res_id': project.id,
-                    'type': 'binary',
-                    'mimetype': file.mimetype,
-                    'public': True,
-                })
-                additional_file_ids.append(attachment.id)
-                attached_files.setdefault(field_id, []).append(f'{attachment.id}/{file.filename}')
-
-            # Handle UNRWA document (single file)
-            unrwa_file = request.httprequest.files.get('unrwa_document')
-            if unrwa_file:
-                file_content = unrwa_file.read()
-                attachment = Attachment.create({
-                    'name': unrwa_file.filename,
-                    'datas': base64.b64encode(file_content),
-                    'res_model': 'project.project',
-                    'res_id': project.id,
-                    'type': 'binary',
-                    'mimetype': unrwa_file.mimetype,
-                    'public': True,
-                })
-                unrwa_file_ids.append(attachment.id)
-
-            # Handle house damage photos (optional)
-            house_damage_files = request.httprequest.files.getlist('house_damage_photos[]')
-            for file in house_damage_files:
-                file_content = file.read()
-                attachment = Attachment.create({
-                    'name': file.filename,
-                    'datas': base64.b64encode(file_content),
-                    'res_model': 'project.project',
-                    'res_id': project.id,
-                    'type': 'binary',
-                    'mimetype': file.mimetype,
-                    'public': True,
-                })
-                house_damage_file_ids.append(attachment.id)
-
-            # Handle report documents (optional)
-            report_files = request.httprequest.files.getlist('report_documents[]')
-            for file in report_files:
-                file_content = file.read()
-                attachment = Attachment.create({
-                    'name': file.filename,
-                    'datas': base64.b64encode(file_content),
-                    'res_model': 'project.project',
-                    'res_id': project.id,
-                    'type': 'binary',
-                    'mimetype': file.mimetype,
-                    'public': True,
-                })
-                report_file_ids.append(attachment.id)
-
-            # Link all attachments to project
-            project.write({
-                'usage_files': [(6, 0, usage_file_ids)],
-                'additional_files': [(6, 0, additional_file_ids)],
-                'unrwa_document': [(6, 0, unrwa_file_ids)],
-                'house_damage_photos': [(6, 0, house_damage_file_ids)],
-                'report_documents': [(6, 0, report_file_ids)],
-            })
+            if attachment_vals:
+                project.write(attachment_vals)
 
             return request.render("lytegen_contact_details.project_onboarding_success", {'project': project})
 
-
         except Exception as e:
+            import traceback
+            _logger.error("Project onboarding submission error: %s\n%s", str(e), traceback.format_exc())
             return f"<pre>Error: {str(e)}</pre>"
 
     def getEnv(self):
