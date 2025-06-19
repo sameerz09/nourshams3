@@ -80,6 +80,7 @@
                     <field name="displacement_reasons" readonly="1"/>
                     <field name="post_displacement_area" readonly="1"/>
                     <field name="family_member_count" readonly="1"/>
+                    <field name="unrwa_document" readonly="0"/>
                 </group>
 
                 <group string="معلومات الاتصال">
@@ -133,7 +134,7 @@
 
                 <group string="الصور والمرفقات">
                     <field name="usage_files" widget="many2many_binary_preview" readonly="1"/>
-                    <field name="unrwa_document" widget="many2many_binary_preview" readonly="1"/>
+                    <field name="unrwa_document" widget="many2many_binary_preview" readonly="0"/>
                     <field name="house_damage_photos" widget="many2many_binary_preview" readonly="1"/>
                     <field name="additional_files" widget="many2many_binary_preview" readonly="1"/>
                     <field name="report_documents" widget="many2many_binary_preview" readonly="1"/>
