@@ -681,7 +681,9 @@ class ProjectProject(models.Model):
     skill_maintenance = fields.Boolean(string="صيانة")
     skill_other = fields.Boolean(string="آخر")
 
-    age = fields.Integer(string="العمر", compute='_compute_age', store=True)
+    age = fields.Integer(string="العمر", store=True)
+    # age = fields.Integer(string="العمر", compute='_compute_age', store=True)
+
 
     @api.depends('date_of_birth')
     def _compute_age(self):
