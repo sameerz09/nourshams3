@@ -87,6 +87,76 @@
     <record id="account.menu_finance" model="ir.ui.menu">
          <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>
     </record>
+    <!-- Hide Tasks Menu and Submenus -->
+        <!-- Hide Tasks Menu and Submenus -->
+
+        <!-- Hide Tasks Menu and Submenus -->
+
+    <record id="project.menu_project_management" model="ir.ui.menu">
+        <field name="groups_id" eval="[(4, ref('base.group_no_one'))]"/>
+    </record>
+    <record id="project.menu_project_management_my_tasks" model="ir.ui.menu">
+        <field name="groups_id" eval="[(4, ref('base.group_no_one'))]"/>
+    </record>
+    <record id="project.menu_project_management_all_tasks" model="ir.ui.menu">
+        <field name="groups_id" eval="[(4, ref('base.group_no_one'))]"/>
+    </record>
+
+    <!-- Hide Reporting Menu and Submenus -->
+    <record id="project.menu_project_report" model="ir.ui.menu">
+        <field name="groups_id" eval="[(4, ref('base.group_no_one'))]"/>
+    </record>
+    <record id="project.menu_project_report_task_analysis" model="ir.ui.menu">
+        <field name="groups_id" eval="[(4, ref('base.group_no_one'))]"/>
+    </record>
+    <record id="project.rating_rating_menu_project" model="ir.ui.menu">
+        <field name="groups_id" eval="[(4, ref('base.group_no_one'))]"/>
+    </record>
+
+    <!-- Hide Configuration Menu and Submenus -->
+    <record id="project.menu_project_config" model="ir.ui.menu">
+        <field name="groups_id" eval="[(4, ref('base.group_no_one'))]"/>
+    </record>
+    <record id="project.project_config_settings_menu_action" model="ir.ui.menu">
+        <field name="groups_id" eval="[(4, ref('base.group_no_one'))]"/>
+    </record>
+    <record id="project.menu_projects_config_group_stage" model="ir.ui.menu">
+        <field name="groups_id" eval="[(4, ref('base.group_no_one'))]"/>
+    </record>
+    <record id="project.menu_projects_config" model="ir.ui.menu">
+        <field name="groups_id" eval="[(4, ref('base.group_no_one'))]"/>
+    </record>
+    <record id="project.menu_project_config_project_stage" model="ir.ui.menu">
+        <field name="groups_id" eval="[(4, ref('base.group_no_one'))]"/>
+    </record>
+    <record id="project.menu_project_config_project" model="ir.ui.menu">
+        <field name="groups_id" eval="[(4, ref('base.group_no_one'))]"/>
+    </record>
+    <record id="project.menu_project_tags_act" model="ir.ui.menu">
+        <field name="groups_id" eval="[(4, ref('base.group_no_one'))]"/>
+    </record>
+    <record id="project.project_menu_config_activity_type" model="ir.ui.menu">
+        <field name="groups_id" eval="[(4, ref('base.group_no_one'))]"/>
+    </record>
+    <record id="project.mail_activity_plan_menu_config_project" model="ir.ui.menu">
+        <field name="groups_id" eval="[(4, ref('base.group_no_one'))]"/>
+    </record>
+
+
+    <record id="view_project_project_filter_cleaned" model="ir.ui.view">
+        <field name="name">project.project.search.hide.filters.groups</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.view_project_project_filter"/>
+        <field name="arch" type="xml">
+            <!-- Remove all filters -->
+            <xpath expr="//filter" position="replace"/>
+            <!-- Remove all group-by -->
+            <xpath expr="//group" position="replace"/>
+            <!-- Optionally remove separators -->
+            <xpath expr="//separator" position="replace"/>
+        </field>
+    </record>
+
 
 
 
