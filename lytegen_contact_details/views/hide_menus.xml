@@ -144,18 +144,46 @@
 
 
     <record id="view_project_project_filter_cleaned" model="ir.ui.view">
-        <field name="name">project.project.search.hide.filters.groups</field>
-        <field name="model">project.project</field>
-        <field name="inherit_id" ref="project.view_project_project_filter"/>
-        <field name="arch" type="xml">
-            <!-- Remove all filters -->
-            <xpath expr="//filter" position="replace"/>
-            <!-- Remove all group-by -->
-            <xpath expr="//group" position="replace"/>
-            <!-- Optionally remove separators -->
-            <xpath expr="//separator" position="replace"/>
-        </field>
-    </record>
+    <field name="name">project.project.search.only.family.filters</field>
+    <field name="model">project.project</field>
+    <field name="inherit_id" ref="project.view_project_project_filter"/>
+    <field name="arch" type="xml">
+        <!-- Remove all default filters -->
+        <xpath expr="//filter" position="replace"/>
+        <!-- Remove all separators -->
+        <xpath expr="//separator" position="replace"/>
+        <!-- Remove group by options -->
+        <xpath expr="//group" position="replace"/>
+
+        <!-- Add custom filters -->
+        <xpath expr="//search" position="replace">
+            <search string="Search Project">
+                <!-- هل يوجد شهيد؟ -->
+                <filter string="يوجد شهيد" name="has_family_martyr_yes" domain="[('has_family_martyr', '=', 'yes')]"/>
+
+                <!-- هل يوجد أسير؟ -->
+                <filter string="يوجد أسير" name="has_family_prisoner_yes" domain="[('has_family_prisoner', '=', 'yes')]"/>
+
+                <!-- هل يوجد جريح؟ -->
+                <filter string="يوجد جريح" name="has_family_injured_yes" domain="[('has_family_injured', '=', 'yes')]"/>
+                <filter string="يوجد طلاب مدارس" name="has_school_students_yes" domain="[('has_school_students', '=', 'yes')]"/>
+                <filter string="طلاب توقفو" name="school_attendance_all" domain="[('school_attendance_status', '=', 'all_continuing')]"/>
+                <filter string="يوجد طلاب جامعات" name="has_university_students_yes" domain="[('has_university_students', '=', 'yes')]"/>
+                <filter string="التعليم الجامعي توقف" name="university_attendance_stopped" domain="[('university_attendance_status', '=', 'stopped')]"/>
+                <filter string="يوجد ذوي إعاقة" name="has_disabled_members_yes" domain="[('has_disabled_members', '=', 'yes')]"/>
+               <!-- Skills (Boolean fields) -->
+                <filter string="مهارة: بناء" name="skill_construction" domain="[('skill_construction','=',True)]"/>
+                <filter string="مهارة: كهرباء" name="skill_electricity" domain="[('skill_electricity','=',True)]"/>
+                <filter string="مهارة: تعليم" name="skill_education" domain="[('skill_education','=',True)]"/>
+                <filter string="مهارة: صيانة" name="skill_maintenance" domain="[('skill_maintenance','=',True)]"/>
+                <filter string="مهارة: آخر" name="skill_other" domain="[('skill_other','=',True)]"/>
+
+
+            </search>
+        </xpath>
+    </field>
+</record>
+
 
 
 
