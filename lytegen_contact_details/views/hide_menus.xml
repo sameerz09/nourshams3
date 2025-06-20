@@ -85,7 +85,7 @@
 <!--        <field name="groups_id" eval="[(6, 0, [ref('base.group_nobody')])]"/>-->
 <!--    </record>-->
     <record id="account.menu_finance" model="ir.ui.menu">
-        <field name="groups_id" eval="[(6, 0, [])]"/>
+         <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>
     </record>
 
 
