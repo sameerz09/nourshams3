@@ -10,8 +10,9 @@
             <list create="false" string="المتضررين">
                 <field name="name" string="اسم رب الأسرة"/>
                 <field name="id_number" string="رقم هوية رب الأسرة"/>
-                <field name="date_formatted" string="تاريخ الإنشاء"/>
-                <field name="time_formatted" string="وقت الإنشاء"/>
+<!--                <field name="date_formatted" string="تاريخ الإنشاء"/>-->
+<!--                <field name="time_formatted" string="وقت الإنشاء"/>-->
+                <field name="post_displacement_area" string="مكان الاقامة الحالي بعد النزوح"/>
                 <field name="displacement_date" string="تاريخ النزوح"/>
                 <field name="displacement_residence_type" string="نوع السكن بعد النزوح"/>
                 <field name="displacement_reasons" string="أسباب النزوح"/>
