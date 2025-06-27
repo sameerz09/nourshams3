@@ -13,6 +13,7 @@
 <!--                <field name="date_formatted" string="تاريخ الإنشاء"/>-->
 <!--                <field name="time_formatted" string="وقت الإنشاء"/>-->
                 <field name="post_displacement_area" string="مكان الاقامة الحالي بعد النزوح"/>
+<!--                <field name="post_displacement_area" string="مكان الاقامة الحالي اخر"/>-->
                 <field name="displacement_date" string="تاريخ النزوح"/>
                 <field name="displacement_residence_type" string="نوع السكن بعد النزوح"/>
                 <field name="displacement_reasons" string="أسباب النزوح"/>
@@ -79,7 +80,8 @@
                     <field name="multiple_displacements" readonly="1"/>
                     <field name="request_date" readonly="1"/>
                     <field name="displacement_reasons" readonly="1"/>
-                    <field name="post_displacement_area" readonly="1"/>
+                    <field name="post_displacement_area_selections" readonly="1"/>
+                    <field name="post_displacement_area" readonly="1" invisible="post_displacement_area_selections != 'other'"/>
                     <field name="family_member_count" readonly="1"/>
                     <field name="unrwa_card_number" readonly="1"/>
                 </group>

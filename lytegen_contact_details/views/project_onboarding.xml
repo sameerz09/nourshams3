@@ -343,33 +343,44 @@
 
                                                             <!-- معلومات النزوح -->
                                                             <div class="row mt-3">
+
                                                                 <!-- تاريخ النزوح -->
-                                                                <div class="col-lg-4 col-sm-12">
-                                                                    <span class="header-font">تاريخ النزوح<sup class="text-danger">*</sup></span>
+                                                                <div class="col-lg-6 col-sm-12 mb-3">
+                                                                    <label class="header-font" for="displacement_date">
+                                                                        تاريخ النزوح <sup class="text-danger">*</sup>
+                                                                    </label>
                                                                     <input type="date" name="displacement_date" id="displacement_date" class="form-control" required="required"/>
                                                                 </div>
 
                                                                 <!-- أسباب النزوح -->
-                                                                <div class="col-lg-4 col-sm-12">
-                                                                    <span class="header-font">أسباب النزوح<sup class="text-danger">*</sup></span>
+                                                                <div class="col-lg-6 col-sm-12 mb-3">
+                                                                    <label class="header-font" for="displacement_reasons">
+                                                                        أسباب النزوح <sup class="text-danger">*</sup>
+                                                                    </label>
                                                                     <select class="form-control js-searchable-re-roof" name="displacement_reasons" id="displacement_reasons" required="required">
-                                                                        <option value=""/>
+                                                                        <option value="" />
                                                                         <t t-foreach="displacement_reasons" t-as="type">
-                                                                            <option t-att-value="type[0]"><t t-esc="type[1]"/></option>
+                                                                            <option t-att-value="type[0]"><t t-esc="type[1]" /></option>
                                                                         </t>
                                                                     </select>
                                                                 </div>
 
+                                                                <!-- العنوان الحالي بعد النزوح -->
+
+
                                                                 <!-- مكان النزوح -->
-                                                                <div class="col-lg-4 col-sm-12">
-                                                                    <span class="header-font">مكان النزوح<sup class="text-danger">*</sup></span>
-                                                                    <select class="form-control js-searchable-re-roof" name="displacement_residences" id="displacement_residences" required="required">
-                                                                        <option value=""/>
-                                                                        <t t-foreach="displacement_residences" t-as="type">
-                                                                            <option t-att-value="type[0]"><t t-esc="type[1]"/></option>
-                                                                        </t>
-                                                                    </select>
-                                                                </div>
+<!--                                                                <div class="col-lg-6 col-sm-12 mb-3">-->
+<!--                                                                    <label class="header-font" for="displacement_residences">-->
+<!--                                                                        مكان النزوح <sup class="text-danger">*</sup>-->
+<!--                                                                    </label>-->
+<!--                                                                    <select class="form-control js-searchable-re-roof" name="displacement_residences" id="displacement_residences">-->
+<!--                                                                        <option value="" />-->
+<!--                                                                        <t t-foreach="displacement_residences" t-as="type">-->
+<!--                                                                            <option t-att-value="type[0]"><t t-esc="type[1]" /></option>-->
+<!--                                                                        </t>-->
+<!--                                                                    </select>-->
+<!--                                                                </div>-->
+
                                                             </div>
 
                                                             <!-- حالة التهجير المتكررة -->
@@ -389,39 +400,108 @@
                                                     </div>
                                                  <h2 class="accordion-header mt-3">
                                                         <button class="accordion-button" type="button" data-bs-target="#projectSpecs" aria-expanded="true" aria-controls="projectSpecs">
-السكن والوضع المعيشي بعد النزوح
+                                                            السكن والوضع المعيشي بعد النزوح
                                                           </button>
                                                  </h2>
                                                  <div id="housingConditions" class="accordion-collapse collapse show" data-bs-parent="#housingConditions">
-                                                    <div class="accordion-body">
-                                                        <div class="row mt-3">
-                                                            <div class="col-lg-4 col-sm-12">
-                                                                <span class="header-font">نوع السكن الحالي <sup class="text-danger">*</sup></span>
-                                                                <select class="form-control mt-2 header-font" name="housing_type" id="housing_type" required="required">
-                                                                    <option value=""/>
-                                                                    <t t-foreach="housing_type_options" t-as="option">
-                                                                        <option t-att-value="option[0]"><t t-esc="option[1]"/></option>
-                                                                    </t>
-                                                                </select>
-                                                            </div>
-                                                            <div class="col-lg-4 col-sm-12">
-                                                                <span class="header-font">حالة السكن</span>
-                                                                <select class="form-control header-font" name="housing_condition" id="housing_condition">
-                                                                    <option value=""/>
-                                                                    <t t-foreach="housing_condition_options" t-as="opt">
-                                                                        <option t-att-value="opt[0]"><t t-esc="opt[1]"/></option>
-                                                                    </t>
-                                                                </select>
-                                                            </div>
-                                                            <div class="col-lg-4 col-sm-12">
-                                                                <label class="header-font">العنوان الحالي بعد النزوح</label>
-                                                                <input type="text" class="form-control header-font" name="post_displacement_area" required="required"/>
-                                                            </div>
+    <div class="accordion-body">
+        <div class="row mt-3">
+
+            <!-- نوع السكن الحالي -->
+            <div class="col-lg-4 col-sm-12 mb-3">
+                <label class="header-font" for="housing_type">
+                    نوع السكن الحالي <sup class="text-danger">*</sup>
+                </label>
+                <select class="form-control mt-2 header-font" name="housing_type" id="housing_type" required="required">
+                    <option value="" />
+                    <t t-foreach="housing_type_options" t-as="option">
+                        <option t-att-value="option[0]"><t t-esc="option[1]" /></option>
+                    </t>
+                </select>
+            </div>
+
+            <!-- حالة السكن -->
+            <div class="col-lg-4 col-sm-12 mb-3">
+                <label class="header-font" for="housing_condition">حالة السكن</label>
+                <select class="form-control header-font" name="housing_condition" id="housing_condition">
+                    <option value="" />
+                    <t t-foreach="housing_condition_options" t-as="opt">
+                        <option t-att-value="opt[0]"><t t-esc="opt[1]" /></option>
+                    </t>
+                </select>
+            </div>
+
+            <!-- العنوان الحالي بعد النزوح - Dropdown -->
+            <div class="col-lg-6 col-sm-12 mb-3">
+                <label class="header-font" for="post_displacement_area2">
+                    العنوان الحالي بعد النزوح <sup class="text-danger">*</sup>
+                </label>
+                <select class="form-control js-searchable-post-displacement header-font"
+                        name="post_displacement_area2"
+                        id="post_displacement_area2"
+                        required="required"
+                        onchange="toggleOtherAreaInput(this)">
+                    <option value="" />
+                    <t t-foreach="post_displacement_area_options" t-as="area">
+                        <option t-att-value="area[0]"><t t-esc="area[1]" /></option>
+                    </t>
+                </select>
+            </div>
+
+            <!-- العنوان الحالي بعد النزوح - Other input (hidden by default) -->
+            <div class="col-lg-4 col-sm-12 mb-3" id="other_post_displacement_input" style="display: none;">
+                <label class="header-font" for="post_displacement_area"> حدد العنوان الحالي بعد النزوح<sup class="text-danger">*</sup></label>
+                <input type="text"
+                       class="form-control header-font"
+                       name="post_displacement_area"
+                       id="post_displacement_area"
+                       />
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Toggle Script -->
+<script>
+    function toggleOtherAreaInput(selectElement) {
+        const otherInputDiv = document.getElementById('other_post_displacement_input');
+        const textInput = document.getElementById('post_displacement_area');
+        if (selectElement.value === 'other') {
+            otherInputDiv.style.display = 'block';
+        } else {
+            otherInputDiv.style.display = 'none';
+            if (textInput) textInput.value = '';
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const select = document.getElementById('post_displacement_area2');
+        if (select) toggleOtherAreaInput(select);
+    });
+</script>
 
 
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                <!-- Toggle Script -->
+                                                <script>
+                                                    function toggleOtherAreaInput(selectElement) {
+                                                        const otherInputDiv = document.getElementById('other_post_displacement_input');
+                                                        const textInput = document.getElementById('post_displacement_area');
+                                                        if (selectElement.value === 'other') {
+                                                            otherInputDiv.style.display = 'block';
+                                                        } else {
+                                                            otherInputDiv.style.display = 'none';
+                                                            if (textInput) textInput.value = '';
+                                                        }
+                                                    }
+
+                                                    // Run on page load (in case the form is repopulated)
+                                                    document.addEventListener('DOMContentLoaded', function () {
+                                                        const select = document.getElementById('post_displacement_area2');
+                                                        if (select) toggleOtherAreaInput(select);
+                                                    });
+                                                </script>
+
                                                  <h2 class="accordion-header mt-3">
                                                         <button class="accordion-button" type="button" data-bs-target="#projectSpecs" aria-expanded="true" aria-controls="projectSpecs">
                                                             الاقتصاد والدخل

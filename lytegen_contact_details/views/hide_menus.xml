@@ -177,6 +177,21 @@
                 <filter string="مهارة: تعليم" name="skill_education" domain="[('skill_education','=',True)]"/>
                 <filter string="مهارة: صيانة" name="skill_maintenance" domain="[('skill_maintenance','=',True)]"/>
                 <filter string="مهارة: آخر" name="skill_other" domain="[('skill_other','=',True)]"/>
+                <filter string="هل تعرض المنزل للهدم" name="destroyed" domain="[('housing_damage_level', '=', 'destroyed')]"/>
+                <filter string="طولكرم" name="tulkarem" domain="[('post_displacement_area_selections', '=', 'tulkarem')]"/>
+                <filter string="اكتابا" name="ektaba" domain="[('post_displacement_area_selections', '=', 'ektaba')]"/>
+                <filter string="ذنابه" name="thanaba" domain="[('post_displacement_area_selections', '=', 'thanaba')]"/>
+                <filter string="حارة السلام" name="salem_neighborhood" domain="[('post_displacement_area_selections', '=', 'salem_neighborhood')]"/>
+                <filter string="العزب" name="alzoub" domain="[('post_displacement_area_selections', '=', 'alzoub')]"/>
+                <filter string="عنبتا" name="anabta" domain="[('post_displacement_area_selections', '=', 'anabta')]"/>
+                <filter string="بلعا" name="balaa" domain="[('post_displacement_area_selections', '=', 'balaa')]"/>
+                <filter string="شويكه" name="shuweika" domain="[('post_displacement_area_selections', '=', 'shuweika')]"/>
+                <filter string="كفر اللبد" name="kafr_labad" domain="[('post_displacement_area_selections', '=', 'kafr_labad')]"/>
+                <filter string="دير الغصون" name="deir_ghassoun" domain="[('post_displacement_area_selections', '=', 'deir_ghassoun')]"/>
+                <filter string="عتيل" name="attil" domain="[('post_displacement_area_selections', '=', 'attil')]"/>
+                <filter string="اخرى / حدد" name="other" domain="[('post_displacement_area_selections', '=', 'other')]"/>
+
+
 
 
             </search>

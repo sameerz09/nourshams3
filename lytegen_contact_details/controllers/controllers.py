@@ -928,6 +928,21 @@ class CustomAppointmentController(AppointmentController):
             ('no', 'لا'),
         ]
 
+        post_displacement_area_options = [
+            ('tulkarem', 'طولكرم'),
+            ('ektaba', 'اكتابا'),
+            ('thanaba', 'ذنابه'),
+            ('salem_neighborhood', 'حارة السلام'),
+            ('alzoub', 'العزب'),
+            ('anabta', 'عنبتا'),
+            ('balaa', 'بلعا'),
+            ('shuweika', 'شويكه'),
+            ('kafr_labad', 'كفر اللبد'),
+            ('deir_ghassoun', 'دير الغصون'),
+            ('attil', 'عتيل'),
+            ('other', 'اخرى / حدد'),
+        ]
+
         sp1s = [(emp.id, emp.name) for emp in sales_consultants]
 
         return request.render("lytegen_contact_details.project_onboarding_form", {
@@ -986,6 +1001,7 @@ class CustomAppointmentController(AppointmentController):
             'has_family_prisoner_options': has_family_prisoner_options,
             'has_family_injured_options': has_family_injured_options,
             'has_disabled_members_options': has_disabled_members_options,
+            'post_displacement_area_options': post_displacement_area_options,
 
 
         })
@@ -1096,6 +1112,7 @@ class CustomAppointmentController(AppointmentController):
                 'skill_other': post.get('skill_other'),
                 'date_of_birth': post.get('date_of_birth'),
                 'date_start': date.today(),
+                'post_displacement_area_selections': post.get('post_displacement_area2'),
             }
 
             # Update or create project safely

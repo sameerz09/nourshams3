@@ -438,6 +438,26 @@ class ProjectProject(models.Model):
     ], string="هل الأسرة نازحة حاليًا؟", required=True)
 
     pre_displacement_area = fields.Char(string="مكان السكن قبل النزوح", required=True)
+    post_displacement_area_options = [
+        ('tulkarem', 'طولكرم'),
+        ('ektaba', 'اكتابا'),
+        ('thanaba', 'ذنابه'),
+        ('salem_neighborhood', 'حارة السلام'),
+        ('alzoub', 'العزب'),
+        ('anabta', 'عنبتا'),
+        ('balaa', 'بلعا'),
+        ('shuweika', 'شويكه'),
+        ('kafr_labad', 'كفر اللبد'),
+        ('deir_ghassoun', 'دير الغصون'),
+        ('attil', 'عتيل'),
+        ('other', 'اخرى / حدد'),
+    ]
+
+    post_displacement_area_selections = fields.Selection(
+        selection=post_displacement_area_options,
+        string="العنوان الحالي بعد النزوح"
+    )
+
     post_displacement_area = fields.Char(string="العنوان الحالي بعد النزوح", required=True)
 
     housing_type = fields.Selection([
